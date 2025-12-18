@@ -1,7 +1,25 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
 import NavbarWithSearch from "@/components/shared/navbar/navbar";
+
+
+const neueHaas = localFont({
+  src: [
+    {
+      path: '/fonts/NeueHaasDisplay-Mediu.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/NeueHaasDisplay-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-neue-haas', // <--- ESTA ES LA CLAVE
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es" className={`${neueHaas.variable}`}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
