@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import NavbarWithSearch from "@/components/shared/navbar/navbar";
 
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-inter", // opcional pero recomendado
+});
 
 const neueHaas = localFont({
   src: [
@@ -44,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${neueHaas.variable}`}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
       >
         <NavbarWithSearch />
         {children}
