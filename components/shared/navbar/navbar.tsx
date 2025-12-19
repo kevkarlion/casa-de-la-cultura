@@ -106,7 +106,7 @@ export default function NavbarMinimal() {
                 <li key={item.label}>
                   <Link 
                     href={item.href}
-                    className="transition-colors duration-200 font-inter font-semibold hover:text-[#e85c23] text-sm lg:text-base px-2 py-1"
+                    className="transition-colors duration-200 font-inter font-normal hover:text-[#e85c23] text-sm lg:text-base px-2 py-1"
                   >
                     {item.label}
                   </Link>

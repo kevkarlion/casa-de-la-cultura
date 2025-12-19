@@ -1,9 +1,15 @@
+import Hero from "@/components/home/Hero/Hero";
+import EventCarousel from "@/components/shared/eventos/EventosDestacados";
+import { eventsMock } from "@/utils/events.mock";
 
 
-export default function Home() {
+const Page = () => {
   return (
-    <div className="font-neue text-4xl lg:text-7xl font-extrabold flex min-h-screen items-center justify-center bg-zinc-50  dark:bg-black">
-      <h1>Casa de la cultura</h1>
+    <div>
+      <Hero />
+      <EventCarousel events={eventsMock} />
     </div>
   );
 }
+
+export default Page;
