@@ -12,7 +12,7 @@ export interface Event {
 export const eventsMock: Event[] = [
   {
     id: 1,
-    image: "/events/muestra-arte.jpg",
+    image: "/imagenes/expo.png",
     date: "12 OCT",
     title: "Muestra de Arte Contemporáneo",
     description:
@@ -20,7 +20,7 @@ export const eventsMock: Event[] = [
   },
   {
     id: 2,
-    image: "/events/teatro-independiente.jpg",
+    image: "/imagenes/teatro.webp",
     date: "18 OCT",
     title: "Teatro Independiente",
     description:
@@ -28,7 +28,7 @@ export const eventsMock: Event[] = [
   },
   {
     id: 3,
-    image: "/events/musica-vivo.jpg",
+    image: "/imagenes/noche-musica.webp",
     date: "25 OCT",
     title: "Noche de Música en Vivo",
     description:
@@ -36,7 +36,7 @@ export const eventsMock: Event[] = [
   },
   {
     id: 4,
-    image: "/events/taller-ceramica.jpg",
+    image: "/imagenes/ceramica.png",
     date: "02 NOV",
     title: "Taller Abierto de Cerámica",
     description:
@@ -44,7 +44,7 @@ export const eventsMock: Event[] = [
   },
   {
     id: 5,
-    image: "/events/cine-debate.jpg",
+    image: "/imagenes/cine.png",
     date: "09 NOV",
     title: "Cine Debate",
     description:
