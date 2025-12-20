@@ -31,7 +31,7 @@ export default function EventCarousel({ events }: EventCarouselProps) {
   };
 
   return (
-    <section className="relative w-full py-8 bottom-40  md:bottom-50   z-20 ">
+    <section className="relative w-full py-8 bottom-23  md:bottom-50   z-20 ">
       {/* Fondo artístico */}
       <div className="pointer-events-none absolute inset-0 " />
 

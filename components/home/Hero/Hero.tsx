@@ -89,7 +89,7 @@ const Hero: FC<HeroProps> = ({
               "
               className="
                 animate-float
-                w-65
+                w-75
                 sm:w-75
                 md:w-85
                 lg:w-100
