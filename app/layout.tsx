@@ -51,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${neueHaas.variable}`}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased bg-white`}
       >
         <NavbarWithSearch />
         {children}
