@@ -114,7 +114,7 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
               onClick={() =>
                 setCurrentDate(d => new Date(d.getFullYear(), d.getMonth() - 1, 1))
               }
-              className="nav-btn"
+              className="nav-btn text-black"
             >
               <ChevronLeft size={18} />
             </button>
@@ -122,7 +122,7 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
               onClick={() =>
                 setCurrentDate(d => new Date(d.getFullYear(), d.getMonth() + 1, 1))
               }
-              className="nav-btn"
+              className="nav-btn text-black"
             >
               <ChevronRight size={18} />
             </button>
