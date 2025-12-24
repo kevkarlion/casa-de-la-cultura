@@ -98,7 +98,7 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
   }
 
   return (
-    <section className="relative z-20 w-full py-16">
+    <section className="relative z-20 w-full py-16 bottom-20">
       <div className="mx-auto max-w-7xl px-4">
         {/* HEADER */}
         <div className="mb-10 flex items-center justify-between">
