@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState, useRef } from 'react'
+import { useMemo, useState, useRef, useEffect } from 'react'
 import { ChevronLeft, ChevronRight, Calendar } from 'lucide-react'
 import Link from 'next/link'
 
@@ -22,6 +22,7 @@ const GAP = 10
 
 export default function AgendaRapida({ items }: AgendaRapidaProps) {
   const today = new Date()
+
   const [currentDate, setCurrentDate] = useState(
     new Date(today.getFullYear(), today.getMonth(), 1)
   )
@@ -29,11 +30,26 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
   const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(
     null
   )
+
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const hoverTooltipRef = useRef(false)
 
   const isMobile =
     typeof window !== 'undefined' && window.innerWidth < 768
+
+  /* --------- CERRAR AL SCROLL --------- */
+  useEffect(() => {
+    function handleScroll() {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current)
+      setOpenDay(null)
+      setTooltipPos(null)
+      hoverTooltipRef.current = false
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+  /* ----------------------------------- */
 
   const monthLabel = currentDate.toLocaleDateString('es-AR', {
     month: 'long',
@@ -67,9 +83,10 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
     const rect = el.getBoundingClientRect()
 
     if (isMobile) {
-      const x = window.innerWidth / 2
-      const y = rect.bottom + GAP
-      setTooltipPos({ x, y })
+      setTooltipPos({
+        x: window.innerWidth / 2,
+        y: rect.bottom + GAP,
+      })
       setOpenDay(day)
       return
     }
@@ -98,10 +115,10 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
   }
 
   return (
-    <section className="relative z-20 w-full py-16 bottom-20">
+    <section className="relative z-20 w-full py-12 bottom-20">
       <div className="mx-auto max-w-7xl px-4">
         {/* HEADER */}
-        <div className="mb-10 flex items-center justify-between">
+        <div className="mb-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Calendar className="text-amber-500" />
             <h2 className="text-xl font-neue text-black">
@@ -129,12 +146,12 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
           </div>
         </div>
 
-        <p className="font-neue mb-8 text-sm uppercase tracking-widest text-black">
+        <p className="font-neue mb-4 text-sm uppercase tracking-widest text-black">
           {monthLabel}
         </p>
 
         {/* GRID */}
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(72px,1fr))] gap-4">
+        <div className="grid grid-cols-7 gap-0 sm:grid-cols-[repeat(auto-fit,minmax(48px,1fr))] sm:gap-2 border border-neutral-800 sm:border-0">
           {Array.from({ length: daysInMonth }, (_, i) => {
             const day = i + 1
             const date = new Date(
@@ -150,11 +167,16 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
                 key={day}
                 type="button"
                 className={`
-                  relative flex w-full flex-col items-center rounded-xl border py-4 transition
+                  relative flex aspect-square sm:aspect-auto
+                  flex-col items-center justify-center
+                  border border-neutral-800
+                  rounded-none sm:rounded-md
+                  p-1 sm:px-1.5 sm:py-2
+                  transition
                   ${
                     events
-                      ? 'cursor-pointer border-neutral-800 bg-neutral-900/60 hover:border-amber-500'
-                      : 'border-neutral-800 bg-neutral-900/40 text-neutral-500'
+                      ? 'cursor-pointer bg-neutral-900/60 hover:border-amber-500'
+                      : 'bg-neutral-900/40 text-neutral-500'
                   }
                 `}
                 onMouseEnter={e => {
@@ -179,11 +201,13 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
                 }}
               >
                 {events && (
-                  <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-amber-500" />
+                  <span className="absolute right-1 top-1 h-1.5 w-1.5 rounded-full bg-amber-500" />
                 )}
 
-                <span className="text-lg font-semibold text-neutral-100">{day}</span>
-                <span className="mt-1 text-xs tracking-widest text-neutral-400">
+                <span className="text-sm sm:text-base font-semibold text-neutral-100">
+                  {day}
+                </span>
+                <span className="mt-0.5 text-[10px] sm:text-[11px] tracking-widest text-neutral-300">
                   {weekDay}
                 </span>
               </button>
@@ -192,14 +216,25 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
         </div>
       </div>
 
+      {/* OVERLAY MOBILE */}
+      {isMobile && openDay && (
+        <div
+          className="fixed inset-0 z-40"
+          onClick={() => {
+            setOpenDay(null)
+            setTooltipPos(null)
+          }}
+        />
+      )}
+
       {/* TOOLTIP */}
       {openDay && tooltipPos && (
         <div
-          className="fixed z-9999"
+          className="fixed z-50"
           style={{
             left: tooltipPos.x,
             top: tooltipPos.y,
-            transform: isMobile ? 'translate(-50%, 0)' : 'translateY(0)',
+            transform: isMobile ? 'translateX(-50%)' : 'none',
           }}
           onMouseEnter={() => {
             if (!isMobile) {
@@ -226,7 +261,9 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
                       {event.title}
                     </p>
                     {event.time && (
-                      <p className="mt-1 text-xs text-neutral-400">{event.time}</p>
+                      <p className="mt-1 text-xs text-neutral-400">
+                        {event.time}
+                      </p>
                     )}
                   </Link>
                 </li>
