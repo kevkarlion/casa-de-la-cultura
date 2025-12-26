@@ -14,7 +14,7 @@ export default function EventCard({
   description,
 }: EventCardProps) {
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-neutral-900 text-neutral-100 shadow-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-xs bg-neutral-900 text-neutral-100 shadow-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
       {/* Imagen */}
       <div className="relative h-52 w-full overflow-hidden">
         <Image
@@ -34,7 +34,7 @@ export default function EventCard({
 
       {/* Contenido */}
       <div className="flex flex-1 flex-col gap-3 p-5">
-        <h3 className="text-xl font-semibold leading-snug tracking-tight">
+        <h3 className="text-xl font-semibold leading-snug tracking-tight font-neue">
           {title}
         </h3>
 

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import NavbarWithSearch from "@/components/shared/navbar/navbar";
+import Footer from "@/components/shared/footer/footer";
 
 
 const inter = Inter({
@@ -55,6 +56,7 @@ export default function RootLayout({
       >
         <NavbarWithSearch />
         {children}
+        <Footer />
       </body>
     </html>
   );
