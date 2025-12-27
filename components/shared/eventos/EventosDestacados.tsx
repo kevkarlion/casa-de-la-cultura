@@ -31,27 +31,32 @@ export default function EventCarousel({ events }: EventCarouselProps) {
   };
 
   return (
-    <section className="relative w-full py-8 bottom-32  md:bottom-50   z-20 ">
-      {/* Fondo artístico */}
-      <div className="pointer-events-none absolute inset-0 " />
-
+    <section className="relative w-full py-8 bottom-15 md:bottom-50 z-20">
       <div className="relative mx-auto max-w-7xl px-4">
-        {/* Controles */}
-        <div className="mb-6 flex justify-end gap-2">
-          <button
-            onClick={() => scroll("left")}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-neutral-900/80 text-neutral-200 backdrop-blur transition hover:border-amber-500 hover:text-amber-400"
-            aria-label="Eventos anteriores"
-          >
-            <ChevronLeft size={20} />
-          </button>
-          <button
-            onClick={() => scroll("right")}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-neutral-900/80 text-neutral-200 backdrop-blur transition hover:border-amber-500 hover:text-amber-400"
-            aria-label="Eventos siguientes"
-          >
-            <ChevronRight size={20} />
-          </button>
+
+        {/* Header: título + controles */}
+        <div className="mb-6 flex items-center justify-between">
+          <h2 className="text-lg font-neue font-semibold tracking-wide text-neutral-100 uppercase bg-brand-magenta px-3 py-1 ">
+            Los más destacados
+          </h2>
+
+          <div className="flex gap-2">
+            <button
+              onClick={() => scroll("left")}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-brand-magenta text-neutral-200 backdrop-blur transition hover:border-amber-500 hover:text-amber-400"
+              aria-label="Eventos anteriores"
+            >
+              <ChevronLeft size={20} />
+            </button>
+
+            <button
+              onClick={() => scroll("right")}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-brand-magenta text-neutral-200 backdrop-blur transition hover:border-amber-500 hover:text-amber-400"
+              aria-label="Eventos siguientes"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
         </div>
 
         {/* Carrusel */}

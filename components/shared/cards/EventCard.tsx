@@ -27,7 +27,7 @@ export default function EventCard({
         <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
 
         {/* Fecha */}
-        <span className="absolute left-4 top-4 rounded-full bg-amber-500/90 px-4 py-1 text-sm font-semibold tracking-wide text-black shadow-md backdrop-blur">
+        <span className="absolute left-4 top-4 rounded-full bg-brand-orange px-4 py-1 text-sm font-semibold tracking-wide text-black shadow-md backdrop-blur">
           {date}
         </span>
       </div>

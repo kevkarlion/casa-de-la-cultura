@@ -118,7 +118,7 @@ const Hero: FC<HeroProps> = ({
             </h1>
 
             {subtitle && (
-              <p className="mb-6 text-lg 2xl:text-xl text-neutral-200">
+              <p className="mb-6 text-lg 2xl:text-xl text-neutral-200 font-neue">
                 {subtitle}
               </p>
             )}
