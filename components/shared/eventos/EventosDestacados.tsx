@@ -34,9 +34,9 @@ export default function EventCarousel({ events }: EventCarouselProps) {
     <section className="relative w-full py-8 bottom-15 md:bottom-50 z-20">
       <div className="relative mx-auto max-w-7xl px-4">
 
-        {/* Header: título + controles */}
-        <div className="mb-6 flex items-center justify-between">
-          <h2 className="text-lg font-neue font-semibold tracking-wide text-neutral-100 uppercase bg-brand-magenta px-3 py-1 ">
+        {/* Header: título + flechas a la derecha */}
+        <div className="mb-6 flex items-center gap-4">
+          <h2 className="text-lg font-neue font-semibold tracking-wide text-neutral-100 uppercase bg-brand-magenta px-3 py-1">
             Los más destacados
           </h2>
 
