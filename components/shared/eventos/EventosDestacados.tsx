@@ -36,7 +36,7 @@ export default function EventCarousel({ events }: EventCarouselProps) {
 
         {/* Header: título + flechas a la derecha */}
         <div className="mb-6 flex items-center gap-4">
-          <h2 className="text-lg font-neue font-semibold tracking-wide text-background uppercase bg-brand-white-cdc px-3 py-1">
+          <h2 className="text-lg font-neue font-semibold tracking-wide text-black uppercase bg-brand-white-cdc px-3 py-1">
             Los más destacados
           </h2>
 

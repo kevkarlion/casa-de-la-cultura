@@ -118,7 +118,7 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
       <div className="mx-auto max-w-7xl px-4">
         {/* HEADER */}
         <div className="mb-6 flex items-center gap-4 ">
-          <div className="flex items-center gap-2 bg-background not-last:px-3 py-1">
+          <div className="flex items-center gap-2 bg-black not-last:px-3 py-1">
             <Calendar className="text-primary" />
             <h2 className="text-lg font-neue font-semibold text-brand-white-cdc uppercase">
               Agenda cultural
@@ -132,7 +132,7 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
                   (d) => new Date(d.getFullYear(), d.getMonth() - 1, 1)
                 )
               }
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-background text-neutral-200 transition hover:border-primary hover:text-primary"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-black text-neutral-200 transition hover:border-primary hover:text-primary"
               aria-label="Mes anterior"
             >
               <ChevronLeft size={20} />
@@ -144,7 +144,7 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
                   (d) => new Date(d.getFullYear(), d.getMonth() + 1, 1)
                 )
               }
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-background text-neutral-200 transition hover:border-primary hover:text-primary"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-black text-neutral-200 transition hover:border-primary hover:text-primary"
               aria-label="Mes siguiente"
             >
               <ChevronRight size={20} />
