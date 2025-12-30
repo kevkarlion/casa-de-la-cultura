@@ -31,8 +31,8 @@ export default function EventCarousel({ events }: EventCarouselProps) {
   };
 
   return (
-    <section className="relative w-full py-8 bottom-15 md:bottom-50 z-20">
-      <div className="relative mx-auto max-w-7xl px-4">
+    <section className="relative w-full py-8  bottom-20 lg:not-only-of-type:bottom-45 z-20">
+      <div className="mx-auto max-w-7xl px-4">
 
         {/* Header: título + flechas a la derecha */}
         <div className="mb-6 flex items-center gap-4">
@@ -43,7 +43,7 @@ export default function EventCarousel({ events }: EventCarouselProps) {
           <div className="flex gap-2">
             <button
               onClick={() => scroll("left")}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-brand-magenta text-neutral-200 backdrop-blur transition hover:border-amber-500 hover:text-amber-400"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-brand-magenta text-white backdrop-blur transition hover:border-amber-500 hover:text-amber-400"
               aria-label="Eventos anteriores"
             >
               <ChevronLeft size={20} />
@@ -51,7 +51,7 @@ export default function EventCarousel({ events }: EventCarouselProps) {
 
             <button
               onClick={() => scroll("right")}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-brand-magenta text-neutral-200 backdrop-blur transition hover:border-amber-500 hover:text-amber-400"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-brand-magenta text-white backdrop-blur transition hover:border-amber-500 hover:text-amber-400"
               aria-label="Eventos siguientes"
             >
               <ChevronRight size={20} />

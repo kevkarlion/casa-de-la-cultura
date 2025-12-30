@@ -48,16 +48,16 @@ export default function NavbarMinimal() {
 
   const logoConfig = {
     mobile: {
-      src: '/logos/Logo-nav-mob.png',
+      src: '/dibujos/Fachada.webp',
       alt: 'Logo Mobile',
-      width: 40,
+      width: 60,
       height: 40,
     },
     desktop: {
-      src: '/logos/Logo-nav-desk.png',
+      src: '/dibujos/Fachada.webp',
       alt: 'Logo Desktop',
-      width: 180,
-      height: 80,
+      width: 100,
+      height: 50,
     },
   }
 
@@ -66,7 +66,7 @@ export default function NavbarMinimal() {
       <nav className="w-full">
         {/* Top bar */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-24 md:h-32 flex items-center">
-          <div className="flex justify-between items-center w-full">
+          <div className="flex justify-between items-center w-full pl-8">
             {/* Logo */}
             <div className="shrink-0">
               <Link href="/">
@@ -97,7 +97,7 @@ export default function NavbarMinimal() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="transition-colors duration-200 font-inter font-normal hover:text-[#e85c23] text-sm lg:text-base px-2 py-1"
+                    className="transition-colors duration-200  hover:text-primary text-sm lg:text-sm  px-2 py-1"
                   >
                     {item.label}
                   </Link>
@@ -130,7 +130,7 @@ export default function NavbarMinimal() {
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="md:hidden fixed inset-0 z-50 bg-[#e85c23] pt-20 min-h-svh overflow-y-auto">
+          <div className="md:hidden fixed inset-0 z-50 bg-primary pt-20 min-h-svh overflow-y-auto">
             {/* Close */}
             <div className="absolute top-6 right-4">
               <button

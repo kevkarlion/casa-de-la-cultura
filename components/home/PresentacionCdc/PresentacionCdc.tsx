@@ -15,8 +15,8 @@ export default function PresentacionCdc() {
         </div>
 
         {/* Título */}
-        <h2 className="mb-4 font-neue text-3xl font-medium text-neutral-900">
-          Casa de la Cultura
+        <h2 className="mb-4 font-neue text-3xl font-medium text-neutral-900 uppercase">
+          Centro cultural de las Artes y las Personas
         </h2>
 
         {/* Texto breve */}
