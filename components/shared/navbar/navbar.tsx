@@ -48,16 +48,16 @@ export default function NavbarMinimal() {
 
   const logoConfig = {
     mobile: {
-      src: '/dibujos/Fachada.webp',
+      src: '/logos/LogoHeroBlackMobile.png',
       alt: 'Logo Mobile',
       width: 60,
       height: 40,
     },
     desktop: {
-      src: '/dibujos/Fachada.webp',
+      src: '/logos/LogoHeroBlack.png',
       alt: 'Logo Desktop',
-      width: 100,
-      height: 50,
+      width: 180,
+      height: 80,
     },
   }
 
