@@ -7,7 +7,7 @@ import { MousePointer2, Fingerprint } from "lucide-react";
 
 export default function PresentacionCdc() {
   return (
-    <section className="relative w-full py-24 overflow-hidden bottom-40">
+    <section className="relative w-full pt-24 overflow-hidden bottom-40">
       <div className="mx-auto mb-20 max-w-6xl px-4">
         <motion.span
           initial={{ scaleX: 0 }}
@@ -60,7 +60,7 @@ export default function PresentacionCdc() {
             }}
             className="flex flex-col items-center text-center"
           >
-            <h2 className="mb-4 font-neue text-3xl font-medium uppercase text-neutral-900">
+            <h2 className="mb-4 font-neue text-3xl font-bold uppercase text-neutral-900">
               CDC
             </h2>
 
