@@ -1,40 +1,103 @@
-'use client'
+"use client";
 
-import { Landmark } from 'lucide-react'
-import Link from 'next/link'
+import Image from "next/image";
+
+import { motion } from "framer-motion";
+import { MousePointer2, Fingerprint } from "lucide-react";
 
 export default function PresentacionCdc() {
   return (
-    <section className="relative w-full py-8 pb-16">
-      <div className="mx-auto max-w-5xl px-4 text-center">
-        {/* Ícono */}
-        <div className="mb-6 flex justify-center">
-          <div className="flex h-14 w-14 items-center justify-center rounded-full border border-neutral-300">
-            <Landmark className="h-6 w-6 text-neutral-800" />
+    <section className="relative w-full py-24 overflow-hidden bottom-40">
+      <div className="mx-auto mb-20 max-w-6xl px-4">
+        <motion.span
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="block h-px w-full origin-left bg-neutral-300"
+        />
+      </div>
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="grid items-center gap-12 md:grid-cols-[1fr_auto_1fr]">
+          {/* IMAGEN */}
+          <motion.div
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative h-65 w-full overflow-hidden rounded-xl md:h-90"
+          >
+            <Image
+              src="/dibujos/Patio.webp"
+              alt="Escenario de la Casa de la Cultura"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
+            />
+          </motion.div>
+
+          {/* SEPARADOR */}
+          <div className="relative hidden md:flex h-full items-center justify-center">
+            <motion.span
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="block h-36 w-px bg-black origin-center"
+            />
           </div>
+
+          {/* CONTENIDO */}
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.7,
+              ease: "easeOut",
+              delay: 0.45, // 👈 espera a que la línea termine
+            }}
+            className="flex flex-col items-center text-center"
+          >
+            <h2 className="mb-4 font-neue text-3xl font-medium uppercase text-neutral-900">
+              CDC
+            </h2>
+
+            <p className="mb-8 max-w-xl text-base leading-relaxed text-neutral-700">
+              Un espacio abierto a la comunidad donde el arte, la música, el
+              teatro y la expresión cultural se encuentran. Promovemos el
+              acceso, la participación y el encuentro a través de propuestas
+              para todas las edades.
+            </p>
+
+            <a
+              href="/institucional"
+              className="
+                inline-flex items-center gap-2
+                text-xl font-medium uppercase font-neue
+                bg-black text-white
+                px-8 py-2
+                border border-black
+                transition-all duration-300
+                hover:bg-transparent hover:text-black
+              "
+            >
+              <span>Conocé más</span>
+
+              {/* Desktop icon */}
+              <span className="hidden md:inline-flex">
+                <MousePointer2 size={18} className="opacity-80" />
+              </span>
+
+              {/* Mobile icon */}
+              <span className="inline-flex md:hidden">
+                <Fingerprint size={18} className="opacity-80" />
+              </span>
+            </a>
+          </motion.div>
         </div>
-
-        {/* Título */}
-        <h2 className="mb-4 font-neue text-3xl font-medium text-neutral-900 uppercase">
-          Centro cultural de las Artes y las Personas
-        </h2>
-
-        {/* Texto breve */}
-        <p className="mx-auto mb-8 max-w-3xl text-base leading-relaxed text-neutral-700">
-          Un espacio abierto a la comunidad donde el arte, la música, el teatro
-          y la expresión cultural se encuentran. La Casa de la Cultura promueve
-          el acceso, la participación y el encuentro a través de actividades
-          para todas las edades.
-        </p>
-
-        {/* CTA opcional */}
-        <Link
-          href="/institucional"
-          className="inline-flex items-center gap-2 rounded-full border border-neutral-300 px-6 py-3 text-sm font-medium text-neutral-800 transition hover:border-neutral-900 hover:text-neutral-900"
-        >
-          Conocé más sobre la Casa
-        </Link>
       </div>
     </section>
-  )
+  );
 }
