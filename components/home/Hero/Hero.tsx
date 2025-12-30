@@ -14,8 +14,8 @@ interface HeroProps {
 }
 
 const Hero: FC<HeroProps> = ({
-  title = 'Casa de la Cultura',
-  subtitle = 'Un espacio para crear, compartir y expresarse',
+  title = 'CDC - Casa de la Cultura',
+  subtitle = 'Desde 1973, un espacio de encuentro y producción cultural que alberga talleres, actividades artísticas y propuestas escénicas, promoviendo la participación comunitaria y el acceso a la cultura en todas las edades.',
   videoSrc = '/videos/hero.webm',
   fallbackImageSrc = '/images/hero-fallback.jpg',
   logoSrc = '/logos/LogoHero.png',
@@ -23,7 +23,7 @@ const Hero: FC<HeroProps> = ({
   overlayOpacity = 45,
 }) => {
   return (
-    <section className="relative min-h-[75vh] lg:min-h-[80vh] xl:min-h-[85vh] overflow-hidden bg-black font-neue">
+    <section className="relative min-h-[75vh] lg:min-h-[80vh] xl:min-h-[85vh] overflow-hidden bg-black ">
       {/* ================= BACKGROUND ================= */}
       <div className="absolute inset-0 z-0">
         {/* Fallback image (NO priority, no compite con logo) */}
@@ -105,30 +105,26 @@ const Hero: FC<HeroProps> = ({
           </div>
 
           {/* ================= TEXT ================= */}
-          <div className="flex flex-col text-center md:text-left text-white">
+          <div className="flex flex-col text-center md:text-left text-brand-white-cdc font-neue">
             <h1 className="
               mb-4
               hidden md:block
-              text-3xl
+              text-4xl
               lg:text-4xl
               2xl:text-5xl
               font-extrabold
+              uppercase
             ">
               {title}
             </h1>
 
             {subtitle && (
-              <p className="mb-6 text-lg 2xl:text-xl text-neutral-200 font-neue">
+              <p className="mb-6 text-sm 2xl:text-base text-brand-white-cdc font-inter">
                 {subtitle}
               </p>
             )}
 
-            <ul className="flex flex-col gap-3 lg:gap-4 text-base text-neutral-300">
-              <li>• Talleres artísticos y formativos</li>
-              <li>• Teatro, música y exposiciones</li>
-              <li>• Espacios comunitarios y culturales</li>
-              <li>• Actividades para todas las edades</li>
-            </ul>
+            
           </div>
         </div>
       </div>
