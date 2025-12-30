@@ -36,14 +36,14 @@ export default function EventCarousel({ events }: EventCarouselProps) {
 
         {/* Header: título + flechas a la derecha */}
         <div className="mb-6 flex items-center gap-4">
-          <h2 className="text-lg font-neue font-semibold tracking-wide text-neutral-100 uppercase bg-brand-magenta px-3 py-1">
+          <h2 className="text-lg font-neue font-semibold tracking-wide text-background uppercase bg-brand-white-cdc px-3 py-1">
             Los más destacados
           </h2>
 
           <div className="flex gap-2">
             <button
               onClick={() => scroll("left")}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-brand-magenta text-white backdrop-blur transition hover:border-amber-500 hover:text-amber-400"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-brand-white-cdc text-black backdrop-blur transition hover:border-primary hover:text-primary"
               aria-label="Eventos anteriores"
             >
               <ChevronLeft size={20} />
@@ -51,7 +51,7 @@ export default function EventCarousel({ events }: EventCarouselProps) {
 
             <button
               onClick={() => scroll("right")}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-brand-magenta text-white backdrop-blur transition hover:border-amber-500 hover:text-amber-400"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-brand-white-cdc text-black backdrop-blur transition hover:border-primary hover:text-primary"
               aria-label="Eventos siguientes"
             >
               <ChevronRight size={20} />

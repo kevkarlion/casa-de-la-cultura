@@ -118,9 +118,9 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
       <div className="mx-auto max-w-7xl px-4">
         {/* HEADER */}
         <div className="mb-6 flex items-center gap-4 ">
-          <div className="flex items-center gap-2 bg-brand-blue not-last:px-3 py-1">
-            <Calendar className="text-amber-500" />
-            <h2 className="text-lg font-neue font-semibold text-white uppercase">
+          <div className="flex items-center gap-2 bg-background not-last:px-3 py-1">
+            <Calendar className="text-primary" />
+            <h2 className="text-lg font-neue font-semibold text-brand-white-cdc uppercase">
               Agenda cultural
             </h2>
           </div>
@@ -132,7 +132,7 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
                   (d) => new Date(d.getFullYear(), d.getMonth() - 1, 1)
                 )
               }
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-brand-blue text-neutral-200 transition hover:border-amber-500 hover:text-amber-400 "
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-background text-neutral-200 transition hover:border-primary hover:text-primary"
               aria-label="Mes anterior"
             >
               <ChevronLeft size={20} />
@@ -144,7 +144,7 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
                   (d) => new Date(d.getFullYear(), d.getMonth() + 1, 1)
                 )
               }
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-brand-blue text-neutral-200 transition hover:border-amber-500 hover:text-amber-400"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-background text-neutral-200 transition hover:border-primary hover:text-primary"
               aria-label="Mes siguiente"
             >
               <ChevronRight size={20} />
@@ -255,19 +255,19 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
             }
           }}
         >
-          <div className="w-[90vw] max-w-sm md:w-[320px] rounded-lg border border-neutral-700 bg-brand-blue p-4 shadow-2xl">
+          <div className="w-[90vw] max-w-sm md:w-[320px] rounded-lg border border-neutral-700 bg-brand-white-cdc p-4 shadow-2xl">
             <ul className="space-y-3">
               {eventsByDay.get(openDay)?.map((event) => (
                 <li key={event.id}>
                   <Link
                     href={`/agenda/${event.slug}`}
-                    className="block rounded-md p-2 hover:bg-[#4852C8]"
+                    className="block rounded-md p-2 hover:bg-gray-300"
                   >
-                    <p className="text-sm font-medium text-white leading-snug">
+                    <p className="text-sm font-medium text-background leading-snug">
                       {event.title}
                     </p>
                     {event.time && (
-                      <p className="mt-1 text-xs text-white">
+                      <p className="mt-1 text-xs text-background">
                         {event.time}
                       </p>
                     )}
