@@ -267,7 +267,7 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
                       {event.title}
                     </p>
                     {event.time && (
-                      <p className="mt-1 text-xs text-background">
+                      <p className="mt-1 text-xs text-black">
                         {event.time}
                       </p>
                     )}
