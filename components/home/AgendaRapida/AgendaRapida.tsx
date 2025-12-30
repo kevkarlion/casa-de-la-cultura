@@ -263,7 +263,7 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
                     href={`/agenda/${event.slug}`}
                     className="block rounded-md p-2 hover:bg-gray-300"
                   >
-                    <p className="text-sm font-medium text-background leading-snug">
+                    <p className="text-sm font-medium text-black leading-snug">
                       {event.title}
                     </p>
                     {event.time && (
