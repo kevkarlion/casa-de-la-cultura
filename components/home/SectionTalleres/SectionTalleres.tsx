@@ -9,7 +9,7 @@ const talleres = [
     image: '/imagenes/talleres/img1.PNG',
     title: 'Taller de Teatro',
     description:
-      'Un espacio de exploración escénica y expresión corporal para jóvenes y adultos.',
+      'Un espacio de exploración escénica y expresión corporal para jóvenes y adultos. Un espacio de exploración escénica y expresión corporal para jóvenes y adultos',
   },
   {
     id: 2,
@@ -46,6 +46,62 @@ const talleres = [
     description:
       'Encuentro musical colectivo, orientado a la práctica y creación sonora.',
   },
+  {
+    id: 7,
+    image: '/imagenes/talleres/img7.PNG',
+    title: 'Taller de Teatro',
+    description:
+      'Un espacio de exploración escénica y expresión corporal para jóvenes y adultos. Un espacio de exploración escénica y expresión corporal para jóvenes y adultos',
+  },
+  {
+    id: 8,
+    image: '/imagenes/talleres/img8.PNG',
+    title: 'Taller de Cerámica',
+    description:
+      'Aprendizaje de técnicas básicas y experimentación con materiales.',
+  },
+  {
+    id: 9,
+    image: '/imagenes/talleres/img9.PNG',
+    title: 'Taller de Música',
+    description:
+      'Encuentro musical colectivo, orientado a la práctica y creación sonora.',
+  },
+  {
+    id: 10,
+    image: '/imagenes/talleres/img10.PNG',
+    title: 'Taller de Teatro',
+    description:
+      'Un espacio de exploración escénica y expresión corporal para jóvenes y adultos.',
+  },
+  {
+    id: 11,
+    image: '/imagenes/talleres/img11.PNG',
+    title: 'Taller de Cerámica',
+    description:
+      'Aprendizaje de técnicas básicas y experimentación con materiales.',
+  },
+  {
+    id: 12,
+    image: '/imagenes/talleres/img12.PNG',
+    title: 'Taller de Música',
+    description:
+      'Encuentro musical colectivo, orientado a la práctica y creación sonora.',
+  },
+  {
+    id: 13,
+    image: '/imagenes/talleres/img13.PNG',
+    title: 'Taller de Música',
+    description:
+      'Encuentro musical colectivo, orientado a la práctica y creación sonora.',
+  },
+  {
+    id: 14,
+    image: '/imagenes/talleres/img14.PNG',
+    title: 'Taller de Música',
+    description:
+      'Encuentro musical colectivo, orientado a la práctica y creación sonora.',
+  },
 ]
 
 export default function SectionTalleres() {
@@ -53,10 +109,10 @@ export default function SectionTalleres() {
     <section className="w-full py-20">
       {/* Header */}
       <header className="mb-12 text-center">
-        <h2 className="mb-2 font-neue text-3xl lg:text-5xl font-bold uppercase text-brand-white-cdc">
+        <h2 className="mb-2 font-neue text-3xl lg:text-5xl font-bold uppercase text-black">
           Talleres
         </h2>
-        <p className="mx-auto max-w-xl text-sm text-brand-white-cdc">
+        <p className="mx-auto max-w-xl text-sm text-black font-inter leading-relaxed">
           Propuestas formativas para todas las edades.
         </p>
       </header>
@@ -79,7 +135,7 @@ export default function SectionTalleres() {
             className="
               snap-center shrink-0
               w-[85%] md:w-auto
-              rounded-xl border border-neutral-200
+               border border-neutral-200
               bg-white overflow-hidden
             "
           >

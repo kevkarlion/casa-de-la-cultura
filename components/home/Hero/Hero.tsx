@@ -18,15 +18,14 @@ const Hero: FC<HeroProps> = ({
   subtitle = 'Desde 1973, un espacio de encuentro y producción cultural que alberga talleres, actividades artísticas y propuestas escénicas, promoviendo la participación comunitaria y el acceso a la cultura en todas las edades.',
   videoSrc = '/videos/hero.webm',
   fallbackImageSrc = '/images/hero-fallback.jpg',
-  logoSrc = '/logos/LogoHero.png',
+  logoSrc = '/dibujos/Fachada.svg',
   logoAlt = 'Logo Casa de la Cultura',
   overlayOpacity = 45,
 }) => {
   return (
-    <section className="relative min-h-[75vh] lg:min-h-[80vh] xl:min-h-[85vh] overflow-hidden bg-black ">
+    <section className="relative min-h-[75vh] lg:min-h-[80vh] xl:min-h-[85vh] overflow-hidden bg-black">
       {/* ================= BACKGROUND ================= */}
       <div className="absolute inset-0 z-0">
-        {/* Fallback image (NO priority, no compite con logo) */}
         <Image
           src={fallbackImageSrc}
           alt="Background fallback"
@@ -35,7 +34,6 @@ const Hero: FC<HeroProps> = ({
           sizes="100vw"
         />
 
-        {/* Video con poster */}
         <video
           className="absolute inset-0 h-full w-full object-cover"
           autoPlay
@@ -57,7 +55,22 @@ const Hero: FC<HeroProps> = ({
       </div>
 
       {/* ================= CONTENT ================= */}
-      <div className="relative z-10 mx-auto flex min-h-[75vh] lg:min-h-[80vh] xl:min-h-[85vh] max-w-7xl items-center justify-center px-6 pb-16">
+      <div className="relative z-10 mx-auto flex min-h-[75vh] lg:min-h-[80vh] xl:min-h-[85vh] max-w-7xl flex-col items-center justify-center px-6 pb-16">
+
+        {/* ===== MOBILE TITLE ===== */}
+        <h1 className="
+          mt-12
+          text-center
+          text-3xl
+          font-extrabold
+          uppercase
+          text-brand-white-cdc
+          font-neue
+          md:hidden
+        ">
+          {title}
+        </h1>
+
         <div
           className="
             grid
@@ -71,12 +84,12 @@ const Hero: FC<HeroProps> = ({
           "
         >
           {/* ================= LOGO ================= */}
-          <div className="flex justify-center md:justify-start">
+          <div className="order-1 flex justify-center md:order-0 md:justify-start">
             <Image
               src={logoSrc}
               alt={logoAlt}
-              width={800}
-              height={500}
+              width={300}
+              height={200}
               priority
               fetchPriority="high"
               decoding="sync"
@@ -84,8 +97,8 @@ const Hero: FC<HeroProps> = ({
                 (max-width: 640px) 260px,
                 (max-width: 768px) 300px,
                 (max-width: 1024px) 340px,
-                (max-width: 1280px) 400px,
-                520px
+                (max-width: 1280px) 350px,
+                400px
               "
               className="
                 animate-float
@@ -93,8 +106,6 @@ const Hero: FC<HeroProps> = ({
                 sm:w-75
                 md:w-85
                 lg:w-100
-                xl:w-130
-                2xl:w-130
               "
             />
           </div>
@@ -105,16 +116,18 @@ const Hero: FC<HeroProps> = ({
           </div>
 
           {/* ================= TEXT ================= */}
-          <div className="flex flex-col text-center md:text-left text-brand-white-cdc font-neue">
-            <h1 className="
-              mb-4
-              hidden md:block
-              text-4xl
-              lg:text-4xl
-              2xl:text-5xl
-              font-extrabold
-              uppercase
-            ">
+          <div className="order-2 flex flex-col text-center md:order-0 md:text-left text-brand-white-cdc font-neue">
+            <h1
+              className="
+                mb-4
+                hidden md:block
+                text-4xl
+                lg:text-4xl
+                2xl:text-5xl
+                font-extrabold
+                uppercase
+              "
+            >
               {title}
             </h1>
 
@@ -123,8 +136,6 @@ const Hero: FC<HeroProps> = ({
                 {subtitle}
               </p>
             )}
-
-            
           </div>
         </div>
       </div>
