@@ -36,7 +36,7 @@ export default function ActividadesEspacios() {
               Actividades y espacios
             </h2>
 
-            <p className="mb-8 max-w-xl text-base leading-relaxed text-neutral-700">
+            <p className="mb-8 max-w-xl text-base leading-relaxed text-black">
               Talleres, muestras, espectáculos y espacios pensados para el
               encuentro cultural. Propuestas que conviven en salas, patios y
               escenarios abiertos a la comunidad.
