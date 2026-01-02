@@ -77,7 +77,7 @@ const Hero: FC<HeroProps> = ({
             w-auto
             grid-cols-1
             items-center
-            gap-10
+            gap-2
             md:grid-cols-[auto_auto_1fr]
             md:gap-14
             lg:gap-20
