@@ -122,23 +122,32 @@ export default function SectionTalleres() {
         className="
           flex gap-6 overflow-x-auto pb-4
           snap-x snap-mandatory
-          md:grid md:grid-cols-3 md:overflow-visible
+          md:grid md:grid-cols-3 overflow-y-hidden
         "
       >
         {talleres.map((taller) => (
           <motion.article
-            key={taller.id}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="
-              snap-center shrink-0
-              w-[85%] md:w-auto
-               border border-neutral-200
-              bg-white overflow-hidden
-            "
-          >
+  key={taller.id}
+  initial={{
+    opacity: 0,
+    y: 0,
+  }}
+  whileInView={{
+    opacity: 1,
+    y: 0,
+  }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.4, ease: 'easeOut' }}
+  className="
+    snap-center shrink-0
+    w-[85%] md:w-auto
+    border border-neutral-200
+    bg-white overflow-hidden
+    md:motion-safe:animate-none
+  "
+>
+
+
             {/* Imagen / Flyer */}
             <div className="relative aspect-9/16 w-full">
               <Image
