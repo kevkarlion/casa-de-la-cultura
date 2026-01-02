@@ -1,95 +1,130 @@
-'use client'
+"use client";
 
-import { ArrowRight } from 'lucide-react'
-import Link from 'next/link'
+import { motion } from "framer-motion";
+import EventCard from "@/components/shared/cards/EventCard"; // ajustá el path si hace falta
 
 const novedades = [
   {
     id: 1,
-    title: 'Nueva temporada de talleres culturales',
-    excerpt:
-      'Se abre la inscripción a una nueva propuesta de talleres para todas las edades.',
-    date: '15 de abril',
-    href: '/novedades/talleres-2025',
+    image: "/imagenes/novedad1.png",
+    date: "15 de abril",
+    title: "Nueva temporada de talleres culturales",
+    description:
+      "Se abre la inscripción a una nueva propuesta de talleres para todas las edades.",
+    href: "/novedades/talleres-2025",
   },
   {
     id: 2,
-    title: 'Convocatoria abierta a artistas locales',
-    excerpt:
-      'Invitamos a creadores y creadoras a formar parte de la programación anual.',
-    date: '8 de abril',
-    href: '/novedades/convocatoria-artistas',
+    image: "/imagenes/novedad2.png",
+    date: "8 de abril",
+    title: "Convocatoria abierta a artistas locales",
+    description:
+      "Invitamos a creadores y creadoras a formar parte de la programación anual.",
+    href: "/novedades/convocatoria-artistas",
   },
   {
     id: 3,
-    title: 'La Casa de la Cultura renueva sus espacios',
-    excerpt:
-      'Avanzan las mejoras en salas y espacios comunes para una mejor experiencia.',
-    date: '2 de abril',
-    href: '/novedades/renovacion-espacios',
+    image: "/imagenes/novedad3.png",
+    date: "2 de abril",
+    title: "La Casa de la Cultura renueva sus espacios",
+    description:
+      "Avanzan las mejoras en salas y espacios comunes para una mejor experiencia.",
+    href: "/novedades/renovacion-espacios",
   },
-]
+  {
+    id: 4,
+    image: "/imagenes/novedad1.png",
+    date: "15 de abril",
+    title: "Nueva temporada de talleres culturales",
+    description:
+      "Se abre la inscripción a una nueva propuesta de talleres para todas las edades.",
+    href: "/novedades/talleres-2025",
+  },
+  {
+    id: 5,
+    image: "/imagenes/novedad2.png",
+    date: "8 de abril",
+    title: "Convocatoria abierta a artistas locales",
+    description:
+      "Invitamos a creadores y creadoras a formar parte de la programación anual.",
+    href: "/novedades/convocatoria-artistas",
+  },
+  {
+    id: 6,
+    image: "/imagenes/novedad3.png",
+    date: "2 de abril",
+    title: "La Casa de la Cultura renueva sus espacios",
+    description:
+      "Avanzan las mejoras en salas y espacios comunes para una mejor experiencia.",
+    href: "/novedades/renovacion-espacios",
+  },
+];
 
 export default function Novedades() {
   return (
-    <section className="relative w-full py-20 bg-white">
-      <div className="mx-auto max-w-7xl px-4">
+    <section className="relative w-full py-24 bg-white">
+      <div className="mx-auto max-w-6xl px-4">
         {/* Header */}
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 font-neue text-3xl font-medium text-neutral-900">
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 font-neue text-3xl font-bold uppercase text-neutral-900">
             Novedades
           </h2>
-          <p className="mx-auto max-w-2xl text-base text-neutral-700">
-            Enterate de las últimas noticias, anuncios y novedades de la Casa de
-            la Cultura.
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-neutral-700">
+            Noticias, anuncios y actualizaciones de la Casa de la Cultura.
           </p>
         </div>
 
-        {/* Listado */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {novedades.map(({ id, title, excerpt, date, href }) => (
-            <Link
-              key={id}
-              href={href}
-              className="
-                group rounded-2xl border border-neutral-200 bg-neutral-50 p-6
-                transition hover:border-neutral-400
-              "
+        {/* Grid de cards */}
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {novedades.map((item, index) => (
+            <motion.a
+              key={item.id}
+              href={item.href}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+                delay: index * 0.1,
+              }}
+              className="block"
             >
-              <span className="mb-2 block text-xs text-neutral-500">
-                {date}
-              </span>
-
-              <h3 className="mb-3 font-neue text-base font-medium text-neutral-900 group-hover:underline">
-                {title}
-              </h3>
-
-              <p className="mb-4 text-sm text-neutral-600 leading-relaxed">
-                {excerpt}
-              </p>
-
-              <span className="inline-flex items-center gap-1 text-sm text-neutral-800">
-                Leer más
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </span>
-            </Link>
+              <EventCard
+              
+                variant="light"
+                image={item.image}
+                date={item.date}
+                title={item.title}
+                description={item.description}
+                classNames={{
+                  card: "rounded-none shadow-none",
+                  title: "font-neue font-semibold text-black uppercase",
+                  divider: "via-black",
+                }}
+              />
+            </motion.a>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="mt-12 flex justify-center">
-          <Link
+        <div className="mt-16 flex justify-center">
+          <a
             href="/novedades"
             className="
-              rounded-full border border-neutral-300
-              px-6 py-3 text-sm font-medium text-neutral-800
-              transition hover:border-neutral-900 hover:text-neutral-900
+              inline-flex items-center gap-2
+              px-8 py-2
+              font-neue text-xl font-medium uppercase
+              bg-black text-white
+              border border-black
+              transition-all duration-300
+              hover:bg-transparent hover:text-black
             "
           >
             Ver todas las novedades
-          </Link>
+          </a>
         </div>
       </div>
     </section>
-  )
+  );
 }
