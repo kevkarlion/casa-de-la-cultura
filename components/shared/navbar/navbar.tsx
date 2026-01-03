@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 'use client'
 
 import { useState, useEffect } from 'react'
@@ -7,30 +8,38 @@ import Image from 'next/image'
 export default function NavbarMinimal() {
   const [isOpen, setIsOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
+
+  const programacionSubmenu = [
+    { label: 'Eventos', href: '/programacion/eventos' },
+    { label: 'Talleres', href: '/programacion/talleres' },
+    { label: 'Exposiciones', href: '/programacion/exposiciones' },
+    { label: 'Actividades permanentes', href: '/programacion/actividades-permanentes' },
+  ]
 
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Eventos', href: '/eventos' },
     { label: 'Agenda', href: '/agenda' },
-    { label: 'Programación', href: '/programacion' },
+    {
+      label: 'Programación',
+      href: '/programacion',
+      submenu: programacionSubmenu,
+    },
     { label: 'Noticias', href: '/noticias' },
     { label: 'Nosotros', href: '/nosotros' },
     { label: 'Contacto', href: '/contacto' },
   ]
 
-  // Detectar tamaño de pantalla
+  /* Detectar tamaño de pantalla */
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
     checkMobile()
     window.addEventListener('resize', checkMobile)
-
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
-  // Cerrar menú al pasar a desktop
+  /* Cerrar menú al pasar a desktop */
   useEffect(() => {
     if (!isMobile && isOpen) {
       const id = window.setTimeout(() => setIsOpen(false), 0)
@@ -38,7 +47,7 @@ export default function NavbarMinimal() {
     }
   }, [isMobile, isOpen])
 
-  // Bloquear scroll
+  /* Bloquear scroll */
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'unset'
     return () => {
@@ -71,22 +80,10 @@ export default function NavbarMinimal() {
             <div className="shrink-0">
               <Link href="/">
                 <div className="hidden md:block">
-                  <Image
-                    src={logoConfig.desktop.src}
-                    alt={logoConfig.desktop.alt}
-                    width={logoConfig.desktop.width}
-                    height={logoConfig.desktop.height}
-                    priority
-                  />
+                  <Image {...logoConfig.desktop} priority />
                 </div>
                 <div className="md:hidden">
-                  <Image
-                    src={logoConfig.mobile.src}
-                    alt={logoConfig.mobile.alt}
-                    width={logoConfig.mobile.width}
-                    height={logoConfig.mobile.height}
-                    priority
-                  />
+                  <Image {...logoConfig.mobile} priority />
                 </div>
               </Link>
             </div>
@@ -94,13 +91,34 @@ export default function NavbarMinimal() {
             {/* Desktop menu */}
             <ul className="hidden md:flex items-center justify-center gap-3 lg:gap-6 text-black flex-wrap font-neue font-light uppercase">
               {navItems.map(item => (
-                <li key={item.label}>
+                <li key={item.label} className="relative group">
                   <Link
                     href={item.href}
-                    className="transition-colors duration-200  hover:text-primary text-sm lg:text-sm  px-2 py-1"
+                    className="flex items-center gap-1 text-sm px-2 py-1 hover:text-primary"
                   >
                     {item.label}
+                    {item.submenu && (
+                      <span className="text-xs transition-transform duration-200 group-hover:rotate-180">
+                        ▼
+                      </span>
+                    )}
                   </Link>
+
+                  {/* Submenu desktop */}
+                  {item.submenu && (
+                    <ul className="absolute left-0 top-full mt-2 w-56 bg-white shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                      {item.submenu.map(sub => (
+                        <li key={sub.label}>
+                          <Link
+                            href={sub.href}
+                            className="block px-4 py-2 text-sm normal-case hover:bg-black/5"
+                          >
+                            {sub.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
             </ul>
@@ -109,15 +127,8 @@ export default function NavbarMinimal() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden p-3 rounded-lg hover:bg-gray-100 transition-colors"
-              aria-label="Abrir menú"
-              aria-expanded={isOpen}
             >
-              <svg
-                className="w-8 h-8 text-black"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+              <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
@@ -131,69 +142,56 @@ export default function NavbarMinimal() {
         {/* Mobile menu */}
         {isOpen && (
           <div className="md:hidden fixed inset-0 z-50 bg-primary pt-20 min-h-svh overflow-y-auto">
-            {/* Close */}
-            <div className="absolute top-6 right-4">
-              <button
-                onClick={() => setIsOpen(false)}
-                className="p-3 rounded-full hover:bg-black/10 transition-colors"
-                aria-label="Cerrar menú"
-              >
-                <svg
-                  className="w-8 h-8 text-black"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
+            <div className="px-6 py-6">
+              <ul className="space-y-4 text-left">
+                {navItems.map(item => {
+                  const isSubOpen = openSubmenu === item.label
 
-            <div className="min-h-[calc(100svh-5rem)] flex flex-col items-center justify-center px-6 py-6">
-              <ul className="w-full max-w-sm space-y-4 text-center">
-                {navItems.map((item, index) => (
-                  <li
-                    key={item.label}
-                    className="opacity-0 animate-fadeInUp"
-                    style={{ animationDelay: `${index * 80}ms` }}
-                  >
-                    <Link
-                      href={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className="block py-2 text-xl font-inter font-bold text-black transition-transform duration-300 hover:scale-105"
-                    >
-                      {item.label}
-                    </Link>
+                  return (
+                    <li key={item.label}>
+                      <button
+                        className="flex items-center gap-2 text-xl font-inter font-bold text-black w-full"
+                        onClick={() => {
+                          if (item.submenu) {
+                            setOpenSubmenu(isSubOpen ? null : item.label)
+                          } else {
+                            setIsOpen(false)
+                          }
+                        }}
+                      >
+                        {item.label}
+                        {item.submenu && (
+                          <span
+                            className={`text-sm transition-transform ${
+                              isSubOpen ? 'rotate-180' : ''
+                            }`}
+                          >
+                            ▼
+                          </span>
+                        )}
+                      </button>
 
-                    {index < navItems.length - 1 && (
-                      <div className="mx-auto w-20 h-0.5 bg-black/30 mt-1" />
-                    )}
-                  </li>
-                ))}
+                      {/* Submenu mobile */}
+                      {item.submenu && isSubOpen && (
+                        <ul className="mt-2 ml-4 space-y-2">
+                          {item.submenu.map(sub => (
+                            <li key={sub.label}>
+                              <Link
+                                href={sub.href}
+                                onClick={() => setIsOpen(false)}
+                                className="block text-sm text-black/80"
+                              >
+                                {sub.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  )
+                })}
               </ul>
-
-              <div className="mt-6 pb-2">
-                <div className="text-xs text-black/70 text-center">
-                  © {new Date().getFullYear()} Todos los derechos reservados
-                </div>
-              </div>
             </div>
-
-            <style jsx>{`
-              @keyframes fadeInUp {
-                from {
-                  opacity: 0;
-                  transform: translateY(16px);
-                }
-                to {
-                  opacity: 1;
-                  transform: translateY(0);
-                }
-              }
-              .animate-fadeInUp {
-                animation: fadeInUp 0.45s ease-out forwards;
-              }
-            `}</style>
           </div>
         )}
       </nav>
