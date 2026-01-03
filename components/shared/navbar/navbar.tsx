@@ -75,7 +75,7 @@ export default function NavbarMinimal() {
     setTimeout(() => {
       setIsOpen(false)
       setOpenSubmenu(null)
-    }, 300)
+    }, 500)
   }
 
   return (
