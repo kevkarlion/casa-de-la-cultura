@@ -30,7 +30,7 @@ const items = [
 
 export default function Programacion() {
   return (
-    <section className="mx-auto pt-16 max-w-6xl px-4">
+    <section className="mx-auto pt-16 max-w-6xl px-4 bg-black">
       {/* ================= HEADER ================= */}
       <header className="mb-16 text-center">
         <h1 className="
