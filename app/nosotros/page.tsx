@@ -1,9 +1,10 @@
 import React from 'react';
+import NosotrosPage from '@/components/home/Nosotros/Nosotros';
 
 const Page = () => {
       return (
-            <div id='#nosotros'>
-                  <h1>Quienes somos</h1>
+            <div>
+                  <NosotrosPage /> 
             </div>
       );
 }
