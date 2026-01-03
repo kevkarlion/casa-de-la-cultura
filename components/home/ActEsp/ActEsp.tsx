@@ -33,7 +33,7 @@ export default function ActividadesEspacios() {
             "
           >
             <h2 className="mb-4 font-neue text-3xl font-bold uppercase text-neutral-900">
-              Actividades y espacios
+              Nuestra programación
             </h2>
 
             <p className="mb-8 max-w-xl text-base leading-relaxed text-black">
@@ -43,7 +43,7 @@ export default function ActividadesEspacios() {
             </p>
 
             <a
-              href="/actividades"
+              href="/programacion"
               className="
                 inline-flex items-center gap-2
                 px-8 py-2

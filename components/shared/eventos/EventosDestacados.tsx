@@ -31,7 +31,7 @@ export default function EventCarousel({ events }: EventCarouselProps) {
   };
 
   return (
-    <section className="relative w-full py-8  bottom-20 lg:not-only-of-type:bottom-45 z-20">
+    <section className="relative w-full py-8 bottom-25 lg:not-only-of-type:bottom-45 z-20">
       <div className="mx-auto max-w-7xl px-4">
 
         {/* Header: título + flechas a la derecha */}
