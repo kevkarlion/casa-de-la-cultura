@@ -1,8 +1,9 @@
-'use client'
+"use client";
 
 import { useMemo, useState } from "react";
-import { motion, easeOut } from "framer-motion"; // <-- Importamos easeOut
+import { motion, easeOut } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 interface AgendaItem {
   id: string | number;
@@ -22,9 +23,15 @@ const WEEK_DAYS = ["DOM", "LUN", "MAR", "MIÉ", "JUE", "VIE", "SÁB"];
 
 export default function AgendaAlmanaque({ items }: AgendaAlmanaqueProps) {
   const today = new Date();
-  const [currentDate, setCurrentDate] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
+  const [currentDate, setCurrentDate] = useState(
+    new Date(today.getFullYear(), today.getMonth(), 1)
+  );
 
-  const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+  const daysInMonth = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth() + 1,
+    0
+  ).getDate();
 
   // Agrupar eventos por día
   const eventsByDay = useMemo(() => {
@@ -44,15 +51,18 @@ export default function AgendaAlmanaque({ items }: AgendaAlmanaqueProps) {
     return map;
   }, [items, currentDate]);
 
-  const monthLabel = currentDate.toLocaleDateString("es-AR", { month: "long", year: "numeric" });
+  const monthLabel = currentDate.toLocaleDateString("es-AR", {
+    month: "long",
+    year: "numeric",
+  });
 
   const fadeUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.5, ease: easeOut } // <-- Corregido
-    }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: easeOut },
+    },
   };
 
   return (
@@ -66,13 +76,21 @@ export default function AgendaAlmanaque({ items }: AgendaAlmanaqueProps) {
 
           <div className="flex gap-2 mt-4 md:mt-0">
             <button
-              onClick={() => setCurrentDate(d => new Date(d.getFullYear(), d.getMonth() - 1, 1))}
+              onClick={() =>
+                setCurrentDate(
+                  (d) => new Date(d.getFullYear(), d.getMonth() - 1, 1)
+                )
+              }
               className="px-4 py-2 rounded-md bg-black text-white hover:bg-primary transition"
             >
               Mes anterior
             </button>
             <button
-              onClick={() => setCurrentDate(d => new Date(d.getFullYear(), d.getMonth() + 1, 1))}
+              onClick={() =>
+                setCurrentDate(
+                  (d) => new Date(d.getFullYear(), d.getMonth() + 1, 1)
+                )
+              }
               className="px-4 py-2 rounded-md bg-black text-white hover:bg-primary transition"
             >
               Mes siguiente
@@ -81,55 +99,65 @@ export default function AgendaAlmanaque({ items }: AgendaAlmanaqueProps) {
         </div>
 
         {/* Grid de días */}
-        <div className="grid grid-cols-7 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-7 gap-2">
           {Array.from({ length: daysInMonth }, (_, i) => {
             const day = i + 1;
-            const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+            const date = new Date(
+              currentDate.getFullYear(),
+              currentDate.getMonth(),
+              day
+            );
             const weekDay = WEEK_DAYS[date.getDay()];
             const events = eventsByDay.get(day) || [];
 
             return (
               <motion.div
                 key={day}
-                className="border border-neutral-300 rounded-lg p-2 flex flex-col h-62.5 overflow-hidden"
+                className="h-64 sm:h-72 md:h-80 overflow-hidden rounded-lg shadow-md"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
               >
-                {/* Header día */}
-                <div className="mb-2 flex justify-between items-center">
-                  <span className="font-semibold">{day}</span>
-                  <span className="text-xs text-neutral-500">{weekDay}</span>
-                </div>
-
-                {/* Eventos */}
-                <div className="flex-1 flex flex-col gap-2 overflow-y-auto pr-1">
-                  {events.length === 0 && <span className="text-xs text-neutral-400">Sin eventos</span>}
-
-                  {events.map(event => (
+                {events.length === 0 ? (
+                  <div className="flex flex-col justify-center items-center h-full border border-neutral-300 rounded-lg p-2 text-center">
+                    <span className="font-semibold text-lg">{day}</span>
+                    <span className="text-xs text-neutral-500">{weekDay}</span>
+                    <span className="text-sm text-neutral-400 mt-2">
+                      Sin eventos
+                    </span>
+                  </div>
+                ) : (
+                  events.map((event) => (
                     <Link
                       key={event.id}
                       href={`/agenda/${event.slug}`}
-                      className="flex flex-col border border-neutral-200 rounded-md overflow-hidden shadow-sm hover:shadow-md transition"
+                      className="relative block h-full w-full rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
                     >
                       {event.image && (
-                        <div className="w-full h-16 md:h-20 overflow-hidden">
-                          <img
-                            src={event.image}
-                            alt={event.title}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
+                        <Image
+                          src={event.image}
+                          alt={event.title}
+                          fill
+                          style={{ objectFit: "cover" }}
+                          className="absolute inset-0"
+                        />
                       )}
-                      <div className="p-2 flex flex-col gap-1">
-                        <span className="text-sm font-medium">{event.title}</span>
-                        {event.time && <span className="text-xs text-neutral-500">{event.time}</span>}
-                        {event.description && <span className="text-xs text-neutral-600 line-clamp-2">{event.description}</span>}
+
+                      {/* Overlay con detalles */}
+                      <div className="absolute inset-0 bg-black/50 text-white flex flex-col justify-end p-4 gap-2">
+                        <span className="text-lg font-bold">{day} - {weekDay}</span>
+                        <span className="text-sm font-semibold">{event.title}</span>
+                        {event.time && (
+                          <span className="text-xs">{event.time}</span>
+                        )}
+                        <button className="mt-2 px-3 py-1 bg-primary text-black rounded-md text-xs font-bold hover:bg-white hover:text-primary transition">
+                          Ver más
+                        </button>
                       </div>
                     </Link>
-                  ))}
-                </div>
+                  ))
+                )}
               </motion.div>
             );
           })}

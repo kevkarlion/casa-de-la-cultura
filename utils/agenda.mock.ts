@@ -7,20 +7,7 @@ export const agendaRapidaMock = [
     title: 'Muestra de arte contemporáneo',
     time: '19:00',
     slug: '2025-09-18-muestra-de-arte-contemporaneo',
-  },
-  {
-    id: 1,
-    date: '2025-12-15',
-    title: 'Muestra de arte contemporáneo',
-    time: '19:00',
-    slug: '2025-09-18-muestra-de-arte-contemporaneo',
-  },
-   {
-    id: 6,
-    date: '2025-12-12',
-    title: 'Cañete',
-    time: '21:00',
-    slug: '2025-09-18-muestra-de-clown',
+    image: '/imagenes/expo.png',
   },
   {
     id: 2,
