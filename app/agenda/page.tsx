@@ -1,9 +1,11 @@
 import React from 'react';
+import AgendaAlmanaque from '@/components/home/AgendaCompleta/AgendaCompleta';
+import { agendaRapidaMock } from '@/utils/agenda.mock';
 
 const Page = () => {
       return (
             <div id='#agenda'>
-                  <h1>Agenda Completa</h1>
+                  <AgendaAlmanaque items={agendaRapidaMock} />
             </div>
       );
 }
