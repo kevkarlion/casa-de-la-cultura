@@ -25,13 +25,13 @@ export default function NavbarMinimal() {
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Eventos', href: '/eventos' },
-    { label: 'Agenda', href: '/agenda' },
+    { label: 'Agenda Cultural', href: '/agenda' },
     {
       label: 'Programación',
       href: '/programacion',
       submenu: programacionSubmenu,
     },
-    { label: 'Noticias', href: '/noticias' },
+    { label: 'Novedades', href: '/novedades' },
     { label: 'Nosotros', href: '/nosotros' },
     { label: 'Contacto', href: '/contacto' },
   ]
