@@ -1,68 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import EventCard from "@/components/shared/cards/EventCard"; // ajustá el path si hace falta
+import EventCard from "@/components/shared/cards/EventCard";
+import { Novedad } from "@/interfaces/novedades.interface";
 
-const novedades = [
-  {
-    id: 1,
-    image: "/imagenes/novedad1.png",
-    date: "15 de abril",
-    title: "Nueva temporada de talleres culturales",
-    description:
-      "Se abre la inscripción a una nueva propuesta de talleres para todas las edades.",
-    href: "/novedades/talleres-2025",
-  },
-  {
-    id: 2,
-    image: "/imagenes/novedad2.png",
-    date: "8 de abril",
-    title: "Convocatoria abierta a artistas locales",
-    description:
-      "Invitamos a creadores y creadoras a formar parte de la programación anual.",
-    href: "/novedades/convocatoria-artistas",
-  },
-  {
-    id: 3,
-    image: "/imagenes/novedad3.png",
-    date: "2 de abril",
-    title: "La Casa de la Cultura renueva sus espacios",
-    description:
-      "Avanzan las mejoras en salas y espacios comunes para una mejor experiencia.",
-    href: "/novedades/renovacion-espacios",
-  },
-  {
-    id: 4,
-    image: "/imagenes/novedad1.png",
-    date: "15 de abril",
-    title: "Nueva temporada de talleres culturales",
-    description:
-      "Se abre la inscripción a una nueva propuesta de talleres para todas las edades.",
-    href: "/novedades/talleres-2025",
-  },
-  {
-    id: 5,
-    image: "/imagenes/novedad2.png",
-    date: "8 de abril",
-    title: "Convocatoria abierta a artistas locales",
-    description:
-      "Invitamos a creadores y creadoras a formar parte de la programación anual.",
-    href: "/novedades/convocatoria-artistas",
-  },
-  {
-    id: 6,
-    image: "/imagenes/novedad3.png",
-    date: "2 de abril",
-    title: "La Casa de la Cultura renueva sus espacios",
-    description:
-      "Avanzan las mejoras en salas y espacios comunes para una mejor experiencia.",
-    href: "/novedades/renovacion-espacios",
-  },
-];
 
-export default function Novedades() {
+
+interface NovedadesProps {
+  novedades: Novedad[];
+}
+
+export default function Novedades({ novedades }: NovedadesProps) {
   return (
     <section className="relative w-full py-24 bg-white">
+      
       <div className="mx-auto max-w-6xl px-4">
         {/* Header */}
         <div className="mb-16 text-center">
@@ -79,7 +30,7 @@ export default function Novedades() {
           {novedades.map((item, index) => (
             <motion.a
               key={item.id}
-              href={item.href}
+              href={`/novedades/${item.slug}`}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -91,12 +42,11 @@ export default function Novedades() {
               className="block"
             >
               <EventCard
-              
                 variant="light"
                 image={item.image}
-                date={item.date}
+                date={new Date(item.date).toLocaleDateString("es-AR")}
                 title={item.title}
-                description={item.description}
+                description={item.summary}
                 classNames={{
                   card: "rounded-none shadow-none",
                   title: "font-neue font-semibold text-black uppercase",

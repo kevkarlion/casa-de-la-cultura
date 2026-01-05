@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getNovedadBySlug, getRelatedNovedades  } from '@/utils/novedades.mock'
 import { Instagram, Facebook, Share2 } from 'lucide-react'
+import Breadcrumbs from "@/components/shared/Breadcrumb/Breadcrumbs";
 
 interface NovedadesDetailProps {
   slug: string
@@ -24,6 +25,14 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
   return (
     <>
     <article className="container mx-auto px-6 py-20 max-w-6xl bg-brand-white-cdc">
+       <Breadcrumbs
+  items={[
+    { label: "Inicio", href: "/" },
+    { label: "Novedades", href: "/novedades" },
+    { label: novedad.title },
+  ]}
+/>
+
       {/* Header editorial */}
       <header className="mb-12 max-w-3xl">
         <p className="text-sm text-black mb-3">

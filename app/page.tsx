@@ -8,6 +8,7 @@ import ContactoRapido from "@/components/home/ContactoRapido/ContactoRapido";
 import { agendaRapidaMock } from "@/utils/agenda.mock";
 import { eventsMock } from "@/utils/events.mock";
 import ActividadesYEspacios from "@/components/home/ActEsp/ActEsp";
+import { novedades } from "@/utils/novedades.mock";
 
 
 const Page = () => {
@@ -19,7 +20,7 @@ const Page = () => {
       <PresentacionCdc />
       <ActividadesYEspacios />
       <Socio />
-      <Novedades />
+      <Novedades novedades={novedades} />
       <ContactoRapido />
     </div>
   );
