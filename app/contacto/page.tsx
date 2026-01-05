@@ -1,9 +1,10 @@
+import ContactoPage from '@/components/home/Contacto/Contacto';
 import React from 'react';
 
 const Page = () => {
       return (
             <div id='#contacto'>
-                  <h1>Contacto</h1>
+                  <ContactoPage />
             </div>
       );
 }
