@@ -66,7 +66,7 @@ export default function PageNovedades({ novedades }: PageNovedadesProps) {
               </h3>
 
               <p className="text-sm text-neutral-100 mb-4">
-                {novedad.excerpt}
+                {novedad.summary}
               </p>
 
               <Link
@@ -127,7 +127,7 @@ export default function PageNovedades({ novedades }: PageNovedadesProps) {
                 </h3>
 
                 <p className="text-sm text-neutral-600">
-                  {novedad.excerpt}
+                  {novedad.summary}
                 </p>
 
                 <Link
