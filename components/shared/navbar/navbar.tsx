@@ -95,7 +95,7 @@ useEffect(() => {
                 >
                   <Link
                     href={item.href}
-                    className="flex items-center gap-1 text-sm hover:text-primary"
+                    className="flex items-center gap-1 text-sm hover:text-primary "
                   >
                     {item.label}
                     {item.submenu && (
@@ -111,7 +111,7 @@ useEffect(() => {
 
                   {item.submenu && desktopSubOpen === item.label && (
                     <div className="absolute left-0 top-full pt-2">
-                      <ul className="w-56 bg-white shadow-md border border-neutral-200 rounded-md">
+                      <ul className="w-56 bg-white shadow-md border border-neutral-200 rounded-md ">
                         {item.submenu.map(sub => (
                           <li key={sub.label}>
                             <Link
