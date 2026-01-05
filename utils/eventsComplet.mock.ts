@@ -18,7 +18,7 @@ export const eventosCompletMock: Event[] = [
   {
     id: 1,
     image: "/imagenes/expo.png",
-    date: "2026-10-12",
+    date: "2026-01-12",
     title: "Muestra de Arte Contemporáneo",
     description:
       "Artistas locales presentan obras que dialogan con la identidad cultural y el territorio.",
@@ -29,7 +29,7 @@ export const eventosCompletMock: Event[] = [
   {
     id: 2,
     image: "/imagenes/teatro.webp",
-    date: "2026-10-18",
+    date: "2026-01-18",
     title: "Teatro Independiente",
     description:
       "Una obra íntima que cruza humor, drama y relatos cotidianos del barrio.",
@@ -40,7 +40,7 @@ export const eventosCompletMock: Event[] = [
   {
     id: 3,
     image: "/imagenes/noche-musica.webp",
-    date: "2026-10-25",
+    date: "2026-01-25",
     title: "Noche de Música en Vivo",
     description:
       "Bandas emergentes y sonidos experimentales se encuentran en una noche única.",
@@ -51,7 +51,7 @@ export const eventosCompletMock: Event[] = [
   {
     id: 4,
     image: "/imagenes/ceramica.png",
-    date: "2026-11-02",
+    date: "2026-01-02",
     title: "Taller Abierto de Cerámica",
     description:
       "Un espacio participativo para explorar técnicas cerámicas y procesos creativos.",
@@ -62,7 +62,7 @@ export const eventosCompletMock: Event[] = [
   {
     id: 5,
     image: "/imagenes/cine.png",
-    date: "2026-11-09",
+    date: "2026-01-09",
     title: "Cine Debate",
     description:
       "Proyección y charla colectiva en torno al cine como expresión cultural y social.",
