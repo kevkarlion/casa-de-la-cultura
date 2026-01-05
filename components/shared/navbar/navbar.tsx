@@ -11,7 +11,6 @@ export default function NavbarMinimal() {
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
 
   const programacionSubmenu = [
-    { label: 'Eventos', href: '/programacion/eventos' },
     { label: 'Talleres', href: '/programacion/talleres' },
     { label: 'Exposiciones', href: '/programacion/exposiciones' },
     { label: 'Actividades permanentes', href: '/programacion/actividades-permanentes' },
