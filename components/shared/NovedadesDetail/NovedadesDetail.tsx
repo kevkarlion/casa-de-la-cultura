@@ -8,9 +8,6 @@ interface NovedadesDetailProps {
   slug: string
 }
 
-
-
-
 export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
   const novedad = getNovedadBySlug(slug)
 
@@ -55,61 +52,71 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
         </div>
       </header>
 
-      {/* Cuerpo tipo diario */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Columna izquierda – texto */}
-        <div className="lg:col-span-8">
-          <p className="font-inter text-lg leading-relaxed text-black whitespace-pre-line">
-            {novedad.excerpt}
-          </p>
+      {/* ESTRUCTURA PRINCIPAL - REORDENADA */}
+      <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12">
+        
+        {/* COLUMNA IZQUIERDA - TEXTO + COMPARTIR (en desktop) */}
+        <div className="lg:col-span-7 order-2 lg:order-1">
+          {/* Texto del artículo con drop cap tradicional */}
+          <div className="mb-8 lg:mb-0">
+            <div className="relative">
+              <div className="font-inter text-lg leading-relaxed text-black whitespace-pre-line drop-cap-traditional">
+                {novedad.excerpt}
+              </div>
+            </div>
+          </div>
+          
+          {/* COMPARTIR - debajo del texto EN AMBOS (móvil y desktop) */}
+          <div className="order-4 lg:order-2 mt-12">
+            <div className="border-t pt-6">
+              <p className="text-sm uppercase tracking-widest text-black mb-4">
+                Compartir
+              </p>
+
+              <div className="flex items-center gap-4">
+                <a
+                  href="#"
+                  className="p-3 rounded-full border text-black hover:bg-black hover:text-white transition"
+                  aria-label="Compartir en Instagram"
+                >
+                  <Instagram size={18} />
+                </a>
+
+                <a
+                  href="#"
+                  className="p-3 rounded-full border text-black hover:bg-black hover:text-white transition"
+                  aria-label="Compartir en Facebook"
+                >
+                  <Facebook size={18} />
+                </a>
+
+                <a
+                  href="#"
+                  className="p-3 rounded-full border text-black hover:bg-black hover:text-white transition"
+                  aria-label="Compartir enlace"
+                >
+                  <Share2 size={18} />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Columna derecha – visual / social */}
-        <aside className="lg:col-span-4 flex flex-col gap-8">
-          {/* Imagen destacada */}
-          <div className="relative w-full aspect-4/5 rounded-xl overflow-hidden">
+        {/* COLUMNA DERECHA - SOLO IMAGEN (en desktop) */}
+        <div className="lg:col-span-5 order-1 lg:order-2">
+          {/* Imagen destacada - va segundo en móvil, derecha en desktop */}
+          <div className="relative w-full aspect-4/5 lg:aspect-3/4 xl:aspect-2/3 rounded-xl overflow-hidden mb-8 lg:mb-0">
             <Image
               src={novedad.image}
               alt={novedad.title}
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
+        </div>
 
-          {/* Redes / compartir */}
-          <div className="border-t pt-6">
-            <p className="text-sm uppercase tracking-widest text-black mb-4">
-              Compartir
-            </p>
-
-            <div className="flex items-center gap-4">
-              <a
-                href="#"
-                className="p-3 rounded-full border text-black hover:bg-black hover:text-white transition"
-                aria-label="Compartir en Instagram"
-              >
-                <Instagram size={18} />
-              </a>
-
-              <a
-                href="#"
-                className="p-3 rounded-full border text-black hover:bg-black hover:text-white transition"
-                aria-label="Compartir en Facebook"
-              >
-                <Facebook size={18} />
-              </a>
-
-              <a
-                href="#"
-                className="p-3 rounded-full border text-black hover:bg-black hover:text-white transition"
-                aria-label="Compartir enlace"
-              >
-                <Share2 size={18} />
-              </a>
-            </div>
-          </div>
-        </aside>
       </div>
     </article>
     {related.length > 0 && (
@@ -162,13 +169,6 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
     </div>
   </section>
 )}
-
-
     </>
-    
-
-
-
-    
   )
 }
