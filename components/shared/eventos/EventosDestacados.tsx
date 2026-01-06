@@ -1,58 +1,69 @@
-'use client';
+'use client'
 
-import { useRef } from "react";
-import EventCard from "../cards/EventCard";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef, useState } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import EventCard from '../cards/EventCard'
+import { DestacadoItem } from '@/types/DestacadoItem'
 
-interface Event {
-  id: string | number;
-  image: string;
-  date: string;
-  title: string;
-  description: string;
+interface Props {
+  items: DestacadoItem[]
 }
 
-interface EventCarouselProps {
-  events: Event[];
-}
+export default function EventCarousel({ items }: Props) {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const cardsRef = useRef<HTMLDivElement[]>([])
+  const [index, setIndex] = useState(0)
 
-export default function EventCarousel({ events }: EventCarouselProps) {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollToCard = (i: number) => {
+    if (!containerRef.current || !cardsRef.current[i]) return
 
-  const scroll = (direction: "left" | "right") => {
-    if (!scrollRef.current) return;
+    const container = containerRef.current
+    const card = cardsRef.current[i]
+    
+    // Obtener el ancho de la tarjeta incluyendo márgenes/padding
+    const cardWidth = card.offsetWidth
+    const cardStyle = window.getComputedStyle(card)
+    const cardMarginLeft = parseFloat(cardStyle.marginLeft || '0')
+    const cardMarginRight = parseFloat(cardStyle.marginRight || '0')
+    const totalCardWidth = cardWidth + cardMarginLeft + cardMarginRight
+    
+    // Calcular la posición de desplazamiento
+    const scrollPosition = i * totalCardWidth
+    
+    container.scrollTo({
+      left: scrollPosition,
+      behavior: 'smooth',
+    })
 
-    const scrollAmount = scrollRef.current.offsetWidth * 0.8;
+    setIndex(i)
+  }
 
-    scrollRef.current.scrollBy({
-      left: direction === "left" ? -scrollAmount : scrollAmount,
-      behavior: "smooth",
-    });
-  };
+  const prev = () => scrollToCard(Math.max(index - 1, 0))
+  const next = () => scrollToCard(Math.min(index + 1, items.length - 1))
 
   return (
-    <section className="relative w-full py-8 bottom-25 lg:not-only-of-type:bottom-30 z-20">
+    <section className="relative w-full py-8 z-20 bottom-20 md:bottom-45 xl:bottom-40">
       <div className="mx-auto max-w-7xl px-4">
 
-        {/* Header: título + flechas a la derecha */}
+        {/* Header */}
         <div className="mb-6 flex items-center gap-4">
-          <h2 className="text-lg font-neue font-semibold tracking-wide text-black uppercase bg-brand-white-cdc px-3 py-1">
+          <h2 className="bg-brand-white-cdc px-3 py-1 font-neue text-lg font-semibold uppercase tracking-wide text-black">
             Los más destacados
           </h2>
 
           <div className="flex gap-2">
             <button
-              onClick={() => scroll("left")}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-brand-white-cdc text-black backdrop-blur transition hover:border-primary hover:text-primary"
-              aria-label="Eventos anteriores"
+              onClick={prev}
+              disabled={index === 0}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-brand-white-cdc text-black disabled:opacity-40"
             >
               <ChevronLeft size={20} />
             </button>
 
             <button
-              onClick={() => scroll("right")}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-brand-white-cdc text-black backdrop-blur transition hover:border-primary hover:text-primary"
-              aria-label="Eventos siguientes"
+              onClick={next}
+              disabled={index === items.length - 1}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-brand-white-cdc text-black disabled:opacity-40"
             >
               <ChevronRight size={20} />
             </button>
@@ -61,24 +72,36 @@ export default function EventCarousel({ events }: EventCarouselProps) {
 
         {/* Carrusel */}
         <div
-          ref={scrollRef}
-          className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          ref={containerRef}
+          className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {events.map((event) => (
+          {items.map((item, i) => (
             <div
-              key={event.id}
-              className="snap-start min-w-70 sm:min-w-90 lg:min-w-105"
+              key={`${item.type}-${item.id}`}
+              ref={(el) => {
+                if (el) cardsRef.current[i] = el
+              }}
+              // Ancho fijo en todos los breakpoints pero responsive
+              className="w-64 sm:w-72 md:w-80 lg:w-96 flex-shrink-0 snap-start"
             >
               <EventCard
-                image={event.image}
-                date={event.date}
-                title={event.title}
-                description={event.description}
+                image={item.image}
+                date={item.date}
+                title={item.title}
+                description={item.summary}
+                href={item.slug}
+                classNames={{
+                  imageWrapper: "aspect-square", // Esto hace que sea cuadrado perfecto
+                  content: "p-3",
+                  title: "text-lg sm:text-xl",
+                  description: "text-sm line-clamp-2",
+                }}
               />
             </div>
           ))}
         </div>
       </div>
     </section>
-  );
+  )
 }

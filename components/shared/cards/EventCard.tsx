@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import clsx from "clsx";
 
 type EventCardVariant = "default" | "light" | "minimal";
@@ -20,7 +21,10 @@ interface EventCardProps {
   title: string;
   description: string;
 
-  /** Opcionales */
+  /** Navegación */
+  href?: string;
+
+  /** Estilo */
   variant?: EventCardVariant;
   classNames?: EventCardClassNames;
 }
@@ -30,6 +34,7 @@ export default function EventCard({
   date,
   title,
   description,
+  href,
   variant = "default",
   classNames = {},
 }: EventCardProps) {
@@ -59,10 +64,12 @@ export default function EventCard({
 
   const v = variants[variant];
 
-  return (
+  const CardContent = (
     <article
       className={clsx(
-        "group relative flex h-full flex-col overflow-hidden rounded-xs shadow-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl",
+        "group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-xs shadow-lg transition-all duration-500",
+        "hover:-translate-y-1 hover:shadow-2xl",
+        "focus-within:ring-2 focus-within:ring-primary",
         v.card,
         classNames.card
       )}
@@ -93,7 +100,7 @@ export default function EventCard({
         {/* Fecha */}
         <span
           className={clsx(
-            "absolute left-4 top-4  px-4 py-1 text-sm font-semibold tracking-wide shadow-md backdrop-blur",
+            "absolute left-4 top-4 px-4 py-1 text-sm font-semibold tracking-wide shadow-md backdrop-blur",
             v.date,
             classNames.date
           )}
@@ -111,7 +118,7 @@ export default function EventCard({
       >
         <h3
           className={clsx(
-            "text-xl font-semibold leading-snug tracking-tight font-neue",
+            "text-xl font-semibold leading-snug tracking-tight font-neue group-hover:underline underline-offset-4",
             classNames.title
           )}
         >
@@ -140,5 +147,13 @@ export default function EventCard({
         </div>
       </div>
     </article>
+  );
+
+  return href ? (
+    <Link href={href} className="block h-full focus:outline-none">
+      {CardContent}
+    </Link>
+  ) : (
+    CardContent
   );
 }
