@@ -57,13 +57,11 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
         
         {/* COLUMNA IZQUIERDA - TEXTO + COMPARTIR (en desktop) */}
         <div className="lg:col-span-7 order-2 lg:order-1">
-          {/* Texto del artículo con drop cap tradicional */}
+          {/* Texto del artículo - NORMAL */}
           <div className="mb-8 lg:mb-0">
-            <div className="relative">
-              <div className="font-inter text-lg leading-relaxed text-black whitespace-pre-line drop-cap-traditional">
-                {novedad.excerpt}
-              </div>
-            </div>
+            <p className="font-inter text-lg leading-relaxed text-black whitespace-pre-line">
+              {novedad.excerpt}
+            </p>
           </div>
           
           {/* COMPARTIR - debajo del texto EN AMBOS (móvil y desktop) */}
