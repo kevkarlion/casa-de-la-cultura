@@ -132,7 +132,7 @@ export default function AgendaAlmanaque({ events }: AgendaAlmanaqueProps) {
                   dayEvents.map(event => (
                     <Link
                       key={event.id}
-                      href={`/agenda/${event.slug}`}
+                      href={`/eventos/${event.slug}`}
                       className="relative block h-full w-full  overflow-hidden shadow-sm hover:shadow-md transition"
                     >
                       {event.image && (
