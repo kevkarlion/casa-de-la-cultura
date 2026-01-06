@@ -30,12 +30,12 @@ const talleres = [
 
 export default function SectionTalleres() {
   return (
-    <section className="w-full pt-16 pb-20 bg-brand-white-cdc">
+    <section className="w-full pt-12 pb-20 bg-brand-white-cdc">
       {/* Header */}
       <header className="mb-16 text-center">
-        <h2 className="mb-2 font-neue text-3xl lg:text-5xl font-bold uppercase text-black">
-          Talleres
-        </h2>
+        <h2 className="text-5xl text-black font-neue md:text-6xl font-bold mb-12 text-center tracking-tight">
+      TALLERES
+      </h2>
         <p className="mx-auto max-w-xl text-sm lg:text-xl text-black leading-relaxed">
           Propuestas formativas y recreativas para infancias, adolescentes y personas adultas.
         </p>

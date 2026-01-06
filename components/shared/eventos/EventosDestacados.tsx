@@ -83,7 +83,7 @@ export default function EventCarousel({ items }: Props) {
                 if (el) cardsRef.current[i] = el
               }}
               // Ancho fijo en todos los breakpoints pero responsive
-              className="w-64 sm:w-72 md:w-80 lg:w-96 flex-shrink-0 snap-start"
+              className="w-64 sm:w-72 md:w-80 lg:w-96 shrink-0 snap-start"
             >
               <EventCard
                 image={item.image}

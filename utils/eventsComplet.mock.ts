@@ -5,6 +5,7 @@ export interface Event {
   id: number;
   image: string;
   date: string; // ISO
+  time?: string; // Hora del evento (opcional)
   title: string;
   description: string;
   slug: string;
@@ -19,6 +20,7 @@ export const eventosCompletMock: Event[] = [
     id: 1,
     image: "/imagenes/expo.png",
     date: "2026-01-12",
+    time: "19:00",
     title: "Muestra de Arte Contemporáneo",
     description: `
 La Casa de la Cultura presenta una nueva muestra de arte contemporáneo que reúne a artistas locales y regionales en una propuesta colectiva.
@@ -35,6 +37,7 @@ La muestra propone un espacio abierto al público donde el arte se convierte en 
     id: 2,
     image: "/imagenes/teatro.webp",
     date: "2026-01-18",
+    time: "21:00",
     title: "Teatro Independiente",
     description: `
 Una propuesta teatral íntima y cercana que invita al público a sumergirse en historias cotidianas atravesadas por el humor, el drama y la emoción.
@@ -51,6 +54,7 @@ El teatro independiente se presenta aquí como un espacio de encuentro, expresi�
     id: 3,
     image: "/imagenes/noche-musica.webp",
     date: "2026-01-25",
+    time: "20:30",
     title: "Noche de Música en Vivo",
     description: `
 Una noche dedicada a la música en vivo donde bandas emergentes y proyectos musicales locales se encuentran para compartir escenario.
@@ -67,6 +71,7 @@ Un evento pensado para disfrutar de la música, descubrir nuevas bandas y fortal
     id: 4,
     image: "/imagenes/ceramica.png",
     date: "2026-01-02",
+    time: "16:00",
     title: "Taller Abierto de Cerámica",
     description: `
 La Casa de la Cultura abre sus puertas para un taller participativo de cerámica, destinado a personas con o sin experiencia previa.
@@ -83,6 +88,7 @@ Una actividad pensada para acercarse al arte desde la práctica, el hacer y el d
     id: 5,
     image: "/imagenes/cine.png",
     date: "2026-01-09",
+    time: "19:30",
     title: "Cine Debate",
     description: `
 Proyección de una película seleccionada especialmente por su valor artístico y social, seguida de un espacio de intercambio y debate abierto.

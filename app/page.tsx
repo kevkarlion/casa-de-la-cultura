@@ -6,6 +6,7 @@ import Socio from "@/components/home/Socio/Socio";
 import Novedades from "@/components/home/Novedades/Novedades";
 import ContactoRapido from "@/components/home/ContactoRapido/ContactoRapido";
 
+
 import EventCarousel from "@/components/shared/eventos/EventosDestacados";
 
 import { agendaRapidaMock } from "@/utils/agenda.mock";
@@ -34,7 +35,7 @@ const Page = () => {
       {/* Los más destacados */}
       <EventCarousel items={destacados} />
 
-      <AgendaRapida items={agendaRapidaMock} />
+      <AgendaRapida items={eventosCompletMock} />
 
       <PresentacionCdc />
 

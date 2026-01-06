@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState, useRef, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Calendar } from "lucide-react";
+import { ChevronLeft, ChevronRight, Calendar, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 interface AgendaItem {
@@ -117,39 +117,55 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
     <section className="relative z-20 w-full py-12 bottom-30 lg:bottom-45">
       <div className="mx-auto max-w-7xl px-4">
         {/* HEADER */}
-        <div className="mb-6 flex items-center gap-4 ">
-          <div className="flex items-center gap-2 bg-black not-last:px-3 py-1">
-            <Calendar className="text-primary" />
-            <h2 className="text-lg font-neue font-semibold text-brand-white-cdc uppercase">
-              Agenda cultural
-            </h2>
+        <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 bg-black not-last:px-3 py-1">
+              <Calendar className="text-primary" />
+              <h2 className="text-lg font-neue font-semibold text-brand-white-cdc uppercase">
+                Agenda cultural
+              </h2>
+            </div>
+
+            <div className="flex gap-2 ml-4">
+              <button
+                onClick={() =>
+                  setCurrentDate(
+                    (d) => new Date(d.getFullYear(), d.getMonth() - 1, 1)
+                  )
+                }
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-black text-neutral-200 transition hover:border-primary hover:text-primary"
+                aria-label="Mes anterior"
+              >
+                <ChevronLeft size={20} />
+              </button>
+
+              <button
+                onClick={() =>
+                  setCurrentDate(
+                    (d) => new Date(d.getFullYear(), d.getMonth() + 1, 1)
+                  )
+                }
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-black text-neutral-200 transition hover:border-primary hover:text-primary"
+                aria-label="Mes siguiente"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
           </div>
 
-          <div className="flex gap-2">
-            <button
-              onClick={() =>
-                setCurrentDate(
-                  (d) => new Date(d.getFullYear(), d.getMonth() - 1, 1)
-                )
-              }
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-black text-neutral-200 transition hover:border-primary hover:text-primary"
-              aria-label="Mes anterior"
-            >
-              <ChevronLeft size={20} />
-            </button>
-
-            <button
-              onClick={() =>
-                setCurrentDate(
-                  (d) => new Date(d.getFullYear(), d.getMonth() + 1, 1)
-                )
-              }
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-black text-neutral-200 transition hover:border-primary hover:text-primary"
-              aria-label="Mes siguiente"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
+          {/* BOTÓN VER AGENDA COMPLETA */}
+          <Link
+            href="/agenda"
+            className="group flex items-center gap-2 self-start sm:self-center px-4 py-2 bg-black text-brand-white-cdc border border-neutral-700 l hover:border-primary hover:text-primary transition-all duration-300"
+          >
+            <span className="text-sm font-medium tracking-wide">
+              Ver agenda completa
+            </span>
+            <ArrowRight 
+              size={16} 
+              className="group-hover:translate-x-1 transition-transform duration-300" 
+            />
+          </Link>
         </div>
 
         <p className="font-neue mb-4 text-sm uppercase tracking-widest text-black">
@@ -260,7 +276,7 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
               {eventsByDay.get(openDay)?.map((event) => (
                 <li key={event.id}>
                   <Link
-                    href={`/agenda/${event.slug}`}
+                    href={`/eventos/${event.slug}`}
                     className="block rounded-md p-2 hover:bg-gray-300"
                   >
                     <p className="text-sm font-medium text-black leading-snug">
