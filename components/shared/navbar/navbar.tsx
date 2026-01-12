@@ -30,18 +30,10 @@ export default function NavbarMinimal() {
   ]
 
   const navItems = [
-    { label: 'Home', href: '/' },
+    { label: 'Casa', href: '/' },
     { label: 'Talleres', href: '/talleres' },
-    {
-      label: 'Agenda Cultural',
-      href: '/agenda',
-      submenu: agendaSubmenu,
-    },
-    {
-      label: 'Programación',
-      href: '/programacion',
-      submenu: programacionSubmenu,
-    },
+    { label: 'Agenda Cultural', href: '/agenda', submenu: agendaSubmenu },
+    { label: 'Programación', href: '/programacion', submenu: programacionSubmenu },
     { label: 'Novedades', href: '/novedades' },
     { label: 'Quiénes Somos', href: '/quienes-somos' },
     { label: 'Socix CDC', href: '/socix-cdc' },
@@ -50,7 +42,7 @@ export default function NavbarMinimal() {
   ]
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024)
     checkMobile()
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
@@ -88,34 +80,35 @@ export default function NavbarMinimal() {
       <nav className="w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-24 md:h-32 flex items-center">
           <div className="flex justify-between items-center w-full pl-8">
+
             {/* Logo */}
             <Link href="/" className="shrink-0">
-              <div className="hidden md:block">
+              <div className="hidden lg:block">
                 <Image {...logoConfig.desktop} alt={logoConfig.desktop.alt} priority />
               </div>
-              <div className="md:hidden">
-                <Image {...logoConfig.mobile} alt={logoConfig.desktop.alt} priority />
+              <div className="lg:hidden">
+                <Image {...logoConfig.mobile} alt={logoConfig.mobile.alt} priority />
               </div>
             </Link>
 
             {/* Desktop menu */}
-            <ul className="hidden md:flex items-center gap-6 text-black font-neue font-light uppercase">
+            <ul className="hidden lg:flex items-center gap-6 text-black font-neue font-light uppercase">
               {navItems.map(item => (
                 <li
                   key={item.label}
                   className="relative"
-                  onMouseEnter={() => !isMobile && item.submenu && setDesktopSubOpen(item.label)}
-                  onMouseLeave={() => !isMobile && item.submenu && setDesktopSubOpen(null)}
+                  onMouseEnter={() => item.submenu && setDesktopSubOpen(item.label)}
+                  onMouseLeave={() => item.submenu && setDesktopSubOpen(null)}
                 >
                   <Link
                     href={item.href}
-                    className="flex items-center gap-1 text-sm hover:text-primary"
+                    className="flex items-center gap-1 text-xs 2xl:text-sm hover:text-primary"
                   >
                     {item.label}
                     {item.submenu && (
                       <span
                         className={`text-xs transition-transform duration-300 ${
-                          desktopSubOpen === item.label ? 'rotate-180' : 'rotate-0'
+                          desktopSubOpen === item.label ? 'rotate-180' : ''
                         }`}
                       >
                         ▼
@@ -130,7 +123,7 @@ export default function NavbarMinimal() {
                           <li key={sub.label}>
                             <Link
                               href={sub.href}
-                              className="block px-4 py-2 text-sm hover:bg-black/5"
+                              className="block px-4 py-2 text-xs 2xl:text-sm hover:bg-black/5"
                             >
                               {sub.label}
                             </Link>
@@ -146,7 +139,7 @@ export default function NavbarMinimal() {
             {/* Hamburger */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-3"
+              className="lg:hidden p-3"
             >
               <svg
                 className="w-8 h-8 text-black"
@@ -161,13 +154,14 @@ export default function NavbarMinimal() {
                 )}
               </svg>
             </button>
+
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile / Tablet menu */}
         <div
           className={`
-            md:hidden
+            lg:hidden
             fixed
             inset-0
             z-50
@@ -179,7 +173,6 @@ export default function NavbarMinimal() {
             ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
           `}
         >
-          {/* X para cerrar */}
           {isOpen && (
             <button
               onClick={() => setIsOpen(false)}
@@ -222,9 +215,7 @@ export default function NavbarMinimal() {
 
                     {item.submenu && (
                       <button
-                        onClick={() =>
-                          setMobileSubOpen(isSubOpen ? null : item.label)
-                        }
+                        onClick={() => setMobileSubOpen(isSubOpen ? null : item.label)}
                         className={`transition-transform duration-300 ${
                           isSubOpen ? 'rotate-180' : ''
                         } text-black`}
