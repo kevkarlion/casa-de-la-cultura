@@ -68,7 +68,7 @@ export default function NosotrosPage() {
       {/* HERO */}
       <section className="relative overflow-hidden">
   <motion.div
-    className="container mx-auto px-0 md:px-6 py-24 max-w-6xl"
+    className="container mx-auto px-0 md:px-6 py-12 max-w-6xl"
     initial="hidden"
     animate="visible"
     variants={stagger}
@@ -76,7 +76,7 @@ export default function NosotrosPage() {
     <div className="grid grid-cols-1 md:grid-cols-12">
       
       {/* IZQUIERDA – CONTENIDO */}
-      <div className="md:col-span-8 bg-white px-6 md:px-10 py-16">
+      <div className="md:col-span-8 bg-white px-6 md:px-10 pb-16">
         <motion.p
           variants={fadeUp}
           className="uppercase tracking-widest text-sm text-neutral-500 mb-4"
@@ -223,7 +223,7 @@ export default function NosotrosPage() {
 
 
       {/* QUIÉNES SOMOS */}
-      <section className="container mx-auto px-6 py-20 max-w-6xl">
+      <section className="container mx-auto px-6 pt-12 pb-20 max-w-6xl">
         <motion.div
           className="grid md:grid-cols-2 gap-16 items-start"
           initial="hidden"
