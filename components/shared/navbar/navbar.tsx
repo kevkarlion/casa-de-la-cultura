@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation'
 
 export default function NavbarMinimal() {
   const router = useRouter()
-  const pathname = usePathname() // ruta actual
+  const pathname = usePathname()
 
   const [isOpen, setIsOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
@@ -16,22 +16,36 @@ export default function NavbarMinimal() {
   const [mobileSubOpen, setMobileSubOpen] = useState<string | null>(null)
 
   const programacionSubmenu = [
-    { label: 'Talleres', href: '/programacion/talleres' },
+    { label: 'Teatro', href: '/programacion/teatro' },
+    { label: 'Cine', href: '/programacion/cine' },
+    { label: 'Música', href: '/programacion/musica' },
+    { label: 'Danza', href: '/programacion/danza' },
     { label: 'Exposiciones', href: '/programacion/exposiciones' },
-    { label: 'Actividades permanentes', href: '/programacion/actividades-permanentes' },
+    { label: 'Conversatorios', href: '/programacion/conversatorios' },
+  ]
+
+  const agendaSubmenu = [
+    { label: 'Mensual', href: '/agenda/mensual' },
+    { label: 'Semanal', href: '/agenda/semanal' },
   ]
 
   const navItems = [
     { label: 'Home', href: '/' },
-    { label: 'Eventos', href: '/eventos' },
-    { label: 'Agenda Cultural', href: '/agenda' },
+    { label: 'Talleres', href: '/talleres' },
+    {
+      label: 'Agenda Cultural',
+      href: '/agenda',
+      submenu: agendaSubmenu,
+    },
     {
       label: 'Programación',
       href: '/programacion',
       submenu: programacionSubmenu,
     },
     { label: 'Novedades', href: '/novedades' },
-    { label: 'Nosotros', href: '/nosotros' },
+    { label: 'Quiénes Somos', href: '/quienes-somos' },
+    { label: 'Socix CDC', href: '/socix-cdc' },
+    { label: 'Espacios y Alquileres', href: '/espacios-y-alquileres' },
     { label: 'Contacto', href: '/contacto' },
   ]
 
@@ -44,7 +58,9 @@ export default function NavbarMinimal() {
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'unset'
-    return () => { document.body.style.overflow = 'unset' }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
   }, [isOpen])
 
   const logoConfig = {
@@ -52,26 +68,20 @@ export default function NavbarMinimal() {
     desktop: { src: '/logos/LogoHeroBlack.png', width: 180, height: 80, alt: 'Logo Desktop' },
   }
 
-  // NUEVO: cierre del menú **solo después de cambiar ruta**
   const handleNavigateMobile = (href: string) => {
-    if (href === pathname) return // ya estás en la página
+    if (href === pathname) return
     router.push(href)
-    // el menú se cerrará automáticamente por el useEffect de pathname
   }
 
-  // cuando la ruta cambia, cerramos el menú
-  // cuando la ruta cambia, cerramos el menú
-useEffect(() => {
-  // posponemos el cierre para evitar warning de React
-  const timeout = setTimeout(() => {
-    setIsOpen(false)
-    setMobileSubOpen(null)
-    setDesktopSubOpen(null)
-  }, 0)
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsOpen(false)
+      setMobileSubOpen(null)
+      setDesktopSubOpen(null)
+    }, 0)
 
-  return () => clearTimeout(timeout)
-}, [pathname])
-
+    return () => clearTimeout(timeout)
+  }, [pathname])
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
@@ -80,8 +90,12 @@ useEffect(() => {
           <div className="flex justify-between items-center w-full pl-8">
             {/* Logo */}
             <Link href="/" className="shrink-0">
-              <div className="hidden md:block"><Image {...logoConfig.desktop} alt={logoConfig.desktop.alt} priority /></div>
-              <div className="md:hidden"><Image {...logoConfig.mobile} alt={logoConfig.desktop.alt} priority /></div>
+              <div className="hidden md:block">
+                <Image {...logoConfig.desktop} alt={logoConfig.desktop.alt} priority />
+              </div>
+              <div className="md:hidden">
+                <Image {...logoConfig.mobile} alt={logoConfig.desktop.alt} priority />
+              </div>
             </Link>
 
             {/* Desktop menu */}
@@ -95,7 +109,7 @@ useEffect(() => {
                 >
                   <Link
                     href={item.href}
-                    className="flex items-center gap-1 text-sm hover:text-primary "
+                    className="flex items-center gap-1 text-sm hover:text-primary"
                   >
                     {item.label}
                     {item.submenu && (
@@ -111,7 +125,7 @@ useEffect(() => {
 
                   {item.submenu && desktopSubOpen === item.label && (
                     <div className="absolute left-0 top-full pt-2">
-                      <ul className="w-56 bg-white shadow-md border border-neutral-200 rounded-md ">
+                      <ul className="w-56 bg-white shadow-md border border-neutral-200 rounded-md">
                         {item.submenu.map(sub => (
                           <li key={sub.label}>
                             <Link
@@ -183,7 +197,13 @@ useEffect(() => {
           )}
 
           <div className="flex justify-center mb-10">
-            <Image src="/logos/LogoHeroBlack.png" alt="Logo CDC" width={250} height={40} priority />
+            <Image
+              src="/logos/LogoHeroBlack.png"
+              alt="Logo CDC"
+              width={250}
+              height={40}
+              priority
+            />
           </div>
 
           <ul className="px-6 space-y-4">
@@ -205,7 +225,9 @@ useEffect(() => {
                         onClick={() =>
                           setMobileSubOpen(isSubOpen ? null : item.label)
                         }
-                        className={`transition-transform duration-300 ${isSubOpen ? 'rotate-180' : ''} text-black`}
+                        className={`transition-transform duration-300 ${
+                          isSubOpen ? 'rotate-180' : ''
+                        } text-black`}
                       >
                         ▼
                       </button>
