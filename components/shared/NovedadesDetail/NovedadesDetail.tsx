@@ -1,45 +1,43 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { notFound } from 'next/navigation'
-import { useState } from 'react'
-import { getNovedadBySlug, getRelatedNovedades } from '@/utils/novedades.mock'
-import { ExternalLink } from 'lucide-react'
-import Breadcrumbs from '@/components/shared/Breadcrumb/Breadcrumbs'
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { useState } from "react";
+import { getNovedadBySlug, getRelatedNovedades } from "@/utils/novedades.mock";
+import { ExternalLink } from "lucide-react";
+import Breadcrumbs from "@/components/shared/Breadcrumb/Breadcrumbs";
 
 interface NovedadesDetailProps {
-  slug: string
+  slug: string;
 }
 
 export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
-  const novedad = getNovedadBySlug(slug)
-  const [isHorizontal, setIsHorizontal] = useState<boolean | null>(null)
+  const novedad = getNovedadBySlug(slug);
+  const [isHorizontal, setIsHorizontal] = useState<boolean | null>(null);
 
   const related = novedad?.tags
     ? getRelatedNovedades(novedad.slug, novedad.tags)
-    : []
+    : [];
 
-  if (!novedad) {
-    notFound()
-  }
+  if (!novedad) notFound();
 
-  const hasGallery = Array.isArray(novedad.images) && novedad.images.length > 0
+  const hasGallery = Array.isArray(novedad.images) && novedad.images.length > 0;
 
   return (
     <>
       <article className="container mx-auto px-6 py-20 max-w-6xl bg-brand-white-cdc">
         <Breadcrumbs
           items={[
-            { label: 'Inicio', href: '/' },
-            { label: 'Novedades', href: '/novedades' },
+            { label: "Inicio", href: "/" },
+            { label: "Novedades", href: "/novedades" },
             { label: novedad.title },
           ]}
         />
 
-        {/* ================= HEADER ================= */}
+        {/* HEADER */}
         <header className="mb-10 max-w-3xl">
           <p className="text-sm text-black mb-3">
-            {new Date(novedad.date).toLocaleDateString('es-AR')}
+            {new Date(novedad.date).toLocaleDateString("es-AR")}
           </p>
 
           <h1 className="text-4xl md:text-5xl font-neue font-bold mb-6 leading-tight text-black">
@@ -47,7 +45,7 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
           </h1>
 
           <div className="flex flex-wrap gap-2">
-            {novedad.tags?.map(tag => (
+            {novedad.tags?.map((tag) => (
               <span
                 key={tag}
                 className="text-xs px-3 py-1 bg-black text-brand-white-cdc"
@@ -58,7 +56,7 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
           </div>
         </header>
 
-        {/* ===== detector de orientación ===== */}
+        {/* DETECTOR DE ORIENTACIÓN */}
         {!hasGallery && isHorizontal === null && (
           <Image
             src={novedad.image}
@@ -67,25 +65,21 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
             height={10}
             className="hidden"
             priority
-            onLoadingComplete={img =>
+            onLoadingComplete={(img) =>
               setIsHorizontal(img.naturalWidth > img.naturalHeight)
             }
           />
         )}
 
-        {/* ======================================================
-            MOBILE FIRST
-        ====================================================== */}
+        {/* MOBILE FIRST: TITLE → IMAGE → CONTENT */}
         <div className="flex flex-col gap-12">
-
-          {/* ================= IMAGEN / GALERÍA ================= */}
-          <div>
-            {/* GALERÍA */}
+          {/* IMAGEN / GALERÍA */}
+          <div className="order-1">
             {hasGallery && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {novedad.images?.map((img, index) => (
+                {novedad.images?.map((img, idx) => (
                   <div
-                    key={index}
+                    key={idx}
                     className="bg-neutral-100 rounded-xl p-4 flex justify-center"
                   >
                     <Image
@@ -100,7 +94,6 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
               </div>
             )}
 
-            {/* IMAGEN ÚNICA HORIZONTAL */}
             {!hasGallery && isHorizontal && (
               <div className="bg-neutral-100 rounded-xl p-4 flex justify-center">
                 <Image
@@ -114,7 +107,6 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
               </div>
             )}
 
-            {/* IMAGEN ÚNICA VERTICAL → MOBILE */}
             {!hasGallery && isHorizontal === false && (
               <div className="bg-neutral-100 rounded-xl p-4 flex justify-center lg:hidden">
                 <Image
@@ -129,8 +121,8 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
             )}
           </div>
 
-          {/* ================= TEXTO ================= */}
-          <div>
+          {/* TEXTO */}
+          <div className="order-2">
             {!hasGallery && isHorizontal === false ? (
               <div className="lg:grid lg:grid-cols-12 gap-10">
                 <div className="lg:col-span-7">
@@ -144,14 +136,14 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
                         Enlaces
                       </h3>
 
-                      <div className="flex flex-col gap-3">
-                        {novedad.links.map(link => (
+                      <div className="flex flex-col gap-3 not-prose">
+                        {novedad.links.map((link) => (
                           <a
                             key={link.url}
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 underline underline-offset-4 hover:opacity-70 transition"
+                            className="inline-flex items-center gap-2 text-sky-400! hover:text-sky-300! underline underline-offset-4 transition-colors"
                           >
                             {link.label}
                             <ExternalLink size={16} />
@@ -182,35 +174,27 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
                   {novedad.excerpt}
                 </p>
 
-                {novedad.links && novedad.links.length > 0 && (
-                  <div className="mb-12">
-                    <h3 className="text-sm uppercase tracking-widest text-black mb-4">
-                      Enlaces
-                    </h3>
-
-                    <div className="flex flex-col gap-3">
-                      {novedad.links.map(link => (
-                        <a
-                          key={link.url}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 underline underline-offset-4 hover:opacity-70 transition text-blue-400"
-                        >
-                          {link.label}
-                          <ExternalLink size={16} />
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                <div className="flex flex-col gap-3 not-prose">
+                  {novedad.links?.map((link) => (
+                    <a
+                      key={link.url}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sky-400! hover:text-sky-300! underline underline-offset-4 transition-colors"
+                    >
+                      {link.label}
+                      <ExternalLink size={16} />
+                    </a>
+                  ))}
+                </div>
               </div>
             )}
           </div>
         </div>
       </article>
 
-      {/* ================= RELACIONADAS ================= */}
+      {/* RELACIONADAS */}
       {related.length > 0 && (
         <section className="container mx-auto px-6 pb-24 max-w-6xl">
           <h2 className="text-2xl font-neue font-bold mb-8 text-black">
@@ -218,7 +202,7 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {related.map(item => (
+            {related.map((item) => (
               <a
                 key={item.slug}
                 href={`/novedades/${item.slug}`}
@@ -235,7 +219,7 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
 
                 <div className="p-5 text-white">
                   <p className="text-xs opacity-70 mb-1">
-                    {new Date(item.date).toLocaleDateString('es-AR')}
+                    {new Date(item.date).toLocaleDateString("es-AR")}
                   </p>
                   <h3 className="font-neue text-lg font-semibold leading-snug">
                     {item.title}
@@ -247,5 +231,5 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
         </section>
       )}
     </>
-  )
+  );
 }

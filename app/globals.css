@@ -20,12 +20,6 @@
   --font-neue: var(--font-neue-haas), ui-sans-serif, system-ui;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}@import "tailwindcss";
 
 :root {
   --background: #ffffff;
