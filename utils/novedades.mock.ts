@@ -3,122 +3,135 @@ import { Novedad } from "@/interfaces/novedades.interface";
 export const novedades: Novedad[] = [
   {
     id: 1,
-    title: "Convocatoria abierta a artistas visuales",
-    date: "2026-01-03",
+    title: "Convocatoria abierta 2026 para artistas regionales",
+    date: "2026-01-01",
     summary:
-      "La Casa de la Cultura abre una convocatoria destinada a artistas visuales de la región para integrar una muestra colectiva.",
+      "Convocatoria abierta a artistas y proyectos de música, teatro, danza y expresiones interdisciplinarias para formar parte de la programación 2026.",
     excerpt: `
-La Casa de la Cultura abre una nueva convocatoria destinada a artistas visuales de la región, con el objetivo de promover la producción, difusión y circulación de obras contemporáneas en distintos formatos y lenguajes.
+📢 Convocatoria abierta 2026
 
-La iniciativa está dirigida a artistas emergentes y con trayectoria que trabajen disciplinas como pintura, dibujo, grabado, fotografía, escultura, arte digital, instalaciones y propuestas interdisciplinarias. Se busca fomentar el intercambio cultural y generar un espacio de visibilidad para la creación local.
+Destinada a artistas regionales y proyectos de música, teatro, danza y expresiones interdisciplinarias que quieran formar parte de la programación de CDC – Casa de la Cultura.
 
-Las obras seleccionadas formarán parte de una muestra colectiva que será inaugurada durante el primer trimestre del año, acompañada por instancias de encuentro con el público, charlas abiertas y actividades educativas.
+Si tenés un proyecto y te interesa participar, completá el formulario de inscripción y revisá las bases y condiciones.
 
-La convocatoria permanecerá abierta hasta el cierre del mes y la inscripción es gratuita. Las bases y condiciones pueden consultarse en los canales oficiales de la Casa de la Cultura.
+📍 CDC – Casa de la Cultura  
+9 de Julio 1043 · Roca / Fiske
+
+Forma parte de CDC – Casa de la Cultura.
     `,
-    image: "/imagenes/convocatoria.png",
-    slug: "convocatoria-artistas-visuales",
+    image: "/imagenes/noche-musica.webp",
+    slug: "convocatoria-artistas-2026",
     featured: true,
-    tags: ["convocatoria", "artes visuales"],
+    tags: ["convocatoria", "artistas", "programación"],
+
+    // 👇 LINKS
+    links: [
+      {
+        label: "Bases y condiciones",
+        url: "https://tr.ee/BQnhtJaUE9",
+      },
+      {
+        label: "Formulario de inscripción",
+        url: "https://tr.ee/BGszcItfaM",
+      },
+    ],
   },
 
   {
     id: 2,
-    title: "Inauguración de la muestra de arte contemporáneo",
+    title: "Cineclub de Verano · 7° Ciclo TYÖ",
     date: "2026-01-05",
     summary:
-      "Se inaugura una nueva muestra de arte contemporáneo con obras de artistas locales y regionales.",
+      "Durante enero, febrero y principios de marzo, el patio de CDC vuelve a ser un espacio de cine al aire libre junto al Cineclub TYÖ.",
     excerpt: `
-La Casa de la Cultura invita a la inauguración de una nueva muestra de arte contemporáneo que reúne obras de artistas locales y regionales, proponiendo un recorrido diverso por distintas miradas, técnicas y poéticas visuales.
+Recibimos al Cineclub TYÖ en su 7° Ciclo de Verano.
 
-La exposición plantea un diálogo entre lo individual y lo colectivo, abordando temáticas actuales como la identidad, el territorio, la memoria y los procesos sociales desde lenguajes contemporáneos.
+Durante enero, febrero y principios de marzo, el patio de nuestra Casa vuelve a transformarse en un espacio de encuentro para compartir cine al aire libre, las noches de verano y la experiencia colectiva de ver películas juntxs.
 
-La apertura contará con la presencia de los artistas participantes y un espacio de intercambio con el público, pensado como una instancia de reflexión y encuentro en torno al arte y la cultura.
+Las funciones se realizan en el patio de CDC. En caso de mal clima, la proyección se traslada a la Sala 2.
 
-La muestra podrá visitarse durante todo el mes, con entrada libre y gratuita, en los horarios habituales de la Casa de la Cultura.
+Las entradas se consiguen en puerta.
     `,
-    image: "/imagenes/expo.png",
-    slug: "inauguracion-muestra-arte",
-    tags: ["exposición", "artes visuales"],
+    image: "/imagenes/cine-club.webp",
+    slug: "cineclub-verano-tyo",
+    tags: ["cine", "cineclub", "verano"],
   },
 
   {
     id: 3,
-    title: "Taller de música para jóvenes",
+    title: "Nueva Comisión Directiva 2026–2027",
     date: "2026-01-10",
     summary:
-      "Abre la inscripción a un taller de música para jóvenes con encuentros semanales y actividades grupales.",
+      "CDC presenta a la nueva Comisión Directiva que acompañará el rumbo institucional durante los próximos dos años.",
     excerpt: `
-Se abre la inscripción al taller de música destinado a jóvenes interesados en explorar distintos lenguajes sonoros y desarrollar herramientas de expresión musical de manera colectiva.
+La nueva Comisión Directiva de CDC – Casa de la Cultura asumió el 22 de diciembre, por unanimidad de votos, durante la asamblea realizada.
 
-El espacio propone un abordaje práctico y participativo, donde se trabajarán nociones de ritmo, armonía, composición e improvisación, combinando teoría y práctica instrumental.
+Está integrada por hacedoras y hacedores culturales que forman parte del día a día de CDC y conocen profundamente su historia y su valor para la comunidad.
 
-El taller estará coordinado por músicos con experiencia en formación artística y contará con encuentros semanales que incluirán ensambles, ejercicios grupales y jam sessions abiertas.
-
-La actividad es gratuita y no requiere conocimientos previos. Los cupos son limitados y la inscripción se realiza de manera presencial.
+La propuesta de gestión está enfocada en el fortalecimiento institucional, la modernización, la transparencia y la sostenibilidad, con una mirada colectiva y a largo plazo.
     `,
-    image: "/imagenes/novedades/musica1.jpg",
-    slug: "taller-musica-jovenes",
-    tags: ["taller", "música"],
+    image: "/imagenes/comision.webp",
+    slug: "comision-directiva-2026-2027",
+    tags: ["institucional", "comisión directiva"],
   },
 
-  {
-    id: 4,
-    title: "Ciclo de cine independiente",
-    date: "2026-01-15",
-    summary:
-      "Comienza un nuevo ciclo de cine independiente con proyecciones semanales y debates posteriores.",
-    excerpt: `
-La Casa de la Cultura presenta un nuevo ciclo de cine independiente con proyecciones semanales que invitan a descubrir producciones alternativas, óperas primas y cine de autor.
+ {
+  id: 4,
+  title: "Nuevas reformas edilicias en CDC",
+  date: "2026-01-15",
+  summary:
+    "Durante el receso se realizaron reformas y mejoras edilicias para seguir poniendo en valor los espacios de la Casa.",
+  excerpt: `
+Durante los días de receso, la Comisión Directiva junto a compañeras y compañeros de CDC trabajó en la reorganización y puesta en valor de distintos espacios de la Casa.
 
-Cada función estará acompañada por un espacio de debate posterior, coordinado por especialistas, donde se analizarán los aspectos narrativos, estéticos y contextuales de las películas proyectadas.
+Se avanzó en la reconstrucción del bar del hall superior, la recuperación de camarines y el traslado del archivo histórico de CDC.
 
-El ciclo busca promover el pensamiento crítico, el acceso al cine no comercial y el encuentro entre realizadores, espectadores y la comunidad.
+Seguimos construyendo CDC incluso en pausa, con compromiso y trabajo colectivo.
+  `,
+  image: "/imagenes/pausa-en-movi/reforma1.webp",
 
-Las funciones se realizarán una vez por semana con entrada libre y gratuita, hasta completar la capacidad de la sala.
-    `,
-    image: "/imagenes/novedades/cine1.jpg",
-    slug: "ciclo-cine-independiente",
-    tags: ["cine", "proyección"],
-  },
+  // 👉 GALERÍA EDITORIAL
+  images: [
+    {
+      src: "/imagenes/pausa-en-movi/reforma1.webp",
+      alt: "Trabajos de remodelación en el hall superior"
+    },
+    {
+      src: "/imagenes/pausa-en-movi/reforma2.webp",
+      alt: "Trabajos de remodelación en el hall superior"
+    },
+    {
+      src: "/imagenes/pausa-en-movi/reforma3.webp",
+      alt: "Reconstrucción del bar del hall"
+    },
+    {
+      src: "/imagenes/pausa-en-movi/reforma4.webp",
+      alt: "Recuperación de camarines"
+    },
+    {
+      src: "/imagenes/pausa-en-movi/reforma5.webp",
+      alt: "Reorganización del archivo histórico de CDC"
+    }
+  ],
 
-  {
-    id: 5,
-    title: "Clases abiertas de danza",
-    date: "2026-01-20",
-    summary:
-      "Clases abiertas de danza para todas las edades y niveles, pensadas como un espacio de encuentro y movimiento.",
-    excerpt: `
-Durante el mes se desarrollarán clases abiertas de danza destinadas a personas de todas las edades y niveles, con el objetivo de acercar el movimiento y la expresión corporal a la comunidad.
+  slug: "reformas-edilicias-cdc",
+  tags: ["institucional", "obras", "cdc"]
+}
 
-Las clases estarán orientadas a distintos estilos y técnicas, priorizando el disfrute, la exploración del cuerpo y el trabajo colectivo en un ambiente inclusivo y participativo.
-
-No es necesario contar con experiencia previa ni vestimenta específica. La propuesta está pensada como un espacio de encuentro, aprendizaje y bienestar a través del movimiento.
-
-La actividad es gratuita y se realiza en los espacios habituales de la Casa de la Cultura.
-    `,
-    image: "/imagenes/novedades/danza1.jpg",
-    slug: "clases-abiertas-danza",
-    tags: ["danza", "actividad permanente"],
-  },
 ];
 
-// 👉 obtener todas
+// helpers (sin cambios)
 export function getNovedades() {
   return novedades;
 }
 
-// 👉 obtener una por slug (detalle)
 export function getNovedadBySlug(slug: string) {
   return novedades.find((n) => n.slug === slug);
 }
 
-// 👉 filtrar por tag
 export function getNovedadesByTag(tag: string) {
   return novedades.filter((n) => n.tags?.includes(tag));
 }
-
-// utils/novedades.mock.ts
 
 export function getRelatedNovedades(
   currentSlug: string,

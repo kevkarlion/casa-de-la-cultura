@@ -1,8 +1,11 @@
+'use client'
+
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { getNovedadBySlug, getRelatedNovedades  } from '@/utils/novedades.mock'
-import { Instagram, Facebook, Share2 } from 'lucide-react'
-import Breadcrumbs from "@/components/shared/Breadcrumb/Breadcrumbs";
+import { useState } from 'react'
+import { getNovedadBySlug, getRelatedNovedades } from '@/utils/novedades.mock'
+import { ExternalLink } from 'lucide-react'
+import Breadcrumbs from '@/components/shared/Breadcrumb/Breadcrumbs'
 
 interface NovedadesDetailProps {
   slug: string
@@ -10,163 +13,239 @@ interface NovedadesDetailProps {
 
 export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
   const novedad = getNovedadBySlug(slug)
+  const [isHorizontal, setIsHorizontal] = useState<boolean | null>(null)
 
   const related = novedad?.tags
-  ? getRelatedNovedades(novedad.slug, novedad.tags)
-  : []
+    ? getRelatedNovedades(novedad.slug, novedad.tags)
+    : []
 
   if (!novedad) {
     notFound()
   }
 
+  const hasGallery = Array.isArray(novedad.images) && novedad.images.length > 0
+
   return (
     <>
-    <article className="container mx-auto px-6 py-20 max-w-6xl bg-brand-white-cdc">
-       <Breadcrumbs
-  items={[
-    { label: "Inicio", href: "/" },
-    { label: "Novedades", href: "/novedades" },
-    { label: novedad.title },
-  ]}
-/>
+      <article className="container mx-auto px-6 py-20 max-w-6xl bg-brand-white-cdc">
+        <Breadcrumbs
+          items={[
+            { label: 'Inicio', href: '/' },
+            { label: 'Novedades', href: '/novedades' },
+            { label: novedad.title },
+          ]}
+        />
 
-      {/* Header editorial */}
-      <header className="mb-12 max-w-3xl">
-        <p className="text-sm text-black mb-3">
-          {new Date(novedad.date).toLocaleDateString('es-AR')}
-        </p>
+        {/* ================= HEADER ================= */}
+        <header className="mb-10 max-w-3xl">
+          <p className="text-sm text-black mb-3">
+            {new Date(novedad.date).toLocaleDateString('es-AR')}
+          </p>
 
-        <h1 className="text-4xl md:text-5xl font-neue font-bold mb-6 leading-tight text-black">
-          {novedad.title}
-        </h1>
+          <h1 className="text-4xl md:text-5xl font-neue font-bold mb-6 leading-tight text-black">
+            {novedad.title}
+          </h1>
 
-        <div className="flex flex-wrap gap-2">
-          {novedad.tags?.map(tag => (
-            <span
-              key={tag}
-              className="text-xs px-3 py-1  bg-black text-brand-white-cdc"
-            >
-              #{tag}
-            </span>
-          ))}
-        </div>
-      </header>
-
-      {/* ESTRUCTURA PRINCIPAL - REORDENADA */}
-      <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12">
-        
-        {/* COLUMNA IZQUIERDA - TEXTO + COMPARTIR (en desktop) */}
-        <div className="lg:col-span-7 order-2 lg:order-1">
-          {/* Texto del artículo - NORMAL */}
-          <div className="mb-8 lg:mb-0">
-            <p className="font-inter text-lg leading-relaxed text-black whitespace-pre-line">
-              {novedad.excerpt}
-            </p>
+          <div className="flex flex-wrap gap-2">
+            {novedad.tags?.map(tag => (
+              <span
+                key={tag}
+                className="text-xs px-3 py-1 bg-black text-brand-white-cdc"
+              >
+                #{tag}
+              </span>
+            ))}
           </div>
-          
-          {/* COMPARTIR - debajo del texto EN AMBOS (móvil y desktop) */}
-          <div className="order-4 lg:order-2 mt-12">
-            <div className="border-t pt-6">
-              <p className="text-sm uppercase tracking-widest text-black mb-4">
-                Compartir
-              </p>
+        </header>
 
-              <div className="flex items-center gap-4">
-                <a
-                  href="#"
-                  className="p-3 rounded-full border text-black hover:bg-black hover:text-white transition"
-                  aria-label="Compartir en Instagram"
-                >
-                  <Instagram size={18} />
-                </a>
+        {/* ===== detector de orientación ===== */}
+        {!hasGallery && isHorizontal === null && (
+          <Image
+            src={novedad.image}
+            alt=""
+            width={10}
+            height={10}
+            className="hidden"
+            priority
+            onLoadingComplete={img =>
+              setIsHorizontal(img.naturalWidth > img.naturalHeight)
+            }
+          />
+        )}
 
-                <a
-                  href="#"
-                  className="p-3 rounded-full border text-black hover:bg-black hover:text-white transition"
-                  aria-label="Compartir en Facebook"
-                >
-                  <Facebook size={18} />
-                </a>
+        {/* ======================================================
+            MOBILE FIRST
+        ====================================================== */}
+        <div className="flex flex-col gap-12">
 
-                <a
-                  href="#"
-                  className="p-3 rounded-full border text-black hover:bg-black hover:text-white transition"
-                  aria-label="Compartir enlace"
-                >
-                  <Share2 size={18} />
-                </a>
+          {/* ================= IMAGEN / GALERÍA ================= */}
+          <div>
+            {/* GALERÍA */}
+            {hasGallery && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {novedad.images?.map((img, index) => (
+                  <div
+                    key={index}
+                    className="bg-neutral-100 rounded-xl p-4 flex justify-center"
+                  >
+                    <Image
+                      src={img.src}
+                      alt={img.alt || novedad.title}
+                      width={1200}
+                      height={800}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                ))}
               </div>
-            </div>
+            )}
+
+            {/* IMAGEN ÚNICA HORIZONTAL */}
+            {!hasGallery && isHorizontal && (
+              <div className="bg-neutral-100 rounded-xl p-4 flex justify-center">
+                <Image
+                  src={novedad.image}
+                  alt={novedad.title}
+                  width={1280}
+                  height={960}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
+              </div>
+            )}
+
+            {/* IMAGEN ÚNICA VERTICAL → MOBILE */}
+            {!hasGallery && isHorizontal === false && (
+              <div className="bg-neutral-100 rounded-xl p-4 flex justify-center lg:hidden">
+                <Image
+                  src={novedad.image}
+                  alt={novedad.title}
+                  width={800}
+                  height={1200}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
+              </div>
+            )}
+          </div>
+
+          {/* ================= TEXTO ================= */}
+          <div>
+            {!hasGallery && isHorizontal === false ? (
+              <div className="lg:grid lg:grid-cols-12 gap-10">
+                <div className="lg:col-span-7">
+                  <p className="font-inter text-lg leading-relaxed text-black whitespace-pre-line mb-10">
+                    {novedad.excerpt}
+                  </p>
+
+                  {novedad.links && novedad.links.length > 0 && (
+                    <div className="mb-12">
+                      <h3 className="text-sm uppercase tracking-widest text-black mb-4">
+                        Enlaces
+                      </h3>
+
+                      <div className="flex flex-col gap-3">
+                        {novedad.links.map(link => (
+                          <a
+                            key={link.url}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 underline underline-offset-4 hover:opacity-70 transition"
+                          >
+                            {link.label}
+                            <ExternalLink size={16} />
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* IMAGEN VERTICAL → DESKTOP */}
+                <div className="hidden lg:block lg:col-span-5">
+                  <div className="bg-neutral-100 rounded-xl p-4 flex justify-center">
+                    <Image
+                      src={novedad.image}
+                      alt={novedad.title}
+                      width={800}
+                      height={1200}
+                      className="w-full h-auto object-contain"
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="max-w-3xl">
+                <p className="font-inter text-lg leading-relaxed text-black whitespace-pre-line mb-10">
+                  {novedad.excerpt}
+                </p>
+
+                {novedad.links && novedad.links.length > 0 && (
+                  <div className="mb-12">
+                    <h3 className="text-sm uppercase tracking-widest text-black mb-4">
+                      Enlaces
+                    </h3>
+
+                    <div className="flex flex-col gap-3">
+                      {novedad.links.map(link => (
+                        <a
+                          key={link.url}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 underline underline-offset-4 hover:opacity-70 transition text-blue-400"
+                        >
+                          {link.label}
+                          <ExternalLink size={16} />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
+      </article>
 
-        {/* COLUMNA DERECHA - SOLO IMAGEN (en desktop) */}
-        <div className="lg:col-span-5 order-1 lg:order-2">
-          {/* Imagen destacada - va segundo en móvil, derecha en desktop */}
-          <div className="relative w-full aspect-4/5 lg:aspect-3/4 xl:aspect-2/3 rounded-xl overflow-hidden mb-8 lg:mb-0">
-            <Image
-              src={novedad.image}
-              alt={novedad.title}
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
+      {/* ================= RELACIONADAS ================= */}
+      {related.length > 0 && (
+        <section className="container mx-auto px-6 pb-24 max-w-6xl">
+          <h2 className="text-2xl font-neue font-bold mb-8 text-black">
+            Noticias relacionadas
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {related.map(item => (
+              <a
+                key={item.slug}
+                href={`/novedades/${item.slug}`}
+                className="group bg-black block overflow-hidden"
+              >
+                <div className="relative aspect-video">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                <div className="p-5 text-white">
+                  <p className="text-xs opacity-70 mb-1">
+                    {new Date(item.date).toLocaleDateString('es-AR')}
+                  </p>
+                  <h3 className="font-neue text-lg font-semibold leading-snug">
+                    {item.title}
+                  </h3>
+                </div>
+              </a>
+            ))}
           </div>
-        </div>
-
-      </div>
-    </article>
-    {related.length > 0 && (
-  <section className="container mx-auto px-6 pb-24 max-w-6xl">
-    <h2 className="text-2xl font-neue font-bold mb-8 text-black">
-      Noticias relacionadas
-    </h2>
-
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {related.map(item => (
-        <a
-          key={item.slug}
-          href={`/novedades/${item.slug}`}
-          className="group block bg-black overflow-hidden transition hover:shadow-xl"
-        >
-          {/* Imagen */}
-          <div className="relative aspect-video overflow-hidden">
-            <Image
-              src={item.image}
-              alt={item.title}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-          </div>
-
-          {/* Contenido */}
-          <div className="p-5 flex flex-col gap-2">
-            <p className="text-xs text-neutral-400">
-              {new Date(item.date).toLocaleDateString('es-AR')}
-            </p>
-
-            <h3 className="font-neue font-semibold text-lg leading-snug text-brand-white-cdc group-hover:underline">
-              {item.title}
-            </h3>
-
-            {/* Tags (opcional, suma mucho) */}
-            <div className="flex flex-wrap gap-2 mt-2">
-              {item.tags?.slice(0, 2).map(tag => (
-                <span
-                  key={tag}
-                  className="text-[11px] px-2 py-0.5 border border-white/20 text-white/80"
-                >
-                  #{tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </a>
-      ))}
-    </div>
-  </section>
-)}
+        </section>
+      )}
     </>
   )
 }

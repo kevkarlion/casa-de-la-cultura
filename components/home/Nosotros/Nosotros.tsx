@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { MessageCircle, MapPin, Mail, Phone } from 'lucide-react'
+import { MessageCircle, MapPin, Mail, Phone } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -67,46 +67,46 @@ export default function NosotrosPage() {
     <main className="bg-white text-black">
       {/* HERO */}
       <section className="relative overflow-hidden">
-  <motion.div
-    className="container mx-auto px-0 md:px-6 py-12 max-w-6xl"
-    initial="hidden"
-    animate="visible"
-    variants={stagger}
-  >
-    <div className="grid grid-cols-1 md:grid-cols-12">
-      
-      {/* IZQUIERDA – CONTENIDO */}
-      <div className="md:col-span-8 bg-white px-6 md:px-10 pb-16">
-        <motion.p
-          variants={fadeUp}
-          className="uppercase tracking-widest text-sm text-neutral-500 mb-4"
+        <motion.div
+          className="container mx-auto px-0 md:px-6 py-12 max-w-6xl"
+          initial="hidden"
+          animate="visible"
+          variants={stagger}
         >
-          CDC - Casa de la Cultura
-        </motion.p>
+          <div className="grid grid-cols-1 md:grid-cols-12">
+            {/* IZQUIERDA – CONTENIDO */}
+            <div className="md:col-span-8 bg-white px-6 md:px-10 pb-16">
+              <motion.p
+                variants={fadeUp}
+                className="uppercase tracking-widest text-sm text-neutral-500 mb-4"
+              >
+                CDC - Casa de la Cultura
+              </motion.p>
 
-        <motion.h1
-          variants={fadeUp}
-          className="text-4xl md:text-5xl font-neue font-bold leading-tight mb-8 text-black"
-        >
-          Más de cinco décadas
-          <br />
-          construyendo cultura
-        </motion.h1>
+              <motion.h1
+                variants={fadeUp}
+                className="text-4xl md:text-5xl font-neue font-bold leading-tight mb-8 text-black"
+              >
+                Más de cinco décadas
+                <br />
+                construyendo cultura
+              </motion.h1>
 
-        <motion.p
-          variants={fadeUp}
-          className="max-w-3xl font-inter text-lg text-neutral-700 leading-relaxed"
-        >
-          Somos una Asociación Civil sin fines de lucro fundada el 7 de mayo de 1972
-          en General Roca / Fiske Menuco, Río Negro, con el objetivo de difundir las
-          industrias culturales y promover la producción artística local y regional.
-        </motion.p>
-      </div>
+              <motion.p
+                variants={fadeUp}
+                className="max-w-3xl font-inter text-lg text-neutral-700 leading-relaxed"
+              >
+                Somos una Asociación Civil sin fines de lucro fundada el 7 de
+                mayo de 1972 en General Roca / Fiske Menuco, Río Negro, con el
+                objetivo de difundir las industrias culturales y promover la
+                producción artística local y regional.
+              </motion.p>
+            </div>
 
-      {/* DERECHA – CONTACTO (NEGRO) */}
-      <motion.aside
-        variants={fadeUp}
-        className="
+            {/* DERECHA – CONTACTO (NEGRO) */}
+            <motion.aside
+              variants={fadeUp}
+              className="
           md:col-span-4
           bg-black
           text-white
@@ -115,61 +115,59 @@ export default function NosotrosPage() {
           flex flex-col
           justify-between
         "
-      >
-        <div className="space-y-8">
-          
-          {/* CONTACTO */}
-          <div>
-            <p className="uppercase tracking-widest text-xs text-neutral-400 mb-4">
-              Contacto
-            </p>
+            >
+              <div className="space-y-8">
+                {/* CONTACTO */}
+                <div>
+                  <p className="uppercase tracking-widest text-xs text-neutral-400 mb-4">
+                    Contacto
+                  </p>
 
-            <ul className="space-y-4 text-sm">
-              <li>
-                <a
-                  href="https://maps.google.com/?q=9+de+Julio+1043+General+Roca"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 hover:text-neutral-300 transition"
-                >
-                  <MapPin size={16} />
-                  9 de Julio 1043
-                </a>
-              </li>
+                  <ul className="space-y-4 text-sm">
+                    <li>
+                      <a
+                        href="https://maps.google.com/?q=9+de+Julio+1043+General+Roca"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 hover:text-neutral-300 transition"
+                      >
+                        <MapPin size={16} />9 de Julio 1043
+                      </a>
+                    </li>
 
-              <li>
-                <a
-                  href="tel:+542984432590"
-                  className="flex items-center gap-3 hover:text-neutral-300 transition"
-                >
-                  <Phone size={16} />
-                  (0298) 443-2590
-                </a>
-              </li>
+                    <li>
+                      <a
+                        href="tel:+542984432590"
+                        className="flex items-center gap-3 hover:text-neutral-300 transition"
+                      >
+                        <Phone size={16} />
+                        (0298) 443-2590
+                      </a>
+                    </li>
 
-              <li>
-                <a
-                  href="mailto:casadelacultura@gmail.com"
-                  className="flex items-center gap-3 hover:text-neutral-300 transition"
-                >
-                  <Mail size={16} />
-                  casadelacultura@gmail.com
-                </a>
-              </li>
-            </ul>
-          </div>
+                    <li>
+                      <a
+                        href="mailto:casadelacultura@gmail.com"
+                        className="flex items-center gap-3 hover:text-neutral-300 transition"
+                      >
+                        <Mail size={16} />
+                        casadelacultura@gmail.com
+                      </a>
+                    </li>
+                  </ul>
+                </div>
 
-          {/* WHATSAPP CTA */}
-          <div>
-            <p className="uppercase tracking-widest text-xs text-neutral-400 mb-3">
-              WhatsApp
-            </p>
+                {/* WHATSAPP CTA */}
+                <div>
+                  <p className="uppercase tracking-widest text-xs text-neutral-400 mb-3">
+                    WhatsApp
+                  </p>
 
-            <a
-              href="https://wa.me/542984432590"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
+                  <a
+                    href="https://wa.me/542984432590"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
                 inline-flex items-center gap-3
                 px-5 py-3
                 border border-white
@@ -177,50 +175,45 @@ export default function NosotrosPage() {
                 transition
                 text-sm font-medium
               "
-            >
-              <MessageCircle size={18} />
-              Escribinos por WhatsApp
-            </a>
+                  >
+                    <MessageCircle size={18} />
+                    Escribinos por WhatsApp
+                  </a>
+                </div>
+
+                {/* REDES */}
+                <div>
+                  <p className="uppercase tracking-widest text-xs text-neutral-400 mb-3">
+                    Redes
+                  </p>
+
+                  <div className="flex gap-3 flex-wrap">
+                    <a
+                      href="https://www.instagram.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 border border-white/40 hover:border-white transition text-sm"
+                    >
+                      Instagram
+                    </a>
+
+                    <a
+                      href="https://www.facebook.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 border border-white/40 hover:border-white transition text-sm"
+                    >
+                      Facebook
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-12 text-xs text-neutral-500">© CDC</div>
+            </motion.aside>
           </div>
-
-          {/* REDES */}
-          <div>
-            <p className="uppercase tracking-widest text-xs text-neutral-400 mb-3">
-              Redes
-            </p>
-
-            <div className="flex gap-3 flex-wrap">
-              <a
-                href="https://www.instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 border border-white/40 hover:border-white transition text-sm"
-              >
-                Instagram
-              </a>
-
-              <a
-                href="https://www.facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 border border-white/40 hover:border-white transition text-sm"
-              >
-                Facebook
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 text-xs text-neutral-500">
-          © CDC
-        </div>
-      </motion.aside>
-
-    </div>
-  </motion.div>
-</section>
-
-
+        </motion.div>
+      </section>
 
       {/* QUIÉNES SOMOS */}
       <section className="container mx-auto px-6 pt-12 pb-20 max-w-6xl">
@@ -456,6 +449,90 @@ export default function NosotrosPage() {
               <li>• Área Técnica y Voluntariado</li>
             </motion.ul>
           </div>
+          {/* CÓMO NOS ORGANIZAMOS */}
+<motion.div
+  variants={fadeUp}
+  className="mt-16 max-w-5xl text-sm text-black"
+>
+  <h3 className="text-xl font-bold mb-6 uppercase">
+    Cómo nos organizamos
+  </h3>
+
+  <p className="mb-6 font-medium">
+    Comisión Directiva 2026–2027
+  </p>
+
+  <ul className="space-y-3 mb-8">
+    <li><strong>Coordinador:</strong> Sergio Mondaca</li>
+    <li><strong>Coordinador Adjunto:</strong> Cristian Acuña</li>
+    <li>
+      <strong>Comité Supervisor:</strong> Amira Pinolli · Elena Ledesma ·
+      Carla Romero · Antonella Perugini · Alejandro Fucci · Daniela Gomez
+    </li>
+    <li>
+      <strong>Revisores de Cuentas:</strong> Mariela Mansilla · Gonzalo Lopez Gadano
+    </li>
+  </ul>
+
+  <div className="grid md:grid-cols-2 gap-6">
+    <ul className="space-y-2">
+      <li>
+        <strong>Administración y finanzas:</strong><br />
+        Mariela Mansilla, Natalia Arratia, Antonella Perugini,
+        Cristian Acuña, Sergio Mondaca
+      </li>
+
+      <li>
+        <strong>Desarrollo artístico, cultural y prácticas del buen vivir:</strong><br />
+        Antonella Perugini, Belén Fabi, Elena Ledesma
+      </li>
+
+      <li>
+        <strong>Programación:</strong><br />
+        Daniela Gomez, Sergio Mondaca, Cristian Acuña
+      </li>
+
+      <li>
+        <strong>Técnica y mantenimiento:</strong><br />
+        José Ducca, Juan Garizzo, Mariano Herrera
+      </li>
+    </ul>
+
+    <ul className="space-y-2">
+      <li>
+        <strong>Comunicación y prensa:</strong><br />
+        Carla Romero, Daniela Henriquez, Abril Medina,
+        Fernando Purafil, Lucila Gazagne
+      </li>
+
+      <li>
+        <strong>Territorio y Comunidad:</strong><br />
+        Micaela Ruiz, Daniela Gomez, Leticia Tarifa
+      </li>
+
+      <li>
+        <strong>Jefatura de Sala:</strong><br />
+        Marcelo Merlo
+      </li>
+
+      <li>
+        <strong>Secretaría Audiovisual:</strong><br />
+        Gonzalo Lopez Gadano
+      </li>
+
+      <li>
+        <strong>Maestranza:</strong><br />
+        Vanesa Ubeda, Gabriela Poblet, Ale
+      </li>
+
+      <li>
+        <strong>Programa de socixs y beneficios:</strong><br />
+        Amira Pinolli
+      </li>
+    </ul>
+  </div>
+</motion.div>
+
         </motion.div>
       </section>
 
