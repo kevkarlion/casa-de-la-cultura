@@ -17,7 +17,7 @@ export default function PageNovedades({ novedades }: PageNovedadesProps) {
     <main className="bg-white text-black min-h-screen py-12">
       {/* Header */}
       <header className="container mx-auto px-6 text-center mb-16">
-        <h1 className="text-5xl font-neue md:text-6xl font-bold mb-12 tracking-tight uppercase">
+        <h1 className="text-5xl md:text-6xl font-neue  font-bold mb-12 tracking-tight uppercase">
           Novedades
         </h1>
       </header>

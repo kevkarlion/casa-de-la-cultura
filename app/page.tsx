@@ -2,7 +2,7 @@ import Hero from "@/components/home/Hero/Hero";
 import AgendaRapida from "@/components/home/AgendaRapida/AgendaRapida";
 import PresentacionCdc from "@/components/home/PresentacionCdc/PresentacionCdc";
 import ActividadesYEspacios from "@/components/home/ActEsp/ActEsp";
-import Socio from "@/components/home/Socio/Socio";
+import SocixCDCPreview from "@/components/home/Socio/Socio";
 import Novedades from "@/components/home/Novedades/Novedades";
 import ContactoRapido from "@/components/home/ContactoRapido/ContactoRapido";
 
@@ -41,7 +41,7 @@ const Page = () => {
 
       <ActividadesYEspacios />
 
-      <Socio />
+      <SocixCDCPreview />
 
       <Novedades novedades={novedades} />
 
