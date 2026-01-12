@@ -98,7 +98,7 @@ export default function SocixCDCPage() {
               whileHover={{ y: -6 }}
               className="
                 group
-                rounded-xl
+                
                 border border-neutral-200
                 bg-black
                 p-6
