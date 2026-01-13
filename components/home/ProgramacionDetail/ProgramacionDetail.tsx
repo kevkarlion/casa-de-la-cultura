@@ -4,8 +4,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { useState } from "react";
 import { getEventoBySlug, getRelatedEventos } from "@/utils/eventsComplet.mock";
-import { Instagram, Facebook, Share2 } from "lucide-react";
 import Breadcrumbs from "@/components/shared/Breadcrumb/Breadcrumbs";
+import { Ticket } from "lucide-react";
 
 interface EventosDetailProps {
   slug: string;
@@ -14,7 +14,7 @@ interface EventosDetailProps {
 // --- UTIL: parse "YYYY-MM-DD" como fecha LOCAL ---
 function parseLocalDate(dateStr: string) {
   const [year, month, day] = dateStr.split("-").map(Number);
-  return new Date(year, month - 1, day); // month-1 porque en JS los meses van de 0 a 11
+  return new Date(year, month - 1, day);
 }
 
 export default function ProgramacionDetail({ slug }: EventosDetailProps) {
@@ -60,6 +60,19 @@ export default function ProgramacionDetail({ slug }: EventosDetailProps) {
               </span>
             ))}
           </div>
+
+          {/* BOTÓN TICKETERA */}
+          {evento.ticketeraUrl && (
+            <a
+              href={evento.ticketeraUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-6 px-6 py-3 bg-primary hover:bg-[#cc4e1d] text-brand-white-cdc font-semibold  transition-colors shadow-lg items-center gap-2 justify-center"
+            >
+              <Ticket size={20} color="var(--brand-white-cdc)" />
+              Compra tu entrada por Ticketera
+            </a>
+          )}
         </header>
 
         {/* DETECTOR DE ORIENTACIÓN */}

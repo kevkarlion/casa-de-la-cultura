@@ -8,14 +8,15 @@ export interface Event {
   image: string
   images?: EventImage[]
   date: string // mantenemos para compatibilidad
-  startDate?: string // nueva
-  endDate?: string   // nueva
+  startDate?: string
+  endDate?: string
   time?: string
   title: string
   description: string
   slug: string
   category: "eventos"
   tags: string[]
+  ticketeraUrl?: string // NUEVO: link de compra de ticket
 }
 
 export const eventosCompletMock: Event[] = [
@@ -142,6 +143,7 @@ Jornada cultural y musical en homenaje a Spinetta. Con artistas invitados: Claud
     slug: "las-habladurias-spinetta-viernes-23",
     category: "eventos",
     tags: ["Música", "Homenaje"],
+    ticketeraUrl: "https://survivo.com.ar/evento/l-a-s-habladurias-homenaje-a-spinetta/",
   },
   {
     id: 9,
@@ -172,6 +174,7 @@ La compañía Circo del Valle vuelve con un show increíble para toda la familia
     slug: "circo-del-valle-sabado-31",
     category: "eventos",
     tags: ["Circo", "Familia"],
+    ticketeraUrl: "https://survivo.com.ar/evento/la-magia-de-un-dia-cualquiera/",
   },
 ]
 

@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { Ticket } from 'lucide-react'
 
 interface Event {
   id: number | string
@@ -12,6 +13,7 @@ interface Event {
   image: string
   description?: string
   slug: string
+  ticketeraUrl?: string // <- nuevo, si tiene link de ticketera
 
   category: 'eventos'
   tags: string[]
@@ -32,8 +34,8 @@ export default function ProgramacionPage({ events }: Props) {
   const otherEvents = events.slice(1)
 
   return (
-    <main className="bg-white text-black min-h-screen py-12 px-4 lg:px-20">
-      <h1 className="text-5xl font-neue md:text-6xl font-bold mb-12 text-center tracking-tight uppercase">
+    <main className="bg-white text-foreground min-h-screen py-12 px-4 lg:px-20">
+      <h1 className="text-5xl text-black font-neue md:text-6xl font-bold mb-12 text-center tracking-tight uppercase">
         Programación
       </h1>
 
@@ -65,25 +67,40 @@ export default function ProgramacionPage({ events }: Props) {
             {heroEvent.tags.map(tag => (
               <span
                 key={tag}
-                className="text-xs bg-black text-brand-white-cdc px-2 py-0.5 "
+                className="text-xs bg-black text-brand-white-cdc px-2 py-0.5 rounded"
               >
                 {tag}
               </span>
             ))}
           </div>
 
-          <Link
-            href={`/programacion/${heroEvent.slug}`}
-            className="mt-4 inline-block px-5 py-2 bg-primary text-white font-semibold  hover:bg-primary-dark transition"
-          >
-            Ver más
-          </Link>
+          {/* BOTONES */}
+          <div className="flex flex-wrap gap-2 mt-4">
+            <Link
+              href={`/programacion/${heroEvent.slug}`}
+              className="inline-block px-5 py-2 bg-primary text-brand-white-cdc font-semibold rounded-lg hover:bg-[#cc4e1d] transition-colors"
+            >
+              Ver más
+            </Link>
+
+            {heroEvent.ticketeraUrl && (
+              <a
+                href={heroEvent.ticketeraUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2 bg-primary text-brand-white-cdc font-semibold rounded-lg hover:bg-[#cc4e1d] transition-colors shadow-lg"
+              >
+                <Ticket size={18} color="var(--brand-white-cdc)" />
+                Compra tu entrada
+              </a>
+            )}
+          </div>
         </div>
       </section>
 
       {/* Grid de eventos */}
       <section className="mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+        <h2 className="text-3xl text-black md:text-4xl font-bold mb-8 text-center">
           Próximos Eventos
         </h2>
 
@@ -130,12 +147,27 @@ export default function ProgramacionPage({ events }: Props) {
                   ))}
                 </div>
 
-                <Link
-                  href={`/programacion/${event.slug}`}
-                  className="mt-2 inline-block text-xs font-bold bg-primary px-3 py-1 hover:bg-primary-dark transition w-max"
-                >
-                  Ver más
-                </Link>
+                {/* BOTONES */}
+                <div className="flex flex-wrap gap-2 mt-2">
+                  <Link
+                    href={`/programacion/${event.slug}`}
+                    className="inline-block text-xs font-bold bg-primary px-3 py-1 hover:bg-[#cc4e1d] transition-colors rounded"
+                  >
+                    Ver más
+                  </Link>
+
+                  {event.ticketeraUrl && (
+                    <a
+                      href={event.ticketeraUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-bold bg-primary px-3 py-1 hover:bg-[#cc4e1d] transition-colors rounded"
+                    >
+                      <Ticket size={14} color="var(--brand-white-cdc)" />
+                      Entradas
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
