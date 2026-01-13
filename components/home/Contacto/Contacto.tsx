@@ -100,7 +100,7 @@ export default function ContactoPage() {
                 </li>
                 <li>
                   <a
-                    href="https://wa.me/54954298590848"
+                    href="https://wa.me/549298590848"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-neutral-700 hover:text-primary transition-colors"
