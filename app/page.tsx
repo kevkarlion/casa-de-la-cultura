@@ -9,7 +9,7 @@ import ContactoRapido from "@/components/home/ContactoRapido/ContactoRapido";
 
 import EventCarousel from "@/components/shared/eventos/EventosDestacados";
 
-import { agendaRapidaMock } from "@/utils/agenda.mock";
+
 import { eventosCompletMock } from "@/utils/eventsComplet.mock";
 import { novedades } from "@/utils/novedades.mock";
 

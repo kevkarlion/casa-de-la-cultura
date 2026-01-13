@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Ticket } from 'lucide-react'
 import EventCard from '../cards/EventCard'
 import { DestacadoItem } from '@/types/DestacadoItem'
 
@@ -20,14 +20,12 @@ export default function EventCarousel({ items }: Props) {
     const container = containerRef.current
     const card = cardsRef.current[i]
     
-    // Obtener el ancho de la tarjeta incluyendo márgenes/padding
     const cardWidth = card.offsetWidth
     const cardStyle = window.getComputedStyle(card)
     const cardMarginLeft = parseFloat(cardStyle.marginLeft || '0')
     const cardMarginRight = parseFloat(cardStyle.marginRight || '0')
     const totalCardWidth = cardWidth + cardMarginLeft + cardMarginRight
     
-    // Calcular la posición de desplazamiento
     const scrollPosition = i * totalCardWidth
     
     container.scrollTo({
@@ -82,8 +80,7 @@ export default function EventCarousel({ items }: Props) {
               ref={(el) => {
                 if (el) cardsRef.current[i] = el
               }}
-              // Ancho fijo en todos los breakpoints pero responsive
-              className="w-64 sm:w-72 md:w-80 lg:w-96 shrink-0 snap-start"
+              className="w-64 sm:w-72 md:w-80 lg:w-96 shrink-0 snap-start relative"
             >
               <EventCard
                 image={item.image}
@@ -92,12 +89,25 @@ export default function EventCarousel({ items }: Props) {
                 description={item.summary}
                 href={item.slug}
                 classNames={{
-                  imageWrapper: "aspect-square", // Esto hace que sea cuadrado perfecto
+                  imageWrapper: "aspect-square",
                   content: "p-3",
                   title: "text-lg sm:text-xl",
                   description: "text-sm line-clamp-2",
                 }}
               />
+
+              {/* CARTEL DE TICKETERA */}
+              {item.ticketeraUrl && (
+                <a
+                  href={item.ticketeraUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-3 right-3 inline-flex items-center gap-1 text-xs font-bold bg-primary text-brand-white-cdc px-2 py-1 rounded shadow-lg hover:bg-[#cc4e1d] transition-colors"
+                >
+                  <Ticket size={14} color="var(--brand-white-cdc)" />
+                  Entradas
+                </a>
+              )}
             </div>
           ))}
         </div>

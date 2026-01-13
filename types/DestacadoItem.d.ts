@@ -6,5 +6,6 @@ export interface DestacadoItem {
   date: string
   slug: string
   tags: string[]
-  type: "evento" | "novedad"
+  type: "evento" | "novedad",
+   ticketeraUrl?: string // NUEVO: link de compra de ticket
 }
