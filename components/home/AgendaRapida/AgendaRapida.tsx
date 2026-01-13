@@ -6,9 +6,9 @@ import Link from "next/link";
 
 interface AgendaItem {
   id: string | number;
-  date: string;        // para compatibilidad
-  startDate?: string;  // nueva
-  endDate?: string;    // nueva
+  date: string;
+  startDate?: string;
+  endDate?: string;
   title: string;
   time?: string;
   slug: string;
@@ -18,11 +18,10 @@ interface AgendaRapidaProps {
   items: AgendaItem[];
 }
 
-const WEEK_DAYS = ["DOM", "LUN", "MAR", "MIÉ", "JUE", "VIE", "SÁB"];
+const WEEK_DAYS = ["LUN", "MAR", "MIÉ", "JUE", "VIE", "SÁB", "DOM"];
 const TOOLTIP_WIDTH = 320;
 const GAP = 10;
 
-// --- UTIL: parse "YYYY-MM-DD" como fecha LOCAL ---
 function parseLocalDate(dateStr: string) {
   const [year, month, day] = dateStr.split("-").map(Number);
   return new Date(year, month - 1, day);
@@ -44,7 +43,6 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
 
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
-  /* --------- CERRAR AL SCROLL --------- */
   useEffect(() => {
     function handleScroll() {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -56,7 +54,6 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  /* ----------------------------------- */
 
   const monthLabel = currentDate.toLocaleDateString("es-AR", {
     month: "long",
@@ -69,49 +66,61 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
     0
   ).getDate();
 
- const eventsByDay = useMemo(() => {
-  const map = new Map<number, AgendaItem[]>();
-  const year = currentDate.getFullYear();
-  const month = currentDate.getMonth();
+  const eventsByDay = useMemo(() => {
+    const map = new Map<number, AgendaItem[]>();
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
 
-  items.forEach((item) => {
-    const start = item.startDate ? parseLocalDate(item.startDate) : parseLocalDate(item.date);
-    const end = item.endDate ? parseLocalDate(item.endDate) : parseLocalDate(item.date);
+    items.forEach((item) => {
+      const start = item.startDate ? parseLocalDate(item.startDate) : parseLocalDate(item.date);
+      const end = item.endDate ? parseLocalDate(item.endDate) : parseLocalDate(item.date);
 
-    for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
-      if (d.getFullYear() === year && d.getMonth() === month) {
-        const day = d.getDate();
-        if (!map.has(day)) map.set(day, []);
-        map.get(day)!.push(item);
+      for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+        if (d.getFullYear() === year && d.getMonth() === month) {
+          const day = d.getDate();
+          if (!map.has(day)) map.set(day, []);
+          map.get(day)!.push(item);
+        }
       }
+    });
+
+    return map;
+  }, [items, currentDate]);
+
+  // --- GENERAR DÍAS DEL CALENDARIO ---
+  const calendarDays: (number | null)[] = [];
+
+  if (isMobile) {
+    // Mobile: llenar espacios vacíos antes del primer día para que siempre empiece en lunes
+    const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+    const firstWeekDayIndex = (firstDayOfMonth.getDay() + 6) % 7; // lunes = 0
+
+    for (let i = 0; i < firstWeekDayIndex; i++) {
+      calendarDays.push(null);
     }
-  });
 
-  return map;
-}, [items, currentDate]);
-
+    for (let day = 1; day <= daysInMonth; day++) {
+      calendarDays.push(day);
+    }
+  } else {
+    // Desktop: solo del 1 al último del mes
+    for (let day = 1; day <= daysInMonth; day++) {
+      calendarDays.push(day);
+    }
+  }
 
   function openTooltip(day: number, el: HTMLElement) {
     const rect = el.getBoundingClientRect();
-
     if (isMobile) {
-      setTooltipPos({
-        x: window.innerWidth / 2,
-        y: rect.bottom + GAP,
-      });
+      setTooltipPos({ x: window.innerWidth / 2, y: rect.bottom + GAP });
       setOpenDay(day);
       return;
     }
 
     let x = rect.left;
     const y = rect.bottom + GAP;
-
-    if (x + TOOLTIP_WIDTH > window.innerWidth) {
-      x = window.innerWidth - TOOLTIP_WIDTH - GAP;
-    }
-
+    if (x + TOOLTIP_WIDTH > window.innerWidth) x = window.innerWidth - TOOLTIP_WIDTH - GAP;
     x = Math.max(GAP, x);
-
     setTooltipPos({ x, y });
     setOpenDay(day);
   }
@@ -166,7 +175,6 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
             </div>
           </div>
 
-          {/* BOTÓN VER AGENDA COMPLETA */}
           <Link
             href="/agenda"
             className="group flex items-center gap-2 self-start sm:self-center px-4 py-2 bg-black text-brand-white-cdc border border-neutral-700 l hover:border-primary hover:text-primary transition-all duration-300"
@@ -187,19 +195,13 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
 
         {/* GRID */}
         <div className="grid grid-cols-7 gap-0 sm:grid-cols-[repeat(auto-fit,minmax(48px,1fr))] sm:gap-2 border border-neutral-800 sm:border-0">
-          {Array.from({ length: daysInMonth }, (_, i) => {
-            const day = i + 1;
-            const date = new Date(
-              currentDate.getFullYear(),
-              currentDate.getMonth(),
-              day
-            );
-            const weekDay = WEEK_DAYS[date.getDay()];
-            const events = eventsByDay.get(day);
+          {calendarDays.map((day, i) => {
+            const events = day ? eventsByDay.get(day) : undefined;
+            const weekDay = WEEK_DAYS[i % 7];
 
             return (
               <button
-                key={day}
+                key={i}
                 type="button"
                 className={`
                   relative flex aspect-square sm:aspect-auto
@@ -209,14 +211,14 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
                   p-1 sm:px-1.5 sm:py-2
                   transition
                   ${events
-                    ? "cursor-pointer bg-gray-300	 hover:border-amber-500"
+                    ? "cursor-pointer bg-gray-300 hover:border-amber-500"
                     : "bg-white text-neutral-500"
                   }
                 `}
                 onMouseEnter={(e) => {
                   if (!events || isMobile) return;
                   if (timeoutRef.current) clearTimeout(timeoutRef.current);
-                  openTooltip(day, e.currentTarget);
+                  openTooltip(day!, e.currentTarget);
                 }}
                 onMouseLeave={() => {
                   if (!isMobile) scheduleCloseTooltip();
@@ -229,21 +231,26 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
                       setTooltipPos(null);
                       return null;
                     }
-                    openTooltip(day, el);
-                    return day;
+                    openTooltip(day!, el);
+                    return day!;
                   });
                 }}
+                disabled={!day}
               >
                 {events && (
                   <span className="absolute right-1 top-1 h-1.5 w-1.5 rounded-full bg-amber-500" />
                 )}
 
-                <span className="text-sm sm:text-base font-semibold text-black">
-                  {day}
-                </span>
-                <span className="mt-0.5 text-[10px] sm:text-[11px] tracking-widest text-black">
-                  {weekDay}
-                </span>
+                {day && (
+                  <>
+                    <span className="text-sm sm:text-base font-semibold text-black">
+                      {day}
+                    </span>
+                    <span className="mt-0.5 text-[10px] sm:text-[11px] tracking-widest text-black">
+                      {weekDay}
+                    </span>
+                  </>
+                )}
               </button>
             );
           })}
@@ -285,25 +292,23 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
         >
           <div className="w-[90vw] max-w-sm md:w-[320px] rounded-lg border border-neutral-700 bg-brand-white-cdc p-4 shadow-2xl">
             <ul className="space-y-3">
-              {eventsByDay.get(openDay)?.map((event) => (
-  <li key={event.id}>
-    <Link
-      // PASAMOS el día clickeado como query "day"
-      href={`/programacion/${event.slug}?day=${openDay}`}
-      className="block rounded-md p-2 hover:bg-gray-300"
-    >
-      <p className="text-sm font-medium text-black leading-snug">
-        {event.title}
-      </p>
-      {event.time && (
-        <p className="mt-1 text-xs text-black">
-          {event.time}
-        </p>
-      )}
-    </Link>
-  </li>
-))}
-
+              {openDay && eventsByDay.get(openDay)?.map((event) => (
+                <li key={event.id}>
+                  <Link
+                    href={`/programacion/${event.slug}?day=${openDay}`}
+                    className="block rounded-md p-2 hover:bg-gray-300"
+                  >
+                    <p className="text-sm font-medium text-black leading-snug">
+                      {event.title}
+                    </p>
+                    {event.time && (
+                      <p className="mt-1 text-xs text-black">
+                        {event.time}
+                      </p>
+                    )}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
