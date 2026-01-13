@@ -138,7 +138,7 @@ export default function NosotrosPage() {
 
                     <li>
                       <a
-                        href="https://wa.me/549298590848"
+                        href="https://wa.me/5492984590848"
                         className="flex items-center gap-3 hover:text-neutral-300 transition"
                         target="_blank"
                       >
@@ -167,7 +167,7 @@ export default function NosotrosPage() {
                   </p>
 
                   <a
-                    href="https://wa.me/54298590848"
+                    href="https://wa.me/5492984590848"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
