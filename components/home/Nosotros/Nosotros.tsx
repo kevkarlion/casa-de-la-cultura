@@ -138,7 +138,7 @@ export default function NosotrosPage() {
 
                     <li>
                       <a
-                        href="tel:+542984432590"
+                        href="https://wa.me/54954298590848"
                         className="flex items-center gap-3 hover:text-neutral-300 transition"
                         target="_blank"
                       >
