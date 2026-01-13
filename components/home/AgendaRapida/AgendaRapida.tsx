@@ -29,20 +29,24 @@ function parseLocalDate(dateStr: string) {
 
 export default function AgendaRapida({ items }: AgendaRapidaProps) {
   const today = new Date();
-
-  const [currentDate, setCurrentDate] = useState(
-    new Date(today.getFullYear(), today.getMonth(), 1)
-  );
+  const [currentDate, setCurrentDate] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
   const [openDay, setOpenDay] = useState<number | null>(null);
-  const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(
-    null
-  );
-
+  const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const hoverTooltipRef = useRef(false);
 
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  // --- IS MOBILE SOLO EN CLIENTE ---
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth < 768);
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
+  // --- SCROLL ---
   useEffect(() => {
     function handleScroll() {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -50,21 +54,12 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
       setTooltipPos(null);
       hoverTooltipRef.current = false;
     }
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const monthLabel = currentDate.toLocaleDateString("es-AR", {
-    month: "long",
-    year: "numeric",
-  });
-
-  const daysInMonth = new Date(
-    currentDate.getFullYear(),
-    currentDate.getMonth() + 1,
-    0
-  ).getDate();
+  const monthLabel = currentDate.toLocaleDateString("es-AR", { month: "long", year: "numeric" });
+  const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
 
   const eventsByDay = useMemo(() => {
     const map = new Map<number, AgendaItem[]>();
@@ -83,30 +78,18 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
         }
       }
     });
-
     return map;
   }, [items, currentDate]);
 
   // --- GENERAR DÍAS DEL CALENDARIO ---
   const calendarDays: (number | null)[] = [];
-
   if (isMobile) {
-    // Mobile: llenar espacios vacíos antes del primer día para que siempre empiece en lunes
     const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
     const firstWeekDayIndex = (firstDayOfMonth.getDay() + 6) % 7; // lunes = 0
-
-    for (let i = 0; i < firstWeekDayIndex; i++) {
-      calendarDays.push(null);
-    }
-
-    for (let day = 1; day <= daysInMonth; day++) {
-      calendarDays.push(day);
-    }
+    for (let i = 0; i < firstWeekDayIndex; i++) calendarDays.push(null);
+    for (let day = 1; day <= daysInMonth; day++) calendarDays.push(day);
   } else {
-    // Desktop: solo del 1 al último del mes
-    for (let day = 1; day <= daysInMonth; day++) {
-      calendarDays.push(day);
-    }
+    for (let day = 1; day <= daysInMonth; day++) calendarDays.push(day);
   }
 
   function openTooltip(day: number, el: HTMLElement) {
@@ -116,7 +99,6 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
       setOpenDay(day);
       return;
     }
-
     let x = rect.left;
     const y = rect.bottom + GAP;
     if (x + TOOLTIP_WIDTH > window.innerWidth) x = window.innerWidth - TOOLTIP_WIDTH - GAP;
@@ -150,11 +132,7 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
 
             <div className="flex gap-2 ml-4">
               <button
-                onClick={() =>
-                  setCurrentDate(
-                    (d) => new Date(d.getFullYear(), d.getMonth() - 1, 1)
-                  )
-                }
+                onClick={() => setCurrentDate((d) => new Date(d.getFullYear(), d.getMonth() - 1, 1))}
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-black text-neutral-200 transition hover:border-primary hover:text-primary"
                 aria-label="Mes anterior"
               >
@@ -162,11 +140,7 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
               </button>
 
               <button
-                onClick={() =>
-                  setCurrentDate(
-                    (d) => new Date(d.getFullYear(), d.getMonth() + 1, 1)
-                  )
-                }
+                onClick={() => setCurrentDate((d) => new Date(d.getFullYear(), d.getMonth() + 1, 1))}
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 bg-black text-neutral-200 transition hover:border-primary hover:text-primary"
                 aria-label="Mes siguiente"
               >
@@ -179,25 +153,24 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
             href="/agenda"
             className="group flex items-center gap-2 self-start sm:self-center px-4 py-2 bg-black text-brand-white-cdc border border-neutral-700 l hover:border-primary hover:text-primary transition-all duration-300"
           >
-            <span className="text-sm font-medium tracking-wide">
-              Ver agenda completa
-            </span>
-            <ArrowRight 
-              size={16} 
-              className="group-hover:translate-x-1 transition-transform duration-300" 
-            />
+            <span className="text-sm font-medium tracking-wide">Ver agenda completa</span>
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>
 
-        <p className="font-neue mb-4 text-sm uppercase tracking-widest text-black">
-          {monthLabel}
-        </p>
+        <p className="font-neue mb-4 text-sm uppercase tracking-widest text-black">{monthLabel}</p>
 
         {/* GRID */}
         <div className="grid grid-cols-7 gap-0 sm:grid-cols-[repeat(auto-fit,minmax(48px,1fr))] sm:gap-2 border border-neutral-800 sm:border-0">
           {calendarDays.map((day, i) => {
             const events = day ? eventsByDay.get(day) : undefined;
-            const weekDay = WEEK_DAYS[i % 7];
+
+            // --- CORRECTO: calcular weekDay según la fecha real ---
+            let weekDay = "";
+            if (day) {
+              const dateObj = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+              weekDay = WEEK_DAYS[(dateObj.getDay() + 6) % 7];
+            }
 
             return (
               <button
@@ -210,10 +183,7 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
                   rounded-none sm:rounded-md
                   p-1 sm:px-1.5 sm:py-2
                   transition
-                  ${events
-                    ? "cursor-pointer bg-gray-300 hover:border-amber-500"
-                    : "bg-white text-neutral-500"
-                  }
+                  ${events ? "cursor-pointer bg-gray-300 hover:border-amber-500" : "bg-white text-neutral-500"}
                 `}
                 onMouseEnter={(e) => {
                   if (!events || isMobile) return;
@@ -237,18 +207,11 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
                 }}
                 disabled={!day}
               >
-                {events && (
-                  <span className="absolute right-1 top-1 h-1.5 w-1.5 rounded-full bg-amber-500" />
-                )}
-
+                {events && <span className="absolute right-1 top-1 h-1.5 w-1.5 rounded-full bg-amber-500" />}
                 {day && (
                   <>
-                    <span className="text-sm sm:text-base font-semibold text-black">
-                      {day}
-                    </span>
-                    <span className="mt-0.5 text-[10px] sm:text-[11px] tracking-widest text-black">
-                      {weekDay}
-                    </span>
+                    <span className="text-sm sm:text-base font-semibold text-black">{day}</span>
+                    <span className="mt-0.5 text-[10px] sm:text-[11px] tracking-widest text-black">{weekDay}</span>
                   </>
                 )}
               </button>
@@ -292,23 +255,18 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
         >
           <div className="w-[90vw] max-w-sm md:w-[320px] rounded-lg border border-neutral-700 bg-brand-white-cdc p-4 shadow-2xl">
             <ul className="space-y-3">
-              {openDay && eventsByDay.get(openDay)?.map((event) => (
-                <li key={event.id}>
-                  <Link
-                    href={`/programacion/${event.slug}?day=${openDay}`}
-                    className="block rounded-md p-2 hover:bg-gray-300"
-                  >
-                    <p className="text-sm font-medium text-black leading-snug">
-                      {event.title}
-                    </p>
-                    {event.time && (
-                      <p className="mt-1 text-xs text-black">
-                        {event.time}
-                      </p>
-                    )}
-                  </Link>
-                </li>
-              ))}
+              {openDay &&
+                eventsByDay.get(openDay)?.map((event) => (
+                  <li key={event.id}>
+                    <Link
+                      href={`/programacion/${event.slug}?day=${openDay}`}
+                      className="block rounded-md p-2 hover:bg-gray-300"
+                    >
+                      <p className="text-sm font-medium text-black leading-snug">{event.title}</p>
+                      {event.time && <p className="mt-1 text-xs text-black">{event.time}</p>}
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </div>
         </div>
