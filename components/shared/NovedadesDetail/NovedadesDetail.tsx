@@ -217,13 +217,28 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
                   />
                 </div>
 
-                <div className="p-5 text-white">
-                  <p className="text-xs opacity-70 mb-1">
+                <div className="p-5 text-white flex flex-col gap-3">
+                  <p className="text-xs opacity-70">
                     {new Date(item.date).toLocaleDateString("es-AR")}
                   </p>
+
                   <h3 className="font-neue text-lg font-semibold leading-snug">
                     {item.title}
                   </h3>
+
+                  {/* TAGS */}
+                  {item.tags && (
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[10px] uppercase tracking-wide px-2 py-1 bg-white/10 border border-white/20"
+                        >
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </a>
             ))}

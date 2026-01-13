@@ -17,7 +17,9 @@ export default function ProgramacionDetail({ slug }: EventosDetailProps) {
 
   if (!evento) notFound();
 
-  const related = evento.tags ? getRelatedEventos(evento.slug, evento.tags) : [];
+  const related = evento.tags
+    ? getRelatedEventos(evento.slug, evento.tags)
+    : [];
 
   const hasGallery = Array.isArray(evento.images) && evento.images.length > 0;
 
@@ -44,7 +46,10 @@ export default function ProgramacionDetail({ slug }: EventosDetailProps) {
 
           <div className="flex flex-wrap gap-2">
             {evento.tags?.map((tag) => (
-              <span key={tag} className="text-xs px-3 py-1 bg-black text-brand-white-cdc">
+              <span
+                key={tag}
+                className="text-xs px-3 py-1 bg-black text-brand-white-cdc"
+              >
                 #{tag}
               </span>
             ))}
@@ -60,7 +65,9 @@ export default function ProgramacionDetail({ slug }: EventosDetailProps) {
             height={10}
             className="hidden"
             priority
-            onLoadingComplete={(img) => setIsHorizontal(img.naturalWidth > img.naturalHeight)}
+            onLoadingComplete={(img) =>
+              setIsHorizontal(img.naturalWidth > img.naturalHeight)
+            }
           />
         )}
 
@@ -167,11 +174,28 @@ export default function ProgramacionDetail({ slug }: EventosDetailProps) {
                   />
                 </div>
 
-                <div className="p-5 text-white">
-                  <p className="text-xs opacity-70 mb-1">
+                <div className="p-5 text-white flex flex-col gap-3">
+                  <p className="text-xs opacity-70">
                     {new Date(item.date).toLocaleDateString("es-AR")}
                   </p>
-                  <h3 className="font-neue text-lg font-semibold leading-snug">{item.title}</h3>
+
+                  <h3 className="font-neue text-lg font-semibold leading-snug">
+                    {item.title}
+                  </h3>
+
+                  {/* TAGS */}
+                  {item.tags && (
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[10px] uppercase tracking-wide px-2 py-1 bg-white/10 border border-white/20"
+                        >
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </a>
             ))}
