@@ -1,122 +1,187 @@
-// Mock de eventos destacados – Casa de la Cultura
-// Simula datos que luego pueden venir de un CMS o API
+export interface EventImage {
+  src: string
+  alt?: string
+}
 
 export interface Event {
-  id: number;
-  image: string;
-  date: string; // ISO
-  time?: string; // Hora del evento (opcional)
-  title: string;
-  description: string;
-  slug: string;
-
-  // Arquitectura de información
-  category: "eventos";
-  tags: string[];
+  id: number
+  image: string
+  images?: EventImage[]
+  date: string // mantenemos para compatibilidad
+  startDate?: string // nueva
+  endDate?: string   // nueva
+  time?: string
+  title: string
+  description: string
+  slug: string
+  category: "eventos"
+  tags: string[]
 }
 
 export const eventosCompletMock: Event[] = [
   {
     id: 1,
-    image: "/imagenes/expo.png",
-    date: "2026-01-12",
-    time: "19:00",
-    title: "Muestra de Arte Contemporáneo",
+    image: "/agenda/colonia.webp",
+    date: "2026-01-13",
+    startDate: "2026-01-13",
+    endDate: "2026-01-17",
+    time: "09:00 - 12:00",
+    title: "Colonia Artística de verano para infancias",
     description: `
-La Casa de la Cultura presenta una nueva muestra de arte contemporáneo que reúne a artistas locales y regionales en una propuesta colectiva.
+Las infancias de 4 a 11 años podrán disfrutar nuevamente de una experiencia única llena de arte, ¡danza, música, expresión corporal y más! 
 
-Las obras expuestas dialogan con la identidad cultural, el territorio y los procesos sociales actuales, abordando distintas miradas estéticas y conceptuales. Pintura, escultura, fotografía e instalaciones conviven en un recorrido pensado para invitar a la reflexión y al intercambio.
-
-La muestra propone un espacio abierto al público donde el arte se convierte en una herramienta para pensar el presente, reconocer las producciones locales y fortalecer el vínculo entre artistas y comunidad.
-`,
-    slug: "muestra-arte-contemporaneo",
+Una oportunidad perfecta para volver a explorar su creatividad y conectarse con su cuerpo e imaginación en un espacio seguro y divertido. | Inscripciones en boletería
+    `,
+    slug: "colonia-artistica-verano-lunes-12",
     category: "eventos",
-    tags: ["Artes visuales", "Exposición", "Muestra"],
+    tags: ["Infancias", "Arte", "Taller"],
   },
   {
     id: 2,
-    image: "/imagenes/teatro.webp",
-    date: "2026-01-18",
-    time: "21:00",
-    title: "Teatro Independiente",
+    image: "/agenda/cine-club-2.webp",
+    date: "2026-01-20",
+    startDate: "2026-01-20",
+    endDate: "2026-01-20",
+    time: "21:30",
+    title: "Cineclub TYÖ: Los reyes",
     description: `
-Una propuesta teatral íntima y cercana que invita al público a sumergirse en historias cotidianas atravesadas por el humor, el drama y la emoción.
-
-La obra pone en escena relatos del barrio y situaciones reconocibles, construidas desde una mirada sensible y honesta. A través de actuaciones potentes y una puesta minimalista, el espectáculo busca generar identificación y diálogo con los espectadores.
-
-El teatro independiente se presenta aquí como un espacio de encuentro, expresión y reflexión colectiva.
-`,
-    slug: "teatro-independiente",
+Arranca el cine bajo las estrellas, el 7mo ciclo de verano de Cineclub Työ.
+Chola y Fútbol son una pareja de perros callejeros que viven en un skatepark en Santiago de Chile, rodeados de jóvenes adolescentes en conflicto con un mundo adulto.
+| Entradas en boletería
+    `,
+    slug: "cineclub-tyo-los-reyes-lunes-12",
     category: "eventos",
-    tags: ["Teatro", "Función"],
+    tags: ["Cine", "Cineclub"],
   },
   {
     id: 3,
-    image: "/imagenes/noche-musica.webp",
-    date: "2026-01-25",
-    time: "20:30",
-    title: "Noche de Música en Vivo",
+    image: "/agenda/mochi.webp",
+    date: "2026-01-17",
+    startDate: "2026-01-17",
+    endDate: "2026-01-17",
+    time: "21:30",
+    title: "Mocchi + Noelia Sinkunas – Música",
     description: `
-Una noche dedicada a la música en vivo donde bandas emergentes y proyectos musicales locales se encuentran para compartir escenario.
-
-La propuesta combina distintos estilos y sonidos, generando una experiencia dinámica y abierta a la exploración musical. Cada presentación busca destacar la identidad artística de los proyectos participantes y fomentar la circulación de nuevas expresiones sonoras.
-
-Un evento pensado para disfrutar de la música, descubrir nuevas bandas y fortalecer la escena cultural local.
-`,
-    slug: "noche-musica-en-vivo",
+Desde Uruguay, Mocchi, un artista trans y una de las voces más personales de la canción rioplatense, nos trae un concierto íntimo junto a la pianista Noelia Sinkunas con canciones de todos sus discos. | Entradas en boletería y ticketera
+    `,
+    slug: "mocchi-noelia-sinkunas-viernes-16",
     category: "eventos",
     tags: ["Música", "Concierto"],
   },
   {
     id: 4,
-    image: "/imagenes/ceramica.png",
-    date: "2026-01-02",
-    time: "16:00",
-    title: "Taller Abierto de Cerámica",
+    image: "/agenda/duo.webp",
+    date: "2026-01-19",
+    startDate: "2026-01-19",
+    endDate: "2026-01-19",
+    time: "20:30",
+    title: "El vibráfono en el Tango Argentino – Dúo Verdún – Rivero",
     description: `
-La Casa de la Cultura abre sus puertas para un taller participativo de cerámica, destinado a personas con o sin experiencia previa.
-
-Durante el encuentro se explorarán técnicas básicas de modelado y procesos creativos, poniendo en valor el trabajo manual y la experimentación con materiales. El taller propone un espacio de aprendizaje colectivo, intercambio y expresión personal.
-
-Una actividad pensada para acercarse al arte desde la práctica, el hacer y el disfrute del proceso creativo.
-`,
-    slug: "taller-abierto-ceramica",
+El dúo Verdún - Rivero presenta un recorrido por la historia del tango a través del vibráfono, desde sus primeras apariciones hasta su consolidación como instrumento solista. | Colaboración consciente
+    `,
+    slug: "vibrafono-tango-verdun-rivero-domingo-18",
     category: "eventos",
-    tags: ["Artes visuales", "Taller", "Actividad participativa"],
+    tags: ["Música", "Tango"],
   },
   {
     id: 5,
-    image: "/imagenes/cine.png",
-    date: "2026-01-09",
-    time: "19:30",
-    title: "Cine Debate",
+    image: "/agenda/colonia.webp",
+    date: "2026-01-20",
+    startDate: "2026-01-20",
+    endDate: "2026-01-24",
+    time: "09:00 - 12:00",
+    title: "Colonia Artística de verano para infancias",
     description: `
-Proyección de una película seleccionada especialmente por su valor artístico y social, seguida de un espacio de intercambio y debate abierto.
-
-La actividad invita a reflexionar colectivamente sobre los temas abordados en el film, compartir miradas y generar diálogo entre los asistentes. El cine se propone como una herramienta cultural para pensar la realidad y promover el pensamiento crítico.
-
-Un encuentro para disfrutar del cine y la conversación en un ambiente participativo y accesible.
-`,
-    slug: "cine-debate",
+Repetimos la experiencia artística para niños de 4 a 11 años con danza, música, expresión corporal y más. | Inscripciones en boletería
+    `,
+    slug: "colonia-artistica-verano-lunes-19",
     category: "eventos",
-    tags: ["Cine", "Debate"],
+    tags: ["Infancias", "Arte", "Taller"],
   },
-];
+  {
+    id: 6,
+    image: "/agenda/cine-club.webp",
+    date: "2026-01-13",
+    startDate: "2026-01-13",
+    endDate: "2026-01-13",
+    time: "21:30",
+    title: "Cineclub TYÖ: Grizzly Man",
+    description: `
+Cine bajo las estrellas: La historia de Timothy Treadwell, el "Hombre Grizzly", y sus veranos intentando proteger a los osos grizzly en Alaska. | Entradas en boletería
+    `,
+    slug: "cineclub-tyo-grizzly-man-lunes-19",
+    category: "eventos",
+    tags: ["Cine", "Cineclub"],
+  },
+  {
+    id: 7,
+    image: "/agenda/duo.webp",
+    date: "2026-01-24",
+    startDate: "2026-01-24",
+    endDate: "2026-01-24",
+    time: "20:30",
+    title: "Pablo Rey & Nico Villagra dúo – Música",
+    description: `
+Un espectáculo acústico con grandes clásicos del rock internacional: Sting, Phil Collins, John Mayer, Kiss y muchos más. | Colaboración consciente
+    `,
+    slug: "pablo-rey-nico-villagra-viernes-23",
+    category: "eventos",
+    tags: ["Música", "Concierto"],
+  },
+  {
+    id: 8,
+    image: "/agenda/las.webp",
+    date: "2026-01-24",
+    startDate: "2026-01-24",
+    endDate: "2026-01-24",
+    time: "22:00",
+    title: "L.A.S Habladurías del mundo – Homenaje a Luis Alberto Spinetta",
+    description: `
+Jornada cultural y musical en homenaje a Spinetta. Con artistas invitados: Claudio Bertone, Luci Fernandez, Cristian Coken, Guillermo Ochonga, Dana Gomez. | Entradas en boletería y ticketera
+    `,
+    slug: "las-habladurias-spinetta-viernes-23",
+    category: "eventos",
+    tags: ["Música", "Homenaje"],
+  },
+  {
+    id: 9,
+    image: "/agenda/tux.webp",
+    date: "2026-01-25",
+    startDate: "2026-01-25",
+    endDate: "2026-01-25",
+    time: "20:30",
+    title: "TUX & Luch Ono Band – Música",
+    description: `
+TUX presenta su EP y Luch Ono Band presenta su segundo álbum en un show híbrido de DJ set y live performance, bailable e inmersivo. | Entradas en boletería y ticketera
+    `,
+    slug: "tux-luch-ono-sabado-24",
+    category: "eventos",
+    tags: ["Música", "Concierto"],
+  },
+  {
+    id: 10,
+    image: "/agenda/circo.webp",
+    date: "2026-02-01",
+    startDate: "2026-02-01",
+    endDate: "2026-02-01",
+    time: "20:30",
+    title: "Circo del Valle",
+    description: `
+La compañía Circo del Valle vuelve con un show increíble para toda la familia: malabares, equilibrio, teatro y mucho más. | Entradas en boletería y ticketera
+    `,
+    slug: "circo-del-valle-sabado-31",
+    category: "eventos",
+    tags: ["Circo", "Familia"],
+  },
+]
 
+// Funciones para el detalle y eventos relacionados
 export function getEventoBySlug(slug: string) {
-  return eventosCompletMock.find((evento) => evento.slug === slug);
+  return eventosCompletMock.find(evento => evento.slug === slug)
 }
 
-export function getRelatedEventos(
-  currentSlug: string,
-  tags: string[],
-  limit = 3
-) {
+export function getRelatedEventos(currentSlug: string, tags: string[], limit = 3) {
   return eventosCompletMock
-    .filter(
-      (evento) =>
-        evento.slug !== currentSlug &&
-        evento.tags.some((tag) => tags.includes(tag))
-    )
-    .slice(0, limit);
+    .filter(evento => evento.slug !== currentSlug && evento.tags.some(tag => tags.includes(tag)))
+    .slice(0, limit)
 }

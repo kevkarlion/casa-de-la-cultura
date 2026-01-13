@@ -21,7 +21,7 @@ Forma parte de CDC – Casa de la Cultura.
     `,
     image: "/imagenes/noche-musica.webp",
     slug: "convocatoria-artistas-2026",
-    featured: true,
+    
     tags: ["convocatoria", "artistas", "programación"],
 
     // 👇 LINKS
@@ -75,49 +75,49 @@ La propuesta de gestión está enfocada en el fortalecimiento institucional, la 
     tags: ["institucional", "comisión directiva"],
   },
 
- {
-  id: 4,
-  title: "Nuevas reformas edilicias en CDC",
-  date: "2026-01-15",
-  summary:
-    "Durante el receso se realizaron reformas y mejoras edilicias para seguir poniendo en valor los espacios de la Casa.",
-  excerpt: `
+  {
+    id: 4,
+    title: "Nuevas reformas edilicias en CDC",
+    date: "2026-01-15",
+    summary:
+      "Durante el receso se realizaron reformas y mejoras edilicias para seguir poniendo en valor los espacios de la Casa.",
+    excerpt: `
 Durante los días de receso, la Comisión Directiva junto a compañeras y compañeros de CDC trabajó en la reorganización y puesta en valor de distintos espacios de la Casa.
 
 Se avanzó en la reconstrucción del bar del hall superior, la recuperación de camarines y el traslado del archivo histórico de CDC.
 
 Seguimos construyendo CDC incluso en pausa, con compromiso y trabajo colectivo.
   `,
-  image: "/imagenes/pausa-en-movi/reforma1.webp",
+    image: "/imagenes/pausa-en-movi/reforma1.webp",
 
-  // 👉 GALERÍA EDITORIAL
-  images: [
-    {
-      src: "/imagenes/pausa-en-movi/reforma1.webp",
-      alt: "Trabajos de remodelación en el hall superior"
-    },
-    {
-      src: "/imagenes/pausa-en-movi/reforma2.webp",
-      alt: "Trabajos de remodelación en el hall superior"
-    },
-    {
-      src: "/imagenes/pausa-en-movi/reforma3.webp",
-      alt: "Reconstrucción del bar del hall"
-    },
-    {
-      src: "/imagenes/pausa-en-movi/reforma4.webp",
-      alt: "Recuperación de camarines"
-    },
-    {
-      src: "/imagenes/pausa-en-movi/reforma5.webp",
-      alt: "Reorganización del archivo histórico de CDC"
-    }
-  ],
+    // 👉 GALERÍA EDITORIAL
+    images: [
+      {
+        src: "/imagenes/pausa-en-movi/reforma1.webp",
+        alt: "Trabajos de remodelación en el hall superior",
+      },
+      {
+        src: "/imagenes/pausa-en-movi/reforma2.webp",
+        alt: "Trabajos de remodelación en el hall superior",
+      },
+      {
+        src: "/imagenes/pausa-en-movi/reforma3.webp",
+        alt: "Reconstrucción del bar del hall",
+      },
+      {
+        src: "/imagenes/pausa-en-movi/reforma4.webp",
+        alt: "Recuperación de camarines",
+      },
+      {
+        src: "/imagenes/pausa-en-movi/reforma5.webp",
+        alt: "Reorganización del archivo histórico de CDC",
+      },
+    ],
 
-  slug: "reformas-edilicias-cdc",
-  tags: ["institucional", "obras", "cdc"]
-}
-
+    slug: "reformas-edilicias-cdc",
+    featured: true,
+    tags: ["institucional", "obras", "cdc"],
+  },
 ];
 
 // helpers (sin cambios)

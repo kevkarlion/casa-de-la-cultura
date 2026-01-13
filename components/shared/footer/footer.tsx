@@ -33,20 +33,20 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/agenda" className="transition hover:text-white">
-                  Agenda cultural
+                <Link href="/agenda/mensual" className="transition hover:text-white">
+                  Agenda Mesual
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/actividades"
+                  href="/programacion"
                   className="transition hover:text-white"
                 >
-                  Actividades y espacios
+                  Programación
                 </Link>
               </li>
               <li>
-                <Link href="/socios" className="transition hover:text-white">
+                <Link href="/socix-cdc" className="transition hover:text-white">
                   Beneficios para socios
                 </Link>
               </li>
@@ -61,7 +61,7 @@ export default function Footer() {
 
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/cdcroca/"
                 aria-label="Instagram"
                 className="
                   flex h-10 w-10 items-center justify-center
@@ -74,7 +74,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
+                href="https://www.facebook.com/CDCroca"
                 aria-label="Facebook"
                 className="
                   flex h-10 w-10 items-center justify-center
@@ -102,11 +102,11 @@ export default function Footer() {
           <span>
             Desarrollo{' '}
             <a
-              href="https://tuweb.com"
+              href="https://devwebpatagonia.com"
               target="_blank"
               className="transition hover:text-white"
             >
-              devweb PATAGONIA
+              devweb
             </a>
           </span>
         </div>

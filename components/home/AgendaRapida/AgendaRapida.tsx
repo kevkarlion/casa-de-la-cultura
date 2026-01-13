@@ -276,7 +276,7 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
               {eventsByDay.get(openDay)?.map((event) => (
                 <li key={event.id}>
                   <Link
-                    href={`/eventos/${event.slug}`}
+                    href={`/programacion/${event.slug}`}
                     className="block rounded-md p-2 hover:bg-gray-300"
                   >
                     <p className="text-sm font-medium text-black leading-snug">

@@ -60,18 +60,19 @@ export default function ContactoPage() {
             <div>
               <h2 className="text-2xl font-bold mb-4">Dirección</h2>
               <p className="text-neutral-700">
-                Calle Principal 123, General Roca / Fiske Menuco, Río Negro, Argentina
+                9 de Julio 1043, General Roca / Fiske Menuco, Río Negro, Argentina
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold mb-4">Teléfono</h2>
-              <p className="text-neutral-700">+54 298 1234567</p>
+              <h2 className="text-2xl font-bold mb-4">Whatsapp</h2>
+              <p className="text-neutral-700">+54 298  59-0848</p>
             </div>
 
             <div>
               <h2 className="text-2xl font-bold mb-4">Correo electrónico</h2>
-              <p className="text-neutral-700">info@cdcroca.org.ar</p>
+              <p className="text-neutral-700">casadelaculturagr@gmail.com</p>
+              <p className="text-neutral-700">programacioncdc72@gmail.com</p>
             </div>
 
             <div>
@@ -79,7 +80,7 @@ export default function ContactoPage() {
               <ul className="flex gap-4">
                 <li>
                   <a
-                    href="https://www.instagram.com/cdcroca/?hl=es"
+                    href="https://www.instagram.com/cdcroca/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-neutral-700 hover:text-primary transition-colors"
@@ -128,7 +129,7 @@ export default function ContactoPage() {
         </div>
 
         {/* CTA */}
-        <motion.div
+        {/* <motion.div
           className="mt-16 text-center"
           initial={{ opacity: 0, y: 48 }}
           whileInView={{ opacity: 1, y: 0, transition: { duration: 1, ease: 'easeOut' } }}
@@ -140,7 +141,7 @@ export default function ContactoPage() {
           >
             Enviar consulta
           </a>
-        </motion.div>
+        </motion.div> */}
       </section>
     </main>
   )

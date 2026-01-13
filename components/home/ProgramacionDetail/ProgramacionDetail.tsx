@@ -11,7 +11,7 @@ interface EventosDetailProps {
   slug: string;
 }
 
-export default function EventosDetail({ slug }: EventosDetailProps) {
+export default function ProgramacionDetail({ slug }: EventosDetailProps) {
   const evento = getEventoBySlug(slug);
   const [isHorizontal, setIsHorizontal] = useState<boolean | null>(null);
 
@@ -27,7 +27,7 @@ export default function EventosDetail({ slug }: EventosDetailProps) {
         <Breadcrumbs
           items={[
             { label: "Inicio", href: "/" },
-            { label: "Eventos", href: "/eventos" },
+            { label: "Programación", href: "/programacion" },
             { label: evento.title },
           ]}
         />
@@ -155,7 +155,7 @@ export default function EventosDetail({ slug }: EventosDetailProps) {
             {related.map((item) => (
               <a
                 key={item.slug}
-                href={`/eventos/${item.slug}`}
+                href={`/programacion/${item.slug}`}
                 className="group bg-black block overflow-hidden"
               >
                 <div className="relative aspect-video">

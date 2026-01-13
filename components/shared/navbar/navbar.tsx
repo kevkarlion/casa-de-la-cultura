@@ -15,29 +15,14 @@ export default function NavbarMinimal() {
   const [desktopSubOpen, setDesktopSubOpen] = useState<string | null>(null)
   const [mobileSubOpen, setMobileSubOpen] = useState<string | null>(null)
 
-  const programacionSubmenu = [
-    { label: 'Teatro', href: '/programacion/teatro' },
-    { label: 'Cine', href: '/programacion/cine' },
-    { label: 'Música', href: '/programacion/musica' },
-    { label: 'Danza', href: '/programacion/danza' },
-    { label: 'Exposiciones', href: '/programacion/exposiciones' },
-    { label: 'Conversatorios', href: '/programacion/conversatorios' },
-  ]
-
-  const agendaSubmenu = [
-    { label: 'Mensual', href: '/agenda/mensual' },
-    { label: 'Semanal', href: '/agenda/semanal' },
-  ]
-
   const navItems = [
     { label: 'Casa', href: '/' },
     { label: 'Talleres', href: '/talleres' },
-    { label: 'Agenda Cultural', href: '/agenda', submenu: agendaSubmenu },
-    { label: 'Programación', href: '/programacion', submenu: programacionSubmenu },
+    { label: 'Agenda Mensual', href: '/agenda/mensual' },
+    { label: 'Programación', href: '/programacion' },
     { label: 'Novedades', href: '/novedades' },
     { label: 'Quiénes Somos', href: '/quienes-somos' },
     { label: 'Socix CDC', href: '/socix-cdc' },
-    { label: 'Espacios y Alquileres', href: '/espacios-y-alquileres' },
     { label: 'Contacto', href: '/contacto' },
   ]
 
@@ -94,44 +79,13 @@ export default function NavbarMinimal() {
             {/* Desktop menu */}
             <ul className="hidden lg:flex items-center gap-6 text-black font-neue font-light uppercase">
               {navItems.map(item => (
-                <li
-                  key={item.label}
-                  className="relative"
-                  onMouseEnter={() => item.submenu && setDesktopSubOpen(item.label)}
-                  onMouseLeave={() => item.submenu && setDesktopSubOpen(null)}
-                >
+                <li key={item.label}>
                   <Link
                     href={item.href}
                     className="flex items-center gap-1 text-xs 2xl:text-sm hover:text-primary"
                   >
                     {item.label}
-                    {item.submenu && (
-                      <span
-                        className={`text-xs transition-transform duration-300 ${
-                          desktopSubOpen === item.label ? 'rotate-180' : ''
-                        }`}
-                      >
-                        ▼
-                      </span>
-                    )}
                   </Link>
-
-                  {item.submenu && desktopSubOpen === item.label && (
-                    <div className="absolute left-0 top-full pt-2">
-                      <ul className="w-56 bg-white shadow-md border border-neutral-200 rounded-md">
-                        {item.submenu.map(sub => (
-                          <li key={sub.label}>
-                            <Link
-                              href={sub.href}
-                              className="block px-4 py-2 text-xs 2xl:text-sm hover:bg-black/5"
-                            >
-                              {sub.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
                 </li>
               ))}
             </ul>
@@ -200,48 +154,16 @@ export default function NavbarMinimal() {
           </div>
 
           <ul className="px-6 space-y-4">
-            {navItems.map(item => {
-              const isSubOpen = mobileSubOpen === item.label
-
-              return (
-                <li key={item.label}>
-                  <div className="flex items-center gap-4">
-                    <button
-                      onClick={() => handleNavigateMobile(item.href)}
-                      className="text-xl font-bold text-black text-left"
-                    >
-                      {item.label}
-                    </button>
-
-                    {item.submenu && (
-                      <button
-                        onClick={() => setMobileSubOpen(isSubOpen ? null : item.label)}
-                        className={`transition-transform duration-300 ${
-                          isSubOpen ? 'rotate-180' : ''
-                        } text-black`}
-                      >
-                        ▼
-                      </button>
-                    )}
-                  </div>
-
-                  {item.submenu && isSubOpen && (
-                    <ul className="mt-2 ml-4 space-y-2">
-                      {item.submenu.map(sub => (
-                        <li key={sub.label}>
-                          <button
-                            onClick={() => handleNavigateMobile(sub.href)}
-                            className="text-sm text-black/80 font-bold"
-                          >
-                            {sub.label}
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              )
-            })}
+            {navItems.map(item => (
+              <li key={item.label}>
+                <button
+                  onClick={() => handleNavigateMobile(item.href)}
+                  className="text-xl font-bold text-black text-left"
+                >
+                  {item.label}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
       </nav>

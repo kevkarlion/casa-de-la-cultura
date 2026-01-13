@@ -129,6 +129,7 @@ export default function NosotrosPage() {
                         href="https://maps.google.com/?q=9+de+Julio+1043+General+Roca"
                         target="_blank"
                         rel="noopener noreferrer"
+                        
                         className="flex items-center gap-3 hover:text-neutral-300 transition"
                       >
                         <MapPin size={16} />9 de Julio 1043
@@ -139,9 +140,10 @@ export default function NosotrosPage() {
                       <a
                         href="tel:+542984432590"
                         className="flex items-center gap-3 hover:text-neutral-300 transition"
+                        target="_blank"
                       >
                         <Phone size={16} />
-                        (0298) 443-2590
+                        (0298) 59-0848
                       </a>
                     </li>
 
@@ -149,9 +151,10 @@ export default function NosotrosPage() {
                       <a
                         href="mailto:casadelacultura@gmail.com"
                         className="flex items-center gap-3 hover:text-neutral-300 transition"
+                        target="_blank"
                       >
                         <Mail size={16} />
-                        casadelacultura@gmail.com
+                        casadelaculturagr@gmail.com 
                       </a>
                     </li>
                   </ul>

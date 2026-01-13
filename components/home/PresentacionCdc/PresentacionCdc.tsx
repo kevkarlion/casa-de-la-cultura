@@ -72,7 +72,7 @@ export default function PresentacionCdc() {
             </p>
 
             <a
-              href="/nosotros"
+              href="/quienes-somos"
               className="
                 inline-flex items-center gap-2
                 text-xl font-medium uppercase font-neue
