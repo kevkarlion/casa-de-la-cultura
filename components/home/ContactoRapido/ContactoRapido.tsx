@@ -23,27 +23,27 @@ export default function ContactoRapido() {
             <div className="flex items-center gap-4">
               <Mail className="h-5 w-5 text-neutral-400" />
               <a
-                href="mailto:contacto@casadelacultura.com"
+                href="casadelaculturagr@gmail.com"
                 className="text-sm transition hover:text-white"
               >
-                contacto@casadelacultura.com
+                casadelaculturagr@gmail.com
               </a>
             </div>
 
             <div className="flex items-center gap-4">
               <Phone className="h-5 w-5 text-neutral-400" />
               <a
-                href="tel:+5491112345678"
+                href="https://wa.me/5492984590848"
                 className="text-sm transition hover:text-white"
               >
-                +54 9 11 1234 5678
+                (0298) 59-0848
               </a>
             </div>
 
             <div className="flex items-center gap-4">
               <MapPin className="h-5 w-5 text-neutral-400" />
               <span className="text-sm text-neutral-300">
-                Av. Principal 123 · Ciudad
+                9 de Julio 1043, General Roca / Fiske Menuco, Río Negro, Argentina
               </span>
             </div>
 
