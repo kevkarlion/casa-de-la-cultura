@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { getNovedadBySlug, getRelatedNovedades } from '@/utils/novedades.mock';
 import { ExternalLink } from 'lucide-react';
 import Breadcrumbs from '@/components/shared/Breadcrumb/Breadcrumbs';
@@ -18,6 +19,10 @@ function parseLocalDate(dateStr: string) {
 }
 
 export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
+  const searchParams = useSearchParams();
+  const dayParam = searchParams.get('day'); // <-- día clickeado en el tooltip
+  const clickedDay = dayParam ? Number(dayParam) : null;
+
   const novedad = getNovedadBySlug(slug);
   const [isHorizontal, setIsHorizontal] = useState<boolean | null>(null);
 
@@ -28,6 +33,12 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
     : [];
 
   const hasGallery = Array.isArray(novedad.images) && novedad.images.length > 0;
+
+  // --- Fecha que mostramos: si hay day en query, usamos ese día del mes de novedad.date ---
+  const baseDate = parseLocalDate(novedad.date);
+  const displayDate = clickedDay
+    ? new Date(baseDate.getFullYear(), baseDate.getMonth(), clickedDay)
+    : baseDate;
 
   return (
     <>
@@ -43,7 +54,7 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
         {/* HEADER */}
         <header className="mb-10 max-w-3xl">
           <p className="text-sm text-black mb-3">
-            {parseLocalDate(novedad.date).toLocaleDateString('es-AR')}
+            {displayDate.toLocaleDateString('es-AR')}
           </p>
 
           <h1 className="text-4xl md:text-5xl font-neue font-bold mb-6 leading-tight text-black">

@@ -286,22 +286,24 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
           <div className="w-[90vw] max-w-sm md:w-[320px] rounded-lg border border-neutral-700 bg-brand-white-cdc p-4 shadow-2xl">
             <ul className="space-y-3">
               {eventsByDay.get(openDay)?.map((event) => (
-                <li key={event.id}>
-                  <Link
-                    href={`/programacion/${event.slug}`}
-                    className="block rounded-md p-2 hover:bg-gray-300"
-                  >
-                    <p className="text-sm font-medium text-black leading-snug">
-                      {event.title}
-                    </p>
-                    {event.time && (
-                      <p className="mt-1 text-xs text-black">
-                        {event.time}
-                      </p>
-                    )}
-                  </Link>
-                </li>
-              ))}
+  <li key={event.id}>
+    <Link
+      // PASAMOS el día clickeado como query "day"
+      href={`/programacion/${event.slug}?day=${openDay}`}
+      className="block rounded-md p-2 hover:bg-gray-300"
+    >
+      <p className="text-sm font-medium text-black leading-snug">
+        {event.title}
+      </p>
+      {event.time && (
+        <p className="mt-1 text-xs text-black">
+          {event.time}
+        </p>
+      )}
+    </Link>
+  </li>
+))}
+
             </ul>
           </div>
         </div>
