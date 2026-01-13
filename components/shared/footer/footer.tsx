@@ -106,7 +106,7 @@ export default function Footer() {
               target="_blank"
               className="transition hover:text-white"
             >
-              devweb
+              devweb 
             </a>
           </span>
         </div>
