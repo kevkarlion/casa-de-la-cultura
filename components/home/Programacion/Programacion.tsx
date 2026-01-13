@@ -21,16 +21,22 @@ interface Props {
   events: Event[]
 }
 
+// --- UTIL: parse "YYYY-MM-DD" como fecha LOCAL ---
+function parseLocalDate(dateStr: string) {
+  const [year, month, day] = dateStr.split('-').map(Number)
+  return new Date(year, month - 1, day) // month-1 porque en JS los meses van de 0 a 11
+}
+
 export default function ProgramacionPage({ events }: Props) {
   const heroEvent = events[0]
   const otherEvents = events.slice(1)
 
   return (
     <main className="bg-white text-black min-h-screen py-12 px-4 lg:px-20">
-
-      <h1 className="text-5xl font-neue md:text-6xl font-bold mb-12 text-center tracking-tight uppercase    ">
-      Programación
+      <h1 className="text-5xl font-neue md:text-6xl font-bold mb-12 text-center tracking-tight uppercase">
+        Programación
       </h1>
+
       {/* Hero: evento destacado */}
       <section className="relative w-full h-100 md:h-125 mb-16 rounded-lg overflow-hidden shadow-lg">
         <Image
@@ -43,7 +49,7 @@ export default function ProgramacionPage({ events }: Props) {
 
         <div className="absolute inset-0 bg-black/30 flex flex-col justify-end p-6 md:p-12">
           <span className="text-sm text-white">
-            {new Date(heroEvent.date).toLocaleDateString('es-AR', {
+            {parseLocalDate(heroEvent.date).toLocaleDateString('es-AR', {
               weekday: 'short',
               day: 'numeric',
               month: 'short',
@@ -101,7 +107,7 @@ export default function ProgramacionPage({ events }: Props) {
 
               <div className="absolute inset-0 bg-black/25 flex flex-col justify-end p-4">
                 <span className="text-xs text-white">
-                  {new Date(event.date).toLocaleDateString('es-AR', {
+                  {parseLocalDate(event.date).toLocaleDateString('es-AR', {
                     weekday: 'short',
                     day: 'numeric',
                     month: 'short',
@@ -135,7 +141,6 @@ export default function ProgramacionPage({ events }: Props) {
           ))}
         </div>
       </section>
-
     </main>
   )
 }

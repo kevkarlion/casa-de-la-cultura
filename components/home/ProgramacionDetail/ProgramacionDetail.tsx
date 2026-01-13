@@ -11,6 +11,12 @@ interface EventosDetailProps {
   slug: string;
 }
 
+// --- UTIL: parse "YYYY-MM-DD" como fecha LOCAL ---
+function parseLocalDate(dateStr: string) {
+  const [year, month, day] = dateStr.split("-").map(Number);
+  return new Date(year, month - 1, day); // month-1 porque en JS los meses van de 0 a 11
+}
+
 export default function ProgramacionDetail({ slug }: EventosDetailProps) {
   const evento = getEventoBySlug(slug);
   const [isHorizontal, setIsHorizontal] = useState<boolean | null>(null);
@@ -37,7 +43,7 @@ export default function ProgramacionDetail({ slug }: EventosDetailProps) {
         {/* HEADER */}
         <header className="mb-10 max-w-3xl">
           <p className="text-sm text-black mb-3">
-            {new Date(evento.date).toLocaleDateString("es-AR")}
+            {parseLocalDate(evento.date).toLocaleDateString("es-AR")}
           </p>
 
           <h1 className="text-4xl md:text-5xl font-neue font-bold mb-6 leading-tight text-black">
@@ -114,38 +120,6 @@ export default function ProgramacionDetail({ slug }: EventosDetailProps) {
               <p className="font-inter text-lg leading-relaxed text-black whitespace-pre-line mb-10">
                 {evento.description}
               </p>
-
-              {/* Compartir */}
-              {/* <div className="mt-12 border-t pt-6">
-                <p className="text-sm uppercase tracking-widest text-black mb-4">
-                  Compartir evento
-                </p>
-                <div className="flex items-center gap-4">
-                  <a
-                    href="#"
-                    className="p-3 rounded-full border text-black hover:bg-black hover:text-white transition"
-                    aria-label="Compartir en Instagram"
-                  >
-                    <Instagram size={18} />
-                  </a>
-
-                  <a
-                    href="#"
-                    className="p-3 rounded-full border text-black hover:bg-black hover:text-white transition"
-                    aria-label="Compartir en Facebook"
-                  >
-                    <Facebook size={18} />
-                  </a>
-
-                  <a
-                    href="#"
-                    className="p-3 rounded-full border text-black hover:bg-black hover:text-white transition"
-                    aria-label="Copiar enlace"
-                  >
-                    <Share2 size={18} />
-                  </a>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
@@ -176,7 +150,7 @@ export default function ProgramacionDetail({ slug }: EventosDetailProps) {
 
                 <div className="p-5 text-white flex flex-col gap-3">
                   <p className="text-xs opacity-70">
-                    {new Date(item.date).toLocaleDateString("es-AR")}
+                    {parseLocalDate(item.date).toLocaleDateString("es-AR")}
                   </p>
 
                   <h3 className="font-neue text-lg font-semibold leading-snug">

@@ -1,25 +1,31 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { notFound } from "next/navigation";
-import { useState } from "react";
-import { getNovedadBySlug, getRelatedNovedades } from "@/utils/novedades.mock";
-import { ExternalLink } from "lucide-react";
-import Breadcrumbs from "@/components/shared/Breadcrumb/Breadcrumbs";
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import { useState } from 'react';
+import { getNovedadBySlug, getRelatedNovedades } from '@/utils/novedades.mock';
+import { ExternalLink } from 'lucide-react';
+import Breadcrumbs from '@/components/shared/Breadcrumb/Breadcrumbs';
 
 interface NovedadesDetailProps {
   slug: string;
+}
+
+// --- UTIL: parse "YYYY-MM-DD" como fecha LOCAL ---
+function parseLocalDate(dateStr: string) {
+  const [year, month, day] = dateStr.split('-').map(Number);
+  return new Date(year, month - 1, day); // month - 1 porque JS cuenta de 0 a 11
 }
 
 export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
   const novedad = getNovedadBySlug(slug);
   const [isHorizontal, setIsHorizontal] = useState<boolean | null>(null);
 
+  if (!novedad) notFound();
+
   const related = novedad?.tags
     ? getRelatedNovedades(novedad.slug, novedad.tags)
     : [];
-
-  if (!novedad) notFound();
 
   const hasGallery = Array.isArray(novedad.images) && novedad.images.length > 0;
 
@@ -28,8 +34,8 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
       <article className="container mx-auto px-6 py-20 max-w-6xl bg-brand-white-cdc">
         <Breadcrumbs
           items={[
-            { label: "Inicio", href: "/" },
-            { label: "Novedades", href: "/novedades" },
+            { label: 'Inicio', href: '/' },
+            { label: 'Novedades', href: '/novedades' },
             { label: novedad.title },
           ]}
         />
@@ -37,7 +43,7 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
         {/* HEADER */}
         <header className="mb-10 max-w-3xl">
           <p className="text-sm text-black mb-3">
-            {new Date(novedad.date).toLocaleDateString("es-AR")}
+            {parseLocalDate(novedad.date).toLocaleDateString('es-AR')}
           </p>
 
           <h1 className="text-4xl md:text-5xl font-neue font-bold mb-6 leading-tight text-black">
@@ -219,7 +225,7 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
 
                 <div className="p-5 text-white flex flex-col gap-3">
                   <p className="text-xs opacity-70">
-                    {new Date(item.date).toLocaleDateString("es-AR")}
+                    {parseLocalDate(item.date).toLocaleDateString('es-AR')}
                   </p>
 
                   <h3 className="font-neue text-lg font-semibold leading-snug">

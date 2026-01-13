@@ -25,6 +25,12 @@ interface AgendaAlmanaqueProps {
 
 const WEEK_DAYS = ["LUN", "MAR", "MIÉ", "JUE", "VIE", "SÁB", "DOM"];
 
+// --- UTIL: parse "YYYY-MM-DD" como fecha LOCAL ---
+function parseLocalDate(dateStr: string) {
+  const [year, month, day] = dateStr.split("-").map(Number);
+  return new Date(year, month - 1, day); // month-1 porque en JS los meses van de 0 a 11
+}
+
 export default function AgendaAlmanaque({ events }: AgendaAlmanaqueProps) {
   const today = new Date();
   const [currentDate, setCurrentDate] = useState(
@@ -43,8 +49,8 @@ export default function AgendaAlmanaque({ events }: AgendaAlmanaqueProps) {
     const month = currentDate.getMonth();
 
     events.forEach((event) => {
-      const start = event.startDate ? new Date(event.startDate) : new Date(event.date!);
-      const end = event.endDate ? new Date(event.endDate) : new Date(event.date!);
+      const start = event.startDate ? parseLocalDate(event.startDate) : parseLocalDate(event.date!);
+      const end = event.endDate ? parseLocalDate(event.endDate) : parseLocalDate(event.date!);
 
       for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
         if (d.getFullYear() === year && d.getMonth() === month) {

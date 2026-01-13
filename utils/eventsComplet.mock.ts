@@ -22,9 +22,9 @@ export const eventosCompletMock: Event[] = [
   {
     id: 1,
     image: "/agenda/colonia.webp",
-    date: "2026-01-13",
-    startDate: "2026-01-13",
-    endDate: "2026-01-17",
+    date: "2026-01-12",
+    startDate: "2026-01-12",
+    endDate: "2026-01-16",
     time: "09:00 - 12:00",
     title: "Colonia Artística de verano para infancias",
     description: `
@@ -39,9 +39,9 @@ Una oportunidad perfecta para volver a explorar su creatividad y conectarse con 
   {
     id: 2,
     image: "/agenda/cine-club-2.webp",
-    date: "2026-01-20",
-    startDate: "2026-01-20",
-    endDate: "2026-01-20",
+    date: "2026-01-19",
+    startDate: "2026-01-19",
+    endDate: "2026-01-19",
     time: "21:30",
     title: "Cineclub TYÖ: Los reyes",
     description: `
@@ -56,9 +56,9 @@ Chola y Fútbol son una pareja de perros callejeros que viven en un skatepark en
   {
     id: 3,
     image: "/agenda/mochi.webp",
-    date: "2026-01-17",
-    startDate: "2026-01-17",
-    endDate: "2026-01-17",
+    date: "2026-01-16",
+    startDate: "2026-01-16",
+    endDate: "2026-01-16",
     time: "21:30",
     title: "Mocchi + Noelia Sinkunas – Música",
     description: `
@@ -70,10 +70,10 @@ Desde Uruguay, Mocchi, un artista trans y una de las voces más personales de la
   },
   {
     id: 4,
-    image: "/agenda/duo.webp",
-    date: "2026-01-19",
-    startDate: "2026-01-19",
-    endDate: "2026-01-19",
+    image: "/agenda/verdun.webp",
+    date: "2026-01-18",
+    startDate: "2026-01-18",
+    endDate: "2026-01-18",
     time: "20:30",
     title: "El vibráfono en el Tango Argentino – Dúo Verdún – Rivero",
     description: `
@@ -86,9 +86,9 @@ El dúo Verdún - Rivero presenta un recorrido por la historia del tango a trav�
   {
     id: 5,
     image: "/agenda/colonia.webp",
-    date: "2026-01-20",
-    startDate: "2026-01-20",
-    endDate: "2026-01-24",
+    date: "2026-01-19",
+    startDate: "2026-01-19",
+    endDate: "2026-01-23",
     time: "09:00 - 12:00",
     title: "Colonia Artística de verano para infancias",
     description: `
@@ -101,9 +101,9 @@ Repetimos la experiencia artística para niños de 4 a 11 años con danza, músi
   {
     id: 6,
     image: "/agenda/cine-club.webp",
-    date: "2026-01-13",
-    startDate: "2026-01-13",
-    endDate: "2026-01-13",
+    date: "2026-01-12",
+    startDate: "2026-01-12",
+    endDate: "2026-01-12",
     time: "21:30",
     title: "Cineclub TYÖ: Grizzly Man",
     description: `
@@ -116,9 +116,9 @@ Cine bajo las estrellas: La historia de Timothy Treadwell, el "Hombre Grizzly", 
   {
     id: 7,
     image: "/agenda/duo.webp",
-    date: "2026-01-24",
-    startDate: "2026-01-24",
-    endDate: "2026-01-24",
+    date: "2026-01-23",
+    startDate: "2026-01-23",
+    endDate: "2026-01-23",
     time: "20:30",
     title: "Pablo Rey & Nico Villagra dúo – Música",
     description: `
@@ -131,9 +131,9 @@ Un espectáculo acústico con grandes clásicos del rock internacional: Sting, P
   {
     id: 8,
     image: "/agenda/las.webp",
-    date: "2026-01-24",
-    startDate: "2026-01-24",
-    endDate: "2026-01-24",
+    date: "2026-01-23",
+    startDate: "2026-01-23",
+    endDate: "2026-01-23",
     time: "22:00",
     title: "L.A.S Habladurías del mundo – Homenaje a Luis Alberto Spinetta",
     description: `
@@ -146,9 +146,9 @@ Jornada cultural y musical en homenaje a Spinetta. Con artistas invitados: Claud
   {
     id: 9,
     image: "/agenda/tux.webp",
-    date: "2026-01-25",
-    startDate: "2026-01-25",
-    endDate: "2026-01-25",
+    date: "2026-01-24",
+    startDate: "2026-01-24",
+    endDate: "2026-01-24",
     time: "20:30",
     title: "TUX & Luch Ono Band – Música",
     description: `
@@ -161,9 +161,9 @@ TUX presenta su EP y Luch Ono Band presenta su segundo álbum en un show híbrid
   {
     id: 10,
     image: "/agenda/circo.webp",
-    date: "2026-02-01",
-    startDate: "2026-02-01",
-    endDate: "2026-02-01",
+    date: "2026-01-31",
+    startDate: "2026-01-31",
+    endDate: "2026-01-31",
     time: "20:30",
     title: "Circo del Valle",
     description: `

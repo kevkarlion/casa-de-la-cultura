@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useMemo, useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Calendar, ArrowRight } from "lucide-react";
@@ -6,7 +6,9 @@ import Link from "next/link";
 
 interface AgendaItem {
   id: string | number;
-  date: string;
+  date: string;        // para compatibilidad
+  startDate?: string;  // nueva
+  endDate?: string;    // nueva
   title: string;
   time?: string;
   slug: string;
@@ -19,6 +21,12 @@ interface AgendaRapidaProps {
 const WEEK_DAYS = ["DOM", "LUN", "MAR", "MIÉ", "JUE", "VIE", "SÁB"];
 const TOOLTIP_WIDTH = 320;
 const GAP = 10;
+
+// --- UTIL: parse "YYYY-MM-DD" como fecha LOCAL ---
+function parseLocalDate(dateStr: string) {
+  const [year, month, day] = dateStr.split("-").map(Number);
+  return new Date(year, month - 1, day);
+}
 
 export default function AgendaRapida({ items }: AgendaRapidaProps) {
   const today = new Date();
@@ -61,22 +69,27 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
     0
   ).getDate();
 
-  const eventsByDay = useMemo(() => {
-    const map = new Map<number, AgendaItem[]>();
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth();
+ const eventsByDay = useMemo(() => {
+  const map = new Map<number, AgendaItem[]>();
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth();
 
-    items.forEach((item) => {
-      const d = new Date(item.date);
+  items.forEach((item) => {
+    const start = item.startDate ? parseLocalDate(item.startDate) : parseLocalDate(item.date);
+    const end = item.endDate ? parseLocalDate(item.endDate) : parseLocalDate(item.date);
+
+    for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
       if (d.getFullYear() === year && d.getMonth() === month) {
         const day = d.getDate();
         if (!map.has(day)) map.set(day, []);
         map.get(day)!.push(item);
       }
-    });
+    }
+  });
 
-    return map;
-  }, [items, currentDate]);
+  return map;
+}, [items, currentDate]);
+
 
   function openTooltip(day: number, el: HTMLElement) {
     const rect = el.getBoundingClientRect();
@@ -195,10 +208,9 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
                   rounded-none sm:rounded-md
                   p-1 sm:px-1.5 sm:py-2
                   transition
-                  ${
-                    events
-                      ? "cursor-pointer bg-gray-300	 hover:border-amber-500"
-                      : "bg-white text-neutral-500"
+                  ${events
+                    ? "cursor-pointer bg-gray-300	 hover:border-amber-500"
+                    : "bg-white text-neutral-500"
                   }
                 `}
                 onMouseEnter={(e) => {
