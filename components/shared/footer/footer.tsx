@@ -63,6 +63,7 @@ export default function Footer() {
               <a
                 href="https://www.instagram.com/cdcroca/"
                 aria-label="Instagram"
+                target="_blank"
                 className="
                   flex h-10 w-10 items-center justify-center
                   border border-neutral-700
@@ -76,6 +77,7 @@ export default function Footer() {
               <a
                 href="https://www.facebook.com/CDCroca"
                 aria-label="Facebook"
+                target="_blank"
                 className="
                   flex h-10 w-10 items-center justify-center
                   border border-neutral-700

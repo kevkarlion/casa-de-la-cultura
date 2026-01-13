@@ -354,7 +354,7 @@ export default function SectionTalleres() {
               bg-white
             "
           >
-            <div className="relative aspect-[3/4] w-full">
+            <div className="relative aspect-3/4 w-full">
               <Image
                 src={taller.image}
                 alt={taller.title}
