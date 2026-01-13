@@ -167,7 +167,7 @@ export default function NosotrosPage() {
                   </p>
 
                   <a
-                    href="https://wa.me/542984432590"
+                    href="https://wa.me/54298590848"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
@@ -192,7 +192,7 @@ export default function NosotrosPage() {
 
                   <div className="flex gap-3 flex-wrap">
                     <a
-                      href="https://www.instagram.com"
+                      href="https://www.instagram.com/cdcroca/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-4 py-2 border border-white/40 hover:border-white transition text-sm"
@@ -201,7 +201,7 @@ export default function NosotrosPage() {
                     </a>
 
                     <a
-                      href="https://www.facebook.com"
+                      href="https://www.facebook.com/CDCroca"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-4 py-2 border border-white/40 hover:border-white transition text-sm"
