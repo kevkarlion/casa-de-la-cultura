@@ -35,9 +35,9 @@ export default function ProgramacionPage({ events }: Props) {
 
   return (
     <main className="bg-white text-foreground min-h-screen py-12 px-4 lg:px-20">
-      <h1 className="text-5xl text-black font-neue md:text-6xl font-bold mb-12 text-center tracking-tight uppercase">
-        Programación
-      </h1>
+      <h1 className="text-5xl text-center text-black md:text-6xl font-neue font-bold mb-12 tracking-tight uppercase">
+          Programación
+        </h1>
 
       {/* Hero: evento destacado */}
       <section className="relative w-full h-100 md:h-125 mb-16 rounded-lg overflow-hidden shadow-lg">

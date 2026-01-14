@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import EventCard from "@/components/shared/cards/EventCard";
 import { Novedad } from "@/interfaces/novedades.interface";
+import Link from "next/link";
 
 
 
@@ -20,7 +21,7 @@ export default function Novedades({ novedades }: NovedadesProps) {
           <h2 className="mb-4 font-neue text-3xl font-bold uppercase text-neutral-900">
             Novedades
           </h2>
-          <p className="mx-auto max-w-2xl text-base leading-relaxed text-neutral-700">
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-black">
             Noticias, anuncios y actualizaciones de la Casa de la Cultura.
           </p>
         </div>
@@ -59,7 +60,7 @@ export default function Novedades({ novedades }: NovedadesProps) {
 
         {/* CTA */}
         <div className="mt-16 flex justify-center">
-          <a
+          <Link
             href="/novedades"
             className="
               inline-flex items-center gap-2
@@ -72,7 +73,7 @@ export default function Novedades({ novedades }: NovedadesProps) {
             "
           >
             Ver todas las novedades
-          </a>
+          </Link>
         </div>
       </div>
     </section>
