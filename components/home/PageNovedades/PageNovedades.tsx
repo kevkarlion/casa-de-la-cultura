@@ -2,11 +2,28 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { Novedad } from '@/interfaces/novedades.interface'
 
 interface PageNovedadesProps {
   novedades: Novedad[]
+}
+
+/* 🔹 MISMO EFECTO QUE PROGRAMACIÓN */
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+  },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.45,
+      delay: i * 0.08,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  }),
 }
 
 export default function PageNovedades({ novedades }: PageNovedadesProps) {
@@ -14,7 +31,7 @@ export default function PageNovedades({ novedades }: PageNovedadesProps) {
   const normales = novedades.filter(n => !n.featured)
 
   return (
-    <main className="bg-white text-black min-h-screen py-12">
+    <main className="bg-white text-black min-h-screen py-12 overflow-x-hidden">
       {/* Header */}
       <header className="container mx-auto px-6 text-center mb-16">
         <h1 className="text-5xl md:text-6xl font-neue font-bold mb-12 tracking-tight uppercase">
@@ -29,20 +46,26 @@ export default function PageNovedades({ novedades }: PageNovedadesProps) {
             Destacado
           </h2>
 
-          {destacadas.map(novedad => (
+          {destacadas.map((novedad, index) => (
             <motion.div
               key={novedad.id}
-              className="relative w-full h-80 rounded-xl overflow-hidden mb-10"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              className="relative w-full h-80 rounded-xl overflow-hidden mb-10 shadow-lg"
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-80px' }}
+              custom={index}
+              style={{
+                willChange: 'transform, opacity',
+                transform: 'translateZ(0)',
+              }}
             >
               <Image
                 src={novedad.image}
                 alt={novedad.title}
                 fill
-                style={{ objectFit: 'cover' }}
+                className="object-cover"
+                priority={index === 0}
               />
 
               <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-6">
@@ -51,7 +74,7 @@ export default function PageNovedades({ novedades }: PageNovedadesProps) {
                   {novedad.tags?.map(tag => (
                     <span
                       key={tag}
-                      className="text-xs px-2 py-0.5 bg-black text-brand-white-cdc backdrop-blur"
+                      className="text-xs px-2 py-0.5 bg-black text-brand-white-cdc"
                     >
                       {tag}
                     </span>
@@ -72,7 +95,7 @@ export default function PageNovedades({ novedades }: PageNovedadesProps) {
 
                 <Link
                   href={`/novedades/${novedad.slug}`}
-                  className="inline-block px-4 py-2 bg-primary text-white font-semibold hover:bg-primary-dark transition"
+                  className="inline-block px-4 py-2 bg-primary text-white font-semibold hover:bg-[#cc4e1d] transition-colors"
                 >
                   Ver más
                 </Link>
@@ -89,21 +112,26 @@ export default function PageNovedades({ novedades }: PageNovedadesProps) {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {normales.map(novedad => (
+          {normales.map((novedad, index) => (
             <motion.article
               key={novedad.id}
               className="border border-neutral-200 overflow-hidden shadow-sm hover:shadow-md transition"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-80px' }}
+              custom={index}
+              style={{
+                willChange: 'transform, opacity',
+                transform: 'translateZ(0)',
+              }}
             >
               <div className="relative aspect-video w-full">
                 <Image
                   src={novedad.image}
                   alt={novedad.title}
                   fill
-                  style={{ objectFit: 'cover' }}
+                  className="object-cover"
                 />
               </div>
 
@@ -112,7 +140,6 @@ export default function PageNovedades({ novedades }: PageNovedadesProps) {
                   {novedad.date}
                 </p>
 
-                {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   {novedad.tags?.map(tag => (
                     <span
@@ -134,7 +161,7 @@ export default function PageNovedades({ novedades }: PageNovedadesProps) {
 
                 <Link
                   href={`/novedades/${novedad.slug}`}
-                  className="mt-3 inline-block px-4 py-2 bg-primary text-white font-semibold hover:bg-primary-dark transition"
+                  className="mt-3 inline-block px-4 py-2 bg-primary text-white font-semibold hover:bg-[#cc4e1d] transition-colors"
                 >
                   Ver más
                 </Link>
