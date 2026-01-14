@@ -9,7 +9,7 @@ interface PageNovedadesProps {
   novedades: Novedad[]
 }
 
-/* 🔹 MISMO EFECTO QUE PROGRAMACIÓN */
+/* Variants iOS-safe (idénticos a Programación) */
 const cardVariants: Variants = {
   hidden: {
     opacity: 0,
@@ -39,7 +39,7 @@ export default function PageNovedades({ novedades }: PageNovedadesProps) {
         </h1>
       </header>
 
-      {/* Destacadas */}
+      {/* DESTACADAS */}
       {destacadas.length > 0 && (
         <section className="container mx-auto px-6 mb-16">
           <h2 className="font-neue text-2xl lg:text-3xl font-bold mb-6">
@@ -49,63 +49,62 @@ export default function PageNovedades({ novedades }: PageNovedadesProps) {
           {destacadas.map((novedad, index) => (
             <motion.div
               key={novedad.id}
-              className="relative w-full h-80 rounded-xl overflow-hidden mb-10 shadow-lg"
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-80px' }}
               custom={index}
-              style={{
-                willChange: 'transform, opacity',
-                transform: 'translateZ(0)',
-              }}
+              style={{ willChange: 'transform, opacity' }}
             >
-              <Image
-                src={novedad.image}
-                alt={novedad.title}
-                fill
-                className="object-cover"
-                priority={index === 0}
-              />
+              {/* 🔑 CONTENEDOR REAL (NO animado) */}
+              <div className="relative w-full h-80 rounded-xl overflow-hidden mb-10 shadow-lg">
+                <Image
+                  src={novedad.image}
+                  alt={novedad.title}
+                  fill
+                  className="object-cover"
+                  priority={index === 0}
+                />
 
-              <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-6">
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-2">
-                  {novedad.tags?.map(tag => (
-                    <span
-                      key={tag}
-                      className="text-xs px-2 py-0.5 bg-black text-brand-white-cdc"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-6">
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    {novedad.tags?.map(tag => (
+                      <span
+                        key={tag}
+                        className="text-xs px-2 py-0.5 bg-black text-brand-white-cdc backdrop-blur"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <p className="text-xs text-neutral-200 mb-1">
+                    {novedad.date}
+                  </p>
+
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {novedad.title}
+                  </h3>
+
+                  <p className="text-sm text-neutral-100 mb-4">
+                    {novedad.summary}
+                  </p>
+
+                  <Link
+                    href={`/novedades/${novedad.slug}`}
+                    className="inline-block px-4 py-2 bg-primary text-white font-semibold hover:bg-primary-dark transition"
+                  >
+                    Ver más
+                  </Link>
                 </div>
-
-                <p className="text-xs text-neutral-200 mb-1">
-                  {novedad.date}
-                </p>
-
-                <h3 className="text-2xl font-bold text-white mb-2">
-                  {novedad.title}
-                </h3>
-
-                <p className="text-sm text-neutral-100 mb-4">
-                  {novedad.summary}
-                </p>
-
-                <Link
-                  href={`/novedades/${novedad.slug}`}
-                  className="inline-block px-4 py-2 bg-primary text-white font-semibold hover:bg-[#cc4e1d] transition-colors"
-                >
-                  Ver más
-                </Link>
               </div>
             </motion.div>
           ))}
         </section>
       )}
 
-      {/* Listado */}
+      {/* LISTADO */}
       <section className="container mx-auto px-6">
         <h2 className="font-neue text-2xl lg:text-3xl font-bold mb-6">
           Todas las novedades
@@ -115,7 +114,6 @@ export default function PageNovedades({ novedades }: PageNovedadesProps) {
           {normales.map((novedad, index) => (
             <motion.article
               key={novedad.id}
-              className="border border-neutral-200 overflow-hidden shadow-sm hover:shadow-md transition"
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
@@ -126,45 +124,48 @@ export default function PageNovedades({ novedades }: PageNovedadesProps) {
                 transform: 'translateZ(0)',
               }}
             >
-              <div className="relative aspect-video w-full">
-                <Image
-                  src={novedad.image}
-                  alt={novedad.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              <div className="p-5 flex flex-col gap-2">
-                <p className="text-xs text-neutral-500">
-                  {novedad.date}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {novedad.tags?.map(tag => (
-                    <span
-                      key={tag}
-                      className="text-[11px] px-2 py-0.5 bg-black text-brand-white-cdc"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+              {/* 🔑 CONTENEDOR REAL (NO animado) */}
+              <div className="border border-neutral-200 overflow-hidden shadow-sm hover:shadow-md transition">
+                <div className="relative aspect-video w-full">
+                  <Image
+                    src={novedad.image}
+                    alt={novedad.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
 
-                <h3 className="font-neue text-lg font-semibold">
-                  {novedad.title}
-                </h3>
+                <div className="p-5 flex flex-col gap-2">
+                  <p className="text-xs text-neutral-500">
+                    {novedad.date}
+                  </p>
 
-                <p className="text-sm text-neutral-600">
-                  {novedad.summary}
-                </p>
+                  <div className="flex flex-wrap gap-2">
+                    {novedad.tags?.map(tag => (
+                      <span
+                        key={tag}
+                        className="text-[11px] px-2 py-0.5 bg-black text-brand-white-cdc"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
-                <Link
-                  href={`/novedades/${novedad.slug}`}
-                  className="mt-3 inline-block px-4 py-2 bg-primary text-white font-semibold hover:bg-[#cc4e1d] transition-colors"
-                >
-                  Ver más
-                </Link>
+                  <h3 className="font-neue text-lg font-semibold">
+                    {novedad.title}
+                  </h3>
+
+                  <p className="text-sm text-neutral-600">
+                    {novedad.summary}
+                  </p>
+
+                  <Link
+                    href={`/novedades/${novedad.slug}`}
+                    className="mt-3 inline-block px-4 py-2 bg-primary text-white font-semibold hover:bg-primary-dark transition"
+                  >
+                    Ver más
+                  </Link>
+                </div>
               </div>
             </motion.article>
           ))}
