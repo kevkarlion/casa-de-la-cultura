@@ -157,6 +157,7 @@ TUX presenta su EP y Luch Ono Band presenta su segundo álbum en un show híbrid
     slug: "tux-luch-ono-sabado-24",
     category: "eventos",
     tags: ["Música", "Concierto"],
+    ticketeraUrl: "https://survivo.com.ar/evento/tux-luch-ono-band/",
   },
   {
     id: 11,
