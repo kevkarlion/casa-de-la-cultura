@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, Variants } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Ticket } from 'lucide-react'
 
 interface Event {
@@ -27,23 +27,6 @@ function parseLocalDate(dateStr: string) {
   return new Date(year, month - 1, day)
 }
 
-/* 🔹 Variantes SIN flicker (iOS safe) */
-const cardVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 24,
-  },
-  visible: (i = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.45,
-      delay: i * 0.08,
-      ease: [0.16, 1, 0.3, 1],
-    },
-  }),
-}
-
 export default function ProgramacionPage({ events }: Props) {
   if (!events || events.length === 0) return null
 
@@ -62,66 +45,63 @@ export default function ProgramacionPage({ events }: Props) {
       {/* HERO */}
       <section className="max-w-6xl mx-auto px-4 mb-20">
         <motion.div
-          className="relative w-full h-105 md:h-130 rounded-lg overflow-hidden shadow-lg"
-          variants={cardVariants}
-          initial="hidden"
-          animate="visible"
-          custom={0}
-          style={{ willChange: 'transform, opacity' }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          {/* Imagen */}
-          <Image
-            src={heroEvent.image}
-            alt={heroEvent.title}
-            fill
-            priority
-            className="object-cover brightness-90"
-          />
+          <div className="relative w-full h-105 md:h-130 rounded-lg overflow-hidden shadow-lg">
+            <Image
+              src={heroEvent.image}
+              alt={heroEvent.title}
+              fill
+              priority
+              className="object-cover brightness-90"
+            />
 
-          {/* Overlay + contenido */}
-          <div className="absolute inset-0 z-10 bg-black/30 flex flex-col justify-end p-6 md:p-10">
-            <span className="text-sm text-white">
-              {parseLocalDate(heroEvent.date).toLocaleDateString('es-AR', {
-                weekday: 'short',
-                day: 'numeric',
-                month: 'short',
-              })}
-            </span>
+            <div className="absolute inset-0 z-10 bg-black/30 flex flex-col justify-end p-6 md:p-10">
+              <span className="text-sm text-white">
+                {parseLocalDate(heroEvent.date).toLocaleDateString('es-AR', {
+                  weekday: 'short',
+                  day: 'numeric',
+                  month: 'short',
+                })}
+              </span>
 
-            <h2 className="text-2xl md:text-4xl font-bold text-white mt-2">
-              {heroEvent.title}
-            </h2>
+              <h2 className="text-2xl md:text-4xl font-bold text-white mt-2">
+                {heroEvent.title}
+              </h2>
 
-            <div className="flex flex-wrap gap-2 mt-3">
-              {heroEvent.tags.map(tag => (
-                <span
-                  key={tag}
-                  className="text-xs bg-black/80 text-brand-white-cdc px-2 py-0.5 rounded"
+              <div className="flex flex-wrap gap-2 mt-3">
+                {heroEvent.tags.map(tag => (
+                  <span
+                    key={tag}
+                    className="text-xs bg-black/80 text-brand-white-cdc px-2 py-0.5 rounded"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-3 mt-5">
+                <Link
+                  href={`/programacion/${heroEvent.slug}`}
+                  className="px-5 py-2 bg-primary text-brand-white-cdc font-semibold rounded-lg hover:bg-[#cc4e1d] transition-colors"
                 >
-                  {tag}
-                </span>
-              ))}
-            </div>
+                  Ver más
+                </Link>
 
-            <div className="flex flex-wrap gap-3 mt-5">
-              <Link
-                href={`/programacion/${heroEvent.slug}`}
-                className="px-5 py-2 bg-primary text-brand-white-cdc font-semibold rounded-lg hover:bg-[#cc4e1d] transition-colors"
-              >
-                Ver más
-              </Link>
-
-              {heroEvent.ticketeraUrl && (
-                <a
-                  href={heroEvent.ticketeraUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2 bg-primary text-brand-white-cdc font-semibold rounded-lg hover:bg-[#cc4e1d] transition-colors"
-                >
-                  <Ticket size={18} />
-                  Compra tu entrada
-                </a>
-              )}
+                {heroEvent.ticketeraUrl && (
+                  <a
+                    href={heroEvent.ticketeraUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2 bg-primary text-brand-white-cdc font-semibold rounded-lg hover:bg-[#cc4e1d] transition-colors"
+                  >
+                    <Ticket size={18} />
+                    Compra tu entrada
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </motion.div>
@@ -135,75 +115,73 @@ export default function ProgramacionPage({ events }: Props) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {otherEvents.map((event, index) => (
-            <motion.article
+            <motion.div
               key={event.id}
-              className="relative rounded-lg overflow-hidden shadow hover:shadow-lg transition"
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-80px' }}
-              custom={index + 1}
-              style={{
-                willChange: 'transform, opacity',
-                transform: 'translateZ(0)',
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.6,
+                ease: 'easeOut',
+                delay: index * 0.1,
               }}
             >
-              {/* Imagen */}
-              <Image
-                src={event.image}
-                alt={event.title}
-                width={500}
-                height={300}
-                className="w-full h-48 md:h-56 object-cover"
-              />
+              <article className="relative rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+                <Image
+                  src={event.image}
+                  alt={event.title}
+                  width={500}
+                  height={300}
+                  className="w-full h-48 md:h-56 object-cover"
+                />
 
-              {/* Overlay */}
-              <div className="absolute inset-0 z-10 bg-black/25 flex flex-col justify-end p-4">
-                <span className="text-xs text-white">
-                  {parseLocalDate(event.date).toLocaleDateString('es-AR', {
-                    weekday: 'short',
-                    day: 'numeric',
-                    month: 'short',
-                  })}
-                </span>
+                <div className="absolute inset-0 z-10 bg-black/25 flex flex-col justify-end p-4">
+                  <span className="text-xs text-white">
+                    {parseLocalDate(event.date).toLocaleDateString('es-AR', {
+                      weekday: 'short',
+                      day: 'numeric',
+                      month: 'short',
+                    })}
+                  </span>
 
-                <h3 className="text-lg font-bold text-white mt-1">
-                  {event.title}
-                </h3>
+                  <h3 className="text-lg font-bold text-white mt-1">
+                    {event.title}
+                  </h3>
 
-                <div className="flex flex-wrap gap-1 mt-2">
-                  {event.tags.map(tag => (
-                    <span
-                      key={tag}
-                      className="text-[10px] bg-black text-brand-white-cdc px-2 py-0.5 rounded"
+                  <div className="flex flex-wrap gap-1 mt-2">
+                    {event.tags.map(tag => (
+                      <span
+                        key={tag}
+                        className="text-[10px] bg-black text-brand-white-cdc px-2 py-0.5 rounded"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    <Link
+                      href={`/programacion/${event.slug}`}
+                      className="text-xs font-bold bg-primary px-3 py-1 rounded hover:bg-[#cc4e1d] transition-colors"
                     >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                      Ver más
+                    </Link>
 
-                <div className="flex flex-wrap gap-2 mt-3">
-                  <Link
-                    href={`/programacion/${event.slug}`}
-                    className="text-xs font-bold bg-primary px-3 py-1 rounded hover:bg-[#cc4e1d] transition-colors"
-                  >
-                    Ver más
-                  </Link>
-
-                  {event.ticketeraUrl && (
-                    <a
-                      href={event.ticketeraUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-brand-white-cdc inline-flex items-center gap-1 text-xs font-bold bg-primary px-3 py-1 rounded hover:bg-[#cc4e1d] transition-colors"
-                    >
-                      <Ticket size={14} />
-                      Entradas
-                    </a>
-                  )}
+                    {event.ticketeraUrl && (
+                      <a
+                        href={event.ticketeraUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-brand-white-cdc inline-flex items-center gap-1 text-xs font-bold bg-primary px-3 py-1 rounded hover:bg-[#cc4e1d] transition-colors"
+                      >
+                        <Ticket size={14} />
+                        Entradas
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </motion.article>
+              </article>
+            </motion.div>
           ))}
         </div>
       </section>
