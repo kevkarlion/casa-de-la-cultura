@@ -44,11 +44,9 @@ Una oportunidad perfecta para volver a explorar su creatividad y conectarse con 
     startDate: "2026-01-19",
     endDate: "2026-01-19",
     time: "21:30",
-    title: "Cineclub TYÖ: Los reyes",
+    title: `Cineclub TYÖ: "Grizzly Man". Dir. Werner Herzog`,
     description: `
-Arranca el cine bajo las estrellas, el 7mo ciclo de verano de Cineclub Työ.
-Chola y Fútbol son una pareja de perros callejeros que viven en un skatepark en Santiago de Chile, rodeados de jóvenes adolescentes en conflicto con un mundo adulto.
-| Entradas en boletería
+En esta ocasión se proyectará “Grizzly Man”: Sigue la historia de Timothy Treadwell, el "Hombre Grizzly", y cómo fueron los trece veranos que pasó en un Parque Nacional de Alaska en su intento de proteger a los osos grizzly. | Entradas en boletería
     `,
     slug: "cineclub-tyo-los-reyes-lunes-12",
     category: "eventos",
@@ -106,9 +104,9 @@ Repetimos la experiencia artística para niños de 4 a 11 años con danza, músi
     startDate: "2026-01-12",
     endDate: "2026-01-12",
     time: "21:30",
-    title: "Cineclub TYÖ: Grizzly Man",
+    title: `"Los reyes". Dir. Bettina Perut, Iván Osnovikoff`,
     description: `
-Cine bajo las estrellas: La historia de Timothy Treadwell, el "Hombre Grizzly", y sus veranos intentando proteger a los osos grizzly en Alaska. | Entradas en boletería
+Arranca el cine bajo las estrellas, el 7mo ciclo de verano de Cineclub Työ. Chola y Fútbol son una pareja de perros callejeros que viven en un skatepark en Santiago de Chile, rodeados de jóvenes adolescentes en conflicto con un mundo adulto.
     `,
     slug: "cineclub-tyo-grizzly-man-lunes-19",
     category: "eventos",
@@ -159,6 +157,22 @@ TUX presenta su EP y Luch Ono Band presenta su segundo álbum en un show híbrid
     slug: "tux-luch-ono-sabado-24",
     category: "eventos",
     tags: ["Música", "Concierto"],
+  },
+  {
+    id: 11,
+    image: "/agenda/tasio.webp",
+    date: "2026-01-26",
+    startDate: "2026-01-26",
+    endDate: "2026-01-26",
+    time: "21:30",
+    title: `Cineclub TYÖ: "Tasio".Dir. Motxo Armendáriz`,
+    description: `
+Cine bajo las estrellas, el 7mo ciclo de verano de Cineclub Työ.
+ “Tasio”, en plena España de la transición, Tasio elige quedarse en el monte mientras el país avanza hacia la modernidad. Retrato sensible de un carbonero en la sierra de Urbasa, donde el tiempo lo marca la naturaleza y un oficio en extinción se vuelve símbolo de identidad, dignidad y libertad personal.
+    `,
+    slug: "tasio-lunes-26",
+    category: "eventos",
+    tags: ["Cine", "Cineclub"],
   },
   {
     id: 10,
