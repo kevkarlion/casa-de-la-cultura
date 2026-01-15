@@ -24,6 +24,20 @@ export default function SocixCDCPreview() {
       >
         {/* ================= TEXTO ================= */}
         <div className="relative p-8 lg:p-12">
+
+          {/* Imagen CDC Club – mobile */}
+          <div
+            className="relative mb-8 mx-auto lg:hidden"
+            style={{ width: 180, height: 180 }}
+          >
+            <Image
+              src="/imagenes/clubcdc-1080.webp"
+              alt="CDC Club"
+              fill
+              className="object-cover"
+            />
+          </div>
+
           {/* línea editorial */}
           <span className="
             absolute left-0 top-8 hidden h-24 w-0.5
@@ -33,6 +47,7 @@ export default function SocixCDCPreview() {
           <h2 className="
             mb-4
             font-neue
+            text-center
             text-3xl lg:text-4xl
             font-bold
             uppercase
@@ -67,25 +82,28 @@ export default function SocixCDCPreview() {
           </p>
 
           {/* ================= CTA DESKTOP ================= */}
-          <Link
-            href="/socix-cdc"
-            className="
-              hidden lg:inline-flex items-center gap-2
-              px-8 py-2
-              font-neue text-xl font-medium uppercase
-              bg-black text-white
-              border border-black
-              transition-all duration-300
-              hover:bg-transparent hover:text-black
-            "
-          >
-            <span>Conocé los beneficios</span>
+          <div className='flex justify-center'>
 
-            <MousePointer2 size={18} className="opacity-80" />
-          </Link>
+            <Link
+              href="/socix-cdc"
+              className="
+                hidden lg:inline-flex items-center gap-2
+                
+                px-8 py-2
+                font-neue text-xl font-medium uppercase
+                bg-black text-white
+                border border-black
+                transition-all duration-300
+                hover:bg-transparent hover:text-black
+              "
+            >
+              <span>Conocé los beneficios</span>
+              <MousePointer2 size={18} className="opacity-80" />
+            </Link>
+          </div>
         </div>
 
-        {/* ================= IMAGEN ================= */}
+        {/* ================= IMAGEN PRINCIPAL ================= */}
         <motion.div
           initial={{ opacity: 0, scale: 1.04 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -100,7 +118,18 @@ export default function SocixCDCPreview() {
             className="object-cover"
           />
 
-          <div className="absolute inset-0" />
+          {/* Imagen CDC Club – desktop (overlay) */}
+          <div
+            className="absolute bottom-6 right-6 hidden lg:block"
+            style={{ width: 140, height: 140 }}
+          >
+            <Image
+              src="/imagenes/clubcdc-1080.webp"
+              alt="CDC Club"
+              fill
+              className="object-cover"
+            />
+          </div>
         </motion.div>
 
         {/* ================= CTA MOBILE ================= */}
