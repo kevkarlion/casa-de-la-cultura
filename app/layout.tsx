@@ -32,10 +32,12 @@ export const metadata: Metadata = {
   verification: {
     google: "PDHOV4hCndaQI0QDvohCsJ0clFQIsJQ5k71708wIFbs",
   },
+
   title: {
     default: 'Casa de la Cultura | Arte, Música y Eventos',
     template: '%s | Casa de la Cultura',
   },
+
   description:
     'La Casa de la Cultura es un espacio dedicado al arte, la música, el teatro y la expresión cultural. Conocé nuestra programación y actividades.',
 
@@ -49,6 +51,37 @@ export const metadata: Metadata = {
   ],
 
   metadataBase: new URL('https://cdcroca.com'),
+
+  icons: {
+  icon: [
+    {
+      url: '/favicon-16x16.png',
+      sizes: '16x16',
+      type: 'image/png',
+    },
+    {
+      url: '/favicon-32x32.png',
+      sizes: '32x32',
+      type: 'image/png',
+    },
+  ],
+  apple: [
+    {
+      url: '/icon-192x192.png',
+      sizes: '192x192',
+      type: 'image/png',
+    },
+  ],
+  other: [
+    {
+      rel: 'icon',
+      url: '/icon-512x512.png',
+      sizes: '512x512',
+      type: 'image/png',
+    },
+  ],
+},
+
 
   openGraph: {
     title: 'Casa de la Cultura',
@@ -73,6 +106,7 @@ export const metadata: Metadata = {
     follow: true,
   },
 }
+
 
 export default function RootLayout({
   children,
