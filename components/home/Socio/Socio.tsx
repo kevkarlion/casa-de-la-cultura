@@ -119,7 +119,7 @@ export default function SocixCDCPreview() {
           />
 
           {/* Imagen CDC Club – desktop (overlay) */}
-          <div
+          {/* <div
             className="absolute bottom-6 right-6 hidden lg:block"
             style={{ width: 140, height: 140 }}
           >
@@ -129,7 +129,7 @@ export default function SocixCDCPreview() {
               fill
               className="object-cover"
             />
-          </div>
+          </div> */}
         </motion.div>
 
         {/* ================= CTA MOBILE ================= */}
