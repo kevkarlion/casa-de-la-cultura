@@ -1,6 +1,7 @@
 'use client'
 
 import { motion, cubicBezier } from 'framer-motion'
+import { MapPin, Instagram, Facebook, MessageCircle, Mail } from 'lucide-react'
 
 export default function ContactoPage() {
   const fadeUp = {
@@ -51,64 +52,106 @@ export default function ContactoPage() {
       <section className="container mx-auto px-6 py-20 max-w-6xl">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <motion.div
-            className="space-y-6"
+            className="space-y-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
           >
+            {/* Dirección */}
             <div>
               <h2 className="text-2xl font-bold mb-4">Dirección</h2>
-              <p className="text-neutral-700">
-                9 de Julio 1043, General Roca / Fiske Menuco, Río Negro, Argentina
-              </p>
+              <a
+                href="https://maps.google.com/?q=9+de+Julio+1043+General+Roca+Rio+Negro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 text-neutral-700 transition hover:text-black"
+              >
+                <MapPin className="mt-1" size={18} />
+                <span>
+                  9 de Julio 1043, General Roca / Fiske Menuco, Río Negro,
+                  Argentina
+                </span>
+              </a>
             </div>
 
-            <div>
-              <h2 className="text-2xl font-bold mb-4">Whatsapp</h2>
-              <p className="text-neutral-700">+54 298  59-0848</p>
-            </div>
+            {/* Correo */}
+            {/* Correo */}
+<div>
+  <h2 className="text-2xl font-bold mb-4">Correo electrónico</h2>
 
-            <div>
-              <h2 className="text-2xl font-bold mb-4">Correo electrónico</h2>
-              <p className="text-neutral-700">casadelaculturagr@gmail.com</p>
-              <p className="text-neutral-700">programacioncdc72@gmail.com</p>
-            </div>
+  <div className="space-y-3">
+    <a
+      href="mailto:casadelaculturagr@gmail.com"
+      className="flex items-center gap-3 text-neutral-700 transition hover:text-black"
+    >
+      <Mail size={18} />
+      <span>casadelaculturagr@gmail.com</span>
+    </a>
 
+    <a
+      href="mailto:programacioncdc72@gmail.com"
+      className="flex items-center gap-3 text-neutral-700 transition hover:text-black"
+    >
+      <Mail size={18} />
+      <span>programacioncdc72@gmail.com</span>
+    </a>
+  </div>
+</div>
+
+
+            {/* Redes */}
             <div>
               <h2 className="text-2xl font-bold mb-4">Redes sociales</h2>
-              <ul className="flex gap-4">
-                <li>
-                  <a
-                    href="https://www.instagram.com/cdcroca/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-neutral-700 hover:text-primary transition-colors"
-                  >
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.facebook.com/CDCroca"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-neutral-700 hover:text-primary transition-colors"
-                  >
-                    Facebook
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://wa.me/5492984590848"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-neutral-700 hover:text-primary transition-colors"
-                  >
-                    WhatsApp
-                  </a>
-                </li>
-              </ul>
+              <div className="flex gap-4">
+                <a
+                  href="https://wa.me/5492984590848"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  className="
+                    flex h-11 w-11 items-center justify-center
+                    border border-neutral-300
+                    text-neutral-700
+                    transition-all
+                    hover:border-black hover:text-black
+                  "
+                >
+                  <MessageCircle size={18} />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/cdcroca/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="
+                    flex h-11 w-11 items-center justify-center
+                    border border-neutral-300
+                    text-neutral-700
+                    transition-all
+                    hover:border-black hover:text-black
+                  "
+                >
+                  <Instagram size={18} />
+                </a>
+
+                <a
+                  href="https://www.facebook.com/CDCroca"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="
+                    flex h-11 w-11 items-center justify-center
+                    border border-neutral-300
+                    text-neutral-700
+                    transition-all
+                    hover:border-black hover:text-black
+                  "
+                >
+                  <Facebook size={18} />
+                </a>
+              </div>
             </div>
           </motion.div>
 
@@ -116,7 +159,11 @@ export default function ContactoPage() {
           <motion.div
             className="w-full h-80 md:h-full rounded-lg overflow-hidden shadow-lg"
             initial={{ opacity: 0, y: 48 }}
-            whileInView={{ opacity: 1, y: 0, transition: { duration: 1, ease: 'easeOut' } }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1, ease: 'easeOut' },
+            }}
             viewport={{ once: true }}
           >
             <iframe
@@ -124,24 +171,9 @@ export default function ContactoPage() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3099.4044682557324!2d-67.58192162527531!3d-39.02889650445608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33b7888cdbe1%3A0xd2149a9cf28b4415!2sCDC%20%7C%20Casa%20de%20la%20Cultura!5e0!3m2!1ses!2sar!4v1767318063379!5m2!1ses!2sar"
               allowFullScreen
               loading="lazy"
-            ></iframe>
+            />
           </motion.div>
         </div>
-
-        {/* CTA */}
-        {/* <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 48 }}
-          whileInView={{ opacity: 1, y: 0, transition: { duration: 1, ease: 'easeOut' } }}
-          viewport={{ once: true }}
-        >
-          <a
-            href="mailto:info@cdcroca.org.ar"
-            className="inline-block bg-primary text-white font-bold px-8 py-4 rounded-md shadow-lg hover:bg-primary/90 transition-all"
-          >
-            Enviar consulta
-          </a>
-        </motion.div> */}
       </section>
     </main>
   )

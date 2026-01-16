@@ -34,7 +34,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/agenda/mensual" className="transition hover:text-white">
-                  Agenda Mesual
+                  Agenda Mensual
                 </Link>
               </li>
               <li>
