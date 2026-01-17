@@ -64,7 +64,7 @@ export default function CDCClubSection() {
         <div className="mb-24">
 
           {/* Desktop / Tablet */}
-          <div className="relative hidden md:block h-80 lg:h-100">
+          {/* <div className="relative hidden md:block h-80 lg:h-100">
             <Image
               src="/imagenes/cdcclub-1280-400.webp"
               alt="CDC Club – membresía cultural"
@@ -72,10 +72,10 @@ export default function CDCClubSection() {
               priority
               className="object-cover"
             />
-          </div>
+          </div> */}
 
           {/* Mobile – ALTURA REAL */}
-          <div
+          {/* <div
             className="relative md:hidden mx-auto"
             style={{
               width: "300px",
@@ -89,7 +89,7 @@ export default function CDCClubSection() {
               priority
               className="object-cover"
             />
-          </div>
+          </div> */}
 
         </div>
 
