@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Percent,
@@ -53,45 +52,15 @@ const beneficios = [
 export default function CDCClubSection() {
   return (
     <section className="bg-brand-white-cdc py-12">
-      <div className="mx-auto max-w-6xl px-4">
-        <header className="container mx-auto px-6 text-center mb-16">
+      <div className="mx-auto max-w-6xl px-4 flex flex-col justify-center ">
+        <header className="container mx-auto px-6 text-center ">
         <h1 className="text-5xl text-black md:text-6xl font-neue font-bold mb-12 tracking-tight uppercase">
           Socix cdc
         </h1>
       </header>
 
         {/* ================= HERO BANNER ================= */}
-        <div className="mb-24">
-
-          {/* Desktop / Tablet */}
-          {/* <div className="relative hidden md:block h-80 lg:h-100">
-            <Image
-              src="/imagenes/cdcclub-1280-400.webp"
-              alt="CDC Club – membresía cultural"
-              fill
-              priority
-              className="object-cover"
-            />
-          </div> */}
-
-          {/* Mobile – ALTURA REAL */}
-          {/* <div
-            className="relative md:hidden mx-auto"
-            style={{
-              width: "300px",
-              height: "250px",
-            }}
-          >
-            <Image
-              src="/imagenes/clubcdc-300.webp"
-              alt="CDC Club – membresía cultural"
-              fill
-              priority
-              className="object-cover"
-            />
-          </div> */}
-
-        </div>
+        
 
         {/* ================= TEXTO EDITORIAL ================= */}
         <div className="mb-24 max-w-3xl">
