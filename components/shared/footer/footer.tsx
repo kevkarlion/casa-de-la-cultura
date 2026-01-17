@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { Instagram, Facebook, MessageCircle, Mail } from 'lucide-react'
+import Link from "next/link";
+import { Instagram, Facebook, MessageCircle, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -33,7 +33,10 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/agenda/mensual" className="transition hover:text-white">
+                <Link
+                  href="/agenda/mensual"
+                  className="transition hover:text-white"
+                >
                   Agenda Mensual
                 </Link>
               </li>
@@ -60,64 +63,62 @@ export default function Footer() {
             </h4>
 
             <div className="flex gap-4">
-  <a
-    href="https://www.instagram.com/cdcroca/"
-    aria-label="Instagram"
-    target="_blank"
-    className="
+              <a
+                href="https://www.instagram.com/cdcroca/"
+                aria-label="Instagram"
+                target="_blank"
+                className="
       flex h-10 w-10 items-center justify-center
       border border-neutral-700
       transition-all duration-300
       hover:border-white hover:text-white
     "
-  >
-    <Instagram size={18} />
-  </a>
+              >
+                <Instagram size={18} />
+              </a>
 
-  <a
-    href="https://www.facebook.com/CDCroca"
-    aria-label="Facebook"
-    target="_blank"
-    className="
+              <a
+                href="https://www.facebook.com/CDCroca"
+                aria-label="Facebook"
+                target="_blank"
+                className="
       flex h-10 w-10 items-center justify-center
       border border-neutral-700
       transition-all duration-300
       hover:border-white hover:text-white
     "
-  >
-    <Facebook size={18} />
-  </a>
+              >
+                <Facebook size={18} />
+              </a>
 
-  <a
-    href="https://wa.me/5492984590848"
-    aria-label="WhatsApp"
-    target="_blank"
-    className="
+              <a
+                href="https://wa.me/5492984590848"
+                aria-label="WhatsApp"
+                target="_blank"
+                className="
       flex h-10 w-10 items-center justify-center
       border border-neutral-700
       transition-all duration-300
       hover:border-white hover:text-white
     "
-  >
-    <MessageCircle size={18} />
-  </a>
+              >
+                <MessageCircle size={18} />
+              </a>
 
-  <a
-    href="mailto:casadelaculturagr@gmail.com"
-    aria-label="Email"
-        target="_blank"
-
-    className="
+              <a
+                href="mailto:casadelaculturagr@gmail.com"
+                aria-label="Email"
+                target="_blank"
+                className="
       flex h-10 w-10 items-center justify-center
       border border-neutral-700
       transition-all duration-300
       hover:border-white hover:text-white
     "
-  >
-    <Mail size={18} />
-  </a>
-</div>
-
+              >
+                <Mail size={18} />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -132,17 +133,17 @@ export default function Footer() {
           </span>
 
           <span>
-            Desarrollo{' '}
+            Desarrollo{" "}
             <a
               href="https://devwebpatagonia.com"
               target="_blank"
               className="transition hover:text-white"
             >
-              devweb 
+              devweb
             </a>
           </span>
         </div>
       </div>
     </footer>
-  )
+  );
 }

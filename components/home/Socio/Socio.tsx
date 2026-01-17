@@ -26,7 +26,7 @@ export default function SocixCDCPreview() {
         <div className="relative p-8 lg:p-12">
 
           {/* Imagen CDC Club – mobile */}
-          <div
+          {/* <div
             className="relative mb-8 mx-auto lg:hidden"
             style={{ width: 180, height: 180 }}
           >
@@ -36,7 +36,7 @@ export default function SocixCDCPreview() {
               fill
               className="object-cover"
             />
-          </div>
+          </div> */}
 
           {/* línea editorial */}
           <span className="
