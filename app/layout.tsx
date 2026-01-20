@@ -52,11 +52,11 @@ export const metadata: Metadata = {
 
   metadataBase: new URL('https://cdcroca.com'),
 
-  icons: {
+icons: {
   icon: [
     {
-      url: '/favicon-16x16.png',
-      sizes: '16x16',
+      url: '/icon-96x96.png', // Asegúrate de que el nombre coincida con tu archivo en /public
+      sizes: '96x96',
       type: 'image/png',
     },
     {
@@ -74,10 +74,8 @@ export const metadata: Metadata = {
   ],
   other: [
     {
-      rel: 'icon',
-      url: '/icon-512x512.png',
-      sizes: '512x512',
-      type: 'image/png',
+      rel: 'apple-touch-icon', // Mejor usar este rel para Apple
+      url: '/icon-192x192.png',
     },
   ],
 },
