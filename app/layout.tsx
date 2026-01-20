@@ -8,21 +8,23 @@ import Footer from "@/components/shared/footer/footer";
 
 /* ------------------ Fonts ------------------ */
 
+// Google Font
 const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-inter",
 });
 
+// Local Font
 const neueHaas = localFont({
   src: [
     {
-      path: "/fonts/NeueHaasDisplay-Medium.ttf",
+      path: "./fonts/NeueHaasDisplay-Mediu.ttf", // relativa a layout.tsx
       weight: "400",
       style: "normal",
     },
     {
-      path: "/fonts/NeueHaasDisplay-Bold.ttf",
+      path: "./fonts/NeueHaasDisplay-Bold.ttf",
       weight: "700",
       style: "normal",
     },
@@ -96,7 +98,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={neueHaas.variable}>
       <body className={`${inter.variable} antialiased bg-white`}>
-        {/* Structured Data para Google (saca el 🌍) */}
+        {/* Structured Data para Google (logo visible en SERP) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
