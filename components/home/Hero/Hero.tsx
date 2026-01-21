@@ -15,7 +15,7 @@ interface HeroProps {
 
 const Hero: FC<HeroProps> = ({
   title = "CDC - Casa de la Cultura",
-  subtitle = "Desde 1973, un espacio de encuentro y producción cultural que alberga talleres, actividades artísticas y propuestas escénicas, promoviendo la participación comunitaria y el acceso a la cultura en todas las edades.",
+  subtitle = "Desde 1972, un espacio de encuentro y producción cultural que alberga talleres, actividades artísticas y propuestas escénicas, promoviendo la participación comunitaria y el acceso a la cultura en todas las edades.",
   videoSrc = "/videos/hero.webm",
   fallbackImageSrc = "/imagenes/hero.webp",
   logoSrc = "/dibujos/Fachada.svg",
