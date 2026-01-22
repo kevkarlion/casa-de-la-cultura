@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import NavbarWithSearch from "@/components/shared/navbar/navbar";
 import Footer from "@/components/shared/footer/footer";
+import Script from "next/script";
 
 /* ------------------ Fonts ------------------ */
 
@@ -99,15 +100,21 @@ export default function RootLayout({
     <html lang="es" className={neueHaas.variable}>
       <body className={`${inter.variable} antialiased bg-white`}>
         {/* Structured Data para Google (logo visible en SERP) */}
-        <script
+        <Script
+          id="organization-schema"
           type="application/ld+json"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Casa de la Cultura",
+              name: "CDC Roca",
               url: "https://cdcroca.com",
               logo: "https://cdcroca.com/logo.png",
+              sameAs: [
+                "https://www.instagram.com/tuusuario",
+                "https://www.facebook.com/tuusuario",
+              ],
             }),
           }}
         />
