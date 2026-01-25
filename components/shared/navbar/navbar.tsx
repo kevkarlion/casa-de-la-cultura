@@ -42,7 +42,7 @@ export default function NavbarMinimal() {
 
   const logoConfig = {
     mobile: { src: '/logos/LogoHeroBlackMobile.png', width: 60, height: 32, alt: 'Logo Mobile' },
-    desktop: { src: '/logos/LogoHeroBlack.png', width: 180, height: 80, alt: 'Logo Desktop' },
+    desktop: { src: '/logos/nvologocdc.webp', width: 230, height: 110, alt: 'Logo Desktop' },
   }
 
   const handleNavigateMobile = (href: string) => {
@@ -145,10 +145,10 @@ export default function NavbarMinimal() {
 
           <div className="flex justify-center mb-10">
             <Image
-              src="/logos/LogoHeroBlack.png"
+              src="/logos/nvologocdc.webp"
               alt="Logo CDC"
-              width={250}
-              height={40}
+              width={300}
+              height={80}
               priority
             />
           </div>
