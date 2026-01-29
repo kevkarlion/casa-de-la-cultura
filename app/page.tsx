@@ -24,7 +24,7 @@ const Page = () => {
       ...eventosCompletMock.map(mapEventoToDestacado),
       ...novedades.map(mapNovedadToDestacado),
     ],
-    ["Música", "Artes visuales", 'convocatoria','Familia' ], // criterio editorial
+    ["Música", "Artes visuales", 'convocatoria','Familia', 'Karaoke' ], // criterio editorial
     6
   );
 

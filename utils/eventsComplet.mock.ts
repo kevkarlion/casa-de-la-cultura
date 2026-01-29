@@ -1,22 +1,22 @@
 export interface EventImage {
-  src: string
-  alt?: string
+  src: string;
+  alt?: string;
 }
 
 export interface Event {
-  id: number
-  image: string
-  images?: EventImage[]
-  date: string // mantenemos para compatibilidad
-  startDate?: string
-  endDate?: string
-  time?: string
-  title: string
-  description: string
-  slug: string
-  category: "eventos"
-  tags: string[]
-  ticketeraUrl?: string // NUEVO: link de compra de ticket
+  id: number;
+  image: string;
+  images?: EventImage[];
+  date: string; // mantenemos para compatibilidad
+  startDate?: string;
+  endDate?: string;
+  time?: string;
+  title: string;
+  description: string;
+  slug: string;
+  category: "eventos";
+  tags: string[];
+  ticketeraUrl?: string; // NUEVO: link de compra de ticket
 }
 
 export const eventosCompletMock: Event[] = [
@@ -37,51 +37,7 @@ Una oportunidad perfecta para volver a explorar su creatividad y conectarse con 
     category: "eventos",
     tags: ["Infancias", "Arte", "Taller"],
   },
-  {
-    id: 2,
-    image: "/agenda/cine-club-2.webp",
-    date: "2026-01-19",
-    startDate: "2026-01-19",
-    endDate: "2026-01-19",
-    time: "21:30",
-    title: `Cineclub TYÖ: "Grizzly Man". Dir. Werner Herzog`,
-    description: `
-En esta ocasión se proyectará “Grizzly Man”: Sigue la historia de Timothy Treadwell, el "Hombre Grizzly", y cómo fueron los trece veranos que pasó en un Parque Nacional de Alaska en su intento de proteger a los osos grizzly. | Entradas en boletería
-    `,
-    slug: "cineclub-tyo-los-reyes-lunes-12",
-    category: "eventos",
-    tags: ["Cine", "Cineclub"],
-  },
-  {
-    id: 3,
-    image: "/agenda/mochi.webp",
-    date: "2026-01-16",
-    startDate: "2026-01-16",
-    endDate: "2026-01-16",
-    time: "21:30",
-    title: "Mocchi + Noelia Sinkunas – Música",
-    description: `
-Desde Uruguay, Mocchi, un artista trans y una de las voces más personales de la canción rioplatense, nos trae un concierto íntimo junto a la pianista Noelia Sinkunas con canciones de todos sus discos. | Entradas en boletería y ticketera
-    `,
-    slug: "mocchi-noelia-sinkunas-viernes-16",
-    category: "eventos",
-    tags: ["Música", "Concierto"],
-  },
-  {
-    id: 4,
-    image: "/agenda/verdun.webp",
-    date: "2026-01-18",
-    startDate: "2026-01-18",
-    endDate: "2026-01-18",
-    time: "20:30",
-    title: "El vibráfono en el Tango Argentino – Dúo Verdún – Rivero",
-    description: `
-El dúo Verdún - Rivero presenta un recorrido por la historia del tango a través del vibráfono, desde sus primeras apariciones hasta su consolidación como instrumento solista. | Colaboración consciente
-    `,
-    slug: "vibrafono-tango-verdun-rivero-domingo-18",
-    category: "eventos",
-    tags: ["Música", "Tango"],
-  },
+
   {
     id: 5,
     image: "/agenda/colonia.webp",
@@ -98,84 +54,6 @@ Repetimos la experiencia artística para niños de 4 a 11 años con danza, músi
     tags: ["Infancias", "Arte", "Taller"],
   },
   {
-    id: 6,
-    image: "/agenda/cine-club.webp",
-    date: "2026-01-12",
-    startDate: "2026-01-12",
-    endDate: "2026-01-12",
-    time: "21:30",
-    title: `"Los reyes". Dir. Bettina Perut, Iván Osnovikoff`,
-    description: `
-Arranca el cine bajo las estrellas, el 7mo ciclo de verano de Cineclub Työ. Chola y Fútbol son una pareja de perros callejeros que viven en un skatepark en Santiago de Chile, rodeados de jóvenes adolescentes en conflicto con un mundo adulto.
-    `,
-    slug: "cineclub-tyo-grizzly-man-lunes-19",
-    category: "eventos",
-    tags: ["Cine", "Cineclub"],
-  },
-  {
-    id: 7,
-    image: "/agenda/duo.webp",
-    date: "2026-01-23",
-    startDate: "2026-01-23",
-    endDate: "2026-01-23",
-    time: "20:30",
-    title: "Pablo Rey & Nico Villagra dúo – Música",
-    description: `
-Un espectáculo acústico con grandes clásicos del rock internacional: Sting, Phil Collins, John Mayer, Kiss y muchos más. | Colaboración consciente
-    `,
-    slug: "pablo-rey-nico-villagra-viernes-23",
-    category: "eventos",
-    tags: ["Música", "Concierto"],
-  },
-  {
-    id: 8,
-    image: "/agenda/las.webp",
-    date: "2026-01-23",
-    startDate: "2026-01-23",
-    endDate: "2026-01-23",
-    time: "22:00",
-    title: "L.A.S Habladurías del mundo – Homenaje a Luis Alberto Spinetta",
-    description: `
-Jornada cultural y musical en homenaje a Spinetta. Con artistas invitados: Claudio Bertone, Luci Fernandez, Cristian Coken, Guillermo Ochonga, Dana Gomez. | Entradas en boletería y ticketera
-    `,
-    slug: "las-habladurias-spinetta-viernes-23",
-    category: "eventos",
-    tags: ["Música", "Homenaje"],
-    ticketeraUrl: "https://survivo.com.ar/evento/l-a-s-habladurias-homenaje-a-spinetta/",
-  },
-  {
-    id: 9,
-    image: "/agenda/tux.webp",
-    date: "2026-01-24",
-    startDate: "2026-01-24",
-    endDate: "2026-01-24",
-    time: "20:30",
-    title: "TUX & Luch Ono Band – Música",
-    description: `
-TUX presenta su EP y Luch Ono Band presenta su segundo álbum en un show híbrido de DJ set y live performance, bailable e inmersivo. | Entradas en boletería y ticketera
-    `,
-    slug: "tux-luch-ono-sabado-24",
-    category: "eventos",
-    tags: ["Música", "Concierto"],
-    ticketeraUrl: "https://survivo.com.ar/evento/tux-luch-ono-band/",
-  },
-  {
-    id: 11,
-    image: "/agenda/tasio.webp",
-    date: "2026-01-26",
-    startDate: "2026-01-26",
-    endDate: "2026-01-26",
-    time: "21:30",
-    title: `Cineclub TYÖ: "Tasio".Dir. Motxo Armendáriz`,
-    description: `
-Cine bajo las estrellas, el 7mo ciclo de verano de Cineclub Työ.
- “Tasio”, en plena España de la transición, Tasio elige quedarse en el monte mientras el país avanza hacia la modernidad. Retrato sensible de un carbonero en la sierra de Urbasa, donde el tiempo lo marca la naturaleza y un oficio en extinción se vuelve símbolo de identidad, dignidad y libertad personal.
-    `,
-    slug: "tasio-lunes-26",
-    category: "eventos",
-    tags: ["Cine", "Cineclub"],
-  },
-  {
     id: 10,
     image: "/agenda/circo.webp",
     date: "2026-01-31",
@@ -189,17 +67,81 @@ La compañía Circo del Valle vuelve con un show increíble para toda la familia
     slug: "circo-del-valle-sabado-31",
     category: "eventos",
     tags: ["Circo", "Familia"],
-    ticketeraUrl: "https://survivo.com.ar/evento/la-magia-de-un-dia-cualquiera/",
+    ticketeraUrl:
+      "https://survivo.com.ar/evento/la-magia-de-un-dia-cualquiera/",
   },
-]
+  {
+    id: 12,
+    image: "/agenda/toch.webp",
+    date: "2026-02-06",
+    startDate: "2026-02-06",
+    endDate: "2026-02-06",
+    time: "21:00",
+    title: "Toch",
+    description: `
+        CDC recibe a Toch, un trío nacido en Córdoba con una formación tan particular como su sonido: bandoneón, bajo y batería al servicio de una propuesta potente, sensible y profundamente latinoamericana.
+
+        Su música cruza la energía del rock, la cadencia del reggae y la calidez del folklore, dando forma a un estilo propio construido desde la emoción, el ritmo y el compromiso. En cada presentación, Toch transforma el escenario en una celebración colectiva: una verdadera fiesta popular donde conviven el baile, la escucha atenta y el encuentro.
+
+        Sus canciones hablan de amor y amistad, pero también de lucha, conciencia y transformación, reflejando una mirada sensible sobre la realidad y los vínculos.
+
+        Formado en 2007, el grupo cuenta con una trayectoria sólida y sostenida en el tiempo: seis discos de estudio, dos singles y un álbum en vivo, además de más de quince años recorriendo escenarios de Argentina, Uruguay y España.
+
+        Su formato de trío les permite viajar y producir de manera autogestiva, adaptándose tanto a espacios íntimos y acústicos como a grandes festivales, sin perder nunca la cercanía con el público.
+
+        Una noche para dejarse llevar por la música, el baile y la energía de una banda que sigue creciendo sin perder su esencia.
+            `,
+    slug: "toch-viernes-06",
+    category: "eventos",
+    tags: ["Música", "Concierto"],
+    // ticketeraUrl:
+    //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
+  },
+  {
+    id: 13,
+    image: "/agenda/karaoke.webp", // la principal
+    images: [{ src: "/agenda/karaoke.webp" }, { src: "/agenda/karaoke2.webp" }],
+    date: "2026-02-07",
+    startDate: "2026-02-07",
+    endDate: "2026-02-07",
+    time: "21:30",
+    title: "Noche de Karaoke en CDC",
+    description: `
+        Desde el CDC seguimos imaginando espacios para encontrarnos, divertirnos y compartir. Por eso llega una nueva producción de la casa: la Noche de Karaoke, una propuesta pensada para todas las edades y para todas las personas que tengan ganas de animarse, cantar, bailar o simplemente disfrutar del ambiente.
+
+        Este verano nos encontramos en el patio para vivir una noche sin jurados, sin filtros y sin vergüenza. Una invitación a soltarse, reírse, equivocarse, aplaudir y acompañar a quienes se suben al micrófono.
+
+        No importa si cantás bien, regular o “solo en la ducha”. Lo importante es participar, pasarla bien y ser parte de una experiencia colectiva, con tu gente, con barra, música y premios que suman a la noche.
+
+        La Noche de Karaoke es un espacio multiedad, abierto y cuidado, donde celebramos el encuentro a través de la música.
+
+        La entrada es gratuita, con modalidad de colaboración consciente.
+
+        Produce: CDC – La casita de tus sueños.
+            `,
+    slug: "karaoke-sabado-07",
+    category: "eventos",
+    tags: ["Karaoke", "Música"],
+    // ticketeraUrl:
+    //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
+  },
+];
 
 // Funciones para el detalle y eventos relacionados
 export function getEventoBySlug(slug: string) {
-  return eventosCompletMock.find(evento => evento.slug === slug)
+  return eventosCompletMock.find((evento) => evento.slug === slug);
 }
 
-export function getRelatedEventos(currentSlug: string, tags: string[], limit = 3) {
+export function getRelatedEventos(
+  currentSlug: string,
+  tags: string[],
+  limit = 3,
+) {
   return eventosCompletMock
-    .filter(evento => evento.slug !== currentSlug && evento.tags.some(tag => tags.includes(tag)))
-    .slice(0, limit)
+    .filter(
+      (evento) =>
+        evento.slug !== currentSlug &&
+        evento.tags.some((tag) => tags.includes(tag)),
+    )
+    .slice(0, limit);
 }
