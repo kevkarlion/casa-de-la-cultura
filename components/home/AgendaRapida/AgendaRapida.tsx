@@ -150,7 +150,7 @@ export default function AgendaRapida({ items }: AgendaRapidaProps) {
           </div>
 
           <Link
-            href="/agenda"
+            href="/agenda/mensual"
             className="group flex items-center gap-2 self-start sm:self-center px-4 py-2 bg-black text-brand-white-cdc border border-neutral-700 l hover:border-primary hover:text-primary transition-all duration-300"
           >
             <span className="text-sm font-medium tracking-wide">Ver agenda completa</span>
