@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import {
   Percent,
   BookOpen,
@@ -9,6 +10,7 @@ import {
   Building2,
   Calendar,
   Ticket,
+  X,
 } from "lucide-react";
 
 const beneficios = [
@@ -51,6 +53,26 @@ const beneficios = [
 ];
 
 export default function CDCClubSection() {
+  const [showModal, setShowModal] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detectar tamaño de pantalla
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Cerrar modal al presionar ESC
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setShowModal(false);
+    };
+    if (showModal) window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [showModal]);
+
   return (
     <section className="bg-brand-white-cdc py-12">
       <div className="mx-auto max-w-6xl px-4 flex flex-col justify-center">
@@ -125,7 +147,6 @@ export default function CDCClubSection() {
           <div className="grid grid-cols-1 md:grid-cols-2">
             {/* Imagen CDC Club */}
             <div className="relative min-h-65 bg-black">
-              {/* Reemplazar luego por <Image /> */}
               <Image
                 src="/imagenes/cdc-club.webp"
                 alt="CDC Club – Descuentos y beneficios culturales en comercios adheridos"
@@ -147,29 +168,43 @@ export default function CDCClubSection() {
                 la comunidad.
               </p>
 
-              {/* Links */}
-              <div className="flex flex-col gap-4">
-                {/* Mobile */}
-                <a
-                  href="https://www.figma.com/proto/PdSDrHKtLJDxD5WnUBLRXf/CLUB-CDC?page-id=0%3A1&node-id=5-11&p=f&viewport=726%2C102%2C0.11&t=Hi8EucOVm7l8xvnM-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5%3A11"
-                  target="_blank"
-                  className="block md:hidden border border-brand-white-cdc px-4 py-3 text-center text-sm font-bold uppercase text-brand-white-cdc transition hover:bg-brand-white-cdc hover:text-black"
-                >
-                  Ver beneficios CDC Club
-                </a>
-
-                {/* Desktop */}
-                <a
-                  href="https://www.figma.com/proto/PdSDrHKtLJDxD5WnUBLRXf/CLUB-CDC?page-id=125%3A62&node-id=125-1526&p=f&viewport=1630%2C-499%2C0.27&t=Jcgprhi4CtozFbjj-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=125%3A1526"
-                  target="_blank"
-                  className="hidden md:inline-block w-fit border border-brand-white-cdc px-6 py-3 text-sm font-bold uppercase text-brand-white-cdc transition hover:bg-brand-white-cdc hover:text-black"
-                >
-                  Ver descuentos y beneficios
-                </a>
-              </div>
+              {/* Botón para modal */}
+              <button
+                onClick={() => setShowModal(true)}
+                className="border border-brand-white-cdc px-6 py-3 text-sm font-bold uppercase text-brand-white-cdc transition hover:bg-brand-white-cdc hover:text-black w-fit"
+              >
+                Ver descuentos y beneficios
+              </button>
             </div>
           </div>
         </motion.div>
+
+        {/* ================= MODAL ================= */}
+        {showModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4 overflow-auto">
+            <div className="relative max-w-[90vw] max-h-[90vh]">
+              {/* Botón de cierre siempre visible */}
+              <button
+                onClick={() => setShowModal(false)}
+                className="fixed top-4 right-4 text-white p-2 hover:bg-white hover:text-black rounded-full z-50"
+              >
+                <X className="h-6 w-6" />
+              </button>
+
+              <Image
+                src={
+                  isMobile
+                    ? "/imagenes/cdc-club-mobile.webp"
+                    : "/imagenes/cdc-club-desktop.webp"
+                }
+                alt="Beneficios CDC Club"
+                width={isMobile ? 350 : 800}
+                height={isMobile ? 800 : 1200}
+                className="object-contain"
+              />
+            </div>
+          </div>
+        )}
 
         {/* ================= CIERRE ================= */}
         <div className="mt-24 max-w-3xl">
