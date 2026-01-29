@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import {
@@ -52,11 +52,24 @@ const beneficios = [
   },
 ];
 
+// Variants para animar las cards sin parpadeo
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      delay: i * 0.05,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  }),
+};
+
 export default function CDCClubSection() {
   const [showModal, setShowModal] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detectar tamaño de pantalla
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize();
@@ -64,7 +77,6 @@ export default function CDCClubSection() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Cerrar modal al presionar ESC
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") setShowModal(false);
@@ -106,15 +118,15 @@ export default function CDCClubSection() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {beneficios.map((item, i) => {
             const Icon = item.icon;
-
             return (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.05 }}
-                whileHover={{ y: -6 }}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-80px" }}
+                custom={i}
+                style={{ willChange: "transform, opacity" }}
                 className="border border-neutral-200 bg-black p-6 transition-all"
               >
                 <div className="mb-4 flex items-center justify-between">
@@ -145,7 +157,6 @@ export default function CDCClubSection() {
           className="mt-24 border border-neutral-200 bg-black"
         >
           <div className="grid grid-cols-1 md:grid-cols-2">
-            {/* Imagen CDC Club */}
             <div className="relative min-h-65 bg-black">
               <Image
                 src="/imagenes/cdc-club.webp"
@@ -155,7 +166,6 @@ export default function CDCClubSection() {
               />
             </div>
 
-            {/* Contenido */}
             <div className="flex flex-col justify-center p-6 md:p-10">
               <h3 className="font-neue text-2xl md:text-3xl font-bold uppercase text-brand-white-cdc mb-4">
                 CDC Club
@@ -168,7 +178,6 @@ export default function CDCClubSection() {
                 la comunidad.
               </p>
 
-              {/* Botón para modal */}
               <button
                 onClick={() => setShowModal(true)}
                 className="border border-brand-white-cdc px-6 py-3 text-sm font-bold uppercase text-brand-white-cdc transition hover:bg-brand-white-cdc hover:text-black w-fit"
@@ -183,7 +192,6 @@ export default function CDCClubSection() {
         {showModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4 overflow-auto">
             <div className="relative max-w-[90vw] max-h-[90vh]">
-              {/* Botón de cierre siempre visible */}
               <button
                 onClick={() => setShowModal(false)}
                 className="fixed top-4 right-4 text-white p-2 hover:bg-white hover:text-black rounded-full z-50"
