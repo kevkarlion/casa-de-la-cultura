@@ -94,8 +94,8 @@ La compañía Circo del Valle vuelve con un show increíble para toda la familia
     slug: "toch-viernes-06",
     category: "eventos",
     tags: ["Música", "Concierto"],
-    // ticketeraUrl:
-    //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
+    ticketeraUrl:
+      "https://survivo.com.ar/evento/toch-pulso-inicial/",
   },
   {
     id: 13,
@@ -124,6 +124,21 @@ La compañía Circo del Valle vuelve con un show increíble para toda la familia
     tags: ["Karaoke", "Música"],
     // ticketeraUrl:
     //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
+  },
+   {
+    id: 14,
+    image: "/agenda/colonia.webp",
+    date: "2026-02-02",
+    startDate: "2026-02-02",
+    endDate: "2026-02-06",
+    time: "09:00 - 12:00",
+    title: "Colonia Artística de verano para infancias",
+    description: `
+Repetimos la experiencia artística para niños de 4 a 11 años con danza, música, expresión corporal y más. | Inscripciones en boletería
+    `,
+    slug: "colonia-artistica-verano-lunes-02",
+    category: "eventos",
+    tags: ["Infancias", "Arte", "Taller"],
   },
 ];
 
