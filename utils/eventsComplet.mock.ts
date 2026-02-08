@@ -171,7 +171,7 @@ Repetimos la experiencia artística para niños de 4 a 11 años con danza, músi
     // ticketeraUrl:
     //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
   },
-    {
+  {
     id: 21,
     image: "/agenda/febrero/angeles-trinidad.webp", // la principal
     date: "2026-02-12",
@@ -184,6 +184,72 @@ Repetimos la experiencia artística para niños de 4 a 11 años con danza, músi
     slug: "angeles-trinidad-jueves-12",
     category: "eventos",
     tags: ["Música", "Show", "Acústico"],
+    // ticketeraUrl:
+    //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
+  },
+  {
+    id: 22,
+    image: "/agenda/febrero/son-violeta.webp", // la principal
+    date: "2026-02-13",
+    startDate: "2026-02-13",
+    endDate: "2026-02-13",
+    time: "20:30",
+    title: "Son violeta - Música",
+    description: `
+        Un proyecto musical compuesto de canciones propias de ritmos argentinos, aires rioplatenses y latinoamericanos que busca transmitir con sus canciones a la música como una energía transformadora para la vida. | Entrada libre a colaboración.`,
+    slug: "son-violeta-viernes-13",
+    category: "eventos",
+    tags: ["Música", "Show", "Latinoamericano"],
+    // ticketeraUrl:
+    //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
+  },
+  {
+    id: 23,
+    image: "/agenda/febrero/entre-acordes.webp", // la principal
+    date: "2026-02-14",
+    startDate: "2026-02-14",
+    endDate: "2026-02-14",
+    time: "20:30",
+    title: "Entre acordes románticos - Música",
+    description: `
+        Entre acordes es un dúo de voz y guitarra que presenta un repertorio recorriendo distintos estilos y épocas de la música nacional e internacional.
+        En un show temático por San Valentín, el grupo propone un viaje a través de las canciones de amor de todos los tiempos, interpretadas de forma íntima y con arreglos acústicos propios | Entrada libre a colaboración.`,
+    slug: "entre-acordes-sabado-14",
+    category: "eventos",
+    tags: ["Música", "Show", "Acústico"],
+    // ticketeraUrl:
+    //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
+  },
+  {
+    id: 24,
+    image: "/agenda/febrero/noche-boleros.webp", // la principal
+    date: "2026-02-14",
+    startDate: "2026-02-14",
+    endDate: "2026-02-14",
+    time: "22:00",
+    title:
+      "Amor(es) noche de boleros con “Al Viento, boleros y otras hierbas” - Música",
+    description: `Una propuesta musical y cultural pensada para celebrar el amor en todas sus formas.
+        A través de una noche de boleros, el evento invita a reflexionar, sentir y compartir el amor como experiencia humana universal | Entradas en boletería.`,
+    slug: "noche-de-boleros-sabado-14",
+    category: "eventos",
+    tags: ["Música", "Show", "Boleros"],
+    // ticketeraUrl:
+    //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
+  },
+  {
+    id: 25,
+    image: "/agenda/febrero/retro-visual.webp", // la principal
+    date: "2026-02-15",
+    startDate: "2026-02-15",
+    endDate: "2026-02-15",
+    time: "21:30",
+    title: "Fiesta retro audiovisual",
+    description: `Volvemos a los 80 y 90 con clásicos que marcaron una época, visuales en pantalla y pista encendida.
+      Una noche para disfrutar como las de antes. | Entradas en boletería.`,
+    slug: "fiesta-retro-visual-domingo-15",
+    category: "eventos",
+    tags: ["Música", "Fiesta", "Retro"],
     // ticketeraUrl:
     //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
   },
