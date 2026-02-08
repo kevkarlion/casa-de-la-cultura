@@ -21,56 +21,6 @@ export interface Event {
 
 export const eventosCompletMock: Event[] = [
   {
-    id: 1,
-    image: "/agenda/colonia.webp",
-    date: "2026-01-12",
-    startDate: "2026-01-12",
-    endDate: "2026-01-16",
-    time: "09:00 - 12:00",
-    title: "Colonia Artística de verano para infancias",
-    description: `
-Las infancias de 4 a 11 años podrán disfrutar nuevamente de una experiencia única llena de arte, ¡danza, música, expresión corporal y más! 
-
-Una oportunidad perfecta para volver a explorar su creatividad y conectarse con su cuerpo e imaginación en un espacio seguro y divertido. | Inscripciones en boletería
-    `,
-    slug: "colonia-artistica-verano-lunes-12",
-    category: "eventos",
-    tags: ["Infancias", "Arte", "Taller"],
-  },
-
-  {
-    id: 5,
-    image: "/agenda/colonia.webp",
-    date: "2026-01-19",
-    startDate: "2026-01-19",
-    endDate: "2026-01-23",
-    time: "09:00 - 12:00",
-    title: "Colonia Artística de verano para infancias",
-    description: `
-Repetimos la experiencia artística para niños de 4 a 11 años con danza, música, expresión corporal y más. | Inscripciones en boletería
-    `,
-    slug: "colonia-artistica-verano-lunes-19",
-    category: "eventos",
-    tags: ["Infancias", "Arte", "Taller"],
-  },
-  {
-    id: 10,
-    image: "/agenda/circo.webp",
-    date: "2026-01-31",
-    startDate: "2026-01-31",
-    endDate: "2026-01-31",
-    time: "20:30",
-    title: "Circo del Valle",
-    description: `
-La compañía Circo del Valle vuelve con un show increíble para toda la familia: malabares, equilibrio, teatro y mucho más. | Entradas en boletería y ticketera
-    `,
-    slug: "circo-del-valle-sabado-31",
-    category: "eventos",
-    tags: ["Circo", "Familia"],
-    ticketeraUrl:
-      "https://survivo.com.ar/evento/la-magia-de-un-dia-cualquiera/",
-  },
-  {
     id: 12,
     image: "/agenda/toch.webp",
     date: "2026-02-06",
@@ -94,8 +44,7 @@ La compañía Circo del Valle vuelve con un show increíble para toda la familia
     slug: "toch-viernes-06",
     category: "eventos",
     tags: ["Música", "Concierto"],
-    ticketeraUrl:
-      "https://survivo.com.ar/evento/toch-pulso-inicial/",
+    ticketeraUrl: "https://survivo.com.ar/evento/toch-pulso-inicial/",
   },
   {
     id: 13,
@@ -125,7 +74,7 @@ La compañía Circo del Valle vuelve con un show increíble para toda la familia
     // ticketeraUrl:
     //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
   },
-   {
+  {
     id: 14,
     image: "/agenda/colonia.webp",
     date: "2026-02-02",
@@ -139,6 +88,104 @@ Repetimos la experiencia artística para niños de 4 a 11 años con danza, músi
     slug: "colonia-artistica-verano-lunes-02",
     category: "eventos",
     tags: ["Infancias", "Arte", "Taller"],
+  },
+  {
+    id: 15,
+    image: "/agenda/febrero/esp-repercusion.webp", // la principal
+    date: "2026-02-05",
+    startDate: "2026-02-05",
+    endDate: "2026-02-05",
+    time: "20:00",
+    title: "Prácticas de verano de bombo - Música",
+    description: `
+        Ritmo, aire y encuentro en el patio de CDC, dejate llevar por la percusión y aprende a sentir las vibraciones de estos instrumentos. | Inscripción en Espacio Percusión.
+            `,
+    slug: "practica-verano-bombo-jueves-05",
+    category: "eventos",
+    tags: ["Música", "Percusión", "Folklore", "Taller"],
+    // ticketeraUrl:
+    //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
+  },
+  {
+    id: 19,
+    image: "/agenda/febrero/esp-repercusion.webp", // la principal
+    date: "2026-02-12",
+    startDate: "2026-02-12",
+    endDate: "2026-02-12",
+    time: "20:00",
+    title: "Prácticas de verano de bombo - Música",
+    description: `
+        Ritmo, aire y encuentro en el patio de CDC, dejate llevar por la percusión y aprende a sentir las vibraciones de estos instrumentos. | Inscripción en Espacio Percusión.`,
+    slug: "practica-verano-bombo-jueves-05",
+    category: "eventos",
+    tags: ["Música", "Percusión", "Folklore", "Taller"],
+    // ticketeraUrl:
+    //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
+  },
+  {
+    id: 16,
+    image: "/agenda/febrero/nadhir.webp", // la principal
+    date: "2026-02-06",
+    startDate: "2026-02-06",
+    endDate: "2026-02-06",
+    time: "20:30",
+    title: "Nadhir Suarez - Música",
+    description: `
+        Músico, compositor y cantautor patagónico nacido en Villa La Angostura con una larga trayectoria dejando huella en diferentes zonas de la Patagonia y el Alto Valle presenta un show con música de autor para disfrutar al aire libre. |Entrada libre a colaboración.`,
+    slug: "nadhir-suarez-viernes-06",
+    category: "eventos",
+    tags: ["Música", "Show Live", "Cultura Regional"],
+    // ticketeraUrl:
+    //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
+  },
+  {
+    id: 17,
+    image: "/agenda/febrero/cineclub-la-boda.webp", // la principal
+    date: "2026-02-09",
+    startDate: "2026-02-09",
+    endDate: "2026-02-09",
+    time: "21:30",
+    title: "Cineclub TYÖ: La boda de Muriel dir. J.P. Hogan",
+    description: `
+        En esta ocasión se proyectará “La boda de Muriel”: Bajo una capa de colores chillones, canciones de ABBA y kitsch australiano, se esconde una de las sátiras más afiladas sobre la presión social y la vacuidad del éxito provinciano. Muriel Heslop no busca el amor, busca la validación que otorga el estatus de "casada". | Entradas en boletería.`,
+    slug: "cineclub-tyo-la-boda-de-mi-muer-lunes-09",
+    category: "eventos",
+    tags: ["Cine", "Proyección", "Comedia Dramática"],
+    // ticketeraUrl:
+    //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
+  },
+  {
+    id: 20,
+    image: "/agenda/febrero/mati-auka.webp", // la principal
+    date: "2026-02-11",
+    startDate: "2026-02-11",
+    endDate: "2026-02-11",
+    time: "21:30",
+    title: "Ciclo de Peña: Auka Folk & Mati Rivas",
+    description: `
+        El encuentro de cada semana que nos trae música, raíces y comunidad. 
+        Auka Folk & Mati Rivas, llega con un repertorio bien tradicional pensado para peñas, que va de la zamba y la chacarera a la cueca y el gato.`,
+    slug: "ciclo-pena-miercoles-11",
+    category: "eventos",
+    tags: ["Música", "Folklore", "Peña"],
+    // ticketeraUrl:
+    //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
+  },
+    {
+    id: 21,
+    image: "/agenda/febrero/angeles-trinidad.webp", // la principal
+    date: "2026-02-12",
+    startDate: "2026-02-12",
+    endDate: "2026-02-12",
+    time: "20:30",
+    title: "Angeles Trinidad – Música",
+    description: `
+        La cantante y compositora Angeles Trinidad presenta un show con canciones de autor y un repertorio de sus temas favoritos de artistas reconocidos desde Fabiana Cantilo y Julieta Venegas hasta clásicos del rock como Los Abuelos de la Nada. | Entrada libre a colaboración.`,
+    slug: "angeles-trinidad-jueves-12",
+    category: "eventos",
+    tags: ["Música", "Show", "Acústico"],
+    // ticketeraUrl:
+    //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
   },
 ];
 
