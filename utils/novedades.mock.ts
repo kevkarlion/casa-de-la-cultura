@@ -115,9 +115,40 @@ Seguimos construyendo CDC incluso en pausa, con compromiso y trabajo colectivo.
     ],
 
     slug: "reformas-edilicias-cdc",
-    featured: true,
+    featured: false,
     tags: ["institucional", "obras", "cdc"],
   },
+  {
+  id: 5,
+  title: "Convocatoria abierta: Talleres, Seminarios y Workshops 2026",
+  date: "2026-02-11",
+  summary:
+    "El Área de Desarrollo Artístico de CDC invita a talleristas, docentes y artistas a presentar sus propuestas educativas y culturales para el ciclo 2026.",
+  excerpt: `
+Desde el Área de Desarrollo Artístico de CDC abrimos una convocatoria para la presentación de propuestas de talleres regulares, seminarios y workshops, destinada a personas con saberes y trayectorias en diversas disciplinas.
+
+La búsqueda está orientada a proyectos que aporten al desarrollo artístico, cultural y social, con un enfoque inclusivo y comunitario que dialogue con el proyecto institucional de Casa de la Cultura.
+
+A través del formulario de inscripción, los interesados podrán detallar su trayectoria, objetivos, metodología y necesidades técnicas. También se solicita adjuntar CV y material visual de trabajos previos.
+
+Las propuestas recibidas serán evaluadas para su posible incorporación a la programación anual.
+  `,
+  image: "/imagenes/convocatoria-talleres.webp",
+  imageOrientation: "horizontal",
+  slug: "convocatoria-propuestas-talleres-2026",
+  featured: true,
+  tags: ["convocatoria", "talleres", "formación", "institucional"],
+  links: [
+    {
+      label: "Completar Formulario de Inscripción",
+      url: "https://forms.gle/gfgoGSsSUFQacctj6"
+    },
+    {
+      label: "Consultas por Email",
+      url: "mailto:desarrolloartisticocdc@gmail.com"
+    }
+  ]
+}
 ];
 
 // helpers (sin cambios)

@@ -141,7 +141,7 @@ export default function SectionTalleres() {
           </div>
 
           {/* Cerámica Infantil */}
-          <div className="py-10 border-b border-black/10">
+          {/* <div className="py-10 border-b border-black/10">
             <h4 className="font-neue text-lg font-bold uppercase">Cerámica infantil · “Arcilla en movimiento”</h4>
             <p className="text-sm italic">Julieta Santamaría</p>
             <p className="mt-2 text-sm"><strong>Edad:</strong> 8 a 12 años</p>
@@ -153,7 +153,7 @@ export default function SectionTalleres() {
               El taller propone una experiencia creativa centrada en el proceso, experimentar con arcilla, explorar texturas 
               y desarrollar paciencia, concentración y creatividad.
             </p>
-          </div>
+          </div> */}
 
           {/* Ritmos Latinos */}
           <div className="py-10 border-b border-black/10">
