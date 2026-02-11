@@ -8,15 +8,13 @@ const talleres = [
     id: 1,
     image: "/imagenes/talleres/arquitectura-infancias.webp",
     title: "Arquitectura para Infancias",
-    description:
-      "Exploración del espacio, formas y estructuras a través del juego.",
+    description: "Exploración del espacio, formas y estructuras a través del juego.",
   },
   {
     id: 2,
     image: "/imagenes/talleres/baile-fitness-adolescencias-y-adultxs.webp",
     title: "Baile Fitness",
-    description:
-      "Actividad física divertida para mejorar resistencia y coordinación.",
+    description: "Actividad física divertida para mejorar resistencia y coordinación.",
   },
   {
     id: 3,
@@ -101,230 +99,140 @@ export default function SectionTalleres() {
       </header>
 
       {/* Contenido largo */}
-      <div className="mx-auto mt-24 max-w-4xl px-4">
-        <h3 className="mb-6 font-neue text-2xl lg:text-3xl font-bold uppercase text-black">
+      <div className="mx-auto mt-24 max-w-4xl px-4 text-neutral-800">
+        <h3 className="mb-10 font-neue text-2xl lg:text-3xl font-bold uppercase text-black">
           Talleres de Verano
         </h3>
 
-        <div className="space-y-10 text-neutral-800 mb-16">
-          {/* Dibujo y pintura */}{" "}
-          <div>
-            {" "}
-            <h4 className="font-neue text-lg font-bold uppercase">
-              Dibujo y pintura
-            </h4>{" "}
-            <p className="text-sm italic">Stefani Barrera · 📞 2984816241</p>{" "}
-            <p className="mt-2 text-sm">
-              <strong>Edad:</strong> 5 a 12 años
-            </p>{" "}
+        <div className="space-y-0 mb-16">
+          {/* Dibujo y pintura */}
+          <div className="py-10 border-b border-black/10">
+            <h4 className="font-neue text-lg font-bold uppercase">Dibujo y pintura</h4>
+            <p className="text-sm italic">Stefani Barrera</p>
+            <p className="mt-2 text-sm"><strong>Edad:</strong> 5 a 12 años</p>
             <p className="mt-2 text-sm leading-relaxed">
-              {" "}
-              Un espacio destinado a infancias donde la creatividad se convierte
-              en juego y el arte en conversación. A través del dibujo y la
-              pintura exploramos colores, formas y texturas, dejando que la
-              imaginación nos guíe. Ideal para divertirse, explorar y compartir!{" "}
-            </p>{" "}
-          </div>{" "}
-          {/* Coreo y cardio */}{" "}
-          <div>
-            {" "}
-            <h4 className="font-neue text-lg font-bold uppercase">
-              Coreo y Cardio
-            </h4>{" "}
-            <p className="text-sm italic">Jessica Quesada · 📞 2984504926</p>{" "}
-            <p className="mt-2 text-sm">
-              <strong>Edad:</strong> +16 años
-            </p>{" "}
-            <p className="text-sm">
-              <strong>Días y horario:</strong> Miércoles y viernes de 19:30 a
-              20:30 hs
-            </p>{" "}
+              Un espacio destinado a infancias donde la creatividad se convierte en juego y el arte en conversación. 
+              A través del dibujo y la pintura exploramos colores, formas y texturas, dejando que la imaginación nos guíe. 
+              Ideal para divertirse, explorar y compartir!
+            </p>
+          </div>
+
+          {/* Coreo y cardio */}
+          <div className="py-10 border-b border-black/10">
+            <h4 className="font-neue text-lg font-bold uppercase">Coreo y Cardio</h4>
+            <p className="text-sm italic">Jessica Quesada</p>
+            <p className="mt-2 text-sm"><strong>Edad:</strong> +16 años</p>
+            <p className="text-sm"><strong>Días y horario:</strong> Miércoles y viernes de 19:30 a 20:30 hs</p>
             <p className="mt-2 text-sm leading-relaxed">
-              {" "}
-              ¿Querés mejorar tu calidad de vida, potenciar el sistema
-              inmunológico, aumentar tu autoestima, fortalecer tus músculos
-              mientras te divertís? ¡Te invitamos a conocer Coreo y Cardio!{" "}
-            </p>{" "}
-          </div>{" "}
-          {/* Baile Fitness */}{" "}
-          <div>
-            {" "}
-            <h4 className="font-neue text-lg font-bold uppercase">
-              Baile Fitness
-            </h4>{" "}
-            <p className="text-sm italic">Beba Díaz · 📞 2984892220</p>{" "}
-            <p className="mt-2 text-sm">
-              <strong>Edad:</strong> +16 años
-            </p>{" "}
-            <p className="text-sm">
-              <strong>Días y horario:</strong> Miércoles y viernes de 20:30 a
-              21:30 hs
-            </p>{" "}
+              ¿Querés mejorar tu calidad de vida, potenciar el sistema inmunológico, aumentar tu autoestima, 
+              fortalecer tus músculos mientras te divertís? ¡Te invitamos a conocer Coreo y Cardio!
+            </p>
+          </div>
+
+          {/* Baile Fitness */}
+          <div className="py-10 border-b border-black/10">
+            <h4 className="font-neue text-lg font-bold uppercase">Baile Fitness</h4>
+            <p className="text-sm italic">Beba Díaz</p>
+            <p className="mt-2 text-sm"><strong>Edad:</strong> +16 años</p>
+            <p className="text-sm"><strong>Días y horario:</strong> Miércoles y viernes de 20:30 a 21:30 hs</p>
             <p className="mt-2 text-sm leading-relaxed">
-              {" "}
-              Es una forma divertida y efectiva de mantenerse en forma y mejorar
-              la condición física.{" "}
-            </p>{" "}
-          </div>{" "}
-          {/* Cerámica Infantil */}{" "}
-          <div>
-            {" "}
-            <h4 className="font-neue text-lg font-bold uppercase">
-              Cerámica infantil · “Arcilla en movimiento”
-            </h4>{" "}
-            <p className="text-sm italic">Julieta Santamaría</p>{" "}
-            <p className="mt-2 text-sm">
-              <strong>Edad:</strong> 8 a 12 años
-            </p>{" "}
-            <p className="text-sm">
-              <strong>Fechas:</strong> Jueves 15, 22, 29 de enero y jueves 5 de
-              febrero
-            </p>{" "}
-            <p className="text-sm">
-              <strong>Horario:</strong> 10 a 11:45 hs
-            </p>{" "}
-            <p className="text-sm">
-              <strong>Modalidad:</strong> 4 encuentros · cupos reducidos
-            </p>{" "}
-            <p className="text-sm">
-              <strong>Valor:</strong> $60.000 (incluye materiales y horneada
-              final)
-            </p>{" "}
+              Es una forma divertida y efectiva de mantenerse en forma y mejorar la condición física.
+            </p>
+          </div>
+
+          {/* Cerámica Infantil */}
+          <div className="py-10 border-b border-black/10">
+            <h4 className="font-neue text-lg font-bold uppercase">Cerámica infantil · “Arcilla en movimiento”</h4>
+            <p className="text-sm italic">Julieta Santamaría</p>
+            <p className="mt-2 text-sm"><strong>Edad:</strong> 8 a 12 años</p>
+            <p className="text-sm"><strong>Fechas:</strong> Jueves 15, 22, 29 de enero y jueves 5 de febrero</p>
+            <p className="text-sm"><strong>Horario:</strong> 10 a 11:45 hs</p>
+            <p className="text-sm"><strong>Modalidad:</strong> 4 encuentros · cupos reducidos</p>
+            <p className="text-sm"><strong>Valor:</strong> $60.000 (incluye materiales y horneada final)</p>
             <p className="mt-2 text-sm leading-relaxed">
-              {" "}
-              El taller propone una experiencia creativa centrada en el proceso,
-              experimentar con arcilla, explorar texturas y desarrollar
-              paciencia, concentración y creatividad.{" "}
-            </p>{" "}
-          </div>{" "}
-          {/* Ritmos Latinos */}{" "}
-          <div>
-            {" "}
-            <h4 className="font-neue text-lg font-bold uppercase">
-              Ritmos Latinos
-            </h4>{" "}
-            <p className="text-sm italic">Beba Díaz · 📞 2984892220</p>{" "}
-            <p className="mt-2 text-sm">
-              <strong>Día y horario:</strong> Jueves de 19:30 a 21:00 hs
-            </p>{" "}
+              El taller propone una experiencia creativa centrada en el proceso, experimentar con arcilla, explorar texturas 
+              y desarrollar paciencia, concentración y creatividad.
+            </p>
+          </div>
+
+          {/* Ritmos Latinos */}
+          <div className="py-10 border-b border-black/10">
+            <h4 className="font-neue text-lg font-bold uppercase">Ritmos Latinos</h4>
+            <p className="text-sm italic">Beba Díaz</p>
+            <p className="mt-2 text-sm"><strong>Día y horario:</strong> Jueves de 19:30 a 21:00 hs</p>
             <p className="mt-2 text-sm leading-relaxed">
-              {" "}
-              Taller orientado al desarrollo artístico, corporal y emocional. Un
-              espacio para conectar con el cuerpo y el estilo propio,
-              fortaleciendo la confianza y la expresión desde la autenticidad.{" "}
-            </p>{" "}
-          </div>{" "}
-          {/* Tango */}{" "}
-          <div>
-            {" "}
-            <h4 className="font-neue text-lg font-bold uppercase">
-              Tango
-            </h4>{" "}
-            <p className="text-sm italic">
-              Martín Mezquita · 📞 2984570978 · Instagram: @martinmezquita_92
-            </p>{" "}
-            <p className="mt-2 text-sm">
-              <strong>Edad:</strong> 18 años en adelante
-            </p>{" "}
-            <p className="mt-2 text-sm">
-              <strong>Día y horario:</strong> Jueves de 19:30 a 21:00 hs
-            </p>{" "}
+              Taller orientado al desarrollo artístico, corporal y emocional. Un espacio para conectar con el cuerpo 
+              y el estilo propio, fortaleciendo la confianza y la expresión desde la autenticidad.
+            </p>
+          </div>
+
+          {/* Tango */}
+          <div className="py-10 border-b border-black/10">
+            <h4 className="font-neue text-lg font-bold uppercase">Tango</h4>
+            <p className="text-sm italic">Martín Mezquita · Instagram: @martinmezquita_92</p>
+            <p className="mt-2 text-sm"><strong>Edad:</strong> 18 años en adelante</p>
+            <p className="mt-2 text-sm"><strong>Día y horario:</strong> Jueves de 19:30 a 21:00 hs</p>
             <p className="mt-2 text-sm leading-relaxed">
-              {" "}
-              Taller de tango con enfoque corporal y musical. Se trabajarán
-              postura, caminata, interpretación musical y coordinación en
-              pareja. Grupos reducidos y personalizados según franjas etarias.{" "}
-            </p>{" "}
-          </div>{" "}
-          {/* Ukelele */}{" "}
-          <div>
-            {" "}
-            <h4 className="font-neue text-lg font-bold uppercase">
-              Ukeleando con Tin
-            </h4>{" "}
-            <p className="text-sm italic">Martín Mezquita</p>{" "}
-            <p className="mt-2 text-sm">
-              <strong>Edad:</strong> 8 a 16 años
-            </p>{" "}
-            <p className="text-sm">
-              <strong>Día y horario:</strong> Viernes de 19:00 a 20:00 hs
-            </p>{" "}
+              Taller de tango con enfoque corporal y musical. Se trabajarán postura, caminata, interpretación musical 
+              y coordinación en pareja. Grupos reducidos y personalizados según franjas etarias.
+            </p>
+          </div>
+
+          {/* Ukelele */}
+          <div className="py-10 border-b border-black/10">
+            <h4 className="font-neue text-lg font-bold uppercase">Ukeleando con Tin</h4>
+            <p className="text-sm italic">Martín Mezquita</p>
+            <p className="mt-2 text-sm"><strong>Edad:</strong> 8 a 16 años</p>
+            <p className="text-sm"><strong>Día y horario:</strong> Viernes de 19:00 a 20:00 hs</p>
             <p className="mt-2 text-sm leading-relaxed">
-              {" "}
-              Taller de ukelele para principiantes con enfoque instrumental y
-              musical. Se trabajarán acordes, rasgueos y canciones grupales.{" "}
-            </p>{" "}
-          </div>{" "}
-          {/* Teatro */}{" "}
-          <div>
-            {" "}
-            <h4 className="font-neue text-lg font-bold uppercase">
-              Teatro
-            </h4>{" "}
-            <p className="text-sm italic">Micaela Ruiz</p>{" "}
+              Taller de ukelele para principiantes con enfoque instrumental y musical. Se trabajarán acordes, rasgueos 
+              y canciones grupales.
+            </p>
+          </div>
+
+          {/* Teatro */}
+          <div className="py-10 border-b border-black/10">
+            <h4 className="font-neue text-lg font-bold uppercase">Teatro</h4>
+            <p className="text-sm italic">Micaela Ruiz</p>
             <p className="mt-2 text-sm leading-relaxed">
-              {" "}
-              Un espacio creativo para explorar el juego teatral, expresión
-              corporal e imaginación. Actividades lúdicas, improvisaciones y
-              construcción de escenas para todas las edades.{" "}
-            </p>{" "}
-          </div>{" "}
-          {/* Taekwon-do Oriana */}{" "}
-          <div>
-            {" "}
-            <h4 className="font-neue text-lg font-bold uppercase">
-              Taekwon-do
-            </h4>{" "}
-            <p className="text-sm italic">Oriana Gil · 📞 2995222625</p>{" "}
-            <p className="mt-2 text-sm">
-              <strong>Edad:</strong> 4 a 12 años
-            </p>{" "}
-            <p className="text-sm">
-              <strong>Días y horario:</strong> Miércoles y viernes de 20 a 21 hs
-            </p>{" "}
+              Un espacio creativo para explorar el juego teatral, expresión corporal e imaginación. 
+              Actividades lúdicas, improvisaciones y construcción de escenas para todas las edades.
+            </p>
+          </div>
+
+          {/* Taekwon-do Oriana */}
+          <div className="py-10 border-b border-black/10">
+            <h4 className="font-neue text-lg font-bold uppercase">Taekwon-do</h4>
+            <p className="text-sm italic">Oriana Gil</p>
+            <p className="mt-2 text-sm"><strong>Edad:</strong> 4 a 12 años</p>
+            <p className="text-sm"><strong>Días y horario:</strong> Miércoles y viernes de 20 a 21 hs</p>
             <p className="mt-2 text-sm leading-relaxed">
-              {" "}
-              Arte marcial que combina actividad física y desarrollo cognitivo,
-              enseñado a través de juegos lúdicos y valores aplicados a la vida
-              cotidiana.{" "}
-            </p>{" "}
-          </div>{" "}
-          {/* Taekwon-do Darío */}{" "}
-          <div>
-            {" "}
-            <h4 className="font-neue text-lg font-bold uppercase">
-              Taekwon-do
-            </h4>{" "}
-            <p className="text-sm italic">Darío Jerez · 📞 2984133311</p>{" "}
-            <p className="mt-2 text-sm">
-              <strong>Edad:</strong> +13 años
-            </p>{" "}
+              Arte marcial que combina actividad física y desarrollo cognitivo, enseñado a través de juegos lúdicos 
+              y valores aplicados a la vida cotidiana.
+            </p>
+          </div>
+
+          {/* Taekwon-do Darío */}
+          <div className="py-10 border-b border-black/10">
+            <h4 className="font-neue text-lg font-bold uppercase">Taekwon-do</h4>
+            <p className="text-sm italic">Darío Jerez</p>
+            <p className="mt-2 text-sm"><strong>Edad:</strong> +13 años</p>
             <p className="mt-2 text-sm leading-relaxed">
-              {" "}
-              Taller dedicado a la enseñanza y difusión del taekwon-do ITF,
-              técnicas, valores y seguimiento de graduación reconocida a nivel
-              provincial, nacional e internacional.{" "}
-            </p>{" "}
-          </div>{" "}
-          {/* Arquitectura para Infancias */}{" "}
-          <div>
-            {" "}
-            <h4 className="font-neue text-lg font-bold uppercase">
-              Arquitectura para Infancias
-            </h4>{" "}
-            <p className="text-sm italic">Belen Stefanich · 📞 2984630794</p>{" "}
-            <p className="mt-2 text-sm">
-              <strong>Edad:</strong> 6 a 12 años
-            </p>{" "}
-            <p className="text-sm">
-              <strong>Día y horario:</strong> Sábados de 10 a 11:30 hs
-            </p>{" "}
+              Taller dedicado a la enseñanza y difusión del taekwon-do ITF, técnicas, valores y seguimiento de graduación 
+              reconocida a nivel provincial, nacional e internacional.
+            </p>
+          </div>
+
+          {/* Arquitectura para Infancias */}
+          <div className="py-10 border-b border-black/10 last:border-0">
+            <h4 className="font-neue text-lg font-bold uppercase">Arquitectura para Infancias</h4>
+            <p className="text-sm italic">Belen Stefanich</p>
+            <p className="mt-2 text-sm"><strong>Edad:</strong> 6 a 12 años</p>
+            <p className="text-sm"><strong>Día y horario:</strong> Sábados de 10 a 11:30 hs</p>
             <p className="mt-2 text-sm leading-relaxed">
-              {" "}
-              Taller de arquitectura de verano, con desafíos de construcción y
-              maquetas, aprendiendo estructuras y contenidos de arquitectura
-              mientras se divierten y se desafían.{" "}
-            </p>{" "}
+              Taller de arquitectura de verano, con desafíos de construcción y maquetas, aprendiendo estructuras 
+              y contenidos de arquitectura mientras se divierten y se desafían.
+            </p>
           </div>
         </div>
       </div>
