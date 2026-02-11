@@ -20,6 +20,23 @@ export interface Event {
 }
 
 export const eventosCompletMock: Event[] = [
+   {
+    id: 26, // Incrementado según el anterior
+    image: "/agenda/febrero/deja.webp",
+    date: "2026-02-13",
+    startDate: "2026-02-13",
+    endDate: "2026-02-13",
+    time: "22:00",
+    title: "DEJA VUGJ & NO LUGAR",
+    description: `Una noche para sumergirse en el sonido con dos propuestas inmersivas. 
+      Deja vugj vuelve a los escenarios con su universo retrofuturista y distópico, 
+      mientras que No Lugar (Franco Martínez) propone una experiencia experimental 
+      de paisajes sonoros cinematográficos. | Rock alternativo, electrónica, ambient y noise.`,
+    slug: "deja-vugj-no-lugar-viernes-13",
+    category: "eventos",
+    tags: ["Rock alternativo", "Electrónica", "Música", "Experimental"],
+    ticketeraUrl: "https://survivo.com.ar/evento/deja-vugj-no-lugar/",
+  },
   {
     id: 12,
     image: "/agenda/toch.webp",
@@ -116,7 +133,7 @@ Repetimos la experiencia artística para niños de 4 a 11 años con danza, músi
     title: "Prácticas de verano de bombo - Música",
     description: `
         Ritmo, aire y encuentro en el patio de CDC, dejate llevar por la percusión y aprende a sentir las vibraciones de estos instrumentos. | Inscripción en Espacio Percusión.`,
-    slug: "practica-verano-bombo-jueves-05",
+    slug: "practica-verano-bombo-jueves-12",
     category: "eventos",
     tags: ["Música", "Percusión", "Folklore", "Taller"],
     // ticketeraUrl:
@@ -253,6 +270,7 @@ Repetimos la experiencia artística para niños de 4 a 11 años con danza, músi
     // ticketeraUrl:
     //   "https://survivo.com.ar/evento/tux-luch-ono-band/",
   },
+ 
 ];
 
 // Funciones para el detalle y eventos relacionados

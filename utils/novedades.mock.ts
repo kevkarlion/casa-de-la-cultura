@@ -1,41 +1,6 @@
 import { Novedad } from "@/interfaces/novedades.interface";
 
 export const novedades: Novedad[] = [
-  {
-    id: 1,
-    title: "Convocatoria abierta 2026 para artistas regionales",
-    date: "2026-01-01",
-    summary:
-      "Convocatoria abierta a artistas y proyectos de música, teatro, danza y expresiones interdisciplinarias para formar parte de la programación 2026.",
-    excerpt: `
- Convocatoria abierta 2026
-
-Destinada a artistas regionales y proyectos de música, teatro, danza y expresiones interdisciplinarias que quieran formar parte de la programación de CDC – Casa de la Cultura.
-
-Si tenés un proyecto y te interesa participar, completá el formulario de inscripción y revisá las bases y condiciones.
-
- CDC – Casa de la Cultura  
-9 de Julio 1043 · Roca / Fiske
-
-Forma parte de CDC – Casa de la Cultura.
-    `,
-    image: "/imagenes/noche-musica.webp",
-    slug: "convocatoria-artistas-2026",
-    
-    tags: ["convocatoria", "artistas", "programación"],
-
-    // 👇 LINKS
-    links: [
-      {
-        label: "Bases y condiciones",
-        url: "https://tr.ee/BQnhtJaUE9",
-      },
-      {
-        label: "Formulario de inscripción",
-        url: "https://tr.ee/BGszcItfaM",
-      },
-    ],
-  },
 
   {
     id: 2,
