@@ -1,6 +1,88 @@
 import { Novedad } from "@/interfaces/novedades.interface";
 
 export const novedades: Novedad[] = [
+  {
+    id: 7,
+    title: "Convocatoria · Espacio Gastronómico Cultural en CDC",
+    date: "2026-03-02",
+    summary:
+      "CDC abre convocatoria para la concesión y puesta en marcha de un espacio gastronómico cultural dentro de la institución.",
+    excerpt: `
+  CDC – Casa de la Cultura abre convocatoria para la concesión y puesta en marcha de un espacio gastronómico cultural, con el objetivo de fortalecer la propuesta integral de la institución, generar un espacio de encuentro y ofrecer una experiencia gastronómica de calidad para el público que asiste diariamente a las actividades.
+  
+  La iniciativa busca desarrollar un proyecto que acompañe la dinámica de CDC, potenciando el cruce entre gastronomía, arte y comunidad, y que atienda a la demanda creciente de quienes participan de la programación artística, formativa y recreativa de la Casa.
+  
+  Las personas interesadas deberán presentar un proyecto gastronómico integral que contemple la inversión inicial necesaria, una propuesta de identidad culinaria y un plan de comunicación.
+  
+  La presentación deberá incluir fundamentación, objetivos, oferta gastronómica, modelo de negocio, público objetivo, carta y estrategia de difusión.
+  
+  La fecha límite para la presentación de proyectos es el **22 de marzo de 2026**.
+  Para consultas y envío de propuestas, comunicarse por email o acercarse presencialmente a la boletería de CDC.
+    `,
+    image: "/imagenes/convocatoria-gastronomica-1.webp",
+
+    images: [
+      {
+        src: "/imagenes/convocatoria-gastronomica-1.webp",
+        alt: "Espacio gastronómico en Casa de la Cultura",
+      },
+      {
+        src: "/imagenes/convocatoria-gastronomica-2.webp",
+        alt: "Propuesta gastronómica cultural en CDC",
+      },
+    ],
+
+    slug: "convocatoria-espacio-gastronomico-cdc",
+    featured: true,
+    tags: ["convocatoria", "gastronomía", "cdc"],
+    links: [
+      {
+        label: "Enviar consulta por Email",
+        url: "mailto:casadelaculturagr@gmail.com",
+      },
+    ],
+  },
+
+  {
+    id: 6,
+    title: "Feria Agro Cultural 2026",
+    date: "2026-03-01",
+    summary:
+      "Convocatoria abierta para participar de la Feria Agro Cultural 2026 que se realizará los sábados en Casa de la Cultura.",
+    excerpt: `
+La cultura de lo hecho a mano y la producción agroecológica forman parte de un gran movimiento económico y social dentro de la ciudad y la región.
+
+Cuando hablamos de movimiento social nos referimos a la activación de productores y productoras que trabajan permanentemente para fomentar el consumo de productos agroecológicos, sustentables y de calidad, apostando al crecimiento económico y cultural mientras se respeta el cuidado del medioambiente, la salud y prácticas que mejoran la calidad de vida de las personas.
+
+Por eso desde CDC, junto a la cooperativa Le Jardinere, impulsamos este llamado a formar parte de la Feria Agro Cultural 2026.
+
+La feria se realizará los días sábados de 10 a 14 hs en Casa de la Cultura y está destinada a quienes elaboran productos de manera artesanal y sustentable: alimentos agroecológicos, conservas, artículos de limpieza ecológicos, cuidado personal, tejido, joyería artesanal, moda circular, costura artesanal, cerámica, vitro, especias y más.
+
+Si querés ser parte de esta propuesta, podés completar el formulario de inscripción.
+    `,
+    image: "/imagenes/feria-agro-cultural-1.webp",
+
+    images: [
+      {
+        src: "/imagenes/feria-agro-cultural-1.webp",
+        alt: "Feria Agro Cultural en Casa de la Cultura",
+      },
+      {
+        src: "/imagenes/feria-agro-cultural-2.webp",
+        alt: "Productores y artesanos en la Feria Agro Cultural",
+      },
+    ],
+
+    slug: "feria-agro-cultural-2026",
+    featured: true,
+    tags: ["feria", "agroecología", "artesanal"],
+    links: [
+      {
+        label: "Completar Formulario de Inscripción",
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSfkl_Khsz1mURGpY7Av6j6j5g_pDC0DyJLPch-kYNByNTYvaQ/viewform",
+      },
+    ],
+  },
 
   {
     id: 2,
@@ -55,7 +137,6 @@ Seguimos construyendo CDC incluso en pausa, con compromiso y trabajo colectivo.
   `,
     image: "/imagenes/pausa-en-movi/reforma1.webp",
 
-    // 👉 GALERÍA EDITORIAL
     images: [
       {
         src: "/imagenes/pausa-en-movi/reforma1.webp",
@@ -83,40 +164,10 @@ Seguimos construyendo CDC incluso en pausa, con compromiso y trabajo colectivo.
     featured: false,
     tags: ["institucional", "obras", "cdc"],
   },
-  {
-  id: 5,
-  title: "Convocatoria abierta: Talleres, Seminarios y Workshops 2026",
-  date: "2026-02-11",
-  summary:
-    "El Área de Desarrollo Artístico de CDC invita a talleristas, docentes y artistas a presentar sus propuestas educativas y culturales para el ciclo 2026.",
-  excerpt: `
-Desde el Área de Desarrollo Artístico de CDC abrimos una convocatoria para la presentación de propuestas de talleres regulares, seminarios y workshops, destinada a personas con saberes y trayectorias en diversas disciplinas.
-
-La búsqueda está orientada a proyectos que aporten al desarrollo artístico, cultural y social, con un enfoque inclusivo y comunitario que dialogue con el proyecto institucional de Casa de la Cultura.
-
-A través del formulario de inscripción, los interesados podrán detallar su trayectoria, objetivos, metodología y necesidades técnicas. También se solicita adjuntar CV y material visual de trabajos previos.
-
-Las propuestas recibidas serán evaluadas para su posible incorporación a la programación anual.
-  `,
-  image: "/imagenes/convocatoria-talleres.webp",
-  imageOrientation: "horizontal",
-  slug: "convocatoria-propuestas-talleres-2026",
-  featured: true,
-  tags: ["convocatoria", "talleres", "formación", "institucional"],
-  links: [
-    {
-      label: "Completar Formulario de Inscripción",
-      url: "https://forms.gle/gfgoGSsSUFQacctj6"
-    },
-    {
-      label: "Consultas por Email",
-      url: "mailto:desarrolloartisticocdc@gmail.com"
-    }
-  ]
-}
 ];
 
-// helpers (sin cambios)
+// helpers
+
 export function getNovedades() {
   return novedades;
 }
@@ -132,11 +183,12 @@ export function getNovedadesByTag(tag: string) {
 export function getRelatedNovedades(
   currentSlug: string,
   tags: string[],
-  limit = 3
+  limit = 3,
 ) {
   return novedades
     .filter(
-      (n) => n.slug !== currentSlug && n.tags?.some((tag) => tags.includes(tag))
+      (n) =>
+        n.slug !== currentSlug && n.tags?.some((tag) => tags.includes(tag)),
     )
     .slice(0, limit);
 }
