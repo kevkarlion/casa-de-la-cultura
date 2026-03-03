@@ -1,119 +1,325 @@
+export interface TallerHorario {
+  age?: string;
+  schedule: string;
+}
+
 export interface TallerInfo {
-      title: string;
-      teacher?: string;
-      age?: string;
-      schedule?: string;
-      phone?: string;
-      description: string;
-      images?: string[];
+  title: string;
+  teacher?: string;
+  description: string;
+  phone?: string;
+  images?: string[];
+  horarios?: TallerHorario[];
+}
+
+export const talleresInfo: TallerInfo[] = [
+
+{
+  title: "Iniciación musical con guitarra",
+  teacher: "Lucas Aguilera",
+  description:
+    "Primer acercamiento al lenguaje musical utilizando la guitarra como herramienta principal. A través de actividades prácticas y grupales se trabajan ritmo, melodía y armonía desarrollando escucha, coordinación y expresión musical.",
+  images: ["/talleres/iniciacion-guitarra.webp"],
+  horarios: [
+    {
+      age: "Desde 8 años",
+      schedule: "Lunes · 18 a 19 hs (8 a 13) · 19 a 20 hs (+13)"
     }
-    
-    export const talleresInfo: TallerInfo[] = [
-      {
-        title: "Dibujo y pintura",
-        teacher: "Stefani Barrera",
-        age: "5 a 12 años",
-        description:
-          "Un espacio destinado a infancias donde la creatividad se convierte en juego y el arte en conversación. A través del dibujo y la pintura exploramos colores, formas y texturas, dejando que la imaginación nos guíe. Ideal para divertirse, explorar y compartir.",
-        images: ["/imagenes/talleres/dibujo-y-pintura-infancias.webp"],
-      },
-    
-      {
-        title: "Coreo y Cardio",
-        teacher: "Jessica Quesada",
-        age: "+16 años",
-        schedule: "Miércoles y viernes de 19:30 a 20:30 hs",
-        description:
-          "¿Querés mejorar tu calidad de vida, potenciar el sistema inmunológico, aumentar tu autoestima, fortalecer tus músculos mientras te divertís? ¡Te invitamos a conocer Coreo y Cardio!",
-        images: ["/imagenes/talleres/coreo-y-cardio-adultxs.webp"],
-      },
-    
-      {
-        title: "Baile Fitness",
-        teacher: "Beba Díaz",
-        age: "+16 años",
-        schedule: "Miércoles y viernes de 20:30 a 21:30 hs",
-        description:
-          "Es una forma divertida y efectiva de mantenerse en forma y mejorar la condición física.",
-        images: ["/imagenes/talleres/baile-fitness-adolescencias-y-adultxs.webp"],
-      },
-    
-      {
-        title: "Ritmos Latinos",
-        teacher: "Beba Díaz",
-        schedule: "Jueves de 19:30 a 21:00 hs",
-        description:
-          "Taller orientado al desarrollo artístico, corporal y emocional. Un espacio para conectar con el cuerpo y el estilo propio, fortaleciendo la confianza y la expresión desde la autenticidad.",
-        images: ["/imagenes/talleres/ritmos-latinos-adolescencias-y-adultxs.webp"],
-      },
-    
-      {
-        title: "Tango",
-        teacher: "Martín Mezquita · Instagram: @martinmezquita_92",
-        age: "18 años en adelante",
-        schedule: "Jueves de 19:30 a 21:00 hs",
-        description:
-          "Taller de tango con enfoque corporal y musical. Se trabajarán postura, caminata, interpretación musical y coordinación en pareja. Grupos reducidos y personalizados según franjas etarias.",
-        images: ["/imagenes/talleres/tango-adultos.webp"],
-      },
-    
-      {
-        title: "Ukeleando con Tin",
-        teacher: "Martín Mezquita",
-        age: "8 a 16 años",
-        schedule: "Viernes de 19:00 a 20:00 hs",
-        description:
-          "Taller de ukelele para principiantes con enfoque instrumental y musical. Se trabajarán acordes, rasgueos y canciones grupales.",
-        images: ["/imagenes/talleres/ukulele-infancias-y-adolescencias.webp"],
-      },
-    
-      {
-        title: "Teatro",
-        teacher: "Micaela Ruiz",
-        description:
-          "Un espacio creativo para explorar el juego teatral, expresión corporal e imaginación. Actividades lúdicas, improvisaciones y construcción de escenas para todas las edades.",
-        images: [
-          "/imagenes/talleres/teatro-adolescencias.webp",
-          "/imagenes/talleres/teatro-adultxs.webp",
-          "/imagenes/talleres/teatro-infancias.webp",
-        ],
-      },
-    
-      {
-        title: "Taekwon-do",
-        teacher: "Oriana Gil",
-        age: "4 a 12 años",
-        schedule: "Miércoles y viernes de 20 a 21 hs",
-        description:
-          "Arte marcial que combina actividad física y desarrollo cognitivo, enseñado a través de juegos lúdicos y valores aplicados a la vida cotidiana.",
-        images: ["/imagenes/talleres/taekwondo-infancias.webp"],
-      },
-    
-      {
-        title: "Taekwon-do",
-        teacher: "Darío Jerez",
-        age: "+13 años",
-        description:
-          "Taller dedicado a la enseñanza y difusión del taekwon-do ITF, técnicas, valores y seguimiento de graduación reconocida a nivel provincial, nacional e internacional.",
-        images: ["/imagenes/talleres/taekwondo-adolescencias-y-adultxs.webp"],
-      },
-    
-      {
-        title: "Arquitectura para Infancias",
-        teacher: "Belen Stefanich",
-        age: "6 a 12 años",
-        schedule: "Sábados de 10 a 11:30 hs",
-        description:
-          "Taller de arquitectura de verano con desafíos de construcción y maquetas, aprendiendo estructuras y contenidos de arquitectura mientras se divierten.",
-        images: ["/imagenes/talleres/arquitectura-infancias.webp"],
-      },
-    
-      {
-        title: "Habitar Poesía",
-        schedule: "Miércoles de 19.30 a 21 hs",
-        description:
-          "Habitar Poesía es un taller grupal que propone transitar la escritura como práctica sostenida, en diálogo con otrxs. Un espacio para indagar en el propio lenguaje, explorar la palabra en su dimensión más profunda y encontrar la propia voz.\n\nA través de consignas, lecturas y trabajo compartido, se acompañan los procesos individuales con una mirada respetuosa, identificando fortalezas y posibles líneas de reescritura. Escribir como escucha, como búsqueda y como experiencia colectiva.",
-        phone: "2984653721",
-        images: ["/imagenes/talleres/habitar-poesia.webp"],
-      },
-    ];
+  ]
+},
+
+{
+  title: "Freestyle",
+  teacher: "Juan Segundo Martín (Juanse)",
+  description:
+    "Espacio creativo para desarrollar expresión, imaginación y comunicación a través del freestyle. Se trabajan rimas, juegos de palabras, ritmo y musicalidad mediante dinámicas grupales.",
+  images: ["/talleres/taller-freestyle.webp"],
+  horarios: [
+    {
+      age: "8 a 16 años",
+      schedule: "Miércoles · 19:30 a 21 hs"
+    }
+  ]
+},
+
+{
+  title: "Canto para infancias",
+  teacher: "Sergio Mondaca · Antonella Perugini",
+  description:
+    "Taller de canto donde se trabaja técnica vocal, repertorio y expresión corporal a través del juego. No se requieren conocimientos previos.",
+    images: ["/talleres/canto-infantes.webp"],
+  horarios: [
+    {
+      age: "6 a 12 años",
+      schedule: "Miércoles · 18:30 a 20 hs"
+    }
+  ]
+},
+
+{
+  title: "Teatro (Infancias)",
+  teacher: "Micaela Ruiz",
+  description:
+    "Espacio para jugar, crear y expresarse a través del teatro. Se desarrollan improvisaciones, juegos escénicos y dinámicas de grupo que fortalecen la creatividad y la confianza.",
+  horarios: [
+    {
+      age: "Desde 8 años",
+      schedule: "Miércoles y Viernes · 18 a 19 hs"
+    }
+  ]
+},
+
+{
+  title: "Teatro – Cada muerte de Obispo",
+  teacher: "Emilio Ziaurriz",
+  description:
+    "Taller de teatro que propone explorar el lenguaje escénico desde el juego y la experimentación. Un espacio de creación colectiva para descubrir el propio lenguaje teatral.",
+  horarios: [
+    {
+      age: "Jóvenes y adultxs",
+      schedule: "Lunes y Jueves · 19 a 21 hs"
+    }
+  ]
+},
+
+{
+  title: "Taekwon-do",
+  teacher: "Oriana Gil",
+  description:
+    "Arte marcial que combina actividad física y desarrollo cognitivo. A través de dinámicas lúdicas se trabajan disciplina, coordinación y valores.",
+  horarios: [
+    {
+      age: "4 a 11 años",
+      schedule: "Miércoles y Viernes · 20 a 21 hs"
+    }
+  ]
+},
+
+{
+  title: "Taekwon-do ITF",
+  teacher: "Darío Jerez",
+  description:
+    "Taller dedicado a la enseñanza del Taekwon-do ITF con desarrollo técnico, valores marciales y seguimiento de graduaciones reconocidas.",
+  images: ["/talleres/taekwondo-itf.webp"],
+  horarios: [
+    {
+      age: "+12 años",
+      schedule: "Lunes, Miércoles y Viernes · 19 a 20 hs"
+    }
+  ]
+},
+
+{
+  title: "Gimnasia cerebral – ActivaMente",
+  teacher: "Adriana Bucci",
+  description:
+    "Programa de estimulación cognitiva para personas mayores donde se trabajan memoria, atención y agilidad mental mediante dinámicas grupales.",
+  images: ["/talleres/gimnasia-cerebral.webp"],
+  horarios: [
+    {
+      age: "+60 años",
+      schedule: "Jueves · 10 a 12 hs"
+    }
+  ]
+},
+
+{
+  title: "Arquitectura para infancias",
+  teacher: "Belén Stefanich",
+  description:
+    "Taller creativo donde las infancias exploran arquitectura mediante maquetas, estructuras y desafíos de construcción.",
+  horarios: [
+    {
+      age: "6 a 12 años",
+      schedule: "Sábados · 18 a 19:30 hs"
+    }
+  ]
+},
+
+{
+  title: "Danzas urbanas",
+  teacher: "Amira Pinolli",
+  description:
+    "Taller de danza urbana con estilos como hip hop, reggaetón y rock. Espacio para desarrollar coordinación, ritmo y expresión corporal.",
+  images: ["/talleres/danzas-urbanas-niños.webp"],
+  horarios: [
+    {
+      age: "+16",
+      schedule: "Adolescenias y adultos | Lunes · 19:30 a 20:30 hs · Viernes · 18:30 a 19:30 hs"
+    }
+  ]
+},
+
+{
+  title: "Danzas árabes",
+  teacher: "Jessica Rodríguez",
+  description:
+    "Escuela de danzas árabes Al'Adhra. Formación artística en danza oriental para todas las edades, explorando técnica, expresión y tradición.",
+  images: ["/talleres/danzas-arabes-infantes.webp"],
+  horarios: [
+    {
+      age: "4 a 9 años",
+      schedule: "KIDS · Martes y Jueves 19:00 a 20:00 hs"
+    },
+    {
+      age: "10 a 14 años",
+      schedule: "TEENS · Lunes y Jueves 19:00 a 20:00 hs"
+    }
+  ]
+},
+
+{
+  title: "Danzas españolas",
+  teacher: "Elena Ledesma",
+  description:
+    "Clases que recorren estilos como escuela bolera, flamenco, estilización y danza regional. Un espacio de aprendizaje artístico y disfrute del movimiento.",
+  // images: ["/talleres/danzas-espanolas.webp"],
+  horarios: [
+    {
+      age: "Infancias y adultxs",
+      schedule: "Lunes y miércoles · 18:30 a 21:30 hs"
+    }
+  ]
+},
+
+{
+  title: "Danzas clásicas (Ballet)",
+  teacher: "Andrea Basconcello",
+  description:
+    "Clases de ballet para diferentes edades y niveles enfocadas en técnica, expresión y desarrollo corporal.",
+  // images: ["/talleres/ballet.webp"],
+  horarios: [
+    {
+      age: "Desde 3 años",
+      schedule: "Lunes a viernes · distintos grupos"
+    }
+  ]
+},
+
+{
+  title: "Flamenco Intermedio",
+  teacher: "Cindy Mayorquin",
+  description:
+    "Clase de flamenco nivel intermedio enfocada en técnica, compás y expresión escénica.",
+  // images: ["/talleres/flamenco.webp"],
+  horarios: [
+    {
+      age: "Jóvenes y adultxs",
+      schedule: "Jueves · 18:30 a 20 hs"
+    }
+  ]
+},
+
+{
+  title: "Flamenco Inicial",
+  teacher: "Cindy Mayorquin",
+  description:
+    "Introducción al flamenco para personas sin experiencia previa, trabajando compás, postura y técnica básica.",
+  // images: ["/talleres/flamenco.webp"],
+  horarios: [
+    {
+      age: "Adultxs",
+      schedule: "Viernes · 18 a 19:30 hs"
+    }
+  ]
+},
+
+{
+  title: "Danzas folklóricas argentinas",
+  teacher: "Sonia Martínez",
+  description:
+    "Espacio para aprender y practicar danzas tradicionales argentinas en un ambiente participativo y cultural.",
+  images: ["/talleres/danzas-folkloricas.webp"],
+  horarios: [
+    {
+      age: "+16 años",
+      schedule: "Martes · 19 a 21 hs"
+    }
+  ]
+},
+
+{
+  title: "Danzas urbanas – Dancehall & Waacking",
+  teacher: "Tamara Gómez",
+  description:
+    "Exploración de estilos urbanos como Dancehall y Waacking, trabajando ritmo, presencia escénica y expresión corporal.",
+  images: ["/talleres/danzas-urbanas.webp"],
+  horarios: [
+    {
+      age: "+16 años",
+      schedule: "Martes y jueves · 20 a 21 hs"
+    }
+  ]
+},
+
+{
+  title: "Stop Motion",
+  teacher: "Stefani Barrera",
+  description:
+    "Laboratorio creativo audiovisual donde se crean historias mediante técnicas de animación stop motion combinando arte, narrativa y tecnología.",
+  images: ["/talleres/stop-motion.webp"],
+  horarios: [
+    {
+      age: "12 a 17 años",
+      schedule: "Sábados · 10:30 a 12:30 hs"
+    }
+  ]
+},
+
+{
+  title: "Dibujo para cómic y manga",
+  teacher: "Gino Barsotti",
+  description:
+    "Taller de ilustración enfocado en técnicas de cómic y manga abordando figura humana, perspectiva y narrativa visual.",
+  // images: ["/talleres/manga-comic.webp"],
+  horarios: [
+    {
+      age: "+10 años",
+      schedule: "Martes y jueves · 18:30 a 20 hs"
+    }
+  ]
+},
+
+{
+  title: "Dibujo y pintura creativa",
+  teacher: "Stefani Barrera",
+  description:
+    "Espacio artístico donde las infancias exploran colores, formas y texturas desarrollando creatividad e imaginación.",
+  // images: ["/talleres/dibujo-pintura.webp"],
+  horarios: [
+    {
+      age: "5 a 12 años",
+      schedule: "Miércoles y viernes · 18:30 a 20 hs"
+    }
+  ]
+},
+
+{
+  title: "Coreo y Cardio",
+  teacher: "Jessica Quesada",
+  description:
+    "Entrenamiento que combina baile y ejercicio cardiovascular para fortalecer el cuerpo, mejorar coordinación y disfrutar del movimiento.",
+  // images: ["/talleres/coreo-cardio.webp"],
+  horarios: [
+    {
+      age: "+16 años",
+      schedule: "Lunes, miércoles y viernes · 19:30 a 20:30 hs"
+    }
+  ]
+},
+
+{
+  title: "Baile Fitness",
+  teacher: "Beba Díaz",
+  description:
+    "Actividad física divertida basada en coreografías que mejora resistencia, coordinación y bienestar general.",
+  // images: ["/talleres/baile-fitness.webp"],
+  horarios: [
+    {
+      age: "Jóvenes y adultxs",
+      schedule: "Lunes, miércoles y viernes · 20:30 a 21:30 hs"
+    }
+  ]
+}
+
+];
