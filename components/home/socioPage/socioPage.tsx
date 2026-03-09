@@ -14,12 +14,7 @@ import {
 } from "lucide-react";
 
 const beneficios = [
-  {
-    icon: BookOpen,
-    value: "40%",
-    title: "Talleres",
-    description: "Descuento en talleres con una antigüedad mínima de 4 meses.",
-  },
+  
   {
     icon: Building2,
     value: "30%",
