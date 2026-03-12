@@ -234,21 +234,21 @@ Andy Watson y Nano presentan una propuesta de música de autor con tintes de can
     tags: ["Música", "Autor", "Fusión", "En vivo"],
     ticketeraUrl: "https://survivo.com.ar/evento/eter-andy-watson-y-nano/",
   },
-//   {
-//     id: 39,
-//     image: "/agenda/marzo/feria-expo-viajera.webp",
-//     date: "2026-03-15",
-//     startDate: "2026-03-15",
-//     endDate: "2026-03-15",
-//     time: "15:00",
-//     title: "Feria Expo Viajera",
-//     description: `
-// Un paseo de emprendedores y artesanos de la comunidad con una gran variedad de productos, desde deco y arte hasta moda y diseño. ¡Encontrá lo que buscás en este espacio! | Entrada libre.
-// `,
-//     slug: "feria-expo-viajera",
-//     category: "eventos",
-//     tags: ["Comunidad", "Feria", "Emprendedores"],
-//   },
+   {
+     id: 39,
+     image: "/agenda/marzo/feria-expo-viajera.webp",
+     date: "2026-03-15",
+     startDate: "2026-03-15",
+     endDate: "2026-03-15",
+     time: "15:00",
+     title: "Feria Expo Viajera",
+     description: `
+ Un paseo de emprendedores y artesanos de la comunidad con una gran variedad de productos, desde deco y arte hasta moda y diseño. ¡Encontrá lo que buscás en este espacio! | Entrada libre.
+ `,
+     slug: "feria-expo-viajera",
+     category: "eventos",
+     tags: ["Comunidad", "Feria", "Emprendedores"],
+   },
   {
     id: 40,
     image: "/agenda/abril/milena-salamanca.webp",
