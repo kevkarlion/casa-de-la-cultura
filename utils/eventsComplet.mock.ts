@@ -345,6 +345,97 @@ El espectáculo cuenta con un elenco de bailarines cordobeses y propone una expe
     tags: ["Danza", "Música", "Rock", "Escénicas"],
     ticketeraUrl: "https://survivo.com.ar/evento/hernan-piquin/",
   },
+  {
+    id: 44,
+    image: "/agenda/marzo/cineclub-septimo-jurado.webp",
+    date: "2026-03-17",
+    startDate: "2026-03-17",
+    endDate: "2026-03-17",
+    time: "21:00",
+    title: "Cineclub TYÖ – Ciclo Las películas de juicios: El séptimo jurado",
+    description: `
+Más allá del estrado existe un tribunal invisible: la conciencia. Cineclub TYÖ presenta “El séptimo jurado” (Le septième juré), dir. Georges Lautner.
+
+Con una atmósfera existencialista, la película explora cómo construimos la verdad interior cuando quien cometió un crimen debe juzgar a un inocente. | Entradas en boletería.
+`,
+    slug: "cineclub-tyo-el-septimo-jurado",
+    category: "eventos",
+    tags: ["Cine", "Proyección", "Cineclub"],
+  },
+  {
+    id: 45,
+    image: "/agenda/marzo/pena-8m.webp",
+    date: "2026-03-18",
+    startDate: "2026-03-18",
+    endDate: "2026-03-18",
+    time: "21:30",
+    title: "Mujeres y disidencias en trama | Peña en conmemoración del 8M",
+    description: `
+Música, danza y palabra para celebrar la creación y el trabajo de mujeres y personas disidentes. 
+
+Participan Auka Folk (grupo folclórico del Valle integrado por cinco mujeres), Latidos de Mujeres (compañía de danza) y lecturas de la Secretaría de Derechos Humanos, Género e Igualdad de Oportunidades de Unter.
+
+Se solicita colaboración con un alimento no perecedero para compañerxs afectadxs por recortes de puestos. | Entradas en boletería y ticketera.
+`,
+    slug: "mujeres-y-disidencias-en-trama-pena-8m",
+    category: "eventos",
+    tags: ["Música", "Folklore", "Danza", "Comunidad"],
+    ticketeraUrl: "https://survivo.com.ar/evento/pena-en-conmemoracion-del-8m/",
+  },
+  {
+    id: 46,
+    image: "/agenda/marzo/pausa-escucha.webp",
+    date: "2026-03-19",
+    startDate: "2026-03-19",
+    endDate: "2026-03-19",
+    time: "19:30",
+    title: "Pausa | Sesión de escucha activa",
+    description: `
+Experiencia inmersiva de escucha profunda. Incluye recepción, asanas suaves guiadas por Florencia Garro para liberar tensiones y una inmersión sonora en vivo a cargo de NoLugar.
+
+Un set ambient con grabaciones de paisajes marinos y texturas de sintetizador para aquietar la mente y conectar con el cuerpo. | Entradas en boletería y ticketera.
+`,
+    slug: "pausa-sesion-de-escucha-activa",
+    category: "eventos",
+    tags: ["Comunidad", "Bienestar", "Música"],
+    ticketeraUrl: "https://survivo.com.ar/evento/pausa-sesion-de-escucha-activa/", // Nota: Se usó el link provisto
+  },
+  {
+    id: 47,
+    image: "/agenda/marzo/habia-un-cuento.webp",
+    date: "2026-03-21",
+    startDate: "2026-03-21",
+    endDate: "2026-03-21",
+    time: "20:30",
+    title: "Había un cuento",
+    description: `
+Ciclo de cuentacuentos para niñes de 2 a 10 años. Historias originales de la actriz Paula La Sala, acompañadas por canciones propias y clásicos de María Elena Walsh. 
+
+Una propuesta de narración con guitarra, voz y chelo para viajar a mundos mágicos en familia. | Entradas en boletería y ticketera.
+`,
+    slug: "habia-un-cuento-infancias",
+    category: "eventos",
+    tags: ["Infancias", "Teatro", "Música"],
+    ticketeraUrl: "https://survivo.com.ar/evento/habia-un-cuento/",
+  },
+  {
+    id: 48,
+    image: "/agenda/marzo/guerreras-kpop.webp",
+    date: "2026-03-22",
+    startDate: "2026-03-22",
+    endDate: "2026-03-22",
+    time: "17:00",
+    title: "Guerreras K-pop",
+    description: `
+Las Guerreras Doradas del K-POP presentan un show inmersivo y teatral que traslada la energía de la pantalla al escenario. 
+
+Coreografías, efectos especiales y música en una aventura interactiva donde el público puede convertirse en el cuarto miembro de la banda. ¡Ideal para fans del género! | Entradas en boletería y ticketera.
+`,
+    slug: "guerreras-k-pop-show",
+    category: "eventos",
+    tags: ["Infancias", "Música", "K-pop", "Teatro"],
+    ticketeraUrl: "https://www.tuentrada.com",
+  },
 ];
 
 // Funciones para el detalle y eventos relacionados
