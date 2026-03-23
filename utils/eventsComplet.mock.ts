@@ -436,6 +436,113 @@ Coreografías, efectos especiales y música en una aventura interactiva donde el
     tags: ["Infancias", "Música", "K-pop", "Teatro"],
     ticketeraUrl: "https://www.tuentrada.com",
   },
+  {
+    id: 49,
+    image: "/agenda/marzo/se-dice-culturas-radio.webp",
+    date: "2026-03-24",
+    startDate: "2026-03-24",
+    endDate: "2026-03-24",
+    time: "20:00",
+    title: "Se Dice Culturas – Especial radio en vivo: A 50 años del último golpe militar",
+    description: `
+Después de la marcha, te esperamos para conversar sobre la construcción de la memoria con un programa de radio en vivo y abierto al público con el acompañamiento de artistas locales cantando a la justicia y a la verdad. | Entrada a colaboración.
+`,
+    slug: "se-dice-culturas-especial-radio-golpe-militar",
+    category: "eventos",
+    tags: ["Comunidad", "Radio", "Memoria"],
+  },
+
+  {
+    id: 50,
+    image: "/agenda/marzo/noche-de-pena-fernando-carmona.webp",
+    date: "2026-03-25",
+    startDate: "2026-03-25",
+    endDate: "2026-03-25",
+    time: "21:30",
+    title: "Noche de Peña – Fernando Carmona & amigos",
+    description: `
+El encuentro de cada semana que nos trae música, raíces y comunidad.
+
+En esta ocasión nos acompaña Fernando Carmona y artistas invitadxs para disfrutar de una noche de puro baile y folklore. | Entrada popular en boletería y anticipadas.
+`,
+    slug: "noche-de-pena-fernando-carmona-miercoles-25",
+    category: "eventos",
+    tags: ["Música", "Folklore", "Peña"],
+  },
+
+  {
+    id: 51,
+    image: "/agenda/marzo/sampler-club-collage.webp",
+    date: "2026-03-26",
+    startDate: "2026-03-26",
+    endDate: "2026-03-26",
+    time: "20:30",
+    title: "Sampler Club Collage",
+    description: `
+Un espacio creativo dedicado a la exploración y reinterpretación a través de la experimentación con el collage. | Inscripción vía formulario, incluye una bebida.
+`,
+    slug: "sampler-club-collage-jueves-26",
+    category: "eventos",
+    tags: ["Comunidad", "Arte", "Taller"],
+    ticketeraUrl: "https://forms.gle/mHbvSJwifN9g3S547",
+  },
+
+  {
+    id: 52,
+    image: "/agenda/marzo/charly-fabrica-alfajores.webp",
+    date: "2026-03-27",
+    startDate: "2026-03-27",
+    endDate: "2026-03-27",
+    time: "21:00",
+    title: "Charly y la fábrica de alfajores",
+    description: `
+Un show de rock nacional que rinde homenaje a la obra de Charly García, recorriendo sus distintas etapas musicales.
+
+Con una propuesta que combina clásicos infaltables y guiños para fans, la banda logra unir generaciones en un mismo viaje sonoro. | Entradas en boletería y ticketera.
+`,
+    slug: "charly-y-la-fabrica-de-alfajores-viernes-27",
+    category: "eventos",
+    tags: ["Música", "Rock Nacional", "En vivo"],
+    ticketeraUrl: "https://survivo.com.ar/evento/charly-y-la-fabrica-de-alfajores/",
+  },
+
+  {
+    id: 53,
+    image: "/agenda/marzo/soulsticie-jazz-bossa.webp",
+    date: "2026-03-28",
+    startDate: "2026-03-28",
+    endDate: "2026-03-28",
+    time: "17:00",
+    title: "Soulsticie Jazz & Bossa",
+    description: `
+Un dúo musical que recorre clásicos del jazz, bossa, blues y bolero con arreglos propios y un estilo íntimo y elegante. Guitarra fingerstyle y voz cálida se unen en un sonido orgánico, sofisticado y lleno de emoción, con composiciones originales incluidas. | Entradas en boletería y ticketera.
+`,
+    slug: "soulsticie-jazz-bossa-sabado-28",
+    category: "eventos",
+    tags: ["Música", "Jazz", "Bossa Nova", "Acústico"],
+    ticketeraUrl: "https://survivo.com.ar/evento/soulstice-jazz-bossa/",
+  },
+
+  {
+    id: 54,
+    image: "/agenda/mayo/julieta-laso.webp",
+    date: "2026-05-16",
+    startDate: "2026-05-16",
+    endDate: "2026-05-16",
+    time: "20:30",
+    title: "Julieta Laso",
+    description: `
+La cantora argentina Julieta Laso se presenta en vivo junto al guitarrista Leandro Ángeli, con un repertorio que recorre tangos, valses, boleros y canciones de su último disco Pata de Perra, además de clásicos de su carrera.
+
+Reconocida por su estilo intenso y por su trayectoria en el tango —incluyendo su paso por la Orquesta Fernández Fierro—, Laso ha lanzado cinco discos, obtuvo premios como los Premios Gardel y fue distinguida como Personalidad Destacada de la Cultura.
+
+Su propuesta combina lo tradicional y lo contemporáneo, con una voz profunda que atraviesa distintos géneros latinoamericanos. | Entradas en boletería y ticketera.
+`,
+    slug: "julieta-laso-abril-16",
+    category: "eventos",
+    tags: ["Música", "Tango", "En vivo", "Canción"],
+    ticketeraUrl: "https://survivo.com.ar/evento/julieta-laso/",
+  },
 ];
 
 // Funciones para el detalle y eventos relacionados
