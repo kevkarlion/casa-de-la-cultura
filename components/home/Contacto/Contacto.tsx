@@ -105,7 +105,7 @@ export default function ContactoPage() {
               <h2 className="text-2xl font-bold mb-4">Redes sociales</h2>
               <div className="flex gap-4">
                 <a
-                  href="https://wa.me/5492984590848"
+                  href="https://wa.me/5492984351387"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"

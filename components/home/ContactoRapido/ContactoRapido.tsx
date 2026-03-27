@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin, MessageCircle } from "lucide-react";
 
 export default function ContactoRapido() {
   return (
@@ -31,12 +31,14 @@ export default function ContactoRapido() {
             </div>
 
             <div className="flex items-center gap-4">
-              <Phone className="h-5 w-5 text-neutral-400" />
               <a
-                href="https://wa.me/5492984590848"
-                className="text-sm transition hover:text-white"
+                href="https://wa.me/5492984351387"
+                target="_blank"
+                aria-label="WhatsApp"
+                className="flex items-center gap-3 transition hover:text-white"
               >
-                (0298) 59-0848
+                <MessageCircle className="h-5 w-5 text-neutral-400" />
+                <span className="text-sm">Línea de WhatsApp</span>
               </a>
             </div>
 

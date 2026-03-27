@@ -138,12 +138,12 @@ export default function NosotrosPage() {
 
                     <li>
                       <a
-                        href="https://wa.me/5492984590848"
+                        href="https://wa.me/5492984351387"
                         className="flex items-center gap-3 hover:text-neutral-300 transition"
                         target="_blank"
                       >
                         <Phone size={16} />
-                        (0298) 59-0848
+                        2984 351387
                       </a>
                     </li>
 
@@ -167,7 +167,7 @@ export default function NosotrosPage() {
                   </p>
 
                   <a
-                    href="https://wa.me/5492984590848"
+                    href="https://wa.me/5492984351387"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
