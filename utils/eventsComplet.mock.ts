@@ -543,6 +543,100 @@ Su propuesta combina lo tradicional y lo contemporáneo, con una voz profunda qu
     tags: ["Música", "Tango", "En vivo", "Canción"],
     ticketeraUrl: "https://survivo.com.ar/evento/julieta-laso/",
   },
+  {
+    id: 55,
+    image: "/agenda/marzo/cineclub-justicia-para-todos.webp",
+    date: "2026-03-31",
+    startDate: "2026-03-31",
+    endDate: "2026-03-31",
+    time: "21:00",
+    title:
+      "Cineclub TYÖ – Ciclo Las películas de juicios: Justicia para todos",
+    description: `
+  Cineclub TYÖ continúa el ciclo de películas de juicios con la proyección de “Justicia para todos” (…And Justice for All), dir. Norman Jewison.
+  
+  Un íntegro abogado que detesta la corrupción se ve obligado a defender en juicio a un juez que desprecia, bajo amenaza de ser inhabilitado. Un film que se posiciona desde la rabia política para denunciar el cinismo y la burocracia que enturbian el acceso a la justicia. | Entradas en boletería.
+  `,
+    slug: "cineclub-tyo-justicia-para-todos",
+    category: "eventos",
+    tags: ["Cine", "Proyección", "Cineclub"],
+  },
+  
+  {
+    id: 56,
+    image: "/agenda/abril/taller-bebes-amar-la-mar.webp",
+    date: "2026-04-01",
+    startDate: "2026-04-01",
+    endDate: "2026-04-01",
+    time: "18:00",
+    title: "Taller para Bebés: Amar la Mar – Las Magdalenas",
+    description: `
+  Sumergite en un vaivén de paisajes sonoros creado para fortalecer el vínculo con tu pequeño a través del arte.
+  
+  Un taller de música, juegos y colores pensado para bebés y niñxs de 0 a 3 años junto a uno o dos adultos acompañantes. | Entrada en entradaweb.com. Asociados de UNTER cuentan con un 15% de descuento.
+  `,
+    slug: "taller-bebes-amar-la-mar-las-magdalenas",
+    category: "eventos",
+    tags: ["Infancias", "Taller", "Música"],
+    ticketeraUrl: "https://www.entradaweb.com.ar/",
+  },
+  
+  {
+    id: 57,
+    image: "/agenda/abril/pena-fer-vazquez-victor-gonzalez.webp",
+    date: "2026-04-01",
+    startDate: "2026-04-01",
+    endDate: "2026-04-01",
+    time: "21:30",
+    title: "Noche de Peña: Fer Vázquez y Víctor González",
+    description: `
+  El encuentro de cada semana que nos trae música, raíces y comunidad.
+  
+  En esta ocasión celebramos la música junto a Fer Vázquez y Víctor González, en una noche cargada de tradición, emoción y buena energía. | Entrada popular en boletería y anticipadas.
+  `,
+    slug: "noche-de-pena-fer-vazquez-victor-gonzalez",
+    category: "eventos",
+    tags: ["Música", "Folklore", "Peña"],
+  },
+  
+  {
+    id: 58,
+    image: "/agenda/abril/las-magdalenas-canciones-para-jugar.webp",
+    date: "2026-04-02",
+    startDate: "2026-04-02",
+    endDate: "2026-04-02",
+    time: "18:00",
+    title: "Las Magdalenas – Canciones para jugar",
+    description: `
+  Las Magdalenas presentan “Canciones para Jugar”, un viaje musical por el mundo de las emociones y la imaginación.
+  
+  Un espectáculo lleno de ternura, juego y música pensado para toda la familia, especialmente para niñxs desde los 2 años. | Entrada en entradaweb.com. Asociados de UNTER cuentan con un 15% de descuento.
+  `,
+    slug: "las-magdalenas-canciones-para-jugar",
+    category: "eventos",
+    tags: ["Infancias", "Música", "Teatro"],
+    ticketeraUrl: "https://www.entradaweb.com.ar/evento/25ea60b1/stop/1",
+  },
+  
+  {
+    id: 59,
+    image: "/agenda/abril/muestra-madres-malvinas.webp",
+    date: "2026-04-02",
+    startDate: "2026-04-02",
+    endDate: "2026-04-02",
+    time: "20:30",
+    title: "Muestra Fotográfica: Madres de Malvinas",
+    description: `
+  Una propuesta del Observatorio de Malvinas Argentinas de la Legislatura de Río Negro y la Dirección Provincial de Veteranos de Guerra que invita a reflexionar y emocionar.
+  
+  A través de esta exposición se visibiliza el profundo dolor, la lucha y la memoria de las Madres de Malvinas, quienes durante más de 40 años han sostenido una historia muchas veces silenciada.
+  
+  Coordinan Sonia Almada y Rubén Pablos junto a los veteranos Ricardo Flores y Jorge Torres. | Entrada libre.
+  `,
+    slug: "muestra-fotografica-madres-de-malvinas",
+    category: "eventos",
+    tags: ["Comunidad", "Muestra", "Memoria"],
+  },
 ];
 
 // Funciones para el detalle y eventos relacionados
