@@ -599,24 +599,24 @@ Su propuesta combina lo tradicional y lo contemporáneo, con una voz profunda qu
     tags: ["Música", "Folklore", "Peña"],
   },
   
-  {
-    id: 58,
-    image: "/agenda/abril/las-magdalenas-canciones-para-jugar.webp",
-    date: "2026-04-02",
-    startDate: "2026-04-02",
-    endDate: "2026-04-02",
-    time: "18:00",
-    title: "Las Magdalenas – Canciones para jugar",
-    description: `
-  Las Magdalenas presentan “Canciones para Jugar”, un viaje musical por el mundo de las emociones y la imaginación.
+  // {
+  //   id: 58,
+  //   image: "/agenda/abril/las-magdalenas-canciones-para-jugar.webp",
+  //   date: "2026-04-02",
+  //   startDate: "2026-04-02",
+  //   endDate: "2026-04-02",
+  //   time: "18:00",
+  //   title: "Las Magdalenas – Canciones para jugar",
+  //   description: `
+  // Las Magdalenas presentan “Canciones para Jugar”, un viaje musical por el mundo de las emociones y la imaginación.
   
-  Un espectáculo lleno de ternura, juego y música pensado para toda la familia, especialmente para niñxs desde los 2 años. | Entrada en entradaweb.com. Asociados de UNTER cuentan con un 15% de descuento.
-  `,
-    slug: "las-magdalenas-canciones-para-jugar",
-    category: "eventos",
-    tags: ["Infancias", "Música", "Teatro"],
-    ticketeraUrl: "https://www.entradaweb.com.ar/evento/25ea60b1/stop/1",
-  },
+  // Un espectáculo lleno de ternura, juego y música pensado para toda la familia, especialmente para niñxs desde los 2 años. | Entrada en entradaweb.com. Asociados de UNTER cuentan con un 15% de descuento.
+  // `,
+  //   slug: "las-magdalenas-canciones-para-jugar",
+  //   category: "eventos",
+  //   tags: ["Infancias", "Música", "Teatro"],
+  //   ticketeraUrl: "https://www.entradaweb.com.ar/evento/25ea60b1/stop/1",
+  // },
   
   {
     id: 59,
