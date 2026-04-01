@@ -216,24 +216,24 @@ Un dúo compuesto por Elisa Malén (voz) y Mauricio Pérez Mondadori (piano) con
     category: "eventos",
     tags: ["Música", "Tango", "Canción", "Acústico"],
   },
-//   {
-//     id: 38,
-//     image: "/agenda/marzo/eter-andy.webp",
-//     date: "2026-03-14",
-//     startDate: "2026-03-14",
-//     endDate: "2026-03-14",
-//     time: "21:00",
-//     title: "Éter & Andy Watson y Nano",
-//     description: `
-// Éter es un proyecto musical que busca representar a través del sonido aquello intangible y espiritual: una presentación etérea, íntima y profunda de la mano de Franco Venezuela (voz y guitarra), Roberto Fuentes (guitarra, trompeta y sintetizador), Amparo Olmedo (bajo) y Justina Olmedo (batería y percusión). | Entradas en boletería y ticketera.
+  {
+    id: 38,
+    image: "/agenda/marzo/eter-andy.webp",
+    date: "2026-03-14",
+    startDate: "2026-03-14",
+    endDate: "2026-03-14",
+    time: "21:00",
+    title: "Éter & Andy Watson y Nano",
+    description: `
+Éter es un proyecto musical que busca representar a través del sonido aquello intangible y espiritual: una presentación etérea, íntima y profunda de la mano de Franco Venezuela (voz y guitarra), Roberto Fuentes (guitarra, trompeta y sintetizador), Amparo Olmedo (bajo) y Justina Olmedo (batería y percusión). | Entradas en boletería y ticketera.
 
-// Andy Watson y Nano presentan una propuesta de música de autor con tintes de canciones del mundo y una fusión de estilos que crean un show con identidad, energía y sonido propio. | Entradas en boletería y ticketera.
-// `,
-//     slug: "eter-andy-watson-y-nano",
-//     category: "eventos",
-//     tags: ["Música", "Autor", "Fusión", "En vivo"],
-//     ticketeraUrl: "https://survivo.com.ar/evento/eter-andy-watson-y-nano/",
-//   },
+Andy Watson y Nano presentan una propuesta de música de autor con tintes de canciones del mundo y una fusión de estilos que crean un show con identidad, energía y sonido propio. | Entradas en boletería y ticketera.
+`,
+    slug: "eter-andy-watson-y-nano",
+    category: "eventos",
+    tags: ["Música", "Autor", "Fusión", "En vivo"],
+    ticketeraUrl: "https://survivo.com.ar/evento/eter-andy-watson-y-nano/",
+  },
    {
      id: 39,
      image: "/agenda/marzo/feria-expo-viajera.webp",
@@ -599,24 +599,24 @@ Su propuesta combina lo tradicional y lo contemporáneo, con una voz profunda qu
     tags: ["Música", "Folklore", "Peña"],
   },
   
-  // {
-  //   id: 58,
-  //   image: "/agenda/abril/las-magdalenas-canciones-para-jugar.webp",
-  //   date: "2026-04-02",
-  //   startDate: "2026-04-02",
-  //   endDate: "2026-04-02",
-  //   time: "18:00",
-  //   title: "Las Magdalenas – Canciones para jugar",
-  //   description: `
-  // Las Magdalenas presentan “Canciones para Jugar”, un viaje musical por el mundo de las emociones y la imaginación.
+  {
+    id: 58,
+    image: "/agenda/abril/las-magdalenas-canciones-para-jugar.webp",
+    date: "2026-04-02",
+    startDate: "2026-04-02",
+    endDate: "2026-04-02",
+    time: "18:00",
+    title: "Las Magdalenas – Canciones para jugar",
+    description: `
+  Las Magdalenas presentan “Canciones para Jugar”, un viaje musical por el mundo de las emociones y la imaginación.
   
-  // Un espectáculo lleno de ternura, juego y música pensado para toda la familia, especialmente para niñxs desde los 2 años. | Entrada en entradaweb.com. Asociados de UNTER cuentan con un 15% de descuento.
-  // `,
-  //   slug: "las-magdalenas-canciones-para-jugar",
-  //   category: "eventos",
-  //   tags: ["Infancias", "Música", "Teatro"],
-  //   ticketeraUrl: "https://www.entradaweb.com.ar/evento/25ea60b1/stop/1",
-  // },
+  Un espectáculo lleno de ternura, juego y música pensado para toda la familia, especialmente para niñxs desde los 2 años. | Entrada en entradaweb.com. Asociados de UNTER cuentan con un 15% de descuento.
+  `,
+    slug: "las-magdalenas-canciones-para-jugar",
+    category: "eventos",
+    tags: ["Infancias", "Música", "Teatro"],
+    ticketeraUrl: "https://www.entradaweb.com.ar/evento/25ea60b1/stop/1",
+  },
   
   {
     id: 59,
