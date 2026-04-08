@@ -99,14 +99,15 @@ export default function EventCard({
 
         {/* Fecha */}
         <span
-          className={clsx(
-            "absolute left-4 top-4 px-4 py-1 text-sm font-semibold tracking-wide shadow-md backdrop-blur",
-            v.date,
-            classNames.date
-          )}
-        >
-          {date}
-        </span>
+  suppressHydrationWarning={true} // <--- AGREGÁ ESTO
+  className={clsx(
+    "absolute left-4 top-4 px-4 py-1 text-sm font-semibold tracking-wide shadow-md backdrop-blur",
+    v.date,
+    classNames.date
+  )}
+>
+  {date}
+</span>
       </div>
 
       {/* Contenido */}
