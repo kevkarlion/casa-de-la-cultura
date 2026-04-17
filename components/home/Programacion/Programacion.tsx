@@ -3,7 +3,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Ticket } from 'lucide-react'
+import { Ticket, FileText } from 'lucide-react'
+
+/** Descarga archivo - abrir URL directa */
+function downloadDocument(url: string | undefined, fileName?: string) {
+  if (!url) return;
+  window.open(url + (url.includes("?") ? "&" : "?") + "fl_attachment=true", "_blank");
+}
 
 interface Event {
   id: number | string
@@ -14,6 +20,8 @@ interface Event {
   description?: string
   slug: string
   ticketeraUrl?: string
+  documentUrl?: string
+  documentName?: string
   category: 'eventos'
   tags: string[]
 }
@@ -101,6 +109,16 @@ export default function ProgramacionPage({ events }: Props) {
                     Compra tu entrada
                   </a>
                 )}
+
+                {heroEvent.documentUrl && (
+                  <button
+                    onClick={() => downloadDocument(heroEvent.documentUrl, heroEvent.documentName)}
+                    className="inline-flex items-center gap-2 px-5 py-2 bg-black text-brand-white-cdc font-semibold rounded-lg hover:bg-gray-800 transition-colors"
+                  >
+                    <FileText size={18} />
+                    {heroEvent.documentName || 'Descargar'}
+                  </button>
+                )}
               </div>
             </div>
           </div>
@@ -177,6 +195,16 @@ export default function ProgramacionPage({ events }: Props) {
                         <Ticket size={14} />
                         Entradas
                       </a>
+                    )}
+
+                    {event.documentUrl && (
+                      <button
+                        onClick={() => downloadDocument(event.documentUrl, event.documentName)}
+                        className="text-brand-white-cdc inline-flex items-center gap-1 text-xs font-bold bg-black px-3 py-1 rounded hover:bg-gray-800 transition-colors"
+                      >
+                        <FileText size={14} />
+                        {event.documentName || 'PDF'}
+                      </button>
                     )}
                   </div>
                 </div>

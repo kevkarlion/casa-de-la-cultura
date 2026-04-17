@@ -1,7 +1,13 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import { ChevronLeft, ChevronRight, Ticket } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Ticket, FileText } from 'lucide-react'
+
+/** Descarga archivo - abrir URL directa */
+function downloadDocument(url: string | undefined, fileName?: string) {
+  if (!url) return;
+  window.open(url + (url.includes("?") ? "&" : "?") + "fl_attachment=true", "_blank");
+}
 import EventCard from '../cards/EventCard'
 import { DestacadoItem } from '@/types/DestacadoItem'
 
@@ -107,6 +113,17 @@ export default function EventCarousel({ items }: Props) {
                   <Ticket size={14} color="var(--brand-white-cdc)" />
                   Entradas
                 </a>
+              )}
+
+              {/* CARTEL DE DOCUMENTO */}
+              {item.documentUrl && (
+                <button
+                  onClick={() => downloadDocument(item.documentUrl, item.documentName)}
+                  className="absolute top-3 left-3 inline-flex items-center gap-1 text-xs font-bold bg-black text-brand-white-cdc px-2 py-1 rounded shadow-lg hover:bg-gray-800 transition-colors"
+                >
+                  <FileText size={14} color="var(--brand-white-cdc)" />
+                  {item.documentName || 'PDF'}
+                </button>
               )}
             </div>
           ))}

@@ -5,10 +5,17 @@ import { notFound } from "next/navigation";
 import { useState } from "react";
 import { getEventoBySlug, getRelatedEventos } from "@/utils/eventsComplet.mock";
 import Breadcrumbs from "@/components/shared/Breadcrumb/Breadcrumbs";
-import { Ticket } from "lucide-react";
+import { Ticket, FileText } from "lucide-react";
 
 interface EventosDetailProps {
   slug: string;
+}
+
+/** Descarga archivo abr directamente con fl_attachment */
+function downloadDocument(url: string | undefined, fileName?: string) {
+  if (!url) return;
+  // Abrir URL directa con fl_attachment - descarga directamente
+  window.open(url + (url.includes("?") ? "&" : "?") + "fl_attachment=true", "_blank");
 }
 
 // --- UTIL: parse "YYYY-MM-DD" como fecha LOCAL ---
@@ -72,6 +79,17 @@ export default function ProgramacionDetail({ slug }: EventosDetailProps) {
               <Ticket size={20} color="var(--brand-white-cdc)" />
               Compra tu entrada por Ticketera
             </a>
+          )}
+
+          {/* ENLACE A DOCUMENTO DESCARGABLE */}
+          {evento.documentUrl && (
+            <button
+              onClick={() => downloadDocument(evento.documentUrl, evento.documentName)}
+              className="inline-block mt-6 ml-0 sm:ml-4 px-6 py-3 bg-black hover:bg-gray-800 text-brand-white-cdc font-semibold transition-colors shadow-lg items-center gap-2 justify-center"
+            >
+              <FileText size={20} color="var(--brand-white-cdc)" />
+              {evento.documentName || "Descargar documento"}
+            </button>
           )}
         </header>
 

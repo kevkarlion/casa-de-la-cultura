@@ -11,6 +11,8 @@ export function mapEventoToDestacado(evento: Event): DestacadoItem {
     slug: `/programacion/${evento.slug}`,
     tags: evento.tags,
     type: "evento",
-    ticketeraUrl: evento.ticketeraUrl, // <--- CORRECTO
+    ticketeraUrl: evento.ticketeraUrl,
+    documentUrl: evento.documentUrl,
+    documentName: evento.documentName,
   }
 }

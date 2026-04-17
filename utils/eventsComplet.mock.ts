@@ -3,6 +3,11 @@ export interface EventImage {
   alt?: string;
 }
 
+export interface EventDocument {
+  url: string;
+  name?: string;
+}
+
 export interface Event {
   id: number;
   image: string;
@@ -17,6 +22,8 @@ export interface Event {
   category: "eventos";
   tags: string[];
   ticketeraUrl?: string;
+  documentUrl?: string;
+  documentName?: string;
 }
 
 export const eventosCompletMock: Event[] = [
@@ -259,9 +266,11 @@ export const eventosCompletMock: Event[] = [
     slug: "festival-danza-intercambio-cultural",
     category: "eventos",
     tags: ["Danza", "Festival"],
-    ticketeraUrl:
-      "https://survivo.com.ar/evento/festival-cultural-por-la-danza/",
+    ticketeraUrl:"https://survivo.com.ar/evento/festival-cultural-por-la-danza/",
+    documentUrl: 'https://res.cloudinary.com/dfli0n64m/raw/upload/v1776454958/INTERCAMBIO_CULTURAL_CDC.pdf',
+    documentName: 'Festival de Danza: Intercambio Cultural',
   },
+  
   {
     id: 201,
     image: "/agenda/abril/por-siempre-fosse.webp",

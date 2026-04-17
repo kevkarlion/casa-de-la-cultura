@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { MousePointer2, Fingerprint } from "lucide-react";
 
@@ -42,7 +43,7 @@ export default function ActividadesEspacios() {
               escenarios abiertos a la comunidad.
             </p>
 
-            <a
+            <Link
               href="/programacion"
               className="
                 inline-flex items-center gap-2
@@ -65,7 +66,7 @@ export default function ActividadesEspacios() {
               <span className="inline-flex md:hidden">
                 <Fingerprint size={18} className="opacity-80" />
               </span>
-            </a>
+            </Link>
           </motion.div>
 
           {/* SEPARADOR */}

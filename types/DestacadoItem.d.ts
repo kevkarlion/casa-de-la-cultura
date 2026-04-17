@@ -7,5 +7,7 @@ export interface DestacadoItem {
   slug: string
   tags: string[]
   type: "evento" | "novedad",
-   ticketeraUrl?: string // NUEVO: link de compra de ticket
+   ticketeraUrl?: string // link de compra de ticket
+   documentUrl?: string // link a documento descargable (PDF, imagen)
+   documentName?: string // nombre personalizado para el documento
 }
