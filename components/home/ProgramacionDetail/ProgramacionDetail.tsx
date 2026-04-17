@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { getEventoBySlug, getRelatedEventos } from "@/utils/eventsComplet.mock";
 import Breadcrumbs from "@/components/shared/Breadcrumb/Breadcrumbs";
@@ -9,6 +9,7 @@ import { Ticket, FileText } from "lucide-react";
 
 interface EventosDetailProps {
   slug: string;
+  initialDate?: string;
 }
 
 /** Descarga archivo abr directamente con fl_attachment */
@@ -24,11 +25,14 @@ function parseLocalDate(dateStr: string) {
   return new Date(year, month - 1, day);
 }
 
-export default function ProgramacionDetail({ slug }: EventosDetailProps) {
+export default function ProgramacionDetail({ slug, initialDate }: EventosDetailProps) {
   const evento = getEventoBySlug(slug);
   const [isHorizontal, setIsHorizontal] = useState<boolean | null>(null);
 
   if (!evento) notFound();
+
+  // Usar la fecha de la query si viene, si no la del evento
+  const displayDate = initialDate || evento.date;
 
   const related = evento.tags
     ? getRelatedEventos(evento.slug, evento.tags)
@@ -50,7 +54,7 @@ export default function ProgramacionDetail({ slug }: EventosDetailProps) {
         {/* HEADER */}
         <header className="mb-10 max-w-3xl">
           <p className="text-sm text-black mb-3">
-            {parseLocalDate(evento.date).toLocaleDateString("es-AR")}
+            {parseLocalDate(displayDate).toLocaleDateString("es-AR")}
           </p>
 
           <h1 className="text-4xl md:text-5xl font-neue font-bold mb-6 leading-tight text-black">

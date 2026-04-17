@@ -31,6 +31,14 @@ function parseLocalDate(dateStr: string) {
   return new Date(year, month - 1, day); // month-1 porque en JS los meses van de 0 a 11
 }
 
+// --- UTIL: formatear fecha como YYYY-MM-DD ---
+function formatDate(date: Date): string {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
+
 export default function AgendaAlmanaque({ events }: AgendaAlmanaqueProps) {
   const today = new Date();
   const [currentDate, setCurrentDate] = useState(
@@ -44,7 +52,7 @@ export default function AgendaAlmanaque({ events }: AgendaAlmanaqueProps) {
   ).getDate();
 
   const eventsByDay = useMemo(() => {
-    const map = new Map<number, Event[]>();
+    const map = new Map<number, { event: Event; dateStr: string }[]>();
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
 
@@ -56,7 +64,8 @@ export default function AgendaAlmanaque({ events }: AgendaAlmanaqueProps) {
         if (d.getFullYear() === year && d.getMonth() === month) {
           const day = d.getDate();
           if (!map.has(day)) map.set(day, []);
-          map.get(day)!.push(event);
+          // Guardar evento + fecha específica del día
+          map.get(day)!.push({ event, dateStr: formatDate(d) });
         }
       }
     });
@@ -159,44 +168,47 @@ export default function AgendaAlmanaque({ events }: AgendaAlmanaqueProps) {
                 )}
 
                 {/* Día con un solo evento */}
-                {dayEvents.length === 1 && (
-                  <Link
-                    href={`/programacion/${dayEvents[0].slug}`}
-                    className="relative block h-full w-full overflow-hidden pt-6"
-                  >
-                    {dayEvents[0].image && (
-                      <Image
-                        src={dayEvents[0].image}
-                        alt={dayEvents[0].title}
-                        fill
-                        style={{ objectFit: "cover" }}
-                        className="absolute inset-0"
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-black/50 text-white flex flex-col justify-end p-2 gap-1">
-                      <span className="text-sm font-semibold">{dayEvents[0].title}</span>
-                      {dayEvents[0].time && <span className="text-xs">{dayEvents[0].time}</span>}
-                      <div className="flex flex-wrap gap-1">
-                        {dayEvents[0].tags.map(tag => (
-                          <span
-                            key={tag}
-                            className="text-[10px] bg-black px-2 py-0.5 rounded"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                {dayEvents.length === 1 && (() => {
+                  const { event, dateStr } = dayEvents[0];
+                  return (
+                    <Link
+                      href={`/programacion/${event.slug}?date=${dateStr}`}
+                      className="relative block h-full w-full overflow-hidden pt-6"
+                    >
+                      {event.image && (
+                        <Image
+                          src={event.image}
+                          alt={event.title}
+                          fill
+                          style={{ objectFit: "cover" }}
+                          className="absolute inset-0"
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-black/50 text-white flex flex-col justify-end p-2 gap-1">
+                        <span className="text-sm font-semibold">{event.title}</span>
+                        {event.time && <span className="text-xs">{event.time}</span>}
+                        <div className="flex flex-wrap gap-1">
+                          {event.tags.map(tag => (
+                            <span
+                              key={tag}
+                              className="text-[10px] bg-black px-2 py-0.5 rounded"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                )}
+                    </Link>
+                  );
+                })()}
 
                 {/* Día con más de un evento */}
                 {dayEvents.length > 1 && (
                   <div className="flex flex-col gap-2 p-2 h-full overflow-y-auto pt-8">
-                    {dayEvents.map(event => (
+                    {dayEvents.map(({ event, dateStr }) => (
                       <Link
-                        key={event.id}
-                        href={`/programacion/${event.slug}`}
+                        key={`${event.id}-${dateStr}`}
+                        href={`/programacion/${event.slug}?date=${dateStr}`}
                         className="relative block h-32 sm:h-36 md:h-40 overflow-hidden rounded-md shadow-sm hover:shadow-md transition"
                       >
                         {event.image && (
