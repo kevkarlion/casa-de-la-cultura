@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { motion, easeOut } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { getEventosOrdenados } from "@/utils/eventsComplet.mock";
 
 interface Event {
   id: string | number;
@@ -56,7 +57,9 @@ export default function AgendaAlmanaque({ events }: AgendaAlmanaqueProps) {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
 
-    events.forEach((event) => {
+    // Usar eventos ordenados por fecha y hora
+    const sortedEvents = getEventosOrdenados();
+    sortedEvents.forEach((event) => {
       const start = event.startDate ? parseLocalDate(event.startDate) : parseLocalDate(event.date!);
       const end = event.endDate ? parseLocalDate(event.endDate) : parseLocalDate(event.date!);
 
@@ -71,7 +74,7 @@ export default function AgendaAlmanaque({ events }: AgendaAlmanaqueProps) {
     });
 
     return map;
-  }, [events, currentDate]);
+  }, [currentDate]);
 
   const monthLabel = currentDate.toLocaleDateString("es-AR", {
     month: "long",
@@ -143,7 +146,16 @@ export default function AgendaAlmanaque({ events }: AgendaAlmanaqueProps) {
             );
 
             const weekDayLabel = WEEK_DAYS[date.getDay() === 0 ? 6 : date.getDay() - 1];
-            const dayEvents = eventsByDay.get(day) || [];
+            const dayEvents = (eventsByDay.get(day) || []).sort((a, b) => {
+              const normalizeTime = (t: string | undefined) => {
+                if (!t) return "00:00";
+                const [h, m] = t.split(":");
+                return `${h.padStart(2, "0")}:${(m || "0").padStart(2, "0")}`;
+              };
+              const timeA = normalizeTime(a.event.time);
+              const timeB = normalizeTime(b.event.time);
+              return timeA.localeCompare(timeB);
+            });
 
             return (
               <motion.div

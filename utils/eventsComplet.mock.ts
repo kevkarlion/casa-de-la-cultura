@@ -1,3 +1,4 @@
+//utils/eventsComplet.mock.ts
 export interface EventImage {
   src: string;
   alt?: string;
@@ -240,36 +241,20 @@ export const eventosCompletMock: Event[] = [
 
   {
     id: 32,
-    image: "/agenda/abril/hernan-piquin.webp",
+    image: "/agenda/abril/hernan-piquin-agotadas.webp",
     date: "2026-04-21",
     time: "21:00",
     title: "Hernán Piquín presenta: Me verás volver",
-    description: "",
+    description:
+      "Un emotivo espectáculo de danza tributo a Soda Stereo que recorre grandes éxitos de la banda con 10 bailarines en escena y una narrativa sobre el amor y la tragedia. | *Entradas agotadas*",
     slug: "hernan-piquin-me-veras-volver",
     category: "eventos",
     tags: ["Danza", "Música"],
-    ticketeraUrl:
-      "https://survivo.com.ar/evento/hernan-piquin/",
+    ticketeraUrl: "https://survivo.com.ar/evento/hernan-piquin-segunda-funcion/",
   },
 
   // EXTRAS
-  {
-    id: 200,
-    image: "/agenda/abril/festival-danza.webp",
-    date: "2026-04-25",
-    startDate: "2026-04-25",
-    endDate: "2026-04-26",
-    time: "15:00",
-    title: "Festival de Danza: Intercambio Cultural",
-    description:
-      "Dos días de formación, intercambio y celebración de la danza con múltiples estilos. | Entradas en ticketera.",
-    slug: "festival-danza-intercambio-cultural",
-    category: "eventos",
-    tags: ["Danza", "Festival"],
-    ticketeraUrl:"https://survivo.com.ar/evento/festival-cultural-por-la-danza/",
-    documentUrl: 'https://res.cloudinary.com/dfli0n64m/raw/upload/v1776454958/INTERCAMBIO_CULTURAL_CDC.pdf',
-    documentName: 'Festival de Danza: Intercambio Cultural',
-  },
+  
   
   {
     id: 201,
@@ -341,10 +326,124 @@ export const eventosCompletMock: Event[] = [
     ticketeraUrl:
       "https://survivo.com.ar/evento/el-cuarto-soda/",
   },
+
+  // NUEVOS ABRIL 2026 - SEMANA 21-26
+  {
+    id: 33,
+    image: "/agenda/abril/hernan-piquin.webp",
+    date: "2026-04-21",
+    time: "23:00",
+    title: "Hernán Piquín: Me verás volver - 2da función",
+    description:
+      "Un emotivo espectáculo de danza tributo a Soda Stereo que recorre grandes éxitos de la banda con 10 bailarines en escena y una narrativa sobre el amor y la tragedia. | Entradas en boletería y ticketera.",
+    slug: "hernan-piquin-me-veras-volver-segunda-funcion",
+    category: "eventos",
+    tags: ["Danza", "Música"],
+    ticketeraUrl: "https://survivo.com.ar/evento/hernan-piquin-segunda-funcion/",
+  },
+  {
+    id: 34,
+    image: "/agenda/abril/noche-pena-colo-parra.webp",
+    date: "2026-04-22",
+    time: "21:30",
+    title: "Noche de Peña: Colo Parra, Lito Riquelme y Fabián Mora",
+    description:
+      "El reconocido Colo Parra llega junto a Lito Riquelme (artista y compositor de Villa Regina) y Fabián Mora (saxofonista y acordeonista) para traernos un repertorio bien bailable de nuestro folklore argentino. | Entradas en boletería.",
+    slug: "noche-de-pena-colo-parra-lito-riquelme-fabian-mora",
+    category: "eventos",
+    tags: ["Música", "Folklore", "Peña"],
+  },
+  {
+    id: 35,
+    image: "/agenda/abril/mari-mendieta.webp",
+    date: "2026-04-23",
+    time: "21:30",
+    title: "Mari de Mendieta y Gastón Cinquegrani: Clásicos de Jazz y Lentos Internacionales",
+    description:
+      "Mari de Mendieta y Gastón Cinquegrani recorren el jazz y clásicos internacionales con una voz expresiva y una guitarra llena de matices que crean un clima cercano donde la improvisación y la conexión con el público son protagonistas. | Colaboración consciente.",
+    slug: "mari-de-mendieta-gaston-cinquegrani-clasicos-jazz",
+    category: "eventos",
+    tags: ["Música", "Jazz"],
+  },
+  {
+    id: 36,
+    image: "/agenda/abril/feria-cultural-agroecologica.webp",
+    date: "2026-04-25",
+    time: "10:00",
+    title: "Feria Cultural / Agroecológica",
+    description:
+      "Un espacio para productores locales y regionales, emprendedores, y artesanxs que laboren desde la conciencia, el respeto por el territorio y la economía social y solidaria. | Entrada libre.",
+    slug: "feria-cultural-agroecologica-abril",
+    category: "eventos",
+    tags: ["Comunidad", "Feria"],
+  },
+  {
+    id: 200,
+    image: "/agenda/abril/festival-danza.webp",
+    date: "2026-04-25",
+    time: "9:30",
+    title: "Festival de Danza: Intercambio Cultural",
+    description:
+      "Dos días de formación, intercambio y celebración de la danza con múltiples estilos. | Entradas en ticketera.",
+    slug: "festival-danza-intercambio-cultural",
+    category: "eventos",
+    tags: ["Danza", "Festival"],
+    ticketeraUrl:"https://survivo.com.ar/evento/festival-cultural-por-la-danza/",
+    documentUrl: 'https://res.cloudinary.com/dfli0n64m/raw/upload/v1776454958/INTERCAMBIO_CULTURAL_CDC.pdf',
+    documentName: 'Festival de Danza: Intercambio Cultural',
+  },
+  {
+    id: 37,
+    image: "/agenda/abril/feria-arte-sano.webp",
+    date: "2026-04-25",
+    time: "15:00",
+    title: "Feria de Arte Sano + Donación e Intercambio de Plantas y Semillas: Proyecto Bosque",
+    description:
+      "Un espacio para encontrar productos artesanales, naturales y con conciencia. Te invitamos a darte una vuelta por los stands y a acercarte con una planta para intercambiar con otrxs o ayudarnos a decorate el hall de CDC. | Entrada libre.",
+    slug: "feria-arte-sano-proyecto-bosque",
+    category: "eventos",
+    tags: ["Comunidad", "Feria"],
+  },
+  {
+    id: 38,
+    image: "/agenda/abril/festival-cultural-danza.webp",
+    date: "2026-04-26",
+    time: "19:00",
+    title: "Intercambio Cultural: Festival Cultural por la Danza",
+    description:
+      "El intercambio culmina con un festival artístico, donde la escena se llena de energía, diversidad y expresión, compartiendo todo lo vivido a lo largo de la jornada formativa. | Entradas en boletería o en ticketera.",
+    slug: "festival-cultural-por-la-danza",
+    category: "eventos",
+    tags: ["Danza", "Festival"],
+    ticketeraUrl: "https://survivo.com.ar/evento/festival-cultural-por-la-danza/",
+  },
 ];
 
 export function getEventoBySlug(slug: string) {
   return eventosCompletMock.find((evento) => evento.slug === slug);
+}
+
+// Normaliza hora a formato HH:MM (con ceros adelante)
+function normalizeTime(time: string | undefined): string {
+  if (!time) return "00:00";
+  const [hours, minutes] = time.split(":");
+  return `${hours.padStart(2, "0")}:${(minutes || "0").padStart(2, "0")}`;
+}
+
+// Ordena eventos por fecha y hora cronológicamente
+export function getEventosOrdenados(): Event[] {
+  return [...eventosCompletMock].sort((a, b) => {
+    const fechaA = a.date || a.startDate || "";
+    const fechaB = b.date || b.startDate || "";
+    const horaA = normalizeTime(a.time);
+    const horaB = normalizeTime(b.time);
+
+    // Primero por fecha, luego por hora
+    if (fechaA !== fechaB) {
+      return fechaA.localeCompare(fechaB);
+    }
+    return horaA.localeCompare(horaB);
+  });
 }
 
 export function getRelatedEventos(currentSlug: string, tags: string[], limit = 3) {
