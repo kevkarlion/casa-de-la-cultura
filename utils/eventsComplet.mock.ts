@@ -330,7 +330,7 @@ export const eventosCompletMock: Event[] = [
   // NUEVOS ABRIL 2026 - SEMANA 21-26
   {
     id: 33,
-    image: "/agenda/abril/hernan-piquin.webp",
+    image: "/agenda/abril/hernan-piquin-agotadas.webp",
     date: "2026-04-21",
     time: "23:00",
     title: "Hernán Piquín: Me verás volver - 2da función",
