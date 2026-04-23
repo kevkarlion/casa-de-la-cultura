@@ -330,7 +330,7 @@ export const eventosCompletMock: Event[] = [
   // NUEVOS ABRIL 2026 - SEMANA 21-26
   {
     id: 33,
-    image: "/agenda/abril/hernan-piquin.webp",
+    image: "/agenda/abril/hernan-piquin-agotadas.webp",
     date: "2026-04-21",
     time: "23:00",
     title: "Hernán Piquín: Me verás volver - 2da función",
@@ -382,7 +382,7 @@ export const eventosCompletMock: Event[] = [
     image: "/agenda/abril/festival-danza.webp",
     date: "2026-04-25",
     time: "9:30",
-    title: "Festival de Danza: Intercambio Cultural",
+    title: "Festival cultural por la danza: Día mundial de la danza",
     description:
       "Durante el sábado 25 de abril, el espacio se transforma en un punto de encuentro para bailarinas, bailarines y amantes de la danza, con clases en simultáneo a cargo de docentes de la región en una amplia variedad de lenguajes: folklore, urbano, flamenco, árabe, contemporáneo, reggaetón, dancehall y propuestas para infancias.| Encontrá más info acá.",
     slug: "festival-danza-intercambio-cultural",
@@ -408,7 +408,7 @@ export const eventosCompletMock: Event[] = [
     image: "/agenda/abril/festival-danza.webp",
     date: "2026-04-26",
     time: "19:00",
-    title: "Intercambio Cultural: Festival Cultural por la Danza",
+    title: "Festival cultural por la danza: Día mundial de la danza",
     description:
       "El intercambio culmina con un festival artístico, donde la escena se llena de energía, diversidad y expresión, compartiendo todo lo vivido a lo largo de la jornada formativa. | Entradas en boletería o en ticketera.",
     slug: "festival-cultural-por-la-danza",
@@ -417,6 +417,8 @@ export const eventosCompletMock: Event[] = [
     documentUrl: 'https://res.cloudinary.com/dfli0n64m/raw/upload/v1776454958/INTERCAMBIO_CULTURAL_CDC.pdf',
     documentName: 'Festival de Danza: Intercambio Cultural',
     ticketeraUrl: "https://survivo.com.ar/evento/festival-cultural-por-la-danza/",
+    documentUrl: 'https://res.cloudinary.com/dfli0n64m/raw/upload/v1776454958/INTERCAMBIO_CULTURAL_CDC.pdf',
+    documentName: 'Festival de Danza: Intercambio Cultural',
   },
 ];
 
