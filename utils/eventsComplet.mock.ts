@@ -384,11 +384,10 @@ export const eventosCompletMock: Event[] = [
     time: "9:30",
     title: "Festival de Danza: Intercambio Cultural",
     description:
-      "Dos días de formación, intercambio y celebración de la danza con múltiples estilos. | Entradas en ticketera.",
+      "Durante el sábado 25 de abril, el espacio se transforma en un punto de encuentro para bailarinas, bailarines y amantes de la danza, con clases en simultáneo a cargo de docentes de la región en una amplia variedad de lenguajes: folklore, urbano, flamenco, árabe, contemporáneo, reggaetón, dancehall y propuestas para infancias.| Encontrá más info acá.",
     slug: "festival-danza-intercambio-cultural",
     category: "eventos",
     tags: ["Danza", "Festival"],
-    ticketeraUrl:"https://survivo.com.ar/evento/festival-cultural-por-la-danza/",
     documentUrl: 'https://res.cloudinary.com/dfli0n64m/raw/upload/v1776454958/INTERCAMBIO_CULTURAL_CDC.pdf',
     documentName: 'Festival de Danza: Intercambio Cultural',
   },
@@ -406,7 +405,7 @@ export const eventosCompletMock: Event[] = [
   },
   {
     id: 38,
-    image: "/agenda/abril/festival-cultural-danza.webp",
+    image: "/agenda/abril/festival-danza.webp",
     date: "2026-04-26",
     time: "19:00",
     title: "Intercambio Cultural: Festival Cultural por la Danza",
@@ -415,6 +414,8 @@ export const eventosCompletMock: Event[] = [
     slug: "festival-cultural-por-la-danza",
     category: "eventos",
     tags: ["Danza", "Festival"],
+    documentUrl: 'https://res.cloudinary.com/dfli0n64m/raw/upload/v1776454958/INTERCAMBIO_CULTURAL_CDC.pdf',
+    documentName: 'Festival de Danza: Intercambio Cultural',
     ticketeraUrl: "https://survivo.com.ar/evento/festival-cultural-por-la-danza/",
   },
 ];
