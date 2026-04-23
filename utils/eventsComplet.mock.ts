@@ -417,8 +417,6 @@ export const eventosCompletMock: Event[] = [
     documentUrl: 'https://res.cloudinary.com/dfli0n64m/raw/upload/v1776454958/INTERCAMBIO_CULTURAL_CDC.pdf',
     documentName: 'Festival de Danza: Intercambio Cultural',
     ticketeraUrl: "https://survivo.com.ar/evento/festival-cultural-por-la-danza/",
-    documentUrl: 'https://res.cloudinary.com/dfli0n64m/raw/upload/v1776454958/INTERCAMBIO_CULTURAL_CDC.pdf',
-    documentName: 'Festival de Danza: Intercambio Cultural',
   },
 ];
 
