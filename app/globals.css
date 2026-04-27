@@ -17,7 +17,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-inter: var(--font-inter), ui-sans-serif, system-ui;
-  --font-neue: var(--font-neue-haas), ui-sans-serif, system-ui;
+  --font-neue: var(--font-neue-haas), Arial, Helvetica, ui-sans-serif, system-ui;
 }
 
 
@@ -41,7 +41,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-neue: var(--font-neue-haas), ui-sans-serif, system-ui;
+  --font-neue: var(--font-neue-haas), Arial, Helvetica, ui-sans-serif, system-ui;
 
   /* Mapeo de colores para que Tailwind genere las utilidades */
   --color-brand-purple: var(--brand-purple);

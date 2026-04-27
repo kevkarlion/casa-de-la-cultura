@@ -61,7 +61,7 @@ export default function SectionTalleres() {
                   {(hasDescription || taller.teacher || taller.horarios) && (
                     <div className="flex-1 max-w-xl">
 
-                      <h3 className="font-neue text-2xl font-bold uppercase mb-2">
+                      <h3 className="font-inter text-2xl font-bold uppercase mb-2">
                         {taller.title}
                       </h3>
 
