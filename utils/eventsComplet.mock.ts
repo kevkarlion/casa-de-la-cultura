@@ -418,6 +418,46 @@ export const eventosCompletMock: Event[] = [
     documentName: 'Festival de Danza: Intercambio Cultural',
     ticketeraUrl: "https://survivo.com.ar/evento/festival-cultural-por-la-danza/",
   },
+
+  // NUEVOS ABRIL 2026 - SEMANA 28-03
+  {
+    id: 39,
+    image: "/agenda/abril/cineclub-what-happened-was.webp", // TODO: agregar imagen
+    date: "2026-04-28",
+    time: "21:00",
+    title: "Cineclub TYÖ: “What Happened Was...”",
+    description:
+      "Una película que no pertenece a ningún lugar, como sus dos personajes. Un apartamento de Manhattan, una cena de viernes, dos almas del mismo bufete que ensayan el arte torpe y aterrador de dejarse conocer. | Entradas en boletería",
+    slug: "cineclub-tyo-what-happened-was",
+    category: "eventos",
+    tags: ["Cine", "Proyección", "Cineclub"],
+  },
+  {
+    id: 40,
+    image: "/agenda/abril/hermanos-sombra-pena.webp", // TODO: agregar imagen
+    date: "2026-04-29",
+    time: "21:30",
+    title: "Noche de Peña – Hermanos Sombra",
+    description:
+      "Familia de raíces folclóricas dentro y fuera del escenario tocando juntos desde siempre un repertorio festivalero y tradicional, recorriendo distintos estilos de nuestro cancionero popular | Entradas en boletería",
+    slug: "noche-de-pena-hermanos-sombra",
+    category: "eventos",
+    tags: ["Música", "Folklore", "Peña"],
+  },
+  {
+    id: 41,
+    image: "/agenda/abril/refacciones-feria.webp", // TODO: agregar imagen
+    date: "2026-04-30",
+    startDate: "2026-04-30",
+    endDate: "2026-05-03",
+    time: "10:00",
+    title: "CERRADO POR REFACCIONES",
+    description:
+      "Solo se dictarán talleres y se desarrollará la Feria agroecológica-cultural el día SÁBADO 02 de 10 a 14hs.",
+    slug: "cerrado-por-refacciones-abril-mayo",
+    category: "eventos",
+    tags: ["Cierre", "Feria"],
+  },
 ];
 
 export function getEventoBySlug(slug: string) {
