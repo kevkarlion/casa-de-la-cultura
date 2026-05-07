@@ -458,6 +458,83 @@ export const eventosCompletMock: Event[] = [
     category: "eventos",
     tags: ["Cierre", "Feria"],
   },
+
+  // MAYO 2026 - Eventos nuevos
+  {
+    id: 42,
+    image: "/agenda/mayo/2026-05-05-very-important-perros.webp",
+    date: "2026-05-05",
+    time: "20:30",
+    title: "Cineclub TYÖ – “Very Important Perros”",
+    description:
+      "Cinco perros y sus dueños van en camino a un concurso canino en Filadelfia, los perros son impecables, sus dueños, un desastre. Christopher Guest retrata con humor quirúrgico las neurosis, obsesiones de clase y deseos de reconocimiento de sus protagonistas. | Entradas en boletería",
+    slug: "cineclub-tyo-very-important-perros",
+    category: "eventos",
+    tags: ["Cine", "Proyección", "Cineclub"],
+  },
+  {
+    id: 43,
+    image: "/agenda/mayo/2026-05-08-llegar-a-una-fiesta.webp",
+    date: "2026-05-08",
+    time: "20:00",
+    title: "Llegar a una fiesta – Por Marina Barbera",
+    description:
+      "Una criatura emerge de su escondite para recordar quién es… y decidir si vuelve a la fiesta. Un unipersonal de clown poético que explora, con humor y sensibilidad, la contradicción de pertenecer… y querer escapar. | Entradas en boletería y en ticketera",
+    slug: "llegar-a-una-fiesta-marina-barbera",
+    category: "eventos",
+    tags: ["Teatro", "Escénicas"],
+    ticketeraUrl: "https://survivo.com.ar/evento/llegar-a-una-fiesta/",
+  },
+  {
+    id: 44,
+    image: "/agenda/mayo/2026-05-08-la-maquina-de-hacer-humo.webp",
+    date: "2026-05-08",
+    time: "22:30",
+    title: "La máquina de hacer humo – La música que nos gusta",
+    description:
+      "Clásicos musicales de Rock y pop nacional e internacional. La Máquina de Humo está integrada por: Nando Coronel en voz, Matías Gioscio en guitarra, Julián Cabaza en batería, Juan Giarizzo en bajo. | Entradas en boletería y ticketera",
+    slug: "la-maquina-de-hacer-humo",
+    category: "eventos",
+    tags: ["Música", "Rock"],
+    ticketeraUrl: "https://survivo.com.ar/evento/la-maquina-de-hacer-humo/",
+  },
+  {
+    id: 45,
+    image: "/agenda/mayo/2026-05-09-feria-cultural-agroecologica.webp",
+    date: "2026-05-09",
+    time: "10:00",
+    title: "Feria cultural / Agroecológica",
+    description:
+      "Un espacio para productores locales y regionales, emprendedores, y artesanxs que laboren desde la conciencia por el territorio y la economía social y solidaria. | Entrada libre",
+    slug: "feria-cultural-agroecologica-mayo",
+    category: "eventos",
+    tags: ["Comunidad", "Feria"],
+  },
+  {
+    id: 46,
+    image: "/agenda/mayo/2026-05-09-celebracion-54-anos-cdc.webp",
+    date: "2026-05-09",
+    time: "21:30",
+    title: "Celebración 54 Años de CDC",
+    description:
+      "Celebramos el cumple de nuestra Casa con un brindis conmemorativo, la presentación de nuestro nuevo espacio gastronómico, anuncios, ¡y mucho más! | Entrada libre",
+    slug: "celebracion-54-anos-cdc",
+    category: "eventos",
+    tags: ["Celebración", "Comunidad"],
+  },
+  {
+    id: 47,
+    image: "/agenda/mayo/2026-05-10-cervantes-se-muestra-danza.webp",
+    date: "2026-05-10",
+    time: "18:30",
+    title: "Cervantes se muestra – Danza",
+    description:
+      "La Escuela de Danzas de Paola Gomez presenta un festival que reúne danzas clásicas, españolas y urbanas, donde bailarines de todas las edades brillan en el escenario. | Entradas en boletería y ticketera",
+    slug: "cervantes-se-muestra-danza",
+    category: "eventos",
+    tags: ["Danza", "Festival"],
+    ticketeraUrl: "https://survivo.com.ar/evento/cervantes-se-muestra/",
+  },
 ];
 
 export function getEventoBySlug(slug: string) {
