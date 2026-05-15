@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { useState } from "react";
 import { getEventoBySlug, getRelatedEventos } from "@/utils/eventsComplet.mock";
-import { Instagram, Facebook, Share2 } from "lucide-react";
+import { Instagram, Facebook, Share2, ChevronLeft, ChevronRight } from "lucide-react";
 import Breadcrumbs from "@/components/shared/Breadcrumb/Breadcrumbs";
 
 interface EventosDetailProps {
@@ -14,12 +14,25 @@ interface EventosDetailProps {
 export default function EventosDetail({ slug }: EventosDetailProps) {
   const evento = getEventoBySlug(slug);
   const [isHorizontal, setIsHorizontal] = useState<boolean | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   if (!evento) notFound();
 
   const related = evento.tags ? getRelatedEventos(evento.slug, evento.tags) : [];
 
   const hasGallery = Array.isArray(evento.images) && evento.images.length > 0;
+
+  const goToPrevious = () => {
+    if (evento.images) {
+      setCurrentImageIndex((prev) => (prev === 0 ? evento.images!.length - 1 : prev - 1));
+    }
+  };
+
+  const goToNext = () => {
+    if (evento.images) {
+      setCurrentImageIndex((prev) => (prev === evento.images!.length - 1 ? 0 : prev + 1));
+    }
+  };
 
   return (
     <>
@@ -68,22 +81,65 @@ export default function EventosDetail({ slug }: EventosDetailProps) {
         <div className="flex flex-col gap-12">
           {/* IMAGEN / GALERÍA */}
           <div className="order-1">
-            {hasGallery && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {evento.images?.map((img, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-neutral-100 rounded-xl p-4 flex justify-center"
-                  >
+            {hasGallery && evento.images && evento.images.length > 1 && (
+              <div className="relative">
+                {/* Carrusel */}
+                <div className="relative bg-neutral-100 rounded-xl p-4 overflow-hidden">
+                  <div className="relative aspect-[4/3] w-full">
                     <Image
-                      src={img.src}
-                      alt={img.alt || evento.title}
-                      width={1200}
-                      height={800}
-                      className="w-full h-auto object-contain"
+                      src={evento.images[currentImageIndex].src}
+                      alt={evento.images[currentImageIndex].alt || evento.title}
+                      fill
+                      className="object-contain"
+                      priority
                     />
                   </div>
-                ))}
+
+                  {/* Botones de navegación */}
+                  <button
+                    onClick={goToPrevious}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                    aria-label="Imagen anterior"
+                  >
+                    <ChevronLeft size={24} />
+                  </button>
+                  <button
+                    onClick={goToNext}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                    aria-label="Imagen siguiente"
+                  >
+                    <ChevronRight size={24} />
+                  </button>
+                </div>
+
+                {/* Indicadores (dots) */}
+                <div className="flex justify-center gap-2 mt-4">
+                  {evento.images.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentImageIndex(idx)}
+                      className={`w-3 h-3 rounded-full transition-colors ${
+                        idx === currentImageIndex
+                          ? "bg-black"
+                          : "bg-neutral-300 hover:bg-neutral-400"
+                      }`}
+                      aria-label={`Ver imagen ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Si solo hay una imagen o no hay galería, mostrar como antes */}
+            {hasGallery && evento.images && evento.images.length === 1 && (
+              <div className="bg-neutral-100 rounded-xl p-4 flex justify-center">
+                <Image
+                  src={evento.images[0].src}
+                  alt={evento.images[0].alt || evento.title}
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto object-contain"
+                />
               </div>
             )}
 

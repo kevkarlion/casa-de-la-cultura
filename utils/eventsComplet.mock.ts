@@ -522,18 +522,83 @@ export const eventosCompletMock: Event[] = [
     category: "eventos",
     tags: ["Celebración", "Comunidad"],
   },
-  {
+{
     id: 47,
     image: "/agenda/mayo/2026-05-10-cervantes-se-muestra-danza.webp",
     date: "2026-05-10",
     time: "18:30",
     title: "Cervantes se muestra – Danza",
     description:
-      "La Escuela de Danzas de Paola Gomez presenta un festival que reúne danzas clásicas, españolas y urbanas, donde bailarines de todas las edades brillan en el escenario. | Entradas en boletería y ticketera",
+      "La Escuela de Danzas de Paola Gomez presenta un festival que reúne danzas clásicas, españolas y urbanas, donde bailarinos de todas las edades brillan en el escenario. | Entradas en boletería y ticketera",
     slug: "cervantes-se-muestra-danza",
     category: "eventos",
     tags: ["Danza", "Festival"],
     ticketeraUrl: "https://survivo.com.ar/evento/cervantes-se-muestra/",
+  },
+
+  // CATALEJO - Festival de Literatura Infantil y Juvenil
+  {
+    id: 48,
+    image: "/agenda/mayo/catalejo1.webp",
+    date: "2026-05-15",
+    time: "09:00",
+    title: "CATALEJO – Festival de Literatura Infantil y Juvenil",
+    description:
+      "Llega CATALEJO, el primer festival de literatura infantil y juvenil, una iniciativa del area de literatura de CDC.\n\nDesde una feria de libros, presentaciones y narraciones en vivo, hasta talleres de literatura y juego, Catalejo es un espacio para compartir lecturas, conversar, aprender y divertirse.\n\nInformes e inscripcion a talleres: cdcliterario@gmail.com\n2984 653721 - 2984 351387",
+    slug: "catalejo-festival-literatura-infantil-juvenil",
+    category: "eventos",
+    tags: ["Infancias", "Literatura", "Festival", "Taller"],
+    images: [
+      { src: "/agenda/mayo/catalejo1.webp", alt: "Catalejo - Festival de Literatura Infantil y Juvenil" },
+      { src: "/agenda/mayo/catalejo2.webp", alt: "Catalejo - Feria de libros" },
+      { src: "/agenda/mayo/catalejo3.webp", alt: "Catalejo - Presentaciones" },
+      { src: "/agenda/mayo/catalejo4.webp", alt: "Catalejo - Narraciones en vivo" },
+      { src: "/agenda/mayo/catalejo5.webp", alt: "Catalejo - Talleres de literatura" },
+      { src: "/agenda/mayo/catalejo6.webp", alt: "Catalejo - Juegos" },
+      { src: "/agenda/mayo/catalejo7.webp", alt: "Catalejo - Espacio literario" },
+    ],
+  },
+  {
+    id: 49,
+    image: "/agenda/mayo/catalejo1.webp",
+    date: "2026-05-16",
+    time: "10:30",
+    title: "CATALEJO – Festival de Literatura Infantil y Juvenil (Sabado)",
+    description:
+      "Llega CATALEJO, el primer festival de literatura infantil y juvenil, una iniciativa del area de literatura de CDC.\n\nDesde una feria de libros, presentaciones y narraciones en vivo, hasta talleres de literatura y juego, Catalejo es un espacio para compartir lecturas, conversar, aprender y divertirse.\n\nInformes e inscripcion a talleres: cdcliterario@gmail.com\n2984 653721 - 2984 351387",
+    slug: "catalejo-festival-literatura-infantil-juvenil-sabado",
+    category: "eventos",
+    tags: ["Infancias", "Literatura", "Festival", "Taller"],
+    images: [
+      { src: "/agenda/mayo/catalejo1.webp", alt: "Catalejo - Festival de Literatura Infantil y Juvenil" },
+      { src: "/agenda/mayo/catalejo2.webp", alt: "Catalejo - Feria de libros" },
+      { src: "/agenda/mayo/catalejo3.webp", alt: "Catalejo - Presentaciones" },
+      { src: "/agenda/mayo/catalejo4.webp", alt: "Catalejo - Narraciones en vivo" },
+      { src: "/agenda/mayo/catalejo5.webp", alt: "Catalejo - Talleres de literatura" },
+      { src: "/agenda/mayo/catalejo6.webp", alt: "Catalejo - Juegos" },
+      { src: "/agenda/mayo/catalejo7.webp", alt: "Catalejo - Espacio literario" },
+    ],
+  },
+  {
+    id: 50,
+    image: "/agenda/mayo/catalejo1.webp",
+    date: "2026-05-17",
+    time: "11:00",
+    title: "CATALEJO – Festival de Literatura Infantil y Juvenil (Domingo)",
+    description:
+      "Llega CATALEJO, el primer festival de literatura infantil y juvenil, una iniciativa del area de literatura de CDC.\n\nDesde una feria de libros, presentaciones y narraciones en vivo, hasta talleres de literatura y juego, Catalejo es un espacio para compartir lecturas, conversar, aprender y divertirse.\n\nInformes e inscripcion a talleres: cdcliterario@gmail.com\n2984 653721 - 2984 351387",
+    slug: "catalejo-festival-literatura-infantil-juvenil-domingo",
+    category: "eventos",
+    tags: ["Infancias", "Literatura", "Festival", "Taller"],
+    images: [
+      { src: "/agenda/mayo/catalejo1.webp", alt: "Catalejo - Festival de Literatura Infantil y Juvenil" },
+      { src: "/agenda/mayo/catalejo2.webp", alt: "Catalejo - Feria de libros" },
+      { src: "/agenda/mayo/catalejo3.webp", alt: "Catalejo - Presentaciones" },
+      { src: "/agenda/mayo/catalejo4.webp", alt: "Catalejo - Narraciones en vivo" },
+      { src: "/agenda/mayo/catalejo5.webp", alt: "Catalejo - Talleres de literatura" },
+      { src: "/agenda/mayo/catalejo6.webp", alt: "Catalejo - Juegos" },
+      { src: "/agenda/mayo/catalejo7.webp", alt: "Catalejo - Espacio literario" },
+    ],
   },
 ];
 
