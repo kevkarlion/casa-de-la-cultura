@@ -544,7 +544,7 @@ export const eventosCompletMock: Event[] = [
     time: "09:00",
     title: "CATALEJO – Festival de Literatura Infantil y Juvenil",
     description:
-      "Llega CATALEJO, el primer festival de literatura infantil y juvenil, una iniciativa del area de literatura de CDC.\n\nDesde una feria de libros, presentaciones y narraciones en vivo, hasta talleres de literatura y juego, Catalejo es un espacio para compartir lecturas, conversar, aprender y divertirse.\n\nInformes e inscripcion a talleres: cdcliterario@gmail.com\n2984 653721 - 2984 351387",
+      "Llega CATALEJO, el primer festival de literatura infantil y juvenil, una iniciativa del área de literatura de CDC.\n\nDesde una feria de libros, presentaciones y narraciones en vivo, hasta talleres de literatura y juego, Catalejo es un espacio para compartir lecturas, conversar, aprender y divertirse.\n\nInformes e inscripción a talleres: cdcliterario@gmail.com\n2984 653721 - 2984 351387",
     slug: "catalejo-festival-literatura-infantil-juvenil",
     category: "eventos",
     tags: ["Infancias", "Literatura", "Festival", "Taller"],
@@ -563,9 +563,9 @@ export const eventosCompletMock: Event[] = [
     image: "/agenda/mayo/catalejo1.webp",
     date: "2026-05-16",
     time: "10:30",
-    title: "CATALEJO – Festival de Literatura Infantil y Juvenil (Sabado)",
+    title: "CATALEJO – Festival de Literatura Infantil y Juvenil (Sábado)",
     description:
-      "Llega CATALEJO, el primer festival de literatura infantil y juvenil, una iniciativa del area de literatura de CDC.\n\nDesde una feria de libros, presentaciones y narraciones en vivo, hasta talleres de literatura y juego, Catalejo es un espacio para compartir lecturas, conversar, aprender y divertirse.\n\nInformes e inscripcion a talleres: cdcliterario@gmail.com\n2984 653721 - 2984 351387",
+      "Llega CATALEJO, el primer festival de literatura infantil y juvenil, una iniciativa del área de literatura de CDC.\n\nDesde una feria de libros, presentaciones y narraciones en vivo, hasta talleres de literatura y juego, Catalejo es un espacio para compartir lecturas, conversar, aprender y divertirse.\n\nInformes e inscripción a talleres: cdcliterario@gmail.com\n2984 653721 - 2984 351387",
     slug: "catalejo-festival-literatura-infantil-juvenil-sabado",
     category: "eventos",
     tags: ["Infancias", "Literatura", "Festival", "Taller"],
@@ -586,7 +586,7 @@ export const eventosCompletMock: Event[] = [
     time: "11:00",
     title: "CATALEJO – Festival de Literatura Infantil y Juvenil (Domingo)",
     description:
-      "Llega CATALEJO, el primer festival de literatura infantil y juvenil, una iniciativa del area de literatura de CDC.\n\nDesde una feria de libros, presentaciones y narraciones en vivo, hasta talleres de literatura y juego, Catalejo es un espacio para compartir lecturas, conversar, aprender y divertirse.\n\nInformes e inscripcion a talleres: cdcliterario@gmail.com\n2984 653721 - 2984 351387",
+      "Llega CATALEJO, el primer festival de literatura infantil y juvenil, una iniciativa del área de literatura de CDC.\n\nDesde una feria de libros, presentaciones y narraciones en vivo, hasta talleres de literatura y juego, Catalejo es un espacio para compartir lecturas, conversar, aprender y divertirse.\n\nInformes e inscripción a talleres: cdcliterario@gmail.com\n2984 653721 - 2984 351387",
     slug: "catalejo-festival-literatura-infantil-juvenil-domingo",
     category: "eventos",
     tags: ["Infancias", "Literatura", "Festival", "Taller"],
