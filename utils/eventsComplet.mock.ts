@@ -600,6 +600,71 @@ export const eventosCompletMock: Event[] = [
       { src: "/agenda/mayo/catalejo7.webp", alt: "Catalejo - Espacio literario" },
     ],
   },
+
+  // MAYO 2026 - Semana 19-23
+  {
+    id: 51,
+    image: "/agenda/mayo/callejeros-cineclub-19mayo.webp",
+    date: "2026-05-19",
+    time: "20:30",
+    title: "Cineclub TYÖ – “Callejeros” - Elizabeth Lo",
+    description:
+      "Tres perros sin dueño deambulan por las calles de Estambul. Elizabeth Lo los sigue con una cámara que renuncia al punto de vista humano: la ciudad aparece desde abajo, a ras del suelo. | Entradas en boletería",
+    slug: "cineclub-tyo-callejeros",
+    category: "eventos",
+    tags: ["Cine", "Proyección", "Cineclub"],
+  },
+  {
+    id: 52,
+    image: "/agenda/mayo/divorcio-del-ano-21mayo.webp",
+    date: "2026-05-21",
+    time: "19:30",
+    title: "El divorcio del año – Funciones",
+    description:
+      "Una pareja que se separa, pero se sigue amando. Una hija que sufre, pero también se ríe. Abogados capaces de todo. Y una familia expuesta al juicio de los medios y las redes.\n\nUna comedia explosiva sobre cómo las relaciones de pareja pueden afectar nuestra salud mental. Con el impressive elenco de Fabián Vena, Juan Palomino, Ernestina Pais, Romina Gaetani y Rochi Igarzábal y la escritura de Mariela Asensio y José María Muscari. | *ENTRADAS AGOTADAS*",
+    slug: "el-divorcio-del-ano",
+    category: "eventos",
+    tags: ["Teatro", "Escénicas"],
+  },
+  {
+    id: 53,
+    image: "/agenda/mayo/divorcio-del-ano-21mayo.webp",
+    date: "2026-05-21",
+    time: "21:30",
+    title: "El divorcio del año – Función noche",
+    description:
+      "Una pareja que se separa, pero se sigue amando. Una hija que sufre, pero también se ríe. Abogados capaces de todo. Y una familia expuesta al juicio de los medios y las redes.\n\nUna comedia explosiva sobre cómo las relaciones de pareja pueden afectar nuestra salud mental. Con el impressive elenco de Fabián Vena, Juan Palomino, Ernestina Pais, Romina Gaetani y Rochi Igarzábal y la escritura de Mariela Asensio y José María Muscari. | *ENTRADAS AGOTADAS*",
+    slug: "el-divorcio-del-ano-21-30",
+    category: "eventos",
+    tags: ["Teatro", "Escénicas"],
+  },
+  {
+    id: 54,
+    image: "/agenda/mayo/psicolyrics-22mayo.webp",
+    date: "2026-05-22",
+    time: "21:00",
+    title: "Psicolyrics: El show",
+    description:
+      "A través de canciones y comentarios en vivo y con un enfoque accesible y cercano, la propuesta apunta tanto a quienes tienen formación en psicología como a quienes simplemente disfrutan de la buena música y buscan una experiencia distinta. | Entradas en boletería y ticketera",
+    slug: "psicolyrics-el-show",
+    category: "eventos",
+    tags: ["Música", "Show"],
+    ticketeraUrl: "https://www.survivo.com.ar/evento/psicolyrics-el-show/",
+  },
+  {
+    id: 55,
+    image: "/agenda/mayo/mercado-ceramistas-23mayo.webp",
+    date: "2026-05-23",
+    startDate: "2026-05-23",
+    endDate: "2026-05-23",
+    time: "10:00",
+    title: "Mercado Artesanal – Encuentro de ceramistas",
+    description:
+      "Un encuentro de ceramistas con productos únicos y artesanales. | Entrada libre",
+    slug: "mercado-ceramistas-encuentro",
+    category: "eventos",
+    tags: ["Comunidad", "Feria", "Artesanal"],
+  },
 ];
 
 export function getEventoBySlug(slug: string) {
