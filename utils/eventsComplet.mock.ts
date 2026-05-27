@@ -422,7 +422,7 @@ export const eventosCompletMock: Event[] = [
   // NUEVOS ABRIL 2026 - SEMANA 28-03
   {
     id: 39,
-    image: "/agenda/abril/cineclub-what-happened-was.webp", // TODO: agregar imagen
+    image: "/agenda/abril/cineclub-what-happened-was.webp",
     date: "2026-04-28",
     time: "21:00",
     title: "Cineclub TYÖ: “What Happened Was...”",
@@ -434,7 +434,7 @@ export const eventosCompletMock: Event[] = [
   },
   {
     id: 40,
-    image: "/agenda/abril/hermanos-sombra-pena.webp", // TODO: agregar imagen
+    image: "/agenda/abril/hermanos-sombra-pena.webp",
     date: "2026-04-29",
     time: "21:30",
     title: "Noche de Peña – Hermanos Sombra",
