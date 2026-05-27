@@ -2,6 +2,61 @@ import { Novedad } from "@/interfaces/novedades.interface";
 
 export const novedades: Novedad[] = [
   {
+    id: 9,
+    title:
+      "Catalejo fue declarado de interés social y cultural por el Concejo Deliberante de General Roca",
+    date: "2026-05-14",
+    summary:
+      "El Festival de Literatura Infantil y Juvenil fue reconocido por su aporte a la construcción del pensamiento crítico y al acceso democrático a la cultura.",
+    excerpt: `
+El Festival de Literatura Infantil y Juvenil "Catalejo: múltiples miradas para leer el mundo" fue declarado de interés social y cultural por el Concejo Deliberante de General Roca, un reconocimiento que pone en valor la importancia de generar espacios dedicados a las infancias, las juventudes y el acceso democrático a la cultura.
+
+La declaración destaca el aporte del festival a la construcción del pensamiento crítico y al fortalecimiento de la lectura como un derecho fundamental para el desarrollo pleno de niños, niñas y jóvenes. Además, subraya el rol de Casa de la Cultura como institución anfitriona y espacio de encuentro para la reflexión, el intercambio y la circulación de ideas.
+
+Durante sus jornadas, Catalejo reunió propuestas artísticas, literarias y formativas destinadas a públicos diversos, con actividades que incluyeron talleres, narraciones, espacios de formación académica, feria de libros y encuentros con destacadas figuras de la literatura infantil y juvenil.
+
+El documento también reconoce que iniciativas como esta fortalecen los lazos comunitarios y consolidan a las instituciones culturales locales como motores de transformación social en la región.
+
+Desde Casa de la Cultura celebramos este reconocimiento que reafirma la necesidad de seguir impulsando proyectos culturales que acerquen la lectura, el arte y la imaginación a toda la comunidad.
+    `,
+    image: "/imagenes/cata-1.webp",
+    images: [
+      { src: "/imagenes/cata-1.webp", alt: "Catalejo - Festival de Literatura Infantil y Juvenil" },
+      { src: "/imagenes/cata-2.webp", alt: "Catalejo - Talleres y actividades" },
+      { src: "/imagenes/cata-3.webp", alt: "Catalejo - Feria de libros y encuentros" },
+    ],
+    slug: "catalejo-interes-social-cultural",
+    featured: true,
+    tags: ["catalejo", "literatura", "infancias", "reconocimiento"],
+  },
+  {
+    id: 8,
+    title: "Ya está funcionando el nuevo café bar cultural en CDC",
+    date: "2026-05-27",
+    summary:
+      "Birock abre sus puertas en el hall superior de CDC, sumando un espacio de encuentro con amplia carta de comidas, bebidas y café.",
+    excerpt: `
+Estamos muy felices de contar con Birock en nuestra casa. Desde ahora, el espacio se encuentra ubicado en el hall superior de CDC, sumándose a la vida cotidiana del centro cultural y convirtiéndose en un nuevo punto de encuentro para quienes habitan y disfrutan este lugar.
+
+Tener un café bar dentro de un espacio cultural como CDC es fundamental. No solo acompaña cada actividad, taller, muestra o evento, sino que también genera un lugar de encuentro, intercambio y permanencia. Un rincón para charlar, trabajar, compartir ideas, hacer una pausa o simplemente quedarse un rato más después de cada actividad.
+
+Birock llega con una amplia carta de comidas, bebidas, tragos y café, además de opciones ideales para desayunos y meriendas.
+
+─ Horarios de atención ─
+• De 9 a 12 hs
+• De 17 a 22 hs
+Los días de evento el horario se extiende.
+
+Ahora pueden venir a hacer cowork, reunirse, desayunar, merendar o simplemente disfrutar de una cerveza en un espacio cálido y cultural.
+
+Gracias a Birock por apostar a este proyecto junto a nosotros. ¡Los esperamos para conocer este nuevo espacio!
+    `,
+    image: "/imagenes/bar-cafe.webp",
+    slug: "birock-cafe-bar-cultural",
+    featured: true,
+    tags: ["birock", "gastronomía", "café", "cdc"],
+  },
+  {
     id: 7,
     title: "Convocatoria · Espacio Gastronómico Cultural en CDC",
     date: "2026-03-02",

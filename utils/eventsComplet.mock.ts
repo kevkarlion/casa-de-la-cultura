@@ -303,12 +303,12 @@ export const eventosCompletMock: Event[] = [
     image: "/agenda/junio/leo-maiello.webp",
     date: "2026-06-06",
     time: "21:00",
-    title: "Leo Maiello: Yo, sin culpa",
+    title: "Leo Maiello – Yo, sin culpa",
     description:
-      "Charla en vivo que mezcla psicología, música y reflexión.",
+      '“YO, sin culpa” es una charla en vivo que mezcla psicología, música, humor y reflexión en una experiencia íntima y honesta. Un encuentro para cuestionar las culpas que cargamos, reconocernos en nuestras historias y salir un poco más livianos.',
     slug: "leo-maiello-yo-sin-culpa",
     category: "eventos",
-    tags: ["Charla"],
+    tags: ["Charla", "Humor"],
     ticketeraUrl:
       "https://survivo.com.ar/evento/maeillo-yo-sin-culpa/",
   },
@@ -319,7 +319,7 @@ export const eventosCompletMock: Event[] = [
     time: "21:00",
     title: "El Cuarto de Soda",
     description:
-      "Homenaje a Soda Stereo con sus grandes clásicos.",
+      "Llega EL CUARTO SODA, el homenaje que revive la esencia, el sonido y la estética de una de las bandas más importantes del rock en español. Un recorrido por todas las etapas de su historia musical, recreando en vivo la magia y evolución de sus canciones más emblemáticas. | Entradas en boletería y ticketera.",
     slug: "el-cuarto-de-soda",
     category: "eventos",
     tags: ["Música", "Rock"],
@@ -444,21 +444,6 @@ export const eventosCompletMock: Event[] = [
     category: "eventos",
     tags: ["Música", "Folklore", "Peña"],
   },
-  {
-    id: 41,
-    image: "/agenda/abril/refacciones-feria.webp", // TODO: agregar imagen
-    date: "2026-04-30",
-    startDate: "2026-04-30",
-    endDate: "2026-05-03",
-    time: "10:00",
-    title: "CERRADO POR REFACCIONES",
-    description:
-      "Solo se dictarán talleres y se desarrollará la Feria agroecológica-cultural el día SÁBADO 02 de 10 a 14hs.",
-    slug: "cerrado-por-refacciones-abril-mayo",
-    category: "eventos",
-    tags: ["Cierre", "Feria"],
-  },
-
   // MAYO 2026 - Eventos nuevos
   {
     id: 42,
@@ -664,6 +649,104 @@ export const eventosCompletMock: Event[] = [
     slug: "mercado-ceramistas-encuentro",
     category: "eventos",
     tags: ["Comunidad", "Feria", "Artesanal"],
+  },
+
+  // JUNIO 2026 - Eventos nuevos
+  {
+    id: 206,
+    image: "/agenda/junio/festival-rock-pro-y-fusion.webp",
+    date: "2026-05-29",
+    startDate: "2026-05-29",
+    endDate: "2026-05-30",
+    time: "18:30",
+    title: "Festival de rock progresivo y jazz fusión",
+    description:
+      "Casa de la Cultura será escenario de dos días repletos de música en vivo, poesía, clínicas, arte y experiencias únicas. Con pioneros del género, bandas emergentes, profesores locales, artistas plásticos y vinilos clásicos, el festival celebra el crecimiento de la escena progresiva y del jazz fusión en la ciudad. | Entradas en boletería de CDC y en kiosco Caramelo loco - Av Roca y Mitre - Gral Roca.",
+    slug: "festival-rock-progresivo-jazz-fusion",
+    category: "eventos",
+    tags: ["Música", "Festival", "Rock"],
+  },
+  {
+    id: 207,
+    image: "/agenda/junio/el-explorador.webp",
+    date: "2026-06-11",
+    time: "18:30",
+    title: "El Explorador",
+    description:
+      "Llega El Explorador con una nueva aventura para despertar el niño interior. Un espectáculo lleno de música, humor, emoción y canciones súper conocidas para cantar, bailar y disfrutar en familia. | Entradas en boletería y ticketera.",
+    slug: "el-explorador",
+    category: "eventos",
+    tags: ["Infancias", "Música", "Show"],
+    ticketeraUrl:
+      "https://survivo.com.ar/evento/el-explorador/",
+  },
+  {
+    id: 208,
+    image: "/agenda/junio/gira-sur.webp",
+    date: "2026-06-12",
+    time: "21:00",
+    title: "José Luis Aguirre – Gira Sur",
+    description:
+      "La Patagonia recibe el canto del poeta y cantor cordobés. Llega con su GIRA SUR 26, trayendo su universo de canciones y el sentir popular a cada rincón del sur argentino. | Entradas en ticketera.",
+    slug: "jose-luis-aguirre-gira-sur",
+    category: "eventos",
+    tags: ["Música", "Folklore"],
+    ticketeraUrl:
+      "https://www.entradaweb.com.ar/eventos?group=378",
+  },
+  {
+    id: 209,
+    image: "/agenda/junio/deseo-en-crisis.webp",
+    date: "2026-06-18",
+    time: "21:00",
+    title: "Sol Despeinada – El deseo en crisis",
+    description:
+      "Qué pasó con el deseo en tiempos de apps, ansiedad, vínculos descartables y placer inmediato? Un encuentro para reflexionar, cuestionar y reírnos de esta paradoja moderna: todo parece estar al alcance, pero cada vez nos sentimos más desconectadxs del deseo. Con humor, información y sin tabúes, una invitación a pensar cómo deseamos, cómo nos vinculamos y qué lugar ocupa hoy el placer en nuestras vidas. | Entradas en ticketera.",
+    slug: "sol-despeinada-el-deseo-en-crisis",
+    category: "eventos",
+    tags: ["Charla", "Humor"],
+    ticketeraUrl:
+      "https://innova-ticket.net",
+  },
+  {
+    id: 210,
+    image: "/agenda/junio/heroe.webp",
+    date: "2026-06-20",
+    time: "21:00",
+    title: "Héroe – Lírico Pop",
+    description:
+      "Un espectáculo único que combina la potencia del Lírico Pop con la emoción del cine, transportando al público a los momentos más icónicos del Séptimo Arte. En esta nueva propuesta podrán disfrutar de temas e imágenes de Casablanca, Cinema Paradiso, El Padrino, Mujer Bonita, El Fantasma de la Ópera, Titanic y muchos éxitos más. | Entradas en boletería y ticketera.",
+    slug: "heroe-lirico-pop",
+    category: "eventos",
+    tags: ["Música", "Show"],
+    ticketeraUrl:
+      "https://survivo.com.ar/evento/heroe/",
+  },
+  {
+    id: 211,
+    image: "/agenda/julio/sinjiao.webp",
+    date: "2026-07-31",
+    time: "20:30",
+    title: "Fernando Sanjiao – Quemado",
+    description:
+      "El reconocido comediante llega con \"Quemado\", su show más nuevo y potente. Una mirada hilarante sobre el caos cotidiano, el cansancio de seguirle el ritmo a la vida y esas situaciones que nos atraviesan a todos. Con su humor filoso y cercano, Sanjiao transforma la realidad en una hora y cuarto de risas aseguradas. | Entradas en boletería y ticketera.",
+    slug: "fernando-sanjiao-quemado",
+    category: "eventos",
+    tags: ["Humor", "Show"],
+    ticketeraUrl:
+      "https://survivo.com.ar/evento/fernando-sanjiao/",
+  },
+  {
+    id: 212,
+    image: "/agenda/junio/el-soñador.webp",
+    date: "2026-06-19",
+    time: "21:30",
+    title: 'José Guajardo, "El Soñador" – Folclore Patagónico',
+    description:
+      "Cantautor roquense con más de 400 canciones escritas, José Guajardo lleva dos décadas creando música con profundo compromiso social y raíces patagónicas. Autor de temas como \"La bronca de Painefil\", \"Piqueteros del sur\" y \"Cuando se marchan los hijos\", su obra ha sido interpretada por artistas de todo el país y reconocida en escenarios nacionales e internacionales. Con su voz y su guitarra, Guajardo comparte historias que emocionan, reivindican y nos conectan con lo más genuino del sur. | Entradas en boletería.",
+    slug: "jose-guajardo-el-sonador-folclore-patagonico",
+    category: "eventos",
+    tags: ["Música", "Folklore"],
   },
 ];
 

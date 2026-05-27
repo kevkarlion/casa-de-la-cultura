@@ -12,10 +12,15 @@ interface NovedadesDetailProps {
   slug: string;
 }
 
-// --- UTIL: parse "YYYY-MM-DD" como fecha LOCAL ---
-function parseLocalDate(dateStr: string) {
+// --- UTIL: formatear "YYYY-MM-DD" SIN depender de zona horaria ---
+function formatDateStr(dateStr: string) {
+  const [year, month, day] = dateStr.split('-');
+  return `${day}/${month}/${year}`;
+}
+
+function getDateComponents(dateStr: string) {
   const [year, month, day] = dateStr.split('-').map(Number);
-  return new Date(year, month - 1, day); // month - 1 porque JS cuenta de 0 a 11
+  return { year, month, day };
 }
 
 export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
@@ -34,11 +39,11 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
 
   const hasGallery = Array.isArray(novedad.images) && novedad.images.length > 0;
 
-  // --- Fecha que mostramos: si hay day en query, usamos ese día del mes de novedad.date ---
-  const baseDate = parseLocalDate(novedad.date);
-  const displayDate = clickedDay
-    ? new Date(baseDate.getFullYear(), baseDate.getMonth(), clickedDay)
-    : baseDate;
+  // --- Fecha que mostramos: si hay day en query, usamos ese día del mes ---
+  const dateComponents = getDateComponents(novedad.date);
+  const displayDateStr = clickedDay
+    ? `${String(clickedDay).padStart(2, '0')}/${String(dateComponents.month).padStart(2, '0')}/${dateComponents.year}`
+    : formatDateStr(novedad.date);
 
   return (
     <>
@@ -54,7 +59,7 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
         {/* HEADER */}
         <header className="mb-10 max-w-3xl">
           <p className="text-sm text-black mb-3">
-            {displayDate.toLocaleDateString('es-AR')}
+            {displayDateStr}
           </p>
 
           <h1 className="text-4xl md:text-5xl font-neue font-bold mb-6 leading-tight text-black">
@@ -236,7 +241,7 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
 
                 <div className="p-5 text-white flex flex-col gap-3">
                   <p className="text-xs opacity-70">
-                    {parseLocalDate(item.date).toLocaleDateString('es-AR')}
+                    {formatDateStr(item.date)}
                   </p>
 
                   <h3 className="font-neue text-lg font-semibold leading-snug">
