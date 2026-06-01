@@ -748,6 +748,59 @@ export const eventosCompletMock: Event[] = [
     category: "eventos",
     tags: ["Música", "Folklore"],
   },
+
+  // JUNIO 2026 - Semana 1
+  {
+    id: 213,
+    image: "/agenda/junio/cazadores-de-trufas.webp",
+    date: "2026-06-02",
+    time: "20:30",
+    title:
+      'Cineclub TYÖ – Ciclo películas de perros: "Cazadores de trufas"',
+    description:
+      'En los bosques del Piamonte, un grupo de ancianos busca con la ayuda de sus perros uno de los ingredientes más caros del mundo: La trufa blanca del alba. Los hombres guardan sus secretos — los recorridos, las técnicas, los trucos de cada animal — como si fueran los últimos del mundo. Dir. Michael Dweck & Gregory Kershaw. | Entradas en boletería.',
+    slug: "cineclub-tyo-cazadores-de-trufas",
+    category: "eventos",
+    tags: ["Cine", "Proyección", "Cineclub"],
+  },
+  {
+    id: 214,
+    image: "/agenda/junio/iris-eskracovia-psicodelia-simio.webp",
+    date: "2026-06-05",
+    time: "21:30",
+    title: "IRIS + Eskracovia + La Psicodelia del Simio",
+    description:
+      "Una noche para celebrar la música en todas sus formas. Latin Jazz, Rock Progresivo, Jazz Funk, Rock Psicodélico y muchos más cruces sonoros se unen en una propuesta única de la mano de tres bandas de la ciudad. | Entradas en las redes de las bandas o al 2984152725.",
+    slug: "iris-eskracovia-psicodelia-simio",
+    category: "eventos",
+    tags: ["Música", "Rock"],
+  },
+  {
+    id: 215,
+    image: "/agenda/junio/feria-agroecologica-cultural-junio.webp",
+    date: "2026-06-06",
+    startDate: "2026-06-06",
+    endDate: "2026-06-06",
+    time: "10:00",
+    title: "Feria agroecológica cultural",
+    description: "Un espacio para productores locales y regionales, emprendedores, y artesanxs que laboren desde la conciencia, el respeto por el territorio y la economía social y solidaria. | Entrada libre.",
+    slug: "feria-agroecologica-cultural-junio",
+    category: "eventos",
+    tags: ["Comunidad", "Feria"],
+  },
+  {
+    id: 216,
+    image: "/agenda/junio/nidoteca-avion.webp",
+    date: "2026-06-06",
+    time: "10:30",
+    title:
+      '2do encuentro "Nidoteca" – Avión que va, avión que viene. Poesía para volar.',
+    description:
+      "Un espacio para compartir la palabra poética, despertar la imaginación y disfrutar en familia. Un encuentro pensado para bebés, niñxs y sus acompañantes, donde los cuentos, los juegos y la poesía invitan a volar juntos. | Facilita: Marlys Fernandez. Inscripción en boletería o al 2984 760708 - 2984 351387.",
+    slug: "nidoteca-avion-que-va-avion-que-viene",
+    category: "eventos",
+    tags: ["Infancias", "Taller", "Literatura"],
+  },
 ];
 
 export function getEventoBySlug(slug: string) {
