@@ -801,6 +801,48 @@ export const eventosCompletMock: Event[] = [
     category: "eventos",
     tags: ["Infancias", "Taller", "Literatura"],
   },
+  // JUNIO 2026 - Sábado 13 y Domingo 14
+  {
+    id: 217,
+    image: "/agenda/junio/feria-agroecologica.webp",
+    date: "2026-06-13",
+    startDate: "2026-06-13",
+    endDate: "2026-06-13",
+    time: "10:00",
+    title: "Feria agroecológica cultural",
+    description:
+      "Un espacio para productores locales y regionales, emprendedores, y artesanxs que laboren desde la conciencia, el respeto por el territorio y la economía social y solidaria. | Entrada libre.",
+    slug: "feria-agroecologica-cultural-junio-13",
+    category: "eventos",
+    tags: ["Comunidad", "Feria"],
+  },
+  {
+    id: 218,
+    image: "/agenda/junio/entre-pañuelos.webp",
+    date: "2026-06-13",
+    startDate: "2026-06-13",
+    endDate: "2026-06-13",
+    time: "22:00",
+    title: "Entre pañuelos: Elementos + Aldea Eluney – Música folclórica",
+    description:
+      "Elementos propone un recorrido por el folklore argentino desde una mirada contemporánea, donde paisaje, tradición y nuevas sonoridades se unen en cada canción. Aldea Eluney Dúo llega con una propuesta de canciones propias que fusionan ritmos andinos, folklore y géneros populares, inspiradas en la naturaleza, la cultura y las historias de nuestra tierra. Dos proyectos que invitan a encontrarse con la música de raíz folclórica que nos identifica. | Entradas en boletería, en las redes de los artistas @Elementosdelvalle - @Aldeaeluney y a través de los números 2915 265412 o al 2984 253280.",
+    slug: "entre-panuelos-elementos-aldea-eluney",
+    category: "eventos",
+    tags: ["Música", "Folklore"],
+  },
+  {
+    id: 219,
+    image: "/agenda/junio/expo-viajera.webp",
+    date: "2026-06-14",
+    startDate: "2026-06-14",
+    endDate: "2026-06-14",
+    time: "16:00",
+    title: "Feria Expo Viajera",
+    description: "",
+    slug: "feria-expo-viajera-junio",
+    category: "eventos",
+    tags: ["Comunidad", "Feria"],
+  },
 ];
 
 export function getEventoBySlug(slug: string) {
