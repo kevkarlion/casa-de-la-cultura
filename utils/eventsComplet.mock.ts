@@ -843,6 +843,85 @@ export const eventosCompletMock: Event[] = [
     category: "eventos",
     tags: ["Comunidad", "Feria"],
   },
+
+  // JUNIO 2026 - Semana 22-27
+  // Lunes 22
+  {
+    id: 220,
+    image: "/agenda/junio/arg-vs-jordania.webp",
+    date: "2026-06-22",
+    startDate: "2026-06-22",
+    endDate: "2026-06-22",
+    time: "14:00",
+    title: "Partido de Argentina vs Jordania",
+    description:
+      "Vení a ver cada partido de Argentina en pantalla gigante y compartí la emoción del fútbol junto a otros hinchas con comida rica, bebida fresquita y pantalla gigante. | Entrada libre",
+    slug: "argentina-vs-jordania-22-junio",
+    category: "eventos",
+    tags: ["Deportes", "Pantalla gigante"],
+  },
+  // Martes 23
+  {
+    id: 221,
+    image: "/agenda/junio/peliculas-de-perros.webp",
+    date: "2026-06-23",
+    startDate: "2026-06-23",
+    endDate: "2026-06-23",
+    time: "20:30",
+    title:
+      'Cineclub TYÖ – Corto + Peli: "Perro Blanco" y "L\'Empire de Médor"',
+    description:
+      '“L\'Empire de Médor” un corto documental satírico que explora el mundo de los amantes de los perros y critica, con humor, el consumismo y la industria creada alrededor de las mascotas y “Perro Blanco” una película que explora lo que hace un perro con aquello que le es inculcado por el humano. | Entradas en boletería',
+    slug: "cineclub-tyo-perro-blanco-empire-medor",
+    category: "eventos",
+    tags: ["Cine", "Proyección", "Cineclub"],
+  },
+  // Miércoles 24
+  {
+    id: 222,
+    image: "/agenda/junio/karaoke-con-juanfer.webp",
+    date: "2026-06-24",
+    startDate: "2026-06-24",
+    endDate: "2026-06-24",
+    time: "21:30",
+    title: "Karaoke con Juanfer San Nicolas – Premios en efectivo",
+    description:
+      "Una noche para animarse a cantar, compartir buena música y competir por premios en efectivo. La lista de participantes se realizará al ingresar al lugar. | Entradas en puerta",
+    slug: "karaoke-juanfer-san-nicolas",
+    category: "eventos",
+    tags: ["Música", "Karaoke"],
+  },
+  // Viernes 26
+  {
+    id: 223,
+    image: "/agenda/junio/retratos-musicales.webp",
+    date: "2026-06-26",
+    startDate: "2026-06-26",
+    endDate: "2026-06-26",
+    time: "20:00",
+    title:
+      "Retratos Musicales | Cuerdas Patagónicas - Filarmónica de Río Negro",
+    description:
+      "El ensamble Cuerdas Patagónicas de la Orquesta filarmónica de Río Negro se presenta con un recorrido por distintas estéticas y épocas a través de obras emblemáticas con composiciones de João Ripper, Benjamin Britten, Luigi Boccherini, Giacomo Puccini y Antonio Vivaldi. | Colaboración voluntaria",
+    slug: "retratos-musicales-cuerdas-patagonicas",
+    category: "eventos",
+    tags: ["Música", "Clásica"],
+  },
+  // Sábado 27
+  {
+    id: 224,
+    image: "/agenda/junio/arg-vs-jordania.webp",
+    date: "2026-06-27",
+    startDate: "2026-06-27",
+    endDate: "2026-06-27",
+    time: "23:00",
+    title: "Partido de Argentina vs Jordania",
+    description:
+      "Vení a ver cada partido de Argentina en pantalla gigante y compartí la emoción del fútbol junto a otros hinchas con comida rica, bebida fresquita y pantalla gigante. | Entrada libre",
+    slug: "argentina-vs-jordania-27-junio",
+    category: "eventos",
+    tags: ["Deportes", "Pantalla gigante"],
+  },
 ];
 
 export function getEventoBySlug(slug: string) {

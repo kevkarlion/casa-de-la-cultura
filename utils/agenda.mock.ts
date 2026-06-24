@@ -115,4 +115,46 @@ export const agendaRapidaMock = [
     slug: "catalejo-festival-literatura-infantil-juvenil-domingo",
     image: "/agenda/mayo/catalejo1.webp",
   },
+
+  // Junio 2026 - Semana 22-27
+  {
+    id: 15,
+    date: "2026-06-22",
+    title: "Partido de Argentina vs Jordania",
+    time: "14:00",
+    slug: "argentina-vs-jordania-22-junio",
+    image: "/agenda/junio/arg-vs-jordania.webp",
+  },
+  {
+    id: 16,
+    date: "2026-06-23",
+    title: 'Cineclub TYÖ – "Perro Blanco" y "L\'Empire de Médor"',
+    time: "20:30",
+    slug: "cineclub-tyo-perro-blanco-empire-medor",
+    image: "/agenda/junio/peliculas-de-perros.webp",
+  },
+  {
+    id: 17,
+    date: "2026-06-24",
+    title: "Karaoke con Juanfer San Nicolas – Premios en efectivo",
+    time: "21:30",
+    slug: "karaoke-juanfer-san-nicolas",
+    image: "/agenda/junio/karaoke-con-juanfer.webp",
+  },
+  {
+    id: 18,
+    date: "2026-06-26",
+    title: "Retratos Musicales | Cuerdas Patagónicas - Filarmónica de Río Negro",
+    time: "20:00",
+    slug: "retratos-musicales-cuerdas-patagonicas",
+    image: "/agenda/junio/retratos-musicales.webp",
+  },
+  {
+    id: 19,
+    date: "2026-06-27",
+    title: "Partido de Argentina vs Jordania",
+    time: "23:00",
+    slug: "argentina-vs-jordania-27-junio",
+    image: "/agenda/junio/arg-vs-jordania.webp",
+  },
 ]

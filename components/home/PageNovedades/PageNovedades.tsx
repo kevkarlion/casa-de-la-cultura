@@ -62,6 +62,7 @@ export default function PageNovedades({ novedades }: PageNovedadesProps) {
                   src={novedad.image}
                   alt={novedad.title}
                   fill
+                  sizes="100vw"
                   className="object-cover"
                   priority={index === 0}
                 />
@@ -131,6 +132,7 @@ export default function PageNovedades({ novedades }: PageNovedadesProps) {
                     src={novedad.image}
                     alt={novedad.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover"
                   />
                 </div>

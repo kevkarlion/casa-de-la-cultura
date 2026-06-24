@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { notFound, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { notFound } from "next/navigation";
 import { getEventoBySlug, getRelatedEventos } from "@/utils/eventsComplet.mock";
 import Breadcrumbs from "@/components/shared/Breadcrumb/Breadcrumbs";
 import { Ticket, FileText } from "lucide-react";
@@ -15,7 +14,6 @@ interface EventosDetailProps {
 /** Descarga archivo abr directamente con fl_attachment */
 function downloadDocument(url: string | undefined, fileName?: string) {
   if (!url) return;
-  // Abrir URL directa con fl_attachment - descarga directamente
   window.open(url + (url.includes("?") ? "&" : "?") + "fl_attachment=true", "_blank");
 }
 
@@ -27,11 +25,9 @@ function parseLocalDate(dateStr: string) {
 
 export default function ProgramacionDetail({ slug, initialDate }: EventosDetailProps) {
   const evento = getEventoBySlug(slug);
-  const [isHorizontal, setIsHorizontal] = useState<boolean | null>(null);
 
   if (!evento) notFound();
 
-  // Usar la fecha de la query si viene, si no la del evento
   const displayDate = initialDate || evento.date;
 
   const related = evento.tags
@@ -97,21 +93,6 @@ export default function ProgramacionDetail({ slug, initialDate }: EventosDetailP
           )}
         </header>
 
-        {/* DETECTOR DE ORIENTACIÓN */}
-        {!hasGallery && isHorizontal === null && (
-          <Image
-            src={evento.image}
-            alt=""
-            width={10}
-            height={10}
-            className="hidden"
-            priority
-            onLoadingComplete={(img) =>
-              setIsHorizontal(img.naturalWidth > img.naturalHeight)
-            }
-          />
-        )}
-
         {/* MOBILE FIRST: TITLE → IMAGE → CONTENT */}
         <div className="flex flex-col gap-12">
           {/* IMAGEN / GALERÍA */}
@@ -128,6 +109,7 @@ export default function ProgramacionDetail({ slug, initialDate }: EventosDetailP
                       alt={img.alt || evento.title}
                       width={1200}
                       height={800}
+                      sizes="(max-width: 640px) calc(100vw - 3rem), calc((100vw - 7.5rem) / 2)"
                       className="w-full h-auto object-contain"
                     />
                   </div>
@@ -135,13 +117,14 @@ export default function ProgramacionDetail({ slug, initialDate }: EventosDetailP
               </div>
             )}
 
-            {!hasGallery && isHorizontal !== null && (
+            {!hasGallery && (
               <div className="bg-neutral-100 rounded-xl p-4 flex justify-center">
                 <Image
                   src={evento.image}
                   alt={evento.title}
-                  width={isHorizontal ? 1280 : 800}
-                  height={isHorizontal ? 960 : 1200}
+                  width={1536}
+                  height={1920}
+                  sizes="(max-width: 1280px) calc(100vw - 3rem), 1100px"
                   className="w-full h-auto object-contain"
                   priority
                 />
@@ -174,14 +157,15 @@ export default function ProgramacionDetail({ slug, initialDate }: EventosDetailP
                 href={`/programacion/${item.slug}`}
                 className="group bg-black block overflow-hidden"
               >
-                <div className="relative aspect-video">
-                  <Image
-                    src={item.images?.[0]?.src || item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
+                  <div className="relative aspect-video">
+                    <Image
+                      src={item.images?.[0]?.src || item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
 
                 <div className="p-5 text-white flex flex-col gap-3">
                   <p className="text-xs opacity-70">

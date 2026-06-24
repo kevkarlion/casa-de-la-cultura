@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { getNovedadBySlug, getRelatedNovedades } from '@/utils/novedades.mock';
 import { ExternalLink } from 'lucide-react';
@@ -29,7 +28,6 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
   const clickedDay = dayParam ? Number(dayParam) : null;
 
   const novedad = getNovedadBySlug(slug);
-  const [isHorizontal, setIsHorizontal] = useState<boolean | null>(null);
 
   if (!novedad) notFound();
 
@@ -78,21 +76,6 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
           </div>
         </header>
 
-        {/* DETECTOR DE ORIENTACIÓN */}
-        {!hasGallery && isHorizontal === null && (
-          <Image
-            src={novedad.image}
-            alt=""
-            width={10}
-            height={10}
-            className="hidden"
-            priority
-            onLoadingComplete={(img) =>
-              setIsHorizontal(img.naturalWidth > img.naturalHeight)
-            }
-          />
-        )}
-
         {/* MOBILE FIRST: TITLE → IMAGE → CONTENT */}
         <div className="flex flex-col gap-12">
           {/* IMAGEN / GALERÍA */}
@@ -109,6 +92,7 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
                       alt={img.alt || novedad.title}
                       width={1200}
                       height={800}
+                      sizes="(max-width: 640px) calc(100vw - 3rem), calc((100vw - 7.5rem) / 2)"
                       className="w-full h-auto object-contain"
                     />
                   </div>
@@ -116,26 +100,14 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
               </div>
             )}
 
-            {!hasGallery && isHorizontal && (
+            {!hasGallery && (
               <div className="bg-neutral-100 rounded-xl p-4 flex justify-center">
                 <Image
                   src={novedad.image}
                   alt={novedad.title}
-                  width={1280}
-                  height={960}
-                  className="w-full h-auto object-contain"
-                  priority
-                />
-              </div>
-            )}
-
-            {!hasGallery && isHorizontal === false && (
-              <div className="bg-neutral-100 rounded-xl p-4 flex justify-center lg:hidden">
-                <Image
-                  src={novedad.image}
-                  alt={novedad.title}
-                  width={800}
-                  height={1200}
+                  width={1536}
+                  height={1920}
+                  sizes="(max-width: 1280px) calc(100vw - 3rem), 1100px"
                   className="w-full h-auto object-contain"
                   priority
                 />
@@ -145,73 +117,26 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
 
           {/* TEXTO */}
           <div className="order-2">
-            {!hasGallery && isHorizontal === false ? (
-              <div className="lg:grid lg:grid-cols-12 gap-10">
-                <div className="lg:col-span-7">
-                  <p className="font-inter text-lg leading-relaxed text-black whitespace-pre-line mb-10">
-                    {novedad.excerpt}
-                  </p>
+            <div className="max-w-3xl">
+              <p className="font-inter text-lg leading-relaxed text-black whitespace-pre-line mb-10">
+                {novedad.excerpt}
+              </p>
 
-                  {novedad.links && novedad.links.length > 0 && (
-                    <div className="mb-12">
-                      <h3 className="text-sm uppercase tracking-widest text-black mb-4">
-                        Enlaces
-                      </h3>
-
-                      <div className="flex flex-col gap-3 not-prose">
-                        {novedad.links.map((link) => (
-                          <a
-                            key={link.url}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-sky-400! hover:text-sky-300! underline underline-offset-4 transition-colors"
-                          >
-                            {link.label}
-                            <ExternalLink size={16} />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* IMAGEN VERTICAL → DESKTOP */}
-                <div className="hidden lg:block lg:col-span-5">
-                  <div className="bg-neutral-100 rounded-xl p-4 flex justify-center">
-                    <Image
-                      src={novedad.image}
-                      alt={novedad.title}
-                      width={800}
-                      height={1200}
-                      className="w-full h-auto object-contain"
-                      priority
-                    />
-                  </div>
-                </div>
+              <div className="flex flex-col gap-3 not-prose">
+                {novedad.links?.map((link) => (
+                  <a
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sky-400! hover:text-sky-300! underline underline-offset-4 transition-colors"
+                  >
+                    {link.label}
+                    <ExternalLink size={16} />
+                  </a>
+                ))}
               </div>
-            ) : (
-              <div className="max-w-3xl">
-                <p className="font-inter text-lg leading-relaxed text-black whitespace-pre-line mb-10">
-                  {novedad.excerpt}
-                </p>
-
-                <div className="flex flex-col gap-3 not-prose">
-                  {novedad.links?.map((link) => (
-                    <a
-                      key={link.url}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sky-400! hover:text-sky-300! underline underline-offset-4 transition-colors"
-                    >
-                      {link.label}
-                      <ExternalLink size={16} />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}
+            </div>
           </div>
         </div>
       </article>
@@ -235,6 +160,7 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
                     src={item.image}
                     alt={item.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>

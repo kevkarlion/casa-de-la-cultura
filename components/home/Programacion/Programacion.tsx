@@ -62,6 +62,7 @@ export default function ProgramacionPage({ events }: Props) {
               src={heroEvent.image}
               alt={heroEvent.title}
               fill
+              sizes="100vw"
               priority
               className="object-cover brightness-90"
             />
@@ -150,6 +151,7 @@ export default function ProgramacionPage({ events }: Props) {
                   alt={event.title}
                   width={500}
                   height={300}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="w-full h-48 md:h-56 object-cover"
                 />
 

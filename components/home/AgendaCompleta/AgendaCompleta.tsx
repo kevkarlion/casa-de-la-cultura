@@ -192,6 +192,7 @@ export default function AgendaAlmanaque({ events }: AgendaAlmanaqueProps) {
                           src={event.image}
                           alt={event.title}
                           fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 14vw"
                           style={{ objectFit: "cover" }}
                           className="absolute inset-0"
                         />
@@ -228,6 +229,7 @@ export default function AgendaAlmanaque({ events }: AgendaAlmanaqueProps) {
                             src={event.image}
                             alt={event.title}
                             fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 14vw"
                             style={{ objectFit: "cover" }}
                             className="absolute inset-0"
                           />
