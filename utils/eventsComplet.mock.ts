@@ -922,6 +922,237 @@ export const eventosCompletMock: Event[] = [
     category: "eventos",
     tags: ["Deportes", "Pantalla gigante"],
   },
+
+  // JULIO 2026 — Semana del 30/6 al 5/7
+  // Martes 30 junio
+  {
+    id: 225,
+    image: "/agenda/junio/cine-cub-la-noche.webp",
+    date: "2026-06-30",
+    startDate: "2026-06-30",
+    endDate: "2026-06-30",
+    time: "20:30",
+    title:
+      'Cineclub TYÖ: "La Noche Está Marchándose Ya"',
+    description:
+      'Pelu es un treintañero que a duras penas sobrevive con su salario de proyectorista de un cineclub municipal. Tras perder su trabajo, acepta quedarse como sereno nocturno y, por una serie de giros desafortunados, termina viviendo en secreto dentro del cine acompañado por las películas que revisa cada noche. Dir. Ezequiel Salinas y Ramiro Sonzini. | Entradas en boletería',
+    slug: "cineclub-tyo-la-noche-esta-marchandose-ya",
+    category: "eventos",
+    tags: ["Cine", "Proyección", "Cineclub"],
+  },
+  // Miércoles 1 julio
+  {
+    id: 226,
+    image: "/agenda/julio/fer-vaszquez.webp",
+    date: "2026-07-01",
+    startDate: "2026-07-01",
+    endDate: "2026-07-01",
+    time: "21:30",
+    title: "Ciclo de peñas CDC: Fer Vazquez",
+    description:
+      "Desde Comallo hasta cada escenario, el cantautor patagónico Fer Vazquez comparte el canto sureño y las raíces de su tierra. Una noche para disfrutar de la música, las historias y la esencia de nuestra Patagonia. | Entradas en boletería",
+    slug: "ciclo-penas-cdc-fer-vazquez",
+    category: "eventos",
+    tags: ["Música", "Folklore", "Peña"],
+  },
+  // Viernes 3 julio
+  {
+    id: 227,
+    image: "/agenda/julio/arg-vs-cpv.webp",
+    date: "2026-07-03",
+    startDate: "2026-07-03",
+    endDate: "2026-07-03",
+    time: "19:00",
+    title: "Partido de Argentina vs Cabo Verde",
+    description:
+      "Vení a ver cada partido de Argentina en pantalla gigante y compartí la emoción del fútbol junto a otros hinchas con comida rica, bebida fresquita y pantalla gigante. | Entrada libre",
+    slug: "argentina-vs-cabo-verde-03-julio",
+    category: "eventos",
+    tags: ["Deportes", "Pantalla gigante"],
+  },
+  // Sábado 4 julio
+  {
+    id: 228,
+    image: "/agenda/julio/iti-del-impulso.webp",
+    date: "2026-07-04",
+    startDate: "2026-07-04",
+    endDate: "2026-07-04",
+    time: "20:00",
+    title: "Itinerario del pulso – Poesía y Música",
+    description:
+      "Una propuesta que reúne poesía y música en una muestra de los procesos creativos de Habitar Poesía. Habrá lecturas en vivo, música y un micrófono abierto. Referente del taller: Valeria Resenite. | Entrada libre",
+    slug: "itinerario-del-pulso-poesia-musica",
+    category: "eventos",
+    tags: ["Música", "Literatura", "Poesía"],
+  },
+  // Domingo 5 julio
+  {
+    id: 229,
+    image: "/agenda/julio/animal-o.webp",
+    date: "2026-07-05",
+    startDate: "2026-07-05",
+    endDate: "2026-07-05",
+    time: "20:00",
+    title: "Animal o la Salida Humana – Luis Sartor",
+    description:
+      'Una de las obras más impactantes de la temporada llega a escena en un formato íntimo y potente que no deja indiferente a nadie.\n\nLuis A. Sartor protagoniza este extraordinario unipersonal dirigido por Víctor Laplace, inspirado en "Informe para una Academia" de Franz Kafka.\n\nLa historia de Pedro, el Rojo —un simio capturado que aprende a comportarse como humano para sobrevivir— se transforma en una reflexión tan profunda como actual sobre la libertad, la identidad y las jaulas que habitamos cada día.\n\nCon una actuación conmovedora, momentos de humor e ironía y una puesta que atrapa de principio a fin, esta obra invita al espectador a mirar(se) desde otro lugar.\n\nUna experiencia teatral intensa, inteligente y emocionante. | Entradas en boletería y ticketera',
+    slug: "luis-sartor-animal-o-la-salida-humana",
+    category: "eventos",
+    tags: ["Teatro", "Escénicas"],
+    ticketeraUrl: "https://survivo.com.ar/evento/animal-o-la-salida-humana/",
+  },
+
+  // Lunes 6 julio
+  {
+    id: 230,
+    image: "/agenda/julio/todo-ritmo.png",
+    date: "2026-07-06",
+    startDate: "2026-07-06",
+    endDate: "2026-07-06",
+    time: "21:00",
+    title: "A Todo Ritmo – Just Dance Free",
+    description:
+      'El grupo de danzas urbanas Just Dance Free de la ciudad de General Roca, a cargo de la profesora Amira Pinolli, nos trae la muestra de mitad de año "A TODO RITMO".\n\nEste grupo está compuesto por participantes de 3 a 13 años, en donde se baila Hip Hop, Reggaeton, Dancehall y Acrobacia de piso. Actualmente sus clases son en Casa de la Cultura y sus inscripciones están abiertas todo el año. Búscalos en Instagram como @justdancefree.\n\nEn esta ocasión se mostrarán coreografías con temáticas diferentes que se han desarrollado esta primera mitad de año. También contaremos con grupos invitados de diferentes estilos como Folklore, Dancehall, Teatro y mucho más. | Entradas en ticketera',
+    slug: "a-todo-ritmo-just-dance-free",
+    category: "eventos",
+    tags: ["Danza", "Muestra"],
+    ticketeraUrl: "https://survivo.com.ar/evento/a-todo-ritmo-just-dance-free/",
+  },
+
+  // Viernes 10 julio
+  {
+    id: 231,
+    image: "/agenda/julio/FEED-PACIENTES-08.png",
+    date: "2026-07-10",
+    startDate: "2026-07-10",
+    endDate: "2026-07-10",
+    time: "20:00",
+    title: "Pacientes en Espera",
+    description:
+      "Una sala de espera médica se convierte en el escenario de encuentros tan cotidianos como absurdos. Mientras un grupo de pacientes aguarda la llegada de un médico que parece no llegar nunca, comienzan a aparecer historias personales, dolores, ansiedades, secretos y situaciones inesperadas.\n\nCada personaje trae consigo una forma particular de transitar la espera y, entre discusiones, confesiones y malentendidos, el tiempo se transforma en una sucesión de escenas cargadas de humor.\n\nSobre la propuesta Pacientes en espera, trabaja desde el humor de situaciones y la construcción de personajes reconocibles. Propone una experiencia teatral ágil y cercana donde el público puede identificarse con escenas de la vida cotidiana.\n\nDirección: Gabriela Dolinsky. | Entradas en ticketera",
+    slug: "pacientes-en-espera",
+    category: "eventos",
+    tags: ["Teatro", "Escénicas"],
+    ticketeraUrl: "https://survivo.com.ar/evento/pacientes-en-espera/",
+  },
+
+  // Sábado 18 julio
+  {
+    id: 232,
+    image: "/agenda/julio/KPOP-FEED-05.png",
+    date: "2026-07-18",
+    startDate: "2026-07-18",
+    endDate: "2026-07-18",
+    time: "15:00",
+    title: "Poder K-pop – Guerreras y Demonios",
+    description:
+      "Un show infantil lleno de música, magia y valentía.\n\nLa oscuridad se expande y amenaza con apoderarse del mundo… pero tres chicas muy especiales fueron enviadas para protegernos. Tres jóvenes artistas que descubren que no solo nacieron para brillar en los escenarios, sino también para defender la esperanza y la alegría de todos.\n\nEntre coreografías llenas de energía, canciones que hacen vibrar y amistades que serán puestas a prueba, estas guerreras deberán enfrentarse a los enemigos de la luz con el poder de la música y la unión de sus voces.\n\nUn espectáculo donde se demuestra que el verdadero poder está en: creer en una misma, mostrarse tal cual somos, confiar en los amigos y seres queridos. Cuanto más fuerte y más unidos cantemos, ¡nada podrá detenernos!\n\nPoder K-pop: Cazadoras y demonios es un show único que combina música, emoción y un mensaje inspirador para toda la familia. | Entradas en ticketera",
+    slug: "poder-kpop-guerreras-y-demonios",
+    category: "eventos",
+    tags: ["Infancias", "Música", "Show"],
+    ticketeraUrl: "https://survivo.com.ar/evento/poder-kpop/",
+  },
+  {
+    id: 233,
+    image: "/agenda/julio/ESCUADRON-FEED-05.png",
+    date: "2026-07-18",
+    startDate: "2026-07-18",
+    endDate: "2026-07-18",
+    time: "17:00",
+    title: "Escuadrón al Rescate",
+    description:
+      "Los cachorros más famosos del mundo llegan al teatro.\n\nCuando un misterioso problema pone en riesgo a la comunidad, Ryder recibe la llamada de emergencia. Sin dudarlo, convoca a toda la patrulla. Todo el equipo desplegará sus habilidades y, sobre todo, el valor del trabajo en equipo para demostrar que ¡no hay nada imposible para la pata patrulla!\n\nCon una puesta en escena visualmente impactante, efectos especiales en vivo y coreografías súper dinámicas, el show invita a los espectadores a ser parte activa de la historia, interactuando con los personajes desde sus butacas. | Entradas en ticketera",
+    slug: "escuadron-al-rescate",
+    category: "eventos",
+    tags: ["Infancias", "Teatro", "Show"],
+    ticketeraUrl: "https://survivo.com.ar/evento/escuadronal-rescate/",
+  },
+
+  // Sábado 25 julio
+  {
+    id: 234,
+    image: "/agenda/julio/feed_25-07.png",
+    date: "2026-07-25",
+    startDate: "2026-07-25",
+    endDate: "2026-07-25",
+    time: "21:00",
+    title: 'Adán y Eva "Un amor de aquellos"',
+    description:
+      "Una propuesta cálida y emotiva que invita a reflexionar sobre el amor, el paso del tiempo y las segundas oportunidades. Con humor, ternura e ironía, esta obra nos muestra que tanto pudo haber cambiado la relación entre los primeros habitantes del paraíso y la pareja actual.\n\nProtagonistas: Patricia Palmer y Mario Pasik.\nDirección: Diego Ramos. | Entradas en ticketera",
+    slug: "adan-y-eva-un-amor-de-aquellos",
+    category: "eventos",
+    tags: ["Teatro", "Escénicas"],
+    ticketeraUrl: "https://survivo.com.ar/evento/adan-y-eva-un-amor-de-aquellos/",
+  },
+
+  // AGOSTO 2026
+  // Jueves 13 agosto
+  {
+    id: 235,
+    image: "/agenda/agosto/cirko-marisko.jpg",
+    date: "2026-08-13",
+    startDate: "2026-08-13",
+    endDate: "2026-08-13",
+    time: "21:00",
+    title: 'Cirko Marisko – "Monoargentum"',
+    description:
+      'El espectáculo ganador del Premio Carlos 2026 a "Mejor Espectáculo de Humor" sale de gira nacional e internacional.\n\nCirko Marisko, el dúo cómico argentino que se consolidó como una de las grandes sorpresas de la última temporada teatral en Villa Carlos Paz, se prepara para recorrer el país con su aclamado show "Monoargentum".\n\nLa propuesta, protagonizada por Lucas "Crazy Waves" y Martín "Konga", logró una inmediata conexión con el público y la crítica, coronando su paso por la cartelera veraniega con el prestigioso Premio Carlos 2026 a Mejor Espectáculo de Humor.\n\nEn un contexto de alta competencia y una programación diversa, Cirko Marisko se destacó por su originalidad, su ritmo escénico y una propuesta que se sostuvo función tras función gracias al boca en boca y a la excelente respuesta del público.\n\nSobre el espectáculo: Comedia Urbana en su máxima expresión. El show fusiona humor, stand up, baile, música, street dance, improvisación y una fuerte participación del público en un formato único: la Comedia Urbana. Dinámico y apto para todo público: combina humor físico, picardía, absurdo y teatro en una experiencia ágil y directa desde el escenario. | Entradas en ticketera',
+    slug: "cirko-marisko-monoargentum",
+    category: "eventos",
+    tags: ["Humor", "Show"],
+    ticketeraUrl: "https://survivo.com.ar/evento/cirko-marisko-monoargentum/",
+  },
+
+  // Sábado 22 agosto
+  {
+    id: 236,
+    image: "/agenda/agosto/no-me-calmo.png",
+    date: "2026-08-22",
+    startDate: "2026-08-22",
+    endDate: "2026-08-22",
+    time: "21:00",
+    title: 'Experiencia Dalia Gutmann – "No me calmo nada"',
+    description:
+      '"Experiencia Dalia Gutmann, No me calmo nada" es un show unipersonal que convierte la vida cotidiana en un show de comedia.\n\nFiel a su estilo verborrágico y alocado, la comediante cuenta las vivencias de una señora que está llegando a los 50, madre de dos adolescentes, en pareja hace mil aunque ya no se use. ¿Su especialidad? Transformar varios de esos temas que nos complican la vida, en risas.\n\nHace más de 20 años que Dalia Gutmann se dedica a la comedia, y se ha convertido en una voz clave para reflejar el universo de las mujeres a través del humor. Los hombres que asisten a sus espectáculos se divierten escuchando confesiones que solo pueden hacerse cuando hay risas.\n\nEs un show, pero también es una celebración a la imperfección. Es comedia, pero también catarsis. | Entradas en ticketera',
+    slug: "experiencia-dalia-gutmann-no-me-calmo-nada",
+    category: "eventos",
+    tags: ["Humor", "Show"],
+    ticketeraUrl: "https://survivo.com.ar/evento/experiencia-dalia-gutmann/",
+  },
+
+  // SEPTIEMBRE 2026
+  // Sábado 26 septiembre
+  {
+    id: 237,
+    image: "/agenda/septiembre/chaplin-como-nunca.png",
+    date: "2026-09-26",
+    startDate: "2026-09-26",
+    endDate: "2026-09-26",
+    time: "20:00",
+    title: "Chaplin como nunca lo viste – Cineclub TYÖ + Ensamble XX-XXI",
+    description:
+      'CHAPLIN VUELVE A LA PANTALLA GRANDE CON MÚSICA EN VIVO: UNA EXPERIENCIA ÚNICA ENTRE CINE Y CONCIERTO.\n\nEl Cineclub TYÖ presentará en Casa de la Cultura de General Roca una función especial de "El niño" (The Kid), la emblemática película de Charles Chaplin, acompañada por música en vivo interpretada por el Ensamble XX-XXI, bajo la dirección de Anderson Perea da Silva.\n\nEstrenada en 1921, El niño constituye una de las obras más importantes de la historia del cine. En ella, Chaplin combina con maestría el humor característico de su personaje Charlot con una profunda sensibilidad social y humana. La historia narra el vínculo entre un humilde vagabundo y un niño abandonado, construyendo un relato que alterna momentos de ternura, risas y emoción, y que continúa conmoviendo a espectadores de todas las edades más de cien años después de su estreno.\n\nEn 1971, con motivo del reestreno y el 50 aniversario de la película, Chaplin compuso una banda sonora junto a otros músicos colaboradores. El Ensamble XX-XXI interpretará una adaptación de esta banda sonora con arreglos especialmente concebidos para la formación instrumental del ensamble. Esta adaptación busca preservar el espíritu musical que acompaña la obra de Chaplin, respetando sus principales temas, climas y recursos expresivos, al tiempo que explora las posibilidades tímbricas y sonoras de un conjunto contemporáneo.\n\nLejos de funcionar como un mero acompañamiento, la música se convierte en un elemento fundamental de la narración. Cada gesto, cada escena de humor, cada momento de emoción encuentra en la interpretación en vivo una resonancia particular, potenciando el vínculo entre la pantalla y el público.\n\nLa propuesta invita a disfrutar del cine de Charles Chaplin y su música desde una perspectiva diferente, reuniendo estos lenguajes artísticos en una experiencia inmersiva e irrepetible.\n\nUna película con una sonrisa y, tal vez, una lágrima… | Entradas en ticketera',
+    slug: "chaplin-como-nunca-lo-viste",
+    category: "eventos",
+    tags: ["Cine", "Música", "Cineclub"],
+  },
+
+  // OCTUBRE 2026
+  // Sábado 24 octubre
+  {
+    id: 238,
+    image: "/agenda/octubre/OVEJA NEGRA FEED-08.png",
+    date: "2026-10-24",
+    startDate: "2026-10-24",
+    endDate: "2026-10-24",
+    time: "22:00",
+    title: 'Juanpi González – "Oveja Negra"',
+    description:
+      'Juampi González presenta Oveja Negra, su cuarto unipersonal de humor, una propuesta tan filosa como cercana donde se anima a explorar su identidad, sus contradicciones y el vértigo de acercarse a los 40 sin haber cumplido ninguno de los casilleros que "había que cumplir".\n\nCon un estilo honesto, incómodo y profundamente gracioso, Juampi se confiesa sobre ese momento extraño de la vida en el que parece que todos tienen un plan… menos uno. A través de anécdotas, reflexiones y observaciones cotidianas, el show invita a reírse de los mandatos, de sentirse raro, distinto o directamente perdido.\n\nOveja Negra es una experiencia de humor identificable y actual, que conecta con quienes alguna vez se sintieron fuera de lugar. Un espectáculo que demuestra que no estamos solos y que, en el fondo, somos muchos más de lo que creemos. Porque todos fuimos la oveja negra alguna vez… | Entradas en ticketera',
+    slug: "juanpi-gonzalez-oveja-negra",
+    category: "eventos",
+    tags: ["Humor", "Show"],
+  },
 ];
 
 export function getEventoBySlug(slug: string) {

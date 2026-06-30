@@ -118,9 +118,10 @@ export default function NovedadesDetail({ slug }: NovedadesDetailProps) {
           {/* TEXTO */}
           <div className="order-2">
             <div className="max-w-3xl">
-              <p className="font-inter text-lg leading-relaxed text-black whitespace-pre-line mb-10">
-                {novedad.excerpt}
-              </p>
+              <div
+                className="font-inter text-lg leading-relaxed text-black whitespace-pre-line mb-10 [&_strong]:font-bold"
+                dangerouslySetInnerHTML={{ __html: novedad.excerpt }}
+              />
 
               <div className="flex flex-col gap-3 not-prose">
                 {novedad.links?.map((link) => (

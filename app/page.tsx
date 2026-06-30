@@ -17,12 +17,19 @@ import { mapEventoToDestacado } from "@/lib/mappers/mapEventoToDestacado";
 import { mapNovedadToDestacado } from "@/lib/mappers/mapNovedadadToDestacado";
 import { getDestacadosByTag } from "@/lib/destacados";
 
+// Filtrar noticias viejas que no queremos en home
+const novedadesHome = novedades.filter(n =>
+  n.title !== "Cineclub de Verano · 7° Ciclo TYÖ" &&
+  n.title !== "Feria Agro Cultural 2026" &&
+  n.title !== "Convocatoria · Espacio Gastronómico Cultural en CDC"
+)
+
 const Page = () => {
   // 🔥 destacados editoriales (eventos + novedades)
   const destacados = getDestacadosByTag(
     [
       ...eventosCompletMock.map(mapEventoToDestacado),
-      ...novedades.map(mapNovedadToDestacado),
+      ...novedadesHome.map(mapNovedadToDestacado),
     ],
     ["Música", "Artes visuales", 'convocatoria','Familia', 'Karaoke' ], // criterio editorial
     6
@@ -43,7 +50,7 @@ const Page = () => {
 
       <SocixCDCPreview />
 
-      <Novedades novedades={novedades} />
+      <Novedades novedades={novedadesHome} />
 
       <ContactoRapido />
     </div>

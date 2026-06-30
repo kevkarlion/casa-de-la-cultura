@@ -2,6 +2,47 @@ import { Novedad } from "@/interfaces/novedades.interface";
 
 export const novedades: Novedad[] = [
   {
+    id: 10,
+    title:
+      "Casa de la Cultura celebra el regreso del Teatro Nacional Cervantes con una nueva producción federal",
+    date: "2026-07-30",
+    summary:
+      "CDC será sede de 'Villa California', la nueva obra del dramaturgo Gonzalo Quintana dirigida por Nicolás Caminiti, tras un proceso de audiciones abiertas del que participaron 35 artistas de la región.",
+    excerpt: `
+Desde Casa de la Cultura expresamos nuestra enorme alegría y orgullo por volver a ser el espacio que recibe al Teatro Nacional Cervantes en una nueva edición de su programa federal "El Cervantes Produce en el País". Es un verdadero honor abrir nuevamente nuestras puertas a este proyecto, que fortalece la producción artística regional y posiciona a General Roca como un escenario de referencia para el teatro argentino.
+
+Luego de cuatro intensas jornadas de audiciones abiertas, finalmente se conoció el elenco que dará vida a "Villa California", la nueva obra del dramaturgo Gonzalo Quintana, dirigida por Nicolás Caminiti y producida por el Teatro Nacional Cervantes.
+
+Tras un exigente proceso de selección en el que participaron 35 artistas de la región, fueron elegidos Laura Raiteri, Juan Rolón, Emiliano Sánchez, Macarena Laciar y Daniel Corrales, quienes comenzarán los ensayos durante el mes de agosto bajo la dirección de Nicolás Caminiti y la asistencia de Sofía Romano.
+
+Las audiciones estuvieron a cargo del director Nicolás Caminiti, la asistente de dirección Sofía Romano y el productor general del Teatro Nacional Cervantes, Poli Bontas. Esta convocatoria reafirma el compromiso del programa federal con la generación de oportunidades laborales para artistas de todo el país, llevando producciones de excelencia a distintos territorios. En esta edición, además de General Roca, participan Lago Puelo (Chubut), Bahía Blanca (Buenos Aires) y Resistencia (Chaco).
+
+El proyecto se desarrollará en Casa de la Cultura entre los meses de agosto y noviembre de 2026 e incluirá funciones para público general, escuelas y universidades, ampliando el acceso a propuestas teatrales de calidad y promoviendo el encuentro entre artistas y comunidades.
+
+La producción contará además con un destacado equipo artístico integrado por Fernanda Bohigues (escenografía), Marcelo Gómez (música original), Diego Borbalás (diseño y realización de vestuario), Mariano Herrera (diseño de iluminación) y Julieta Ledesma (maquillaje). El equipo de trabajo se completa con Nicolás Caminiti en la dirección, Sofía Romano como asistente de dirección, Lilén Quintín como referente de Gestión de Públicos y Soledad González en la producción general.
+
+<strong>Sobre Villa California</strong>
+
+Villa California es una comedia negra ambientada en una casa de un barrio cerrado, donde una familia espera una visita que nunca llega mientras la convivencia se vuelve cada vez más tensa. En ese encierro voluntario, atravesado por promesas incumplidas y un caluroso verano patagónico, los vínculos comienzan a resquebrajarse y lo doméstico deja al descubierto toda su fragilidad.
+
+Desde Casa de la Cultura renovamos nuestro compromiso con el desarrollo cultural de la región y celebramos la confianza del Teatro Nacional Cervantes al elegir nuevamente nuestra institución como sede de este importante proyecto. Recibir una producción de esta magnitud nos llena de prestigio y nos impulsa a seguir trabajando para que el teatro, la creación y el encuentro con el público continúen siendo protagonistas de nuestra comunidad.
+    `,
+    image: "/novedades/teatro-cervantes/teatro-cervantes.webp",
+    images: [
+      {
+        src: "/novedades/teatro-cervantes/teatro-cervantes.webp",
+        alt: "Teatro Nacional Cervantes en Casa de la Cultura",
+      },
+      {
+        src: "/novedades/teatro-cervantes/teatro-cervantes-2.webp",
+        alt: "Audiciones abiertas del Cervantes Produce en el País",
+      },
+    ],
+    slug: "teatro-nacional-cervantes-villa-california",
+    featured: true,
+    tags: ["teatro", "cervantes", "producción federal", "cultura", "institucional"],
+  },
+  {
     id: 9,
     title:
       "Catalejo fue declarado de interés social y cultural por el Concejo Deliberante de General Roca",
@@ -224,7 +265,7 @@ Seguimos construyendo CDC incluso en pausa, con compromiso y trabajo colectivo.
 // helpers
 
 export function getNovedades() {
-  return novedades;
+  return [...novedades].sort((a, b) => b.date.localeCompare(a.date));
 }
 
 export function getNovedadBySlug(slug: string) {

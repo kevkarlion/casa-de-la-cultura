@@ -1,6 +1,8 @@
 import React from 'react';
 import PageNovedades from '@/components/home/PageNovedades/PageNovedades';
-import { novedades } from '@/utils/novedades.mock'
+import { getNovedades } from '@/utils/novedades.mock'
+
+const novedades = getNovedades()
 
 // Quitar esas 3 noticias viejas
 const novedadesFiltradas = novedades.filter(n => 
