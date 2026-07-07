@@ -1005,7 +1005,7 @@ export const eventosCompletMock: Event[] = [
   // Lunes 6 julio
   {
     id: 230,
-    image: "/agenda/julio/todo-ritmo.png",
+    image: "/agenda/julio/a-todo-ritmo.webp",
     date: "2026-07-06",
     startDate: "2026-07-06",
     endDate: "2026-07-06",
@@ -1022,7 +1022,7 @@ export const eventosCompletMock: Event[] = [
   // Viernes 10 julio
   {
     id: 231,
-    image: "/agenda/julio/FEED-PACIENTES-08.png",
+    image: "/agenda/julio/de-ruben.webp",
     date: "2026-07-10",
     startDate: "2026-07-10",
     endDate: "2026-07-10",
@@ -1152,6 +1152,98 @@ export const eventosCompletMock: Event[] = [
     slug: "juanpi-gonzalez-oveja-negra",
     category: "eventos",
     tags: ["Humor", "Show"],
+  },
+
+  // JULIO 2026 — Semana del 7 al 12 de julio
+  // Martes 7 julio
+  {
+    id: 239,
+    image: "/agenda/julio/arg-vs-egp.webp",
+    date: "2026-07-07",
+    startDate: "2026-07-07",
+    endDate: "2026-07-07",
+    time: "13:00",
+    title: "Partido de Argentina vs Egipto",
+    description:
+      "Viví el partido de octavos de final con comida rica, bebida fresquita, buena compañía y una pantalla gigante en CDC. | Entrada libre",
+    slug: "argentina-vs-egipto-07-julio",
+    category: "eventos",
+    tags: ["Deportes", "Pantalla gigante"],
+  },
+  // Miércoles 8 julio
+  {
+    id: 240,
+    image: "/agenda/julio/rey-orlando.webp",
+    date: "2026-07-08",
+    startDate: "2026-07-08",
+    endDate: "2026-07-08",
+    time: "21:30",
+    title: "Ciclo de peñas CDC – Roy Orlando con Emilio Salas y Facundo Galarza",
+    description:
+      "Una noche de puro folklore para disfrutar con el músico, guitarrista y compositor de folclore argentino Roy Macaya junto a Emilio Salas y Facundo Galarza, con la participación especial del taller de danzas folklóricas Nueva Esperanza, «La Retama» y los bailarines Mayra y Matías. | Entradas en boletería",
+    slug: "ciclo-penas-roy-orlando-emilio-salas-facundo-galarza",
+    category: "eventos",
+    tags: ["Música", "Folklore", "Peña"],
+  },
+  // Jueves 9 julio
+  {
+    id: 241,
+    image: "/agenda/julio/las-rondas-primera.webp",
+    date: "2026-07-09",
+    startDate: "2026-07-09",
+    endDate: "2026-07-09",
+    time: "21:00",
+    title: "Las Rondas de Ley Primera 1ra edición – Con la participación de Aukiñ",
+    description:
+      "Ley Primera compartirá un repertorio de folclore argentino cargado de emoción y sentimiento, mientras que Aukiñ aportará una propuesta de ritmos folklóricos latinoamericanos desde la percusión, las voces y el trabajo colectivo en una noche para celebrar nuestras raíces a través de la música. | Entradas en boletería y con los artistas",
+    slug: "las-rondas-ley-primera-aukin",
+    category: "eventos",
+    tags: ["Música", "Folklore"],
+  },
+  // Viernes 10 julio – ya existe "Pacientes en Espera" (id 231, 20:00)
+  {
+    id: 242,
+    image: "/agenda/julio/dehors.webp",
+    date: "2026-07-10",
+    startDate: "2026-07-10",
+    endDate: "2026-07-10",
+    time: "21:00",
+    title: 'Estudio En Dehors presenta "Esto lo resolvemos entre todos"',
+    description:
+      'En la aldea de "Esto lo resolvemos entre todos", niños, adolescentes y adultos enfrentan un imprevisto que pondrá a prueba la convivencia, la responsabilidad y el valor del diálogo. Una muestra de danza clásica que, con humor y sensibilidad, invita a reflexionar sobre el crecimiento, los errores y la importancia de encontrar soluciones entre todos. | Entradas a través de la profesora @andrebasconcelo',
+    slug: "estudio-en-dehors-esto-lo-resolvemos",
+    category: "eventos",
+    tags: ["Danza", "Muestra"],
+  },
+  // Sábado 11 julio
+  {
+    id: 243,
+    image: "/agenda/julio/fer-vazquez.webp",
+    date: "2026-07-11",
+    startDate: "2026-07-11",
+    endDate: "2026-07-11",
+    time: "22:30",
+    title: "Ciclo de peña CDC – Fer Vazquez y Victor Gonzalez",
+    description:
+      "El cantautor patagónico Fer Vazquez junto a Victor Gonzalez comparten el canto sureño y las raíces de nuestra tierra en una noche de puro folclore. | Entrada en boletería",
+    slug: "ciclo-penas-fer-vazquez-victor-gonzalez",
+    category: "eventos",
+    tags: ["Música", "Folklore", "Peña"],
+  },
+  // Domingo 12 julio
+  {
+    id: 244,
+    image: "/agenda/julio/expo-viajera.webp",
+    date: "2026-07-12",
+    startDate: "2026-07-12",
+    endDate: "2026-07-12",
+    time: "16:00",
+    title: "Feria Expo Viajera",
+    description:
+      "Paseo de expositores, arte, moda, deco y diseño. ¡Encontrá lo que buscas! | Entrada libre",
+    slug: "feria-expo-viajera-julio-12",
+    category: "eventos",
+    tags: ["Comunidad", "Feria"],
   },
 ];
 

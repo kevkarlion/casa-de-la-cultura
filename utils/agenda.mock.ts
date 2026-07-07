@@ -206,7 +206,7 @@ export const agendaRapidaMock = [
     title: 'A Todo Ritmo – Just Dance Free',
     time: '21:00',
     slug: 'a-todo-ritmo-just-dance-free',
-    image: '/agenda/julio/todo-ritmo.png',
+    image: '/agenda/julio/a-todo-ritmo.webp',
   },
   {
     id: 26,
@@ -214,7 +214,7 @@ export const agendaRapidaMock = [
     title: 'Pacientes en Espera',
     time: '20:00',
     slug: 'pacientes-en-espera',
-    image: '/agenda/julio/FEED-PACIENTES-08.png',
+    image: '/agenda/julio/de-ruben.webp',
   },
   {
     id: 27,
@@ -277,5 +277,55 @@ export const agendaRapidaMock = [
     time: '22:00',
     slug: 'juanpi-gonzalez-oveja-negra',
     image: '/agenda/octubre/OVEJA NEGRA FEED-08.png',
+  },
+
+  // Julio 2026 - Semana del 7 al 12
+  {
+    id: 34,
+    date: '2026-07-07',
+    title: 'Partido de Argentina vs Egipto',
+    time: '13:00',
+    slug: 'argentina-vs-egipto-07-julio',
+    image: '/agenda/julio/arg-vs-egp.webp',
+  },
+  {
+    id: 35,
+    date: '2026-07-08',
+    title: 'Ciclo de peñas CDC – Roy Orlando con Emilio Salas y Facundo Galarza',
+    time: '21:30',
+    slug: 'ciclo-penas-roy-orlando-emilio-salas-facundo-galarza',
+    image: '/agenda/julio/rey-orlando.webp',
+  },
+  {
+    id: 36,
+    date: '2026-07-09',
+    title: 'Las Rondas de Ley Primera 1ra edición – Con la participación de Aukiñ',
+    time: '21:00',
+    slug: 'las-rondas-ley-primera-aukin',
+    image: '/agenda/julio/las-rondas-primera.webp',
+  },
+  {
+    id: 37,
+    date: '2026-07-10',
+    title: 'Estudio En Dehors presenta "Esto lo resolvemos entre todos"',
+    time: '21:00',
+    slug: 'estudio-en-dehors-esto-lo-resolvemos',
+    image: '/agenda/julio/dehors.webp',
+  },
+  {
+    id: 38,
+    date: '2026-07-11',
+    title: 'Ciclo de peña CDC – Fer Vazquez y Victor Gonzalez',
+    time: '22:30',
+    slug: 'ciclo-penas-fer-vazquez-victor-gonzalez',
+    image: '/agenda/julio/fer-vazquez.webp',
+  },
+  {
+    id: 39,
+    date: '2026-07-12',
+    title: 'Feria Expo Viajera',
+    time: '16:00',
+    slug: 'feria-expo-viajera-julio-12',
+    image: '/agenda/julio/expo-viajera.webp',
   },
 ]
