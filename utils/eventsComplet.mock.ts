@@ -1200,13 +1200,13 @@ export const eventosCompletMock: Event[] = [
     category: "eventos",
     tags: ["Música", "Folklore"],
   },
-  // Viernes 10 julio – ya existe "Pacientes en Espera" (id 231, 20:00)
+  // Sábado 11 julio
   {
     id: 242,
     image: "/agenda/julio/dehors.webp",
-    date: "2026-07-10",
-    startDate: "2026-07-10",
-    endDate: "2026-07-10",
+    date: "2026-07-11",
+    startDate: "2026-07-11",
+    endDate: "2026-07-11",
     time: "21:00",
     title: 'Estudio En Dehors presenta "Esto lo resolvemos entre todos"',
     description:
@@ -1245,6 +1245,222 @@ export const eventosCompletMock: Event[] = [
     category: "eventos",
     tags: ["Comunidad", "Feria"],
   },
+
+  // Semana 13 al 25 de julio
+  // Domingo 13 julio
+  {
+    id: 245,
+    image: "/agenda/julio/rio-con-historias.webp",
+    date: "2026-07-13",
+    startDate: "2026-07-13",
+    endDate: "2026-07-13",
+    title: "Río con Historias – Títeres",
+    description:
+      "El espectáculo comienza cuando el actor titiritero presenta a su amigo El Gallareto Anacleto. Esta pequeña ave acuática, cargada de ternura y picardía, desea ser el presentador del teatro interfiriendo en el espectáculo y bromeando con el titiritero hasta exasperarlo. En la segunda parte se presenta \"El Gato y Los Ratones\", de Roberto Espina, un clásico del Teatro de Títeres: dos ratones honestos y trabajadores son avasallados por un Gato egoísta y violento. Los ratones deberán imponerse a su maldad, para ello necesitarán el auxilio del público. La técnica elegida son los Títeres de Guante. | Entradas en ticketera",
+    slug: "rio-con-historias-titeres",
+    category: "eventos",
+    tags: ["Títeres", "Infancias"],
+    ticketeraUrl: "https://survivo.com.ar/evento/ojitos-curiosos/",
+  },
+  // Lunes 14 julio
+  {
+    id: 246,
+    image: "/agenda/julio/pistacho.webp",
+    date: "2026-07-14",
+    startDate: "2026-07-14",
+    endDate: "2026-07-14",
+    title: "Pistacho en Viaje – Circo Teatro Clown",
+    description:
+      "Pistacho tiene una valija rota, un sombrero que le queda grande y unas ganas enormes de llegar a algún lado. En su viaje se cruza con tres leyendas: El mejor malabarista del mundo, la mejor acróbata del mundo y el mejor monociclista del mundo. Cada uno le regala a su manera, un oficio imposible. Pistacho no aprende a ser perfecto, aprende a insistir. Pistacho en viaje es una obra sobre aprender a caerse bien, sobre los compañeros invisibles que nos sostienen y sobre ese momento en que por fin te presentas al mundo, tal cual como eres. | Entradas en ticketera",
+    slug: "pistacho-en-viaje",
+    category: "eventos",
+    tags: ["Circo", "Clown", "Infancias"],
+    ticketeraUrl: "https://survivo.com.ar/evento/pistacho-en-viaje/",
+  },
+  // Martes 15 julio
+  {
+    id: 247,
+    image: "/agenda/julio/duo-upa.webp",
+    date: "2026-07-15",
+    startDate: "2026-07-15",
+    endDate: "2026-07-15",
+    title: "Dúo a Upa: El Gran Engaño de la Selva – Teatro Musical",
+    description:
+      "Un misterioso concurso ha revolucionado la selva y ningún animal quiere quedarse afuera. Entre canciones, desafíos inesperados, divertidos enredos y mucho humor, un simpático mono hará todo lo posible por cumplir su gran sueño. Pero no todo es lo que parece... El Gran Engaño de la Selva es una divertida aventura teatral y musical que invita a niños y niñas a sumergirse en una historia llena de sorpresas, personajes entrañables y momentos de participación. A través de la amistad, la perseverancia y la imaginación, descubrirán que la verdad y el trabajo en equipo pueden ser mucho más valiosos que cualquier premio. | Entradas en ticketera",
+    slug: "duo-a-upa-el-gran-engano-de-la-selva",
+    category: "eventos",
+    tags: ["Teatro Musical", "Infancias"],
+    ticketeraUrl:
+      "https://survivo.com.ar/evento/duo-a-upa-el-gran-engano-de-la-selva/",
+  },
+  // Miércoles 16 julio
+  {
+    id: 248,
+    image: "/agenda/julio/cuento-de-sol-y-tierra.webp",
+    date: "2026-07-16",
+    startDate: "2026-07-16",
+    endDate: "2026-07-16",
+    title: "Cuentos de Sol y Tierra – Teatro",
+    description:
+      "El Tiempo, encarnado en una hechicera, revela el origen del cosmos a través de objetos de cerámica que cobran vida sobre el escenario. Es una cosmogonía atravesada por los cuatro elementos —fuego, agua, aire y tierra—, donde el barro se transforma en memoria viva y en un puente entre lo ancestral y el presente. Esta obra interdisciplinaria integra teatro físico, cerámica sonora y música en vivo para crear una experiencia poética y sensorial destinada a todo público. A través de imágenes, sonidos y movimiento, invita a reflexionar sobre nuestra relación con la naturaleza y el impacto de nuestras acciones en el ecosistema. | Entradas en ticketera",
+    slug: "cuentos-de-sol-y-tierra",
+    category: "eventos",
+    tags: ["Teatro", "Escénicas"],
+    ticketeraUrl: "https://survivo.com.ar/evento/cuento-de-sol-y-tierra/",
+  },
+  // Jueves 17 julio
+  {
+    id: 249,
+    image: "/agenda/julio/circo-del-valle.webp",
+    date: "2026-07-17",
+    startDate: "2026-07-17",
+    endDate: "2026-07-17",
+    title: "Circo del Valle – Circo",
+    description:
+      "Les invitamos a un viaje a través de nuestro mundo hecho de colores, circo, sazón y ternura. Todo empieza como un día cualquiera. La rutina, los objetos de siempre, el espacio conocido. Pero basta un encuentro para que lo cotidiano se llene de juego. Entre malabares que pintan el aire, acrobacias que desafían lo posible y risas que contagian, descubrimos que la verdadera magia está en estar juntxs. Esta obra es un homenaje a esos momentos chiquitos que nos cambian el día a día. Un recordatorio de que el circo también pasa en la cocina, en la calle, en una mirada. Y que cuando jugamos, el tiempo se vuelve fiesta. | Entradas en ticketera",
+    slug: "circo-del-valle",
+    category: "eventos",
+    tags: ["Circo", "Infancias"],
+    ticketeraUrl: "https://survivo.com.ar/evento/circo-del-valle/",
+  },
+  // Viernes 18 julio
+  {
+    id: 250,
+    image: "/agenda/julio/poder-k-pop.webp",
+    date: "2026-07-18",
+    startDate: "2026-07-18",
+    endDate: "2026-07-18",
+    title: "Poder K-Pop – Música Teatro",
+    description:
+      "La oscuridad se expande y amenaza con apoderarse del mundo... Pero tres chicas muy especiales fueron elegidas para protegerlo. Tres jóvenes artistas descubrirán que no solo nacieron para brillar sobre el escenario, sino también para defender la esperanza y la alegría de todos. Entre impactantes coreografías, canciones llenas de energía y amistades que serán puestas a prueba, estas valientes guerreras deberán enfrentarse a los enemigos de la luz con el poder de la música y la fuerza de sus voces. Un espectáculo infantil que demuestra que el verdadero poder está en: Creer en una misma. Mostrarnos tal como somos. Confiar en nuestros amigos y seres queridos. Porque cuando cantamos juntos y unimos nuestras voces... ¡nada puede detenernos! | Entradas en ticketera",
+    slug: "poder-kpop",
+    category: "eventos",
+    tags: ["Música", "Teatro Musical", "Infancias"],
+    ticketeraUrl: "https://survivo.com.ar/evento/poder-kpop/",
+  },
+  // Viernes 18 julio
+  {
+    id: 251,
+    image: "/agenda/julio/escuadron-al-rescate.webp",
+    date: "2026-07-18",
+    startDate: "2026-07-18",
+    endDate: "2026-07-18",
+    title: "Escuadrón al Rescate – Música Teatro",
+    description:
+      "Los cachorros más famosos del mundo llegan al teatro. Cuando un misterioso problema pone en riesgo a la comunidad, Ryder recibe una llamada de emergencia. Sin dudarlo, convoca a toda la Patrulla Canina. Juntos, desplegarán sus habilidades y, sobre todo, el valor del trabajo en equipo para demostrar que: ¡no hay nada imposible para la Patrulla Canina! Con una puesta en escena visualmente impactante, efectos especiales en vivo y coreografías llenas de energía, este espectáculo invita a los espectadores a formar parte de la aventura, interactuando con los personajes desde sus butacas y viviendo una experiencia inolvidable para toda la familia. | Entradas en ticketera",
+    slug: "escuadron-al-rescate",
+    category: "eventos",
+    tags: ["Música", "Teatro Musical", "Infancias"],
+    ticketeraUrl: "https://survivo.com.ar/evento/escuadronal-rescate/",
+  },
+  // Domingo 20 julio
+  {
+    id: 252,
+    image: "/agenda/julio/pochoclo.webp",
+    date: "2026-07-20",
+    startDate: "2026-07-20",
+    endDate: "2026-07-20",
+    title: "Pochoclo y sus Malabares – Teatro Clown",
+    description:
+      "Un actor que presenta un payaso que luego presenta otro payaso... con una gran incógnita que promete revelar al final del show. ¿Qué es lo que hay debajo de la nariz del payaso? Este simpático personaje nos muestra trucos con diferentes elementos de malabares, mientras juega con el público y los hace reír. | Entradas en ticketera",
+    slug: "pochoclo-y-sus-malabares",
+    category: "eventos",
+    tags: ["Clown", "Infancias"],
+    ticketeraUrl: "https://survivo.com.ar/evento/pochoclo-y-sus-malabares/",
+  },
+  // Lunes 21 julio
+  {
+    id: 253,
+    image: "/agenda/julio/pan-y-traje-gomitas.webp",
+    date: "2026-07-21",
+    startDate: "2026-07-21",
+    endDate: "2026-07-21",
+    title: "Me Mandaron a Comprar Pan y Traje Gomitas – Títeres",
+    description:
+      "\"Me mandaron a comprar pan y traje gomitas\" es una obra de títeres que recorre, con humor, ternura y poesía, las distintas etapas de la infancia. A través de personajes entrañables, juegos, descubrimientos y pequeñas aventuras cotidianas, la obra invita a viajar por esos territorios donde la imaginación transforma lo simple en extraordinario. Entre risas, preguntas y travesuras, los títeres evocan la curiosidad, los miedos, la alegría de crecer y la capacidad infinita de asombro que habita en las niñas y los niños. La historia celebra la infancia como un tiempo de exploración, creatividad y libertad. | Entradas en ticketera",
+    slug: "me-mandaron-a-comprar-pan-y-traje-gomitas",
+    category: "eventos",
+    tags: ["Títeres", "Infancias"],
+    ticketeraUrl:
+      "https://survivo.com.ar/evento/me-mandaron-a-comprar-pan-y-traje-gomitas/",
+  },
+  // Martes 22 julio
+  {
+    id: 254,
+    image: "/agenda/julio/juegos-teatrales.webp",
+    date: "2026-07-22",
+    startDate: "2026-07-22",
+    endDate: "2026-07-22",
+    title: "Juegos Teatrales – Creá Tu Propio Personaje",
+    description:
+      "¿Te imaginás convertirte en alguien completamente diferente por un rato? En este encuentro teatral, niños y niñas de 8 a 12 años exploran el mundo de la actuación a través del juego, la imaginación y la creatividad. Durante 2 hs los participantes jugarán con el cuerpo, la voz, las emociones y distintos desafíos teatrales para descubrir personajes únicos y divertidos. Una propuesta lúdica para desarrollar la confianza, expresión, creatividad y trabajo en equipo. No hace falta experiencia previa, solo ganas de jugar. Cupo Mín 6 / Máx 24. | Entradas en ticketera",
+    slug: "juegos-teatrales-crea-tu-propio-personaje",
+    category: "eventos",
+    tags: ["Taller", "Infancias", "Teatro"],
+    ticketeraUrl:
+      "https://survivo.com.ar/evento/juegos-teatrales-crea-tu-propio-personaje/",
+  },
+  // Miércoles 23 julio
+  {
+    id: 255,
+    image: "/agenda/julio/hilado-de-marionetas.webp",
+    date: "2026-07-23",
+    startDate: "2026-07-23",
+    endDate: "2026-07-23",
+    title: "Hilado de Marionetas – Teatro de Marionetas",
+    description:
+      "Desde una puesta de pulpería de época, los personajes presentan un recorrido breve de música latinoamericana y europea, con danzas típicas, interpretando así cada género musical. | Entradas en ticketera",
+    slug: "hilado-de-marionetas",
+    category: "eventos",
+    tags: ["Teatro de Marionetas", "Música"],
+    ticketeraUrl: "https://survivo.com.ar/evento/hilado-de-marionetas/",
+  },
+  // Jueves 24 julio
+  {
+    id: 256,
+    image: "/agenda/julio/detras-de-un-gajo.webp",
+    date: "2026-07-24",
+    startDate: "2026-07-24",
+    endDate: "2026-07-24",
+    title: "Detrás de un Gajo – Teatro de Marionetas",
+    description:
+      "Historia, adaptación del cuento \"El gajo del viento\". En un bosque que a veces se parece a un monte, las vidas que lo habitan, un día de primavera, se sienten amenazadas por otras vidas que arrasan con todo en su camino. La obra aborda la temática ambiental y el reciclado. | Entradas en ticketera",
+    slug: "detras-de-un-gajo",
+    category: "eventos",
+    tags: ["Teatro de Marionetas", "Infancias"],
+    ticketeraUrl: "https://survivo.com.ar/evento/detras-de-un-gajo/",
+  },
+  // Viernes 25 julio
+  {
+    id: 257,
+    image: "/agenda/julio/cerdiña.webp",
+    date: "2026-07-25",
+    startDate: "2026-07-25",
+    endDate: "2026-07-25",
+    title: "Cerdiña: La Niña y el Jabalí – Teatro",
+    description:
+      "El encuentro entre una niña perdida y un jabalí herido en la estepa patagónica da inicio a una transformación inesperada. Malén se separa de su grupo durante un paseo escolar por el monte y, en medio de la incertidumbre y el temor que trae la llegada de la noche, encuentra a un jabalí herido. A partir de este hecho, ambos emprenden un recorrido lleno de desafíos, encuentros e interacciones con el entorno y con el vasto universo que propone la Patagonia. En este viaje transformador, Malén se convierte en una heroína que dialoga y convive con animales, presencias mágicas y fuerzas sagradas. A través de estas experiencias de conexión espiritual, la historia pone de manifiesto la importancia del cuidado de la naturaleza y la necesidad de fortalecer nuestro vínculo con ella. | Entradas en ticketera",
+    slug: "cerdina-la-nina-y-el-jabali",
+    category: "eventos",
+    tags: ["Teatro", "Infancias"],
+    ticketeraUrl:
+      "https://survivo.com.ar/evento/cerdina-la-nina-y-el-jabali/",
+  },
+  // Viernes 25 julio
+  {
+    id: 258,
+    image: "/agenda/julio/el-carrito-magico.webp",
+    date: "2026-07-25",
+    startDate: "2026-07-25",
+    endDate: "2026-07-25",
+    title: "El Carrito Mágico – Títeres",
+    description:
+      "El Carrito Mágico llega con sus valijas cargadas de ilusión para presentar dos propuestas encantadoras: \"Armonía, burbujas y melodías\" y \"Muñestre, pintor de sueños\". Un espectáculo participativo que combina teatro de títeres de varilla, música, juego e imaginación. A través de personajes entrañables y situaciones poéticas, la propuesta invita a niñas y niños a sumergirse en un universo donde los objetos cobran vida, la fantasía transforma la realidad y cada encuentro se convierte en una aventura compartida. Pensada para toda la familia, esta propuesta promueve la expresión artística, el juego colectivo y la creatividad, generando un espacio cálido, inclusivo y lleno de magia. | Entradas en ticketera",
+    slug: "el-carrito-magico",
+    category: "eventos",
+    tags: ["Títeres", "Infancias"],
+    ticketeraUrl: "https://survivo.com.ar/evento/el-carrito-magico/",
+  },
 ];
 
 export function getEventoBySlug(slug: string) {
@@ -1275,7 +1491,13 @@ export function getEventosOrdenados(): Event[] {
 }
 
 export function getRelatedEventos(currentSlug: string, tags: string[], limit = 3) {
+  const hoy = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
   return eventosCompletMock
-    .filter((evento) => evento.slug !== currentSlug && evento.tags.some((tag) => tags.includes(tag)))
+    .filter(
+      (evento) =>
+        evento.slug !== currentSlug &&
+        (evento.date || evento.startDate || "") >= hoy &&
+        evento.tags.some((tag) => tags.includes(tag)),
+    )
     .slice(0, limit);
 }
