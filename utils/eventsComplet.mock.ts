@@ -446,18 +446,6 @@ export const eventosCompletMock: Event[] = [
   },
   // MAYO 2026 - Eventos nuevos
   {
-    id: 42,
-    image: "/agenda/mayo/2026-05-05-very-important-perros.webp",
-    date: "2026-05-05",
-    time: "20:30",
-    title: "Cineclub TYÖ – “Very Important Perros”",
-    description:
-      "Cinco perros y sus dueños van en camino a un concurso canino en Filadelfia, los perros son impecables, sus dueños, un desastre. Christopher Guest retrata con humor quirúrgico las neurosis, obsesiones de clase y deseos de reconocimiento de sus protagonistas. | Entradas en boletería",
-    slug: "cineclub-tyo-very-important-perros",
-    category: "eventos",
-    tags: ["Cine", "Proyección", "Cineclub"],
-  },
-  {
     id: 43,
     image: "/agenda/mayo/2026-05-08-llegar-a-una-fiesta.webp",
     date: "2026-05-08",
