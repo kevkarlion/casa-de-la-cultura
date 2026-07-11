@@ -1191,11 +1191,11 @@ export const eventosCompletMock: Event[] = [
   // Sábado 11 julio
   {
     id: 242,
-    image: "/agenda/julio/dehors.webp",
+    image: "/agenda/julio/dehors-20hs.png",
     date: "2026-07-11",
     startDate: "2026-07-11",
     endDate: "2026-07-11",
-    time: "21:00",
+    time: "20:00",
     title: 'Estudio En Dehors presenta "Esto lo resolvemos entre todos"',
     description:
       'En la aldea de "Esto lo resolvemos entre todos", niños, adolescentes y adultos enfrentan un imprevisto que pondrá a prueba la convivencia, la responsabilidad y el valor del diálogo. Una muestra de danza clásica que, con humor y sensibilidad, invita a reflexionar sobre el crecimiento, los errores y la importancia de encontrar soluciones entre todos. | Entradas a través de la profesora @andrebasconcelo',
