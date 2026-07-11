@@ -1238,7 +1238,7 @@ export const eventosCompletMock: Event[] = [
   // Domingo 13 julio
   {
     id: 245,
-    image: "/agenda/julio/rio-con-historias.webp",
+    image: "/agenda/julio/rio-historias.webp",
     date: "2026-07-13",
     startDate: "2026-07-13",
     endDate: "2026-07-13",
@@ -1284,7 +1284,7 @@ export const eventosCompletMock: Event[] = [
   // Miércoles 16 julio
   {
     id: 248,
-    image: "/agenda/julio/cuento-de-sol-y-tierra.webp",
+    image: "/agenda/julio/cuento-sol.webp",
     date: "2026-07-16",
     startDate: "2026-07-16",
     endDate: "2026-07-16",
@@ -1299,7 +1299,7 @@ export const eventosCompletMock: Event[] = [
   // Jueves 17 julio
   {
     id: 249,
-    image: "/agenda/julio/circo-del-valle.webp",
+    image: "/agenda/julio/circo-valle.webp",
     date: "2026-07-17",
     startDate: "2026-07-17",
     endDate: "2026-07-17",
@@ -1329,7 +1329,7 @@ export const eventosCompletMock: Event[] = [
   // Viernes 18 julio
   {
     id: 251,
-    image: "/agenda/julio/escuadron-al-rescate.webp",
+    image: "/agenda/julio/escuadron.webp",
     date: "2026-07-18",
     startDate: "2026-07-18",
     endDate: "2026-07-18",
@@ -1359,7 +1359,7 @@ export const eventosCompletMock: Event[] = [
   // Lunes 21 julio
   {
     id: 253,
-    image: "/agenda/julio/pan-y-traje-gomitas.webp",
+    image: "/agenda/julio/pan-gomitas.webp",
     date: "2026-07-21",
     startDate: "2026-07-21",
     endDate: "2026-07-21",
@@ -1391,7 +1391,7 @@ export const eventosCompletMock: Event[] = [
   // Miércoles 23 julio
   {
     id: 255,
-    image: "/agenda/julio/hilado-de-marionetas.webp",
+    image: "/agenda/julio/marionetas.webp",
     date: "2026-07-23",
     startDate: "2026-07-23",
     endDate: "2026-07-23",
@@ -1406,7 +1406,7 @@ export const eventosCompletMock: Event[] = [
   // Jueves 24 julio
   {
     id: 256,
-    image: "/agenda/julio/detras-de-un-gajo.webp",
+    image: "/agenda/julio/detras-gajo.webp",
     date: "2026-07-24",
     startDate: "2026-07-24",
     endDate: "2026-07-24",
@@ -1437,7 +1437,7 @@ export const eventosCompletMock: Event[] = [
   // Viernes 25 julio
   {
     id: 258,
-    image: "/agenda/julio/el-carrito-magico.webp",
+    image: "/agenda/julio/carrito-magico.webp",
     date: "2026-07-25",
     startDate: "2026-07-25",
     endDate: "2026-07-25",
