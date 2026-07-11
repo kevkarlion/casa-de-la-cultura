@@ -11,6 +11,14 @@ const nextConfig = {
 
     // Tamaños para imágenes con layout fixed o fill con sizes
     imageSizes: [64, 96, 128, 256, 384],
+
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/dfli0n64m/**',
+      },
+    ],
   },
 }
 

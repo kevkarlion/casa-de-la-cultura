@@ -1238,7 +1238,7 @@ export const eventosCompletMock: Event[] = [
   // Domingo 13 julio
   {
     id: 245,
-    image: "/agenda/julio/rio-historias.webp",
+    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/rio-historias.webp",
     date: "2026-07-13",
     startDate: "2026-07-13",
     endDate: "2026-07-13",
@@ -1253,7 +1253,7 @@ export const eventosCompletMock: Event[] = [
   // Lunes 14 julio
   {
     id: 246,
-    image: "/agenda/julio/pistacho.webp",
+    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/pistacho.webp",
     date: "2026-07-14",
     startDate: "2026-07-14",
     endDate: "2026-07-14",
@@ -1268,7 +1268,7 @@ export const eventosCompletMock: Event[] = [
   // Martes 15 julio
   {
     id: 247,
-    image: "/agenda/julio/duo-upa.webp",
+    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/duo-upa.webp",
     date: "2026-07-15",
     startDate: "2026-07-15",
     endDate: "2026-07-15",
@@ -1284,7 +1284,7 @@ export const eventosCompletMock: Event[] = [
   // Miércoles 16 julio
   {
     id: 248,
-    image: "/agenda/julio/cuento-sol.webp",
+    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/cuento-sol.webp",
     date: "2026-07-16",
     startDate: "2026-07-16",
     endDate: "2026-07-16",
@@ -1299,7 +1299,7 @@ export const eventosCompletMock: Event[] = [
   // Jueves 17 julio
   {
     id: 249,
-    image: "/agenda/julio/circo-valle.webp",
+    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/circo-valle.webp",
     date: "2026-07-17",
     startDate: "2026-07-17",
     endDate: "2026-07-17",
@@ -1314,7 +1314,7 @@ export const eventosCompletMock: Event[] = [
   // Viernes 18 julio
   {
     id: 250,
-    image: "/agenda/julio/poder-k-pop.webp",
+    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/poder-k-pop.webp",
     date: "2026-07-18",
     startDate: "2026-07-18",
     endDate: "2026-07-18",
@@ -1329,7 +1329,7 @@ export const eventosCompletMock: Event[] = [
   // Viernes 18 julio
   {
     id: 251,
-    image: "/agenda/julio/escuadron.webp",
+    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/escuadron.webp",
     date: "2026-07-18",
     startDate: "2026-07-18",
     endDate: "2026-07-18",
@@ -1344,7 +1344,7 @@ export const eventosCompletMock: Event[] = [
   // Domingo 20 julio
   {
     id: 252,
-    image: "/agenda/julio/pochoclo.webp",
+    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/pochoclo.webp",
     date: "2026-07-20",
     startDate: "2026-07-20",
     endDate: "2026-07-20",
@@ -1359,7 +1359,7 @@ export const eventosCompletMock: Event[] = [
   // Lunes 21 julio
   {
     id: 253,
-    image: "/agenda/julio/pan-gomitas.webp",
+    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/pan-gomitas.webp",
     date: "2026-07-21",
     startDate: "2026-07-21",
     endDate: "2026-07-21",
@@ -1375,7 +1375,7 @@ export const eventosCompletMock: Event[] = [
   // Martes 22 julio
   {
     id: 254,
-    image: "/agenda/julio/juegos-teatrales.webp",
+    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/juegos-teatrales.webp",
     date: "2026-07-22",
     startDate: "2026-07-22",
     endDate: "2026-07-22",
@@ -1391,7 +1391,7 @@ export const eventosCompletMock: Event[] = [
   // Miércoles 23 julio
   {
     id: 255,
-    image: "/agenda/julio/marionetas.webp",
+    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/marionetas.webp",
     date: "2026-07-23",
     startDate: "2026-07-23",
     endDate: "2026-07-23",
@@ -1406,7 +1406,7 @@ export const eventosCompletMock: Event[] = [
   // Jueves 24 julio
   {
     id: 256,
-    image: "/agenda/julio/detras-gajo.webp",
+    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/detras-gajo.webp",
     date: "2026-07-24",
     startDate: "2026-07-24",
     endDate: "2026-07-24",
@@ -1421,7 +1421,7 @@ export const eventosCompletMock: Event[] = [
   // Viernes 25 julio
   {
     id: 257,
-    image: "/agenda/julio/cerdiña.webp",
+    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/cerdi%C3%B1a.webp",
     date: "2026-07-25",
     startDate: "2026-07-25",
     endDate: "2026-07-25",
@@ -1437,7 +1437,7 @@ export const eventosCompletMock: Event[] = [
   // Viernes 25 julio
   {
     id: 258,
-    image: "/agenda/julio/carrito-magico.webp",
+    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/carrito-magico.webp",
     date: "2026-07-25",
     startDate: "2026-07-25",
     endDate: "2026-07-25",
