@@ -312,14 +312,7 @@ export const agendaRapidaMock = [
     slug: 'estudio-en-dehors-esto-lo-resolvemos',
     image: '/agenda/julio/dehors.webp',
   },
-  {
-    id: 38,
-    date: '2026-07-11',
-    title: 'Ciclo de peña CDC – Fer Vazquez y Victor Gonzalez',
-    time: '22:30',
-    slug: 'ciclo-penas-fer-vazquez-victor-gonzalez',
-    image: '/agenda/julio/fer-vazquez.webp',
-  },
+ 
   {
     id: 39,
     date: '2026-07-12',

@@ -1204,20 +1204,7 @@ export const eventosCompletMock: Event[] = [
     tags: ["Danza", "Muestra"],
   },
   // Sábado 11 julio
-  {
-    id: 243,
-    image: "/agenda/julio/fer-vazquez.webp",
-    date: "2026-07-11",
-    startDate: "2026-07-11",
-    endDate: "2026-07-11",
-    time: "22:30",
-    title: "Ciclo de peña CDC – Fer Vazquez y Victor Gonzalez",
-    description:
-      "El cantautor patagónico Fer Vazquez junto a Victor Gonzalez comparten el canto sureño y las raíces de nuestra tierra en una noche de puro folclore. | Entrada en boletería",
-    slug: "ciclo-penas-fer-vazquez-victor-gonzalez",
-    category: "eventos",
-    tags: ["Música", "Folklore", "Peña"],
-  },
+
   // Domingo 12 julio
   {
     id: 244,
