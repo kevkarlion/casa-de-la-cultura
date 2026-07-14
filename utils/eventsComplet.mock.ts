@@ -1024,38 +1024,6 @@ export const eventosCompletMock: Event[] = [
     ticketeraUrl: "https://survivo.com.ar/evento/pacientes-en-espera/",
   },
 
-  // Sábado 18 julio
-  {
-    id: 232,
-    image: "/agenda/julio/KPOP-FEED-05.png",
-    date: "2026-07-18",
-    startDate: "2026-07-18",
-    endDate: "2026-07-18",
-    time: "15:00",
-    title: "Poder K-pop – Guerreras y Demonios",
-    description:
-      "Un show infantil lleno de música, magia y valentía.\n\nLa oscuridad se expande y amenaza con apoderarse del mundo… pero tres chicas muy especiales fueron enviadas para protegernos. Tres jóvenes artistas que descubren que no solo nacieron para brillar en los escenarios, sino también para defender la esperanza y la alegría de todos.\n\nEntre coreografías llenas de energía, canciones que hacen vibrar y amistades que serán puestas a prueba, estas guerreras deberán enfrentarse a los enemigos de la luz con el poder de la música y la unión de sus voces.\n\nUn espectáculo donde se demuestra que el verdadero poder está en: creer en una misma, mostrarse tal cual somos, confiar en los amigos y seres queridos. Cuanto más fuerte y más unidos cantemos, ¡nada podrá detenernos!\n\nPoder K-pop: Cazadoras y demonios es un show único que combina música, emoción y un mensaje inspirador para toda la familia. | Entradas en ticketera",
-    slug: "poder-kpop-guerreras-y-demonios",
-    category: "eventos",
-    tags: ["Infancias", "Música", "Show"],
-    ticketeraUrl: "https://survivo.com.ar/evento/poder-kpop/",
-  },
-  {
-    id: 233,
-    image: "/agenda/julio/ESCUADRON-FEED-05.png",
-    date: "2026-07-18",
-    startDate: "2026-07-18",
-    endDate: "2026-07-18",
-    time: "17:00",
-    title: "Escuadrón al Rescate",
-    description:
-      "Los cachorros más famosos del mundo llegan al teatro.\n\nCuando un misterioso problema pone en riesgo a la comunidad, Ryder recibe la llamada de emergencia. Sin dudarlo, convoca a toda la patrulla. Todo el equipo desplegará sus habilidades y, sobre todo, el valor del trabajo en equipo para demostrar que ¡no hay nada imposible para la pata patrulla!\n\nCon una puesta en escena visualmente impactante, efectos especiales en vivo y coreografías súper dinámicas, el show invita a los espectadores a ser parte activa de la historia, interactuando con los personajes desde sus butacas. | Entradas en ticketera",
-    slug: "escuadron-al-rescate",
-    category: "eventos",
-    tags: ["Infancias", "Teatro", "Show"],
-    ticketeraUrl: "https://survivo.com.ar/evento/escuadronal-rescate/",
-  },
-
   // Sábado 25 julio
   {
     id: 234,
@@ -1221,44 +1189,75 @@ export const eventosCompletMock: Event[] = [
     tags: ["Comunidad", "Feria"],
   },
 
-  // Semana 13 al 25 de julio
-  // Domingo 13 julio
+  // Semana 13 al 25 de julio — Festival Ojitos Curiosos al Teatro
+  // Lunes 13 julio
   {
     id: 245,
-    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/rio-historias.webp",
+    image: "/agenda/julio/rio-con-historias.webp",
     date: "2026-07-13",
     startDate: "2026-07-13",
     endDate: "2026-07-13",
+    time: "17:00",
     title: "Río con Historias – Títeres",
     description:
-      "El espectáculo comienza cuando el actor titiritero presenta a su amigo El Gallareto Anacleto. Esta pequeña ave acuática, cargada de ternura y picardía, desea ser el presentador del teatro interfiriendo en el espectáculo y bromeando con el titiritero hasta exasperarlo. En la segunda parte se presenta \"El Gato y Los Ratones\", de Roberto Espina, un clásico del Teatro de Títeres: dos ratones honestos y trabajadores son avasallados por un Gato egoísta y violento. Los ratones deberán imponerse a su maldad, para ello necesitarán el auxilio del público. La técnica elegida son los Títeres de Guante. | Entradas en ticketera",
+      "Una tarde de títeres para disfrutar en familia, con mucho humor, historias entrañables, enseñanzas y participación del público. | Entradas en boletería y ticketera www.survivo.com.ar/evento/ojitos-curiosos/",
     slug: "rio-con-historias-titeres",
     category: "eventos",
-    tags: ["Títeres", "Infancias"],
+    tags: ["Títeres", "Infancias", "Festival"],
     ticketeraUrl: "https://survivo.com.ar/evento/ojitos-curiosos/",
   },
-  // Lunes 14 julio
+  // Martes 14 julio
   {
     id: 246,
-    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/pistacho.webp",
+    image: "/agenda/julio/pistacho.webp",
     date: "2026-07-14",
     startDate: "2026-07-14",
     endDate: "2026-07-14",
+    time: "17:00",
     title: "Pistacho en Viaje – Circo Teatro Clown",
     description:
-      "Pistacho tiene una valija rota, un sombrero que le queda grande y unas ganas enormes de llegar a algún lado. En su viaje se cruza con tres leyendas: El mejor malabarista del mundo, la mejor acróbata del mundo y el mejor monociclista del mundo. Cada uno le regala a su manera, un oficio imposible. Pistacho no aprende a ser perfecto, aprende a insistir. Pistacho en viaje es una obra sobre aprender a caerse bien, sobre los compañeros invisibles que nos sostienen y sobre ese momento en que por fin te presentas al mundo, tal cual como eres. | Entradas en ticketera",
+      "Malabares, acrobacias y un show en monociclo en una historia sobre la perseverancia, los encuentros y el valor de ser uno mismo. | Entradas en boletería y ticketera www.survivo.com.ar/evento/pistacho-en-viaje/",
     slug: "pistacho-en-viaje",
     category: "eventos",
-    tags: ["Circo", "Clown", "Infancias"],
+    tags: ["Circo", "Clown", "Infancias", "Festival"],
     ticketeraUrl: "https://survivo.com.ar/evento/pistacho-en-viaje/",
   },
-  // Martes 15 julio
+  // Miércoles 15 julio
+  {
+    id: 259,
+    image: "/agenda/julio/arg-vs-eng.webp",
+    date: "2026-07-15",
+    startDate: "2026-07-15",
+    endDate: "2026-07-15",
+    time: "16:00",
+    title: "Partido de Argentina vs Inglaterra",
+    description:
+      "Viví la semifinal con comida rica, bebida fresquita, buena compañía y una pantalla gigante en CDC. | Entrada libre",
+    slug: "argentina-vs-inglaterra-15-julio",
+    category: "eventos",
+    tags: ["Deportes", "Pantalla gigante"],
+  },
+  {
+    id: 260,
+    image: "/agenda/julio/fer-vaszquez.webp",
+    date: "2026-07-15",
+    startDate: "2026-07-15",
+    endDate: "2026-07-15",
+    time: "21:30",
+    title: "Ciclo de peñas CDC – Romina Pino",
+    description:
+      "Romina Pino, referente del folklore rionegrino, llega con más de 27 años de trayectoria y una propuesta que combina tradición, emoción y la fuerza de la música popular argentina. | Entradas en boletería",
+    slug: "ciclo-penas-romina-pino",
+    category: "eventos",
+    tags: ["Música", "Folklore", "Peña"],
+  },
   {
     id: 247,
     image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/duo-upa.webp",
     date: "2026-07-15",
     startDate: "2026-07-15",
     endDate: "2026-07-15",
+    time: "18:00",
     title: "Dúo a Upa: El Gran Engaño de la Selva – Teatro Musical",
     description:
       "Un misterioso concurso ha revolucionado la selva y ningún animal quiere quedarse afuera. Entre canciones, desafíos inesperados, divertidos enredos y mucho humor, un simpático mono hará todo lo posible por cumplir su gran sueño. Pero no todo es lo que parece... El Gran Engaño de la Selva es una divertida aventura teatral y musical que invita a niños y niñas a sumergirse en una historia llena de sorpresas, personajes entrañables y momentos de participación. A través de la amistad, la perseverancia y la imaginación, descubrirán que la verdad y el trabajo en equipo pueden ser mucho más valiosos que cualquier premio. | Entradas en ticketera",
@@ -1283,50 +1282,80 @@ export const eventosCompletMock: Event[] = [
     tags: ["Teatro", "Escénicas"],
     ticketeraUrl: "https://survivo.com.ar/evento/cuento-de-sol-y-tierra/",
   },
-  // Jueves 17 julio
+  // Viernes 17 julio
   {
     id: 249,
-    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/circo-valle.webp",
+    image: "/agenda/julio/circo-del-valle.webp",
     date: "2026-07-17",
     startDate: "2026-07-17",
     endDate: "2026-07-17",
+    time: "17:00",
     title: "Circo del Valle – Circo",
     description:
-      "Les invitamos a un viaje a través de nuestro mundo hecho de colores, circo, sazón y ternura. Todo empieza como un día cualquiera. La rutina, los objetos de siempre, el espacio conocido. Pero basta un encuentro para que lo cotidiano se llene de juego. Entre malabares que pintan el aire, acrobacias que desafían lo posible y risas que contagian, descubrimos que la verdadera magia está en estar juntxs. Esta obra es un homenaje a esos momentos chiquitos que nos cambian el día a día. Un recordatorio de que el circo también pasa en la cocina, en la calle, en una mirada. Y que cuando jugamos, el tiempo se vuelve fiesta. | Entradas en ticketera",
+      "Un espectáculo de circo, color y humor que transforma lo cotidiano en una experiencia llena de juego e imaginación. | Entradas en boletería y ticketera www.survivo.com.ar/evento/circo-del-valle/",
     slug: "circo-del-valle",
     category: "eventos",
-    tags: ["Circo", "Infancias"],
+    tags: ["Circo", "Infancias", "Festival"],
     ticketeraUrl: "https://survivo.com.ar/evento/circo-del-valle/",
   },
-  // Viernes 18 julio
+  {
+    id: 261,
+    image: "/agenda/julio/kitapena.webp",
+    date: "2026-07-17",
+    startDate: "2026-07-17",
+    endDate: "2026-07-17",
+    time: "19:00",
+    title: "Kitapena – Degustación, Arte y Música",
+    description:
+      "Degustaciones de vinos, espumantes, cervezas, whiskies y una coctelería artesanal fina con el acompañamiento de buen arte y música para llenar el ambiente. | Entradas en boletería y con RRPP autorizados",
+    slug: "kitapena-degustacion-arte-y-musica",
+    category: "eventos",
+    tags: ["Gastronomía", "Música", "Degustación"],
+  },
+  // Sábado 18 julio
   {
     id: 250,
-    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/poder-k-pop.webp",
+    image: "/agenda/julio/poder-kpop.webp",
     date: "2026-07-18",
     startDate: "2026-07-18",
     endDate: "2026-07-18",
-    title: "Poder K-Pop – Música Teatro",
+    time: "15:00",
+    title: "Poder K-Pop – Guerreras y Demonios",
     description:
-      "La oscuridad se expande y amenaza con apoderarse del mundo... Pero tres chicas muy especiales fueron elegidas para protegerlo. Tres jóvenes artistas descubrirán que no solo nacieron para brillar sobre el escenario, sino también para defender la esperanza y la alegría de todos. Entre impactantes coreografías, canciones llenas de energía y amistades que serán puestas a prueba, estas valientes guerreras deberán enfrentarse a los enemigos de la luz con el poder de la música y la fuerza de sus voces. Un espectáculo infantil que demuestra que el verdadero poder está en: Creer en una misma. Mostrarnos tal como somos. Confiar en nuestros amigos y seres queridos. Porque cuando cantamos juntos y unimos nuestras voces... ¡nada puede detenernos! | Entradas en ticketera",
-    slug: "poder-kpop",
+      "La oscuridad se expande y amenaza con apoderarse del mundo… pero tres chicas muy especiales fueron enviadas para protegernos. | Entradas en boletería y ticketera www.survivo.com.ar/evento/poder-kpop/",
+    slug: "poder-kpop-guerreras-y-demonios",
     category: "eventos",
-    tags: ["Música", "Teatro Musical", "Infancias"],
+    tags: ["Infancias", "Música", "Show", "Festival"],
     ticketeraUrl: "https://survivo.com.ar/evento/poder-kpop/",
   },
-  // Viernes 18 julio
   {
     id: 251,
-    image: "https://res.cloudinary.com/dfli0n64m/image/upload/agenda/julio/escuadron.webp",
+    image: "/agenda/julio/escuadron-al-rescate.webp",
     date: "2026-07-18",
     startDate: "2026-07-18",
     endDate: "2026-07-18",
-    title: "Escuadrón al Rescate – Música Teatro",
+    time: "17:00",
+    title: "Escuadrón al Rescate",
     description:
-      "Los cachorros más famosos del mundo llegan al teatro. Cuando un misterioso problema pone en riesgo a la comunidad, Ryder recibe una llamada de emergencia. Sin dudarlo, convoca a toda la Patrulla Canina. Juntos, desplegarán sus habilidades y, sobre todo, el valor del trabajo en equipo para demostrar que: ¡no hay nada imposible para la Patrulla Canina! Con una puesta en escena visualmente impactante, efectos especiales en vivo y coreografías llenas de energía, este espectáculo invita a los espectadores a formar parte de la aventura, interactuando con los personajes desde sus butacas y viviendo una experiencia inolvidable para toda la familia. | Entradas en ticketera",
+      "Cuando una emergencia pone en riesgo a la comunidad, Ryder y la Patrulla entran en acción para demostrar que, con trabajo en equipo, no hay misión imposible. | Entradas en boletería y ticketera www.survivo.com.ar/evento/escuadronal-rescate/",
     slug: "escuadron-al-rescate",
     category: "eventos",
-    tags: ["Música", "Teatro Musical", "Infancias"],
+    tags: ["Infancias", "Teatro", "Show", "Festival"],
     ticketeraUrl: "https://survivo.com.ar/evento/escuadronal-rescate/",
+  },
+  {
+    id: 262,
+    image: "/agenda/julio/voragine.webp",
+    date: "2026-07-18",
+    startDate: "2026-07-18",
+    endDate: "2026-07-18",
+    time: "22:00",
+    title: "Vorágine – Tributo a Airbag",
+    description:
+      "Reviví los temas clásicos y nuevos de Airbag en una noche llena de energía, guitarras y puro rock nacional. | Entradas con los artistas",
+    slug: "voragine-tributo-airbag",
+    category: "eventos",
+    tags: ["Música", "Rock", "Tributo"],
   },
   // Domingo 20 julio
   {
