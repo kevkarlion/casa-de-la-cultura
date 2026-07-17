@@ -28,6 +28,21 @@ export interface Event {
 
 export const eventosCompletMock: Event[] = [
   {
+    id: 266,
+    image: "/agenda/julio/mixtion-musica.webp",
+    date: "2026-07-31",
+    startDate: "2026-07-31",
+    endDate: "2026-07-31",
+    time: "21:00",
+    title: "Mixtión Música – Otra posible mirada del tango",
+    description:
+      "El tango se encuentra con nuevas sonoridades en la propuesta de Mixtión Música, un cuarteto platense integrado por tres guitarras y voz que reinterpreta la tradición desde una mirada contemporánea. Recorrerán las composiciones de su nuevo EP 'Intersección' y compartirán versiones de grandes clásicos del rock nacional llevadas al lenguaje de la música ciudadana. | Entradas en boletería y ticketera.",
+    slug: "mixtio-musica-otra-mirada-del-tango",
+    category: "eventos",
+    tags: ["Música", "Tango", "Rock"],
+    ticketeraUrl: "https://www.survivo.com.ar/evento/mixtio-musica-otra-mirada-del-tango/",
+  },
+  {
     id: 204,
     image: "/agenda/junio/leo-maiello.webp",
     date: "2026-06-06",
