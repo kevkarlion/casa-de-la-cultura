@@ -832,7 +832,7 @@ export const eventosCompletMock: Event[] = [
     time: "15:00",
     title: "Final Argentina vs España – Pantalla Gigante",
     description:
-      "Viví el partido de octavos de final con comida rica, bebida fresquita, buena compañía y una pantalla gigante en CDC. | Entrada libre",
+      "Viví el partido de la gran final con comida rica, bebida fresquita, buena compañía y una pantalla gigante en CDC. | Entrada libre",
     slug: "final-argentina-vs-espana-19-julio",
     category: "eventos",
     tags: ["Deportes", "Pantalla gigante"],
