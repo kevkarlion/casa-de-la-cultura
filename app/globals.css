@@ -42,6 +42,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-neue: var(--font-neue-haas), Arial, Helvetica, ui-sans-serif, system-ui;
+  --animate-fade-in-up: fade-in-up 0.5s ease-out;
 
   /* Mapeo de colores para que Tailwind genere las utilidades */
   --color-brand-purple: var(--brand-purple);
@@ -66,10 +67,15 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
 }
- 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-inter), system-ui, sans-serif;
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 

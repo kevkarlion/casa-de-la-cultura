@@ -837,20 +837,21 @@ export const eventosCompletMock: Event[] = [
     category: "eventos",
     tags: ["Deportes", "Pantalla gigante"],
   },
-  {
-    id: 271,
-    image: "/agenda/julio/karaoke.webp",
-    date: "2026-07-23",
-    startDate: "2026-07-23",
-    endDate: "2026-07-23",
-    time: "21:00",
-    title: "Noche de Karaoke – Con Juan Fer y premios en efectivo",
-    description:
-      "Una nueva noche de karaoke invita a disfrutar de buena música, diversión y grandes premios. Quienes se animen a subir al escenario podrán participar por premios en efectivo, mientras el público acompaña cada presentación en un ambiente distendido. Además, durante toda la noche habrá promociones especiales en pizzas y en el bar. Las inscripciones se realizarán en puerta, por lo que solo queda elegir una canción y prepararse para compartir una noche diferente. | Entradas e inscripción en puerta",
-    slug: "noche-de-karaoke-23-julio",
-    category: "eventos",
-    tags: ["Música", "Karaoke"],
-  },
+  // COMENTADO: evento tentativo, falta confirmar
+  // {
+  //   id: 271,
+  //   image: "/agenda/julio/karaoke.webp",
+  //   date: "2026-07-23",
+  //   startDate: "2026-07-23",
+  //   endDate: "2026-07-23",
+  //   time: "21:00",
+  //   title: "Noche de Karaoke – Con Juan Fer y premios en efectivo",
+  //   description:
+  //     "Una nueva noche de karaoke invita a disfrutar de buena música, diversión y grandes premios. Quienes se animen a subir al escenario podrán participar por premios en efectivo, mientras el público acompaña cada presentación en un ambiente distendido. Además, durante toda la noche habrá promociones especiales en pizzas y en el bar. Las inscripciones se realizarán en puerta, por lo que solo queda elegir una canción y prepararse para compartir una noche diferente. | Entradas e inscripción en puerta",
+  //   slug: "noche-de-karaoke-23-julio",
+  //   category: "eventos",
+  //   tags: ["Música", "Karaoke"],
+  // },
   {
     id: 272,
     image: "/agenda/julio/fer-vazquez.webp",
