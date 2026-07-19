@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import React from 'react'
 import { Ticket, FileText } from 'lucide-react'
 
 /** Descarga archivo - abrir URL directa */
@@ -35,6 +35,83 @@ function parseLocalDate(dateStr: string) {
   return new Date(year, month - 1, day)
 }
 
+const EventCard = React.memo(function EventCard({ event, index }: { event: Event; index: number }) {
+  return (
+    <div
+      className="animate-fade-in-up"
+      style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'both' }}
+    >
+      <article className="relative rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+        <Image
+          src={event.image}
+          alt={event.title}
+          width={500}
+          height={300}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          loading="lazy"
+          className="w-full h-48 md:h-56 object-cover"
+        />
+
+        <div className="absolute inset-0 z-10 bg-black/25 flex flex-col justify-end p-4">
+          <span className="text-xs text-white">
+            {parseLocalDate(event.date).toLocaleDateString('es-AR', {
+              weekday: 'short',
+              day: 'numeric',
+              month: 'short',
+            })}
+          </span>
+
+          <h3 className="text-lg font-bold text-white mt-1">
+            {event.title}
+          </h3>
+
+          <div className="flex flex-wrap gap-1 mt-2">
+            {event.tags.map(tag => (
+              <span
+                key={tag}
+                className="text-[10px] bg-black text-brand-white-cdc px-2 py-0.5 rounded"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap gap-2 mt-3">
+            <Link
+              href={`/programacion/${event.slug}`}
+              className="text-xs font-bold bg-primary px-3 py-1 rounded hover:bg-[#cc4e1d] transition-colors"
+            >
+              Ver más
+            </Link>
+
+            {event.ticketeraUrl && (
+              <a
+                href={event.ticketeraUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-white-cdc inline-flex items-center gap-1 text-xs font-bold bg-primary px-3 py-1 rounded hover:bg-[#cc4e1d] transition-colors"
+              >
+                <Ticket size={14} />
+                Entradas
+              </a>
+            )}
+
+            {event.documentUrl && (
+              <button
+                onClick={() => downloadDocument(event.documentUrl, event.documentName)}
+                className="text-brand-white-cdc inline-flex items-center gap-1 text-xs font-bold bg-black px-3 py-1 rounded hover:bg-gray-800 transition-colors"
+              >
+                <FileText size={14} />
+                {event.documentName || 'PDF'}
+              </button>
+            )}
+          </div>
+        </div>
+      </article>
+    </div>
+  )
+})
+
 export default function ProgramacionPage({ events }: Props) {
   if (!events || events.length === 0) return null
 
@@ -52,11 +129,7 @@ export default function ProgramacionPage({ events }: Props) {
 
       {/* HERO */}
       <section className="max-w-6xl mx-auto px-4 mb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-        >
+        <div className="animate-fade-in-up">
           <div className="relative w-full h-105 md:h-130 rounded-lg overflow-hidden shadow-lg">
             <Image
               src={heroEvent.image}
@@ -123,7 +196,7 @@ export default function ProgramacionPage({ events }: Props) {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* GRID */}
@@ -134,84 +207,7 @@ export default function ProgramacionPage({ events }: Props) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {otherEvents.map((event, index) => (
-            <motion.div
-              key={event.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.6,
-                ease: 'easeOut',
-                delay: index * 0.1,
-              }}
-            >
-              <article className="relative rounded-lg overflow-hidden shadow hover:shadow-lg transition">
-                <Image
-                  src={event.image}
-                  alt={event.title}
-                  width={500}
-                  height={300}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="w-full h-48 md:h-56 object-cover"
-                />
-
-                <div className="absolute inset-0 z-10 bg-black/25 flex flex-col justify-end p-4">
-                  <span className="text-xs text-white">
-                    {parseLocalDate(event.date).toLocaleDateString('es-AR', {
-                      weekday: 'short',
-                      day: 'numeric',
-                      month: 'short',
-                    })}
-                  </span>
-
-                  <h3 className="text-lg font-bold text-white mt-1">
-                    {event.title}
-                  </h3>
-
-                  <div className="flex flex-wrap gap-1 mt-2">
-                    {event.tags.map(tag => (
-                      <span
-                        key={tag}
-                        className="text-[10px] bg-black text-brand-white-cdc px-2 py-0.5 rounded"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    <Link
-                      href={`/programacion/${event.slug}`}
-                      className="text-xs font-bold bg-primary px-3 py-1 rounded hover:bg-[#cc4e1d] transition-colors"
-                    >
-                      Ver más
-                    </Link>
-
-                    {event.ticketeraUrl && (
-                      <a
-                        href={event.ticketeraUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-brand-white-cdc inline-flex items-center gap-1 text-xs font-bold bg-primary px-3 py-1 rounded hover:bg-[#cc4e1d] transition-colors"
-                      >
-                        <Ticket size={14} />
-                        Entradas
-                      </a>
-                    )}
-
-                    {event.documentUrl && (
-                      <button
-                        onClick={() => downloadDocument(event.documentUrl, event.documentName)}
-                        className="text-brand-white-cdc inline-flex items-center gap-1 text-xs font-bold bg-black px-3 py-1 rounded hover:bg-gray-800 transition-colors"
-                      >
-                        <FileText size={14} />
-                        {event.documentName || 'PDF'}
-                      </button>
-                    )}
-                  </div>
-                </div>
-              </article>
-            </motion.div>
+            <EventCard key={event.id} event={event} index={index} />
           ))}
         </div>
       </section>

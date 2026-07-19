@@ -20,6 +20,11 @@ function formatDateLocal(date: Date): string {
   return `${y}-${m}-${d}`;
 }
 
+function parseLocalDate(dateStr: string): Date {
+  const [year, month, day] = dateStr.split("-").map(Number);
+  return new Date(year, month - 1, day);
+}
+
 interface DayCellProps {
   day: number;
   weekDayLabel: string;
@@ -162,8 +167,8 @@ export default function AgendaAlmanaque({ events, initialYear, initialMonth }: A
       const end = event.endDate ? event.endDate : event.date;
       if (!start || !end) return;
 
-      const s = new Date(start);
-      const e = new Date(end);
+      const s = parseLocalDate(start);
+      const e = parseLocalDate(end);
       for (let d = new Date(s); d <= e; d.setDate(d.getDate() + 1)) {
         if (d.getFullYear() === year && d.getMonth() === month) {
           const day = d.getDate();

@@ -825,7 +825,7 @@ export const eventosCompletMock: Event[] = [
   },
   {
     id: 270,
-    image: "/agenda/julio/arg-vs-egp.webp",
+    image: "/agenda/julio/arg-vs-esp.webp",
     date: "2026-07-19",
     startDate: "2026-07-19",
     endDate: "2026-07-19",
