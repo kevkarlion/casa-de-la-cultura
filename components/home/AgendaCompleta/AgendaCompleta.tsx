@@ -29,19 +29,16 @@ interface DayCellProps {
   day: number;
   weekDayLabel: string;
   dayEvents: { event: Event; dateStr: string }[];
-  colStart: number;
 }
 
 const DayCell = React.memo(function DayCell({
   day,
   weekDayLabel,
   dayEvents,
-  colStart,
 }: DayCellProps) {
   return (
     <div
       className="h-64 sm:h-72 md:h-80 overflow-hidden border border-neutral-300 rounded-md shadow-md relative flex flex-col animate-fade-in-up"
-      style={colStart > 1 && colStart <= 7 ? { gridColumnStart: colStart } : undefined}
     >
       <div className="absolute top-1 left-1 bg-white/90 text-black px-2 py-0.5 rounded z-10 text-sm font-semibold shadow-sm flex flex-col items-start">
         <span className="text-[10px]">{weekDayLabel}</span>
@@ -223,7 +220,7 @@ export default function AgendaAlmanaque({ events, initialYear, initialMonth }: A
         <div className="grid md:grid-cols-7 gap-2 mt-2 flex-col md:flex-none">
           {Array.from({ length: daysInMonth + desktopOffset }, (_, i) => {
             const day = i - desktopOffset + 1;
-            if (day < 1) return <div key={`empty-${i}`} className="hidden md:block md:h-80" />;
+            if (day < 1) return <div key={`empty-${i}`} className="h-4 md:h-80" />;
 
             const date = new Date(
               localMonth.getFullYear(),
@@ -242,7 +239,6 @@ export default function AgendaAlmanaque({ events, initialYear, initialMonth }: A
                 day={day}
                 weekDayLabel={weekDayLabel}
                 dayEvents={sortedDayEvents}
-                colStart={day === 1 ? desktopOffset + 1 : 1}
               />
             );
           })}
