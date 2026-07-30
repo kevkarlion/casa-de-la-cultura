@@ -982,6 +982,67 @@ export const eventosCompletMock: Event[] = [
     tags: ["Humor", "Stand Up"],
     ticketeraUrl: "https://www.survivo.com.ar/evento/julian-bellese/",
   },
+
+  // Julio 2026 – Nuevos
+  {
+    id: 281,
+    image: "/agenda/julio/feria-mexicana.webp",
+    date: "2026-07-29",
+    startDate: "2026-07-29",
+    endDate: "2026-07-29",
+    time: "21:00",
+    title: "Noche Mexicana – Tacos Libres",
+    description:
+      "Viví una noche de auténtica comida mexicana en el café restobar Alma Mía, ubicado en nuestro hall superior. | Reservas al 299 466 7883.",
+    slug: "noche-mexicana-tacos-libres",
+    category: "eventos",
+    tags: ["Gastronomía", "Noche Temática"],
+  },
+  {
+    id: 282,
+    image: "/agenda/julio/hay-otros-mundos.webp",
+    date: "2026-07-31",
+    startDate: "2026-07-31",
+    endDate: "2026-07-31",
+    time: "20:30",
+    title: "Hay otros mundos, pero están en este – Pinturas y Textos",
+    description:
+      "Una colección de pinturas y dibujos por Amelia Gutiérrez y textos por Pilar Altilio inspirados en los paisajes, la fauna y la inmensidad de la Patagonia, que celebra la belleza de nuestro territorio a través del arte. | Entrada libre.",
+    slug: "hay-otros-mundos-pero-estan-en-este",
+    category: "eventos",
+    tags: ["Arte", "Exposición", "Pintura", "Literatura"],
+  },
+
+  // Agosto 2026
+  {
+    id: 284,
+    image: "/agenda/agosto/frutilda.webp",
+    date: "2026-08-01",
+    startDate: "2026-08-01",
+    endDate: "2026-08-01",
+    time: "19:00",
+    title: "Frutilda – Muestra de teatro",
+    description:
+      'Inspirados por las frutinovelas y atrapados por la magia de Matilda, los alumnos del taller de teatro de la profe Mica Ruiz se animaron a crear y representar una nueva historia que "pega" más con la realidad. | Entradas en boletería y ticketera.',
+    slug: "frutilda-muestra-de-teatro-de-la-profe-mica-ruiz",
+    category: "eventos",
+    tags: ["Teatro", "Muestra"],
+    ticketeraUrl: "https://survivo.com.ar/evento/frutilda-muestra-de-teatro-de-la-profe-mica-ruiz/",
+  },
+  {
+    id: 285,
+    image: "/agenda/agosto/peña-a-beneficio.webp",
+    date: "2026-08-01",
+    startDate: "2026-08-01",
+    endDate: "2026-08-01",
+    time: "21:30",
+    title: "Peña a Beneficio de Natalia Verdugue",
+    description:
+      "Una peña solidaria a beneficio de Natalia Verdugue, quien se encuentra atravesando un tratamiento contra el cáncer, reunirá las presentaciones de Trío Roy Orlando, Auka Folk y Peñeros, junto a la participación especial del ballet Amigos de la Danza. | Entradas al 2984643240.",
+    slug: "pena-a-beneficio-natalia-verdugue",
+    category: "eventos",
+    tags: ["Música", "Peña", "Solidario"],
+  },
 ];
 
 export function getEventoBySlug(slug: string) {
