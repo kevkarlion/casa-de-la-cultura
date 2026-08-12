@@ -243,14 +243,6 @@ export const agendaRapidaMock = [
 
   // Agosto 2026
   {
-    id: 30,
-    date: '2026-08-13',
-    title: 'Cirko Marisko – "Monoargentum"',
-    time: '21:00',
-    slug: 'cirko-marisko-monoargentum',
-    image: '/agenda/agosto/cirko-marisko.jpg',
-  },
-  {
     id: 31,
     date: '2026-08-22',
     title: 'Experiencia Dalia Gutmann – "No me calmo nada"',
@@ -327,5 +319,31 @@ export const agendaRapidaMock = [
     time: '16:00',
     slug: 'feria-expo-viajera-julio-12',
     image: '/agenda/julio/expo-viajera.webp',
+  },
+
+  // Agosto 2026 – Eventos del 12 al 15
+  {
+    id: 40,
+    date: '2026-08-12',
+    title: 'Noche de Peña – La Retama',
+    time: '21:30',
+    slug: 'noche-de-pena-la-retama',
+    image: '/agenda/agosto/la-retama.webp',
+  },
+  {
+    id: 42,
+    date: '2026-08-13',
+    title: 'Cirko Marisco – Nueva Función',
+    time: '22:30',
+    slug: 'cirko-marisco-nueva-funcion',
+    image: '/agenda/agosto/cirko-marisko-agotado-nueva-funcion-2230hs.webp',
+  },
+  {
+    id: 43,
+    date: '2026-08-15',
+    title: 'DEVRA: Colección 20 años – Canciones del Mundo',
+    time: '22:00',
+    slug: 'devra-coleccion-20-anos-canciones-del-mundo',
+    image: '/agenda/agosto/devra.webp',
   },
 ]

@@ -431,22 +431,7 @@ export const eventosCompletMock: Event[] = [
     slug: "adan-y-eva-un-amor-de-aquellos",
     category: "eventos",
     tags: ["Teatro", "Escénicas"],
-    ticketeraUrl: "https://survivo.com.ar/evento/adan-y-eva-un-amor-de-aquellos/",
-  },
-  {
-    id: 235,
-    image: "/agenda/agosto/cirko-marisko.jpg",
-    date: "2026-08-13",
-    startDate: "2026-08-13",
-    endDate: "2026-08-13",
-    time: "21:00",
-    title: 'Cirko Marisko – "Monoargentum"',
-    description:
-      'El espectáculo ganador del Premio Carlos 2026 a "Mejor Espectáculo de Humor" sale de gira nacional e internacional.\n\nCirko Marisko, el dúo cómico argentino que se consolidó como una de las grandes surprises de la última temporada teatral en Villa Carlos Paz, se prepara para recorrer el país con su aclamado show "Monoargentum".\n\nLa propuesta, protagonizada por Lucas "Crazy Waves" y Martín "Konga", logró una inmediata conexión con el público y la crítica, coronando su paso por la cartelera veraniega con el prestigioso Premio Carlos 2026 a Mejor Espectáculo de Humor.\n\nEn un contexto de alta competencia y una programación diversa, Cirko Marisko se destacó por su originalidad, su ritmo escénico y una propuesta que se sostuvo función tras función gracias al boca en boca y a la excelente respuesta del público.\n\nSobre el espectáculo: Comedia Urbana en su máxima expresión. El show fusiona humor, stand up, baile, música, street dance, improvisación y una fuerte participación del público en un formato único: la Comedia Urbana. Dinámico y apto para todo público: combina humor físico, picardía, absurdo y teatro en una experiencia ágil y directa desde el escenario. | Entradas en ticketera',
-    slug: "cirko-marisko-monoargentum",
-    category: "eventos",
-    tags: ["Humor", "Show"],
-    ticketeraUrl: "https://survivo.com.ar/evento/cirko-marisko-monoargentum/",
+ticketeraUrl: "https://survivo.com.ar/evento/adan-y-eva-un-amor-de-aquellos/",
   },
   {
     id: 236,
@@ -1198,6 +1183,51 @@ export const eventosCompletMock: Event[] = [
     slug: "feria-expo-viajera-agosto-9",
     category: "eventos",
     tags: ["Comunidad", "Feria"],
+  },
+
+  // Agosto 2026 – Eventos del 12 al 15
+  {
+    id: 297,
+    image: "/agenda/agosto/la-retama.webp",
+    date: "2026-08-12",
+    startDate: "2026-08-12",
+    endDate: "2026-08-12",
+    time: "21:30",
+    title: "Noche de Peña – La Retama",
+    description:
+      "Una noche de puro folclore para encontrarnos, compartir, bailar y disfrutar de nuestra música y nuestras raíces. | Entradas en boletería",
+    slug: "noche-de-pena-la-retama",
+    category: "eventos",
+    tags: ["Música", "Peña", "Folklore"],
+  },
+  {
+    id: 299,
+    image: "/agenda/agosto/cirko-marisko-agotado-nueva-funcion-2230hs.webp",
+    date: "2026-08-13",
+    startDate: "2026-08-13",
+    endDate: "2026-08-13",
+    time: "22:30",
+    title: "Cirko Marisco – Nueva Función",
+    description:
+      "Un espectáculo desopilante que combina humor, música, interacción y mucha diversión para grandes y chicos. Dos artistas, un sinfín de personajes y situaciones inesperadas se encuentran en escena para crear una propuesta fresca, dinámica y llena de sorpresas. | Entradas en boletería y ticketera",
+    slug: "cirko-marisco-nueva-funcion",
+    category: "eventos",
+    ticketeraUrl: "https://survivo.com.ar/evento/cirko-marisko-monoargentum-segunda-funciob/",
+    tags: ["Humor", "Familia"],
+  },
+  {
+    id: 300,
+    image: "/agenda/agosto/devra.webp",
+    date: "2026-08-15",
+    startDate: "2026-08-15",
+    endDate: "2026-08-15",
+    time: "22:00",
+    title: "DEVRA: Presentación del disco Colección 20 años – Canciones del Mundo",
+    description:
+      "Un viaje musical por distintas culturas, géneros e idiomas: tango, folklore argentino, bossa nova, rock patagónico e internacional, jazz y canciones italianas y francesas, con alguna sorpresa en árabe. Seis idiomas, múltiples culturas y 20 años de música reunidos en un espectáculo para disfrutar y viajar a través de las canciones. | Entradas en boletería, ticketera y a través del 2995016493",
+    slug: "devra-coleccion-20-anos-canciones-del-mundo",
+    category: "eventos",
+    tags: ["Música", "Concierto"],
   },
 ];
 
