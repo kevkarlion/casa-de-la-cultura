@@ -1230,6 +1230,37 @@ ticketeraUrl: "https://survivo.com.ar/evento/adan-y-eva-un-amor-de-aquellos/",
     tags: ["Música", "Concierto"],
   },
 
+  // Agosto 2026 – Semana del 26 al 29
+  {
+    id: 309,
+    image: "/agenda/agosto/nocjhe-pastas.webp",
+    date: "2026-08-26",
+    startDate: "2026-08-26",
+    endDate: "2026-08-26",
+    time: "20:00",
+    title: "Noche de pastas rellenas",
+    description:
+      "Una noche para disfrutar, compartir y repetir tus favoritos. Agnolottis rellenos de salmón, cordero ahumado, jamón y queso, y calabaza y roquefort. IMPORTANTE: Por una cuestión de elaboración, deberán elegir el sabor de sus agnolottis al momento de realizar la reserva. | Reservas al 2994667883",
+    slug: "noche-de-pastas-rellenas",
+    category: "eventos",
+    tags: ["Gastronomía", "Noche Temática"],
+  },
+  {
+    id: 310,
+    image: "/agenda/agosto/esquejes.webp",
+    date: "2026-08-28",
+    startDate: "2026-08-28",
+    endDate: "2026-08-28",
+    time: "21:00",
+    title: "Esquejes, noche de cuerdas y poesías",
+    description:
+      "Un encuentro íntimo con la música acústica, el folklore y poemas de autoras con la participación de las poetas Graciela Simonit, Valentina Natalini, Mariana Rizuto, con el acompañamiento de Jennifer Mario en piano y Salomé Guevara en guitarra. Además de una presentación especial de guitarra clásica de la mano del Colo Parra a dúo con Salome. | Entradas en boletería y ticketera",
+    slug: "esquejes-noche-de-cuerdas-y-poesias",
+    category: "eventos",
+    tags: ["Música", "Poesía", "Folklore"],
+    ticketeraUrl: "https://survivo.com.ar/evento/invierno-lirico/",
+  },
+
   // Agosto - Noviembre 2026 – Nuevos eventos
   {
     id: 301,
@@ -1237,13 +1268,14 @@ ticketeraUrl: "https://survivo.com.ar/evento/adan-y-eva-un-amor-de-aquellos/",
     date: "2026-08-29",
     startDate: "2026-08-29",
     endDate: "2026-08-29",
-    time: "21:00",
-    title: "Rondas",
+    time: "17:00",
+    title: "Rondas – Musical interactivo para infancias",
     description:
-      "Un espectáculo lúdico musical que se vale de canciones, algunas acompañadas de narraciones y juego con luces, en el que el movimiento, las miradas, la escucha y el canto colectivo nos llevan a compartir, sin límite de edad, un momento en el que la ternura, la empatía, la observación y el placer de estar y habitar un lugar común y divertido nos acerca a un territorio \"RONDA\", donde cada persona forma parte de un espacio simple, estético, sensible: un tiempo pleno para entrelazar voces, abrazos, risas y nuestras verdades.\n\nRondas para que circule la alegría. Rondas para que circulen las canciones. Rondas para que circulen las voces. Rondas para que circule el cuidado.",
+      "Un espectáculo lúdico musical para disfrutar sin límite de edad. Canciones, narraciones, luces y movimiento se encuentran en una experiencia sensible y divertida que invita a compartir, escuchar, cantar y ser parte de un espacio común. | Entradas en boletería y ticketera",
     slug: "rondas",
     category: "eventos",
-    tags: ["Familia", "Música", "Show"],
+    tags: ["Infancias", "Música", "Show"],
+    ticketeraUrl: "https://survivo.com.ar/evento/compania/",
   },
   {
     id: 302,
@@ -1333,6 +1365,20 @@ ticketeraUrl: "https://survivo.com.ar/evento/adan-y-eva-un-amor-de-aquellos/",
     category: "eventos",
     tags: ["Humor", "Música", "Show"],
     ticketeraUrl: "https://survivo.com.ar/evento/pablo-cordonet/",
+  },
+  {
+    id: 308,
+    image: "/agenda/agosto/membrillos.webp",
+    date: "2026-08-29",
+    startDate: "2026-08-29",
+    endDate: "2026-08-29",
+    time: "21:30",
+    title: "Membrillo & Flaco V – Rock nacional e indie",
+    description:
+      "Membrillo y FLACO V se encuentran en una noche de música en vivo en inglés y en español. Indie rock, canciones propias y distintas influencias se unen en dos propuestas de la escena regional. | Entradas a través de las bandas",
+    slug: "membrillo-flaco-v",
+    category: "eventos",
+    tags: ["Música", "Rock", "Indie"],
   },
 ];
 
