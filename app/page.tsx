@@ -11,18 +11,20 @@ import EventCarousel from "@/components/shared/eventos/EventosDestacados";
 
 
 import { eventosCompletMock } from "@/utils/eventsComplet.mock";
-import { novedades } from "@/utils/novedades.mock";
+import { getNovedades } from "@/utils/novedades.mock";
 
 import { mapEventoToDestacado } from "@/lib/mappers/mapEventoToDestacado";
 import { mapNovedadToDestacado } from "@/lib/mappers/mapNovedadadToDestacado";
 import { getDestacadosByTag } from "@/lib/destacados";
 
-// Filtrar noticias viejas que no queremos en home
-const novedadesHome = novedades.filter(n =>
-  n.title !== "Cineclub de Verano · 7° Ciclo TYÖ" &&
-  n.title !== "Feria Agro Cultural 2026" &&
-  n.title !== "Convocatoria · Espacio Gastronómico Cultural en CDC"
-)
+// Filtrar noticias viejas que no queremos en home (orden nuevas → viejas, solo las 9 más recientes)
+const novedadesHome = getNovedades()
+  .filter(n =>
+    n.title !== "Cineclub de Verano · 7° Ciclo TYÖ" &&
+    n.title !== "Feria Agro Cultural 2026" &&
+    n.title !== "Convocatoria · Espacio Gastronómico Cultural en CDC"
+  )
+  .slice(0, 9)
 
 const Page = () => {
   // 🔥 destacados editoriales (eventos + novedades)
@@ -31,7 +33,7 @@ const Page = () => {
       ...eventosCompletMock.map(mapEventoToDestacado),
       ...novedadesHome.map(mapNovedadToDestacado),
     ],
-    ["Música", "Artes visuales", 'convocatoria','Familia', 'Karaoke' ], // criterio editorial
+    ["Música", "Artes visuales", "convocatoria", "Familia", "Karaoke", "Humor", "Teatro", "Stand Up", "Show", "Cine"],
     6
   );
 

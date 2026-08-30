@@ -39,7 +39,7 @@ Desde Casa de la Cultura renovamos nuestro compromiso con el desarrollo cultural
       },
     ],
     slug: "teatro-nacional-cervantes-villa-california",
-    featured: true,
+    featured: false,
     tags: ["teatro", "cervantes", "producción federal", "cultura", "institucional"],
   },
   {
@@ -67,7 +67,7 @@ Desde Casa de la Cultura celebramos este reconocimiento que reafirma la necesida
       { src: "/imagenes/cata-3.webp", alt: "Catalejo - Feria de libros y encuentros" },
     ],
     slug: "catalejo-interes-social-cultural",
-    featured: true,
+    featured: false,
     tags: ["catalejo", "literatura", "infancias", "reconocimiento"],
   },
   {
@@ -94,7 +94,7 @@ Gracias a Birock por apostar a este proyecto junto a nosotros. ¡Los esperamos p
     `,
     image: "/imagenes/bar-cafe.webp",
     slug: "birock-cafe-bar-cultural",
-    featured: true,
+    featured: false,
     tags: ["birock", "gastronomía", "café", "cdc"],
   },
   {
@@ -428,6 +428,7 @@ Un nuevo espacio para que la literatura también encuentre su lugar en nuestra c
     `,
     image: "/novedades/novedades-agosto/R09.webp",
     slug: "nueva-area-literatura",
+    featured: true,
     tags: ["literatura", "biblioteca"],
   },
   {
@@ -451,6 +452,7 @@ Durante las últimas semanas se realizaron tareas de pintura y reacondicionamien
       },
     ],
     slug: "mejoras-espacios-trabajo-formacion",
+    featured: true,
     tags: ["obras", "espacios"],
   },
   {
@@ -478,6 +480,7 @@ Un nuevo espacio para encontrarnos, compartir y disfrutar de nuestra casa tambi�
       },
     ],
     slug: "nueva-concesion-bar",
+    featured: true,
     tags: ["gastronomía", "bar"],
   },
 ];
