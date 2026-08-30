@@ -260,6 +260,226 @@ Seguimos construyendo CDC incluso en pausa, con compromiso y trabajo colectivo.
     featured: false,
     tags: ["institucional", "obras", "cdc"],
   },
+  {
+    id: 11,
+    title: "Sumamos equipamiento para el área técnica",
+    date: "2026-08-03",
+    summary:
+      "Incorporamos una nueva computadora notebook para el área técnica de CDC, sumando una herramienta indispensable para optimizar el servicio.",
+    excerpt: `
+Seguimos fortaleciendo nuestros espacios de trabajo. Incorporamos una nueva computadora notebook que fue entregada al área técnica de CDC, sumando una herramienta indispensable para optimizar el servicio y acompañar el trabajo diario de nuestros técnicos.
+
+Cada nueva incorporación nos permite mejorar las condiciones de trabajo y seguir construyendo una Casa de la Cultura más equipada y preparada para sus actividades.
+    `,
+    image: "/novedades/novedades-agosto/R01.webp",
+    slug: "sumamos-equipamiento-area-tecnica",
+    tags: ["equipamiento", "institucional"],
+  },
+  {
+    id: 12,
+    title: "Nuevos convenios para fortalecer la actividad cultural",
+    date: "2026-08-05",
+    summary:
+      "CDC firmó un convenio con la Secretaría de Cultura de Río Negro que consolida su rol como sede de la Filarmónica de Río Negro y del programa El Teatro Cervantes Produce.",
+    excerpt: `
+CDC firmó un convenio con la Secretaría de Cultura de Río Negro que consolida su rol como sede de la Filarmónica de Río Negro y del programa El Teatro Cervantes Produce. Además, se estableció un convenio marco de colaboración entre el Estado provincial y la Asociación para impulsar nuevas acciones culturales conjuntas.
+    `,
+    image: "/novedades/novedades-agosto/R02.webp",
+    slug: "nuevos-convenios-fortalecer-actividad-cultural",
+    tags: ["convenios", "institucional", "cultura"],
+  },
+  {
+    id: 13,
+    title: "Volvimos a abrir nuestra galería",
+    date: "2026-08-06",
+    summary:
+      "La Galería de Casa de la Cultura vuelve a recibir a diversos artistas para compartir y poner en valor sus obras. Entrada gratuita.",
+    excerpt: `
+Estamos felices de recuperar este espacio fundamental y emblemático de Casa de la Cultura. La Galería vuelve a recibir a diversos artistas para compartir y poner en valor sus obras, fortaleciendo el encuentro entre el arte y nuestra comunidad.
+
+Te invitamos a acercarte y disfrutar de la muestra.
+<strong>Entrada gratuita.</strong>
+    `,
+    image: "/novedades/novedades-agosto/R03.webp",
+    images: [
+      {
+        src: "/novedades/novedades-agosto/R03.webp",
+        alt: "Reapertura de la Galería de Casa de la Cultura",
+      },
+      {
+        src: "/novedades/novedades-agosto/R03(1).webp",
+        alt: "Reapertura de la Galería de Casa de la Cultura",
+      },
+      {
+        src: "/novedades/novedades-agosto/R03(2).webp",
+        alt: "Reapertura de la Galería de Casa de la Cultura",
+      },
+    ],
+    slug: "volvimos-abrir-nuestra-galeria",
+    tags: ["galería", "arte", "cultura"],
+  },
+  {
+    id: 14,
+    title: "Puesta en valor del patrimonio y el archivo histórico de CDC",
+    date: "2026-08-07",
+    summary:
+      "Desde el Área Literaria trabajamos en un proyecto para preservar, organizar y poner en valor el patrimonio bibliográfico e histórico de la institución.",
+    excerpt: `
+Desde el Área Literaria de CDC estamos trabajando en un proyecto destinado a preservar, organizar y poner en valor el patrimonio bibliográfico e histórico de la institución, junto con su colección de obras de arte.
+
+Actualmente, se está reorganizando el material y estableciendo criterios de inventario y catalogación, con el objetivo de que este acervo pueda ser puesto a disposición de la comunidad. Como parte de este proceso, también se proyecta implementar un futuro sistema de préstamos para socios y avanzar, en una próxima etapa, hacia la digitalización y puesta en valor del archivo histórico y fundacional de CDC.
+
+<em>Agradecemos a Ana Bussio, colaboradora del área.</em>
+    `,
+    image: "/novedades/novedades-agosto/R04.webp",
+    images: [
+      {
+        src: "/novedades/novedades-agosto/R04.webp",
+        alt: "Puesta en valor del archivo histórico de CDC",
+      },
+      {
+        src: "/novedades/novedades-agosto/R04(1).webp",
+        alt: "Puesta en valor del archivo histórico de CDC",
+      },
+    ],
+    slug: "puesta-en-valor-patrimonio-archivo-historico",
+    tags: ["patrimonio", "archivo", "literatura"],
+  },
+  {
+    id: 15,
+    title: "Incorporamos un sistema de gestión desarrollado a medida",
+    date: "2026-08-11",
+    summary:
+      "Un sistema diseñado para las necesidades de la institución que centraliza la administración de clientes, socios y pagos, integrado con facturación electrónica.",
+    excerpt: `
+Fue diseñado específicamente para las necesidades de la institución y centraliza la administración de clientes, socios y pagos. Además, está integrado con facturación electrónica, generando comprobantes automáticos en ARCA y enviándolos por correo o WhatsApp, agilizando el trabajo administrativo y reduciendo el uso de papel.
+    `,
+    image: "/novedades/novedades-agosto/R05.webp",
+    slug: "sistema-gestion-desarrollado-a-medida",
+    tags: ["gestión", "sistema", "institucional"],
+  },
+  {
+    id: 16,
+    title: "Nuevo paquete de recepción para artistas",
+    date: "2026-08-12",
+    summary:
+      "Incorporamos a los camarines el paquete de recepción de Sala 2, pensado para acompañar a nuestros artistas durante su estadía en la institución.",
+    excerpt: `
+Seguimos mejorando nuestros espacios para brindar una mejor experiencia a quienes nos visitan y a quienes hacen posible cada espectáculo.
+
+Incorporamos a los camarines el paquete de recepción de Sala 2, pensado especialmente para acompañar a nuestros artistas durante su estadía en la institución.
+
+<strong>Cuenta con:</strong> pava eléctrica, jarra con agua mineral, caramelera, frutera, caja de té con diferentes variedades, copas y tazas con platitos.
+
+<em>Pequeños detalles que hacen a una mejor bienvenida.</em>
+    `,
+    image: "/novedades/novedades-agosto/R06.webp",
+    slug: "paquete-recepcion-artistas",
+    tags: ["camarines", "artistas"],
+  },
+  {
+    id: 17,
+    title: "Primera venta en la galería renovada",
+    date: "2026-08-13",
+    summary:
+      "Se concretó la primera venta de una obra del catálogo de la muestra de la artista Amelia Gutiérrez, con entrega de certificado de autenticidad.",
+    excerpt: `
+Luego de la reapertura de nuestra galería, celebramos una nueva instancia que reafirma el vínculo entre el arte y la comunidad.
+
+Se concretó la primera venta de una obra perteneciente al catálogo de la muestra de la artista Amelia Gutiérrez, actualmente en exposición.
+
+Una vez realizada la venta, se hizo entrega del correspondiente certificado de autenticidad de la obra, garantizando su procedencia y documentación. La muestra puede visitarse en la galería de CDC hasta el 30 de agosto.
+
+Seguimos impulsando espacios para la circulación, exhibición y comercialización del arte.
+    `,
+    image: "/novedades/novedades-agosto/R07.webp",
+    slug: "primera-venta-galeria-renovada",
+    tags: ["galería", "arte", "venta"],
+  },
+  {
+    id: 18,
+    title: "Más herramientas para una gestión eficiente",
+    date: "2026-08-14",
+    summary:
+      "El sistema permite controlar pagos mediante filtros, exportar información a Excel y registrar asistencias de talleristas, con un bot integrado a WhatsApp y la web.",
+    excerpt: `
+El sistema permite controlar pagos mediante filtros, exportar información a Excel y brinda acceso a talleristas para registrar asistencias. También se desarrolla un bot integrado con WhatsApp y la web que facilitará el pago de cuotas, responderá consultas sobre actividades y enviará recordatorios automáticos a los socios.
+    `,
+    image: "/novedades/novedades-agosto/R08.webp",
+    slug: "mas-herramientas-gestion-eficiente",
+    tags: ["gestión", "sistema", "socios"],
+  },
+  {
+    id: 19,
+    title: "Nueva área de literatura",
+    date: "2026-08-18",
+    summary:
+      "Creamos nuestra Área de Literatura, a cargo del armado y desarrollo de nuestra pequeña biblioteca, un espacio para acercarse a la lectura.",
+    excerpt: `
+Seguimos creciendo y sumando espacios para promover el encuentro con la cultura.
+
+Creamos nuestra Área de Literatura, que estará a cargo del armado y desarrollo de nuestra pequeña biblioteca, un espacio al que podés acercarte a leer, descubrir nuevos textos y compartir el placer por la lectura.
+
+Además, el área recibirá proyectos y propuestas para presentaciones de libros en Casa de la Cultura.
+
+Un nuevo espacio para que la literatura también encuentre su lugar en nuestra casa.
+
+<strong>Contacto:</strong> cdcliterario@gmail.com
+    `,
+    image: "/novedades/novedades-agosto/R09.webp",
+    slug: "nueva-area-literatura",
+    tags: ["literatura", "biblioteca"],
+  },
+  {
+    id: 20,
+    title: "Mejoras en los espacios de trabajo y formación",
+    date: "2026-08-20",
+    summary:
+      "Se realizaron tareas de pintura y reacondicionamiento en dos aulas y en la oficina de Comunicación para brindar espacios más cómodos y funcionales.",
+    excerpt: `
+Durante las últimas semanas se realizaron tareas de pintura y reacondicionamiento en dos aulas y en la oficina de Comunicación. Estas mejoras buscan brindar espacios más cómodos, funcionales y adecuados para el desarrollo de las actividades diarias.
+    `,
+    image: "/novedades/novedades-agosto/R10.webp",
+    images: [
+      {
+        src: "/novedades/novedades-agosto/R10.webp",
+        alt: "Mejoras en los espacios de trabajo y formación",
+      },
+      {
+        src: "/novedades/novedades-agosto/R10(1).webp",
+        alt: "Mejoras en los espacios de trabajo y formación",
+      },
+    ],
+    slug: "mejoras-espacios-trabajo-formacion",
+    tags: ["obras", "espacios"],
+  },
+  {
+    id: 21,
+    title: "Nueva concesión del bar",
+    date: "2026-08-24",
+    summary:
+      "Alma Mía se sumó a nuestra comunidad con una nueva propuesta gastronómica, con una cocina inspirada en la gastronomía mexicana.",
+    excerpt: `
+Hace muy poco tiempo le dimos la bienvenida a Alma Mía, que se sumó a nuestra comunidad con una nueva propuesta gastronómica.
+
+Una cocina inspirada en la gastronomía mexicana, con algunas perlitas y creaciones especiales del chef, sin dejar de lado los clásicos de siempre.
+
+Un nuevo espacio para encontrarnos, compartir y disfrutar de nuestra casa también alrededor de la mesa.
+    `,
+    image: "/novedades/novedades-agosto/R11.webp",
+    images: [
+      {
+        src: "/novedades/novedades-agosto/R11.webp",
+        alt: "Nueva concesión del bar en Casa de la Cultura",
+      },
+      {
+        src: "/novedades/novedades-agosto/R11(1).webp",
+        alt: "Nueva concesión del bar en Casa de la Cultura",
+      },
+    ],
+    slug: "nueva-concesion-bar",
+    tags: ["gastronomía", "bar"],
+  },
 ];
 
 // helpers
