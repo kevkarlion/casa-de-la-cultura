@@ -1380,6 +1380,64 @@ ticketeraUrl: "https://survivo.com.ar/evento/adan-y-eva-un-amor-de-aquellos/",
     category: "eventos",
     tags: ["Música", "Rock", "Indie"],
   },
+
+  // Septiembre 2026 – Semana 1 al 6
+  {
+    id: 311,
+    image: "/agenda/septiembre/cineclub-cien-años.webp",
+    date: "2026-09-01",
+    startDate: "2026-09-01",
+    endDate: "2026-09-01",
+    time: "20:30",
+    title: "Cineclub TYÖ: Ciclo 100 años de perdón – \"Oro en barras\"",
+    description:
+      "Vuelve Cineclub TYÖ con un nuevo ciclo de películas sobre robos de bancos. En esta ocasión se proyectará \"Oro en barras\", Henry \"Dutch\" Holland, un empleado bancario meticuloso que tras veinte años transportando lingotes de oro trama, junto al escultor Alfred Pendlebury (Stanley Holloway), el atraco perfecto: fundir el oro en miniaturas de la Torre Eiffel para sacarlo de contrabando hacia París. | Entradas en boletería",
+    slug: "cineclub-tyo-oro-en-barras",
+    category: "eventos",
+    tags: ["Cine", "Cineclub"],
+  },
+  {
+    id: 312,
+    image: "/agenda/septiembre/noche-mex.webp",
+    date: "2026-09-02",
+    startDate: "2026-09-02",
+    endDate: "2026-09-02",
+    time: "20:00",
+    title: "Noche Mexicana – Tacos libres",
+    description:
+      "Una noche de auténtica comida mexicana llena de sabor con show en vivo y tacos libres para que elijas tus favoritos y comas todo lo que quieras. Contamos con opciones vegetarianas. | Reservas al 2994667883",
+    slug: "noche-mexicana-septiembre",
+    category: "eventos",
+    tags: ["Gastronomía", "Noche Temática"],
+  },
+  {
+    id: 313,
+    image: "/agenda/septiembre/random-lab.webp",
+    date: "2026-09-03",
+    startDate: "2026-09-03",
+    endDate: "2026-09-03",
+    time: "19:30",
+    title: "Random Lab: jueves creativo",
+    description:
+      "Un nuevo ciclo para encontrarnos todos los jueves y salir de la rutina, experimentar y crear sin reglas, sin juicios y sin necesidad de saber dibujar, escribir o actuar. En nuestro primer encuentro, \"Escucha y tinta\", nos dejamos llevar por los paisajes sonoros de los 70: Led Zeppelin, Yes, Invisible, Pink Floyd, y dejamos que las manos fluyan para escribir, dibujar, garabatear o simplemente escuchar y ver qué aparece. Además, la barra estará abierta con opciones para picar y beber durante el encuentro. | Entrada libre",
+    slug: "random-lab-jueves-creativo",
+    category: "eventos",
+    tags: ["Taller", "Arte", "Música"],
+  },
+  {
+    id: 314,
+    image: "/agenda/septiembre/transicion.webp",
+    date: "2026-09-04",
+    startDate: "2026-09-04",
+    endDate: "2026-09-04",
+    time: "19:30",
+    title: "Transición: Collage, DJ y proyecciones",
+    description:
+      "Una propuesta para experimentar con la técnica del collage con proyecciones visuales propias y apropiadas, acompañada por el sonido espacial de DJ Chorus. Con la coordinación de Lola Delucchi | Inscripción arancelada a través de boletería o al 2984351387 (incluye los materiales para tu creación)",
+    slug: "transicion-collage-dj-proyecciones",
+    category: "eventos",
+    tags: ["Arte", "Música", "Taller"],
+  },
 ];
 
 export function getEventoBySlug(slug: string) {
