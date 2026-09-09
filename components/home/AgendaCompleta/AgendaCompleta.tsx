@@ -1,8 +1,10 @@
 "use client"
 
-import React, { useMemo, useState } from "react"
+import React, { useMemo, useState, useEffect, useRef, useCallback } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import * as Popover from "@radix-ui/react-popover"
+import { Clock } from "lucide-react"
 import type { Event } from "@/utils/eventsComplet.mock"
 
 const WEEK_DAYS = ["LUN", "MAR", "MIÉ", "JUE", "VIE", "SÁB", "DOM"];
@@ -11,6 +13,12 @@ function normalizeTime(t: string | undefined): string {
   if (!t) return "00:00";
   const [h, m] = t.split(":");
   return `${h.padStart(2, "0")}:${(m || "0").padStart(2, "0")}`;
+}
+
+/** Extrae una reseña breve: corta en el separador "|" y limpia espacios */
+function extractExcerpt(description: string): string {
+  const clean = description.split("|")[0]?.trim() || "";
+  return clean.replace(/\s+/g, " ").trim();
 }
 
 function formatDateLocal(date: Date): string {
@@ -23,6 +31,115 @@ function formatDateLocal(date: Date): string {
 function parseLocalDate(dateStr: string): Date {
   const [year, month, day] = dateStr.split("-").map(Number);
   return new Date(year, month - 1, day);
+}
+
+/** Contenido del popover de preview del evento */
+function EventPreviewContent({ event, dateStr }: { event: Event; dateStr: string }) {
+  const excerpt = extractExcerpt(event.description);
+  const dateLabel = parseLocalDate(dateStr || event.date).toLocaleDateString("es-AR", {
+    day: "numeric",
+    month: "long",
+  });
+
+  return (
+    <>
+      <div className="flex items-center justify-between gap-2 mb-2">
+        {event.time && (
+          <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary">
+            <Clock size={14} />
+            {event.time} hs
+          </span>
+        )}
+        <span className="text-[11px] uppercase tracking-wide text-neutral-500">
+          {dateLabel}
+        </span>
+      </div>
+
+      <h3 className="font-neue text-lg font-bold leading-snug mb-1 text-black">
+        {event.title}
+      </h3>
+
+      {excerpt && (
+        <p className="text-sm text-neutral-600 leading-relaxed line-clamp-3">
+          {excerpt}
+        </p>
+      )}
+
+      {event.tags.length > 0 && (
+        <div className="flex flex-wrap gap-1.5 mt-3">
+          {event.tags.map(tag => (
+            <span
+              key={tag}
+              className="text-[10px] uppercase tracking-wide px-2 py-0.5 bg-black text-white rounded"
+            >
+              #{tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </>
+  );
+}
+
+/**
+ * Envuelve una tarjeta de evento (trigger) y muestra un popover de preview al
+ * hacer hover. La apertura se controla con mouseenter/mouseleave + un pequeño
+ * delay para evitar parpadeo al pasar entre eventos. Solo se muestra en desktop.
+ */
+function HoverPopover({
+  event,
+  dateStr,
+  children,
+}: {
+  event: Event;
+  dateStr: string;
+  children: React.ReactNode;
+}) {
+  const [open, setOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cancelClose = useCallback(() => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  }, []);
+
+  const enter = useCallback(() => {
+    cancelClose();
+    setOpen(true);
+  }, [cancelClose]);
+
+  const leave = useCallback(() => {
+    cancelClose();
+    closeTimer.current = setTimeout(() => setOpen(false), 120);
+  }, [cancelClose]);
+
+  useEffect(() => cancelClose, [cancelClose]);
+
+  return (
+    <Popover.Root open={open} onOpenChange={setOpen} modal={false}>
+      <Popover.Anchor asChild onMouseEnter={enter} onMouseLeave={leave}>
+        {children}
+      </Popover.Anchor>
+
+      <Popover.Portal>
+        <Popover.Content
+          side="right"
+          sideOffset={12}
+          align="center"
+          onMouseEnter={enter}
+          onMouseLeave={leave}
+          onOpenAutoFocus={(e) => e.preventDefault()}
+          onCloseAutoFocus={(e) => e.preventDefault()}
+          className="hidden md:block z-50 w-72 bg-white border border-neutral-200 rounded-xl shadow-2xl p-4 animate-fade-in-up outline-none"
+        >
+          <Popover.Arrow className="fill-white" />
+          <EventPreviewContent event={event} dateStr={dateStr} />
+        </Popover.Content>
+      </Popover.Portal>
+    </Popover.Root>
+  );
 }
 
 interface DayCellProps {
@@ -69,31 +186,33 @@ const SingleEvent = React.memo(function SingleEvent({
 }) {
   const { event: e, dateStr } = event;
   return (
-    <Link
-      href={`/programacion/${e.slug}?date=${dateStr}`}
-      className="relative block h-full w-full overflow-hidden pt-6"
-    >
-      {e.image && (
-        <Image
-          src={e.image}
-          alt={e.title}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 14vw"
-          style={{ objectFit: "cover" }}
-          loading="lazy"
-          className="absolute inset-0"
-        />
-      )}
-      <div className="absolute inset-0 bg-black/50 text-white flex flex-col justify-end p-2 gap-1">
-        <span className="text-sm font-semibold">{e.title}</span>
-        {e.time && <span className="text-xs">{e.time}</span>}
-        <div className="flex flex-wrap gap-1">
-          {e.tags.map(tag => (
-            <span key={tag} className="text-[10px] bg-black px-2 py-0.5 rounded">{tag}</span>
-          ))}
+    <HoverPopover event={e} dateStr={dateStr}>
+      <Link
+        href={`/programacion/${e.slug}?date=${dateStr}`}
+        className="relative block h-full w-full overflow-hidden pt-6"
+      >
+        {e.image && (
+          <Image
+            src={e.image}
+            alt={e.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 14vw"
+            style={{ objectFit: "cover" }}
+            loading="lazy"
+            className="absolute inset-0"
+          />
+        )}
+        <div className="absolute inset-0 bg-black/50 text-white flex flex-col justify-end p-2 gap-1">
+          <span className="text-sm font-semibold">{e.title}</span>
+          {e.time && <span className="text-xs">{e.time}</span>}
+          <div className="flex flex-wrap gap-1">
+            {e.tags.map(tag => (
+              <span key={tag} className="text-[10px] bg-black px-2 py-0.5 rounded">{tag}</span>
+            ))}
+          </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </HoverPopover>
   );
 });
 
@@ -105,32 +224,33 @@ const MultipleEvents = React.memo(function MultipleEvents({
   return (
     <div className="flex flex-col gap-2 p-2 h-full overflow-y-auto pt-8">
       {events.map(({ event, dateStr }) => (
-        <Link
-          key={`${event.id}-${dateStr}`}
-          href={`/programacion/${event.slug}?date=${dateStr}`}
-          className="relative block h-32 sm:h-36 md:h-40 overflow-hidden rounded-md shadow-sm hover:shadow-md transition"
-        >
-          {event.image && (
-            <Image
-              src={event.image}
-              alt={event.title}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 14vw"
-              style={{ objectFit: "cover" }}
-              loading="lazy"
-              className="absolute inset-0"
-            />
-          )}
-          <div className="absolute inset-0 bg-black/50 text-white flex flex-col justify-end p-2 gap-1">
-            <span className="text-sm font-semibold">{event.title}</span>
-            {event.time && <span className="text-xs">{event.time}</span>}
-            <div className="flex flex-wrap gap-1">
-              {event.tags.map(tag => (
-                <span key={tag} className="text-[10px] bg-black px-2 py-0.5 rounded">{tag}</span>
-              ))}
+        <HoverPopover key={`${event.id}-${dateStr}`} event={event} dateStr={dateStr}>
+          <Link
+            href={`/programacion/${event.slug}?date=${dateStr}`}
+            className="relative block h-32 sm:h-36 md:h-40 overflow-hidden rounded-md shadow-sm hover:shadow-md transition"
+          >
+            {event.image && (
+              <Image
+                src={event.image}
+                alt={event.title}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 14vw"
+                style={{ objectFit: "cover" }}
+                loading="lazy"
+                className="absolute inset-0"
+              />
+            )}
+            <div className="absolute inset-0 bg-black/50 text-white flex flex-col justify-end p-2 gap-1">
+              <span className="text-sm font-semibold">{event.title}</span>
+              {event.time && <span className="text-xs">{event.time}</span>}
+              <div className="flex flex-wrap gap-1">
+                {event.tags.map(tag => (
+                  <span key={tag} className="text-[10px] bg-black px-2 py-0.5 rounded">{tag}</span>
+                ))}
+              </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </HoverPopover>
       ))}
     </div>
   );
