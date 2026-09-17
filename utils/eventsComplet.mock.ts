@@ -431,7 +431,7 @@ export const eventosCompletMock: Event[] = [
     slug: "adan-y-eva-un-amor-de-aquellos",
     category: "eventos",
     tags: ["Teatro", "Escénicas"],
-ticketeraUrl: "https://survivo.com.ar/evento/adan-y-eva-un-amor-de-aquellos/",
+    ticketeraUrl: "https://survivo.com.ar/evento/adan-y-eva-un-amor-de-aquellos/",
   },
   {
     id: 236,

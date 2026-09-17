@@ -2,21 +2,12 @@ import React from 'react';
 import { eventosCompletMock } from '@/utils/eventsComplet.mock';
 import ProgramacionPage from '@/components/home/Programacion/Programacion';
 
-// Filtrar solo eventos futuros
-function isFutureEvent(dateStr: string): boolean {
-  const eventDate = new Date(dateStr)
-  const today = new Date()
-  today.setHours(0, 0, 0, 0)
-  eventDate.setHours(0, 0, 0, 0)
-  return eventDate >= today
-}
-
 export default function Page() {
-  const futureEvents = eventosCompletMock.filter(e => isFutureEvent(e.date));
-  
+  // La visibilidad (eventos futuros y en curso) y el orden los resuelve el
+  // pipeline en Programacion.tsx — una sola fuente de verdad.
   return (
     <div>
-      <ProgramacionPage events={futureEvents}/>
+      <ProgramacionPage events={eventosCompletMock}/>
     </div>
   );
 }

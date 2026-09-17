@@ -483,6 +483,86 @@ Un nuevo espacio para encontrarnos, compartir y disfrutar de nuestra casa tambi�
     featured: true,
     tags: ["gastronomía", "bar"],
   },
+  {
+    id: 22,
+    title: "Más seguridad para nuestra comunidad",
+    date: "2026-09-17",
+    summary:
+      "Incorporamos 3 nuevas cámaras de vigilancia en las instalaciones de CDC, ampliando el sistema de monitoreo para fortalecer el cuidado del espacio y de nuestra comunidad.",
+    excerpt: `
+Seguimos trabajando para mejorar las condiciones de seguridad de nuestro espacio y de quienes forman parte de la comunidad de Casa de la Cultura. Esta incorporación permite ampliar el sistema de monitoreo y fortalecer el cuidado de nuestras instalaciones.
+
+Las nuevas cámaras se suman a los puntos estratégicos ya monitoreados, brindando mayor tranquilidad a los artistas, talleristas, socios y visitantes que a diario forman parte de nuestra casa. Seguimos invirtiendo en infraestructura para que CDC sea un espacio cada vez más seguro y confiable.
+    `,
+    image: "/novedades/novedades-septiembre/r1.webp",
+    slug: "mas-seguridad-nuevas-camaras-vigilancia",
+    tags: ["seguridad", "institucional", "obras"],
+  },
+  {
+    id: 23,
+    title: "Un hall que también se escucha",
+    date: "2026-09-17",
+    summary:
+      "Incorporamos un nuevo sistema de audio Home Theater para nuestro hall inferior, que acompañará las distintas actividades y encuentros de la Casa.",
+    excerpt: `
+Incorporamos un nuevo sistema de audio Home Theater para nuestro hall inferior.
+
+Esta nueva adquisición permitirá musicalizar y ambientar uno de los espacios de encuentro de CDC, generando una experiencia más agradable para quienes nos visitan y acompañando las distintas actividades que se desarrollan en nuestra casa.
+
+El nuevo equipo acompañará inauguraciones de muestras, recepciones y encuentros informales, sumando una capa sonora que invita a quedarse, conversar y disfrutar del espacio.
+
+Un pequeño gran cambio para uno de los rincones más transitados de la Casa.
+    `,
+    image: "/novedades/novedades-septiembre/r2.webp",
+    slug: "hall-que-tambien-se-escucha-audio-home-theater",
+    tags: ["equipamiento", "institucional"],
+  },
+  {
+    id: 24,
+    title: "El patio se prepara para volver a encontrarnos",
+    date: "2026-09-17",
+    summary:
+      "Comenzamos los trabajos de reacondicionamiento de nuestro patio para volver a disfrutarlo con recitales, espectáculos y propuestas culturales.",
+    excerpt: `
+Comenzamos los trabajos de reacondicionamiento de nuestro patio.
+
+Estamos poniendo en condiciones este espacio para volver a disfrutarlo muy pronto con nuevos recitales, espectáculos y propuestas culturales. Queremos recuperar el patio como un lugar de encuentro, para compartir arte, música y cultura al aire libre.
+
+Las tareas incluyen limpieza general, acondicionamiento del mobiliario y mejoras en la iluminación, pensando en un espacio cómodo y seguro para toda la comunidad. Poco a poco, vamos devolviéndole vida a uno de los rincones más queridos de Casa de la Cultura.
+
+<em>Cultura bajo las estrellas. Muy pronto, volvemos a encontrarnos.</em>
+    `,
+    image: "/novedades/novedades-septiembre/r3.webp",
+    images: [
+      {
+        src: "/novedades/novedades-septiembre/r3.webp",
+        alt: "Trabajos de reacondicionamiento del patio de Casa de la Cultura",
+      },
+      {
+        src: "/novedades/novedades-septiembre/r3 f2.webp",
+        alt: "Trabajos de reacondicionamiento del patio de Casa de la Cultura",
+      },
+    ],
+    slug: "patio-reacondicionamiento-volver-encontrarnos",
+    tags: ["obras", "patio", "institucional"],
+  },
+  {
+    id: 25,
+    title: "Nueva ticketera",
+    date: "2026-09-17",
+    summary:
+      "Sumamos una nueva ticketera para la venta de entradas en boletería, con comprobante para cada compra y un registro más ordenado de las operaciones.",
+    excerpt: `
+Sumamos una nueva ticketera para la venta de entradas en boletería.
+
+Esta nueva herramienta nos permite entregar un comprobante a cada persona que realiza una compra y llevar un registro más ordenado de las operaciones. De esta manera, fortalecemos el control de la venta de entradas y mejoramos la experiencia de quienes nos eligen para disfrutar de nuestras propuestas culturales.
+
+La incorporación agiliza la atención en boletería, reduce errores en el registro de ventas y se suma a las herramientas digitales que venimos sumando para modernizar la gestión administrativa de CDC.
+    `,
+    image: "/novedades/novedades-septiembre/r4.webp",
+    slug: "nueva-ticketera-boleteria",
+    tags: ["gestión", "boletería", "institucional"],
+  },
 ];
 
 // helpers
