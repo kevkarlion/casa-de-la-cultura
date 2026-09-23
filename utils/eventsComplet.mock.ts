@@ -461,6 +461,7 @@ export const eventosCompletMock: Event[] = [
     slug: "chaplin-como-nunca-lo-viste",
     category: "eventos",
     tags: ["Cine", "Música", "Cineclub"],
+    ticketeraUrl: "https://www.survivo.com.ar/evento/chaplin-como-nunca-lo-viste/",
   },
   {
     id: 238,
@@ -1665,9 +1666,9 @@ export const eventosCompletMock: Event[] = [
     startDate: "2026-09-25",
     endDate: "2026-09-25",
     time: "19:30",
-    title: "Trepún y Alto Bronce en concerto",
+    title: "Trepún y Alto Bronce en concierto",
     description:
-      "Dos formaciones de la Orquesta Filarmónica de Río Negro se encuentran en un concierto que propone recorrer distintos sonidos, estilos y universos musicales. Trepún, el ensamble de percusión con sede en General Roca, se une al Ensamble Alto Bronce, cuarteto de bronces de la OFRN, en una propuesta que cruza la música académica con repertorios y formatos no tradicionales. En esta oportunidad, Trepún estará integrado por Carla Jensen, Antonella Lardani e Imanol Sáez, mientras que Alto Bronce contará con Albano Bellino Novita en trompeta, Pablo Sosa en trombón bajo, y Artashes Guloyan y Marcos Matías Mora en corno. Como invitado especial, Martín Ledezma sumará su voz y guitarra a esta experiencia. El cantautor viedmense propone un repertorio que transita el bossa, el candombe, el folclore y la canción. Una noche para encontrarse con la música desde distintas perspectivas, con nuevos arreglos, combinaciones y sonoridades.",
+      "Dos formaciones de la Orquesta Filarmónica de Río Negro se encuentran en un concierto que propone recorrer distintos sonidos, estilos y universos musicales. Trepún, el ensamble de percusión con sede en General Roca, se une al Ensamble Alto Bronce, cuarteto de bronces de la OFRN, en una propuesta que cruza la música académica con repertorios y formatos no tradicionales. En esta oportunidad, Trepún estará integrado por Carla Jensen, Antonella Lardani e Imanol Sáez, mientras que Alto Bronce contará con Albano Bellino Novita en trompeta, Pablo Sosa en trombón bajo, y Artashes Guloyan y Marcos Matías Mora en corno. Como invitado especial, Martín Ledezma sumará su voz y guitarra a esta experiencia. El cantautor viedmense propone un repertorio que transita el bossa, el candombe, el folclore y la canción. Una noche para encontrarse con la música desde distintas perspectivas, con nuevos arreglos, combinaciones y sonoridades. | Bono contribución",
     slug: "trepun-alto-bronce-concierto",
     category: "eventos",
     tags: ["Música", "Orquesta", "Concierto"],
@@ -1681,7 +1682,7 @@ export const eventosCompletMock: Event[] = [
     time: "21:00",
     title: "Hermanos Sombra",
     description:
-      "El grupo local, integrado por Luciano Sombra, Lucas Sombra, Néstor Sombra y Lucas Ibañez, presenta una noche de folklore tradicional y de raíz festivalera para celebrar nuestra identidad.",
+      "El grupo local, integrado por Luciano Sombra, Lucas Sombra, Néstor Sombra y Lucas Ibañez, presenta una noche de folklore tradicional y de raíz festivalera para celebrar nuestra identidad. | Entradas en boletería y con los artistas",
     slug: "hermanos-sombra",
     category: "eventos",
     tags: ["Música", "Folklore"],
@@ -1699,6 +1700,66 @@ export const eventosCompletMock: Event[] = [
     slug: "rutas-paiasas",
     category: "eventos",
     tags: ["Infancias", "Teatro", "Circo", "Familia"],
+    ticketeraUrl: "https://www.survivo.com.ar/evento/rutas-paiasas/",
+  },
+
+  // Semana del 22 al 26 de septiembre 2026
+  {
+    id: 340,
+    image: "/agenda/septiembre/3.webp",
+    date: "2026-09-22",
+    startDate: "2026-09-22",
+    endDate: "2026-09-22",
+    time: "20:30",
+    title:
+      'Cineclub TYÖ: Ciclo Recuperando la riqueza social – "Vabank" – Dir. Juliusz Machulski',
+    description:
+      "Un trompetista de jazz y experto abridor de cajas fuertes sale de prisión decidido a vengarse del socio que lo traicionó y hoy es un poderoso banquero. | Entradas en boletería",
+    slug: "cineclub-tyo-vabank",
+    category: "eventos",
+    tags: ["Cine", "Cineclub"],
+  },
+  {
+    id: 341,
+    image: "/agenda/septiembre/pastas.webp",
+    date: "2026-09-23",
+    startDate: "2026-09-23",
+    endDate: "2026-09-23",
+    time: "20:00",
+    title: "Noche de pastas libres",
+    description:
+      "Salmón, cordero ahumado, jamón y queso, y calabaza y roquefort son los sabores que podrán probar en esta noche de agnolottis. | Reservas al 2994667883",
+    slug: "noche-de-pastas-libres-septiembre",
+    category: "eventos",
+    tags: ["Gastronomía", "Noche Temática"],
+  },
+  {
+    id: 342,
+    image: "/agenda/septiembre/lumen.webp",
+    date: "2026-09-25",
+    startDate: "2026-09-25",
+    endDate: "2026-09-25",
+    time: "20:00",
+    title: "Festival Lumen – Un encuentro con la imagen",
+    description:
+      'Una jornada repleta de actividades, armado de mural colectivo, inauguración de la muestra "50 años – Nunca mas" con fotografías conservadas por la fototeca ARGRA, muestra de fotobordado de la mano de Aguja Activa, cena y cierre con la presentación de Micronautas y un DJ en vivo. | Entrada libre',
+    slug: "festival-lumen-un-encuentro-con-la-imagen",
+    category: "eventos",
+    tags: ["Festival", "Arte", "Fotografía"],
+  },
+  {
+    id: 343,
+    image: "/agenda/septiembre/taller-mini-chef.webp",
+    date: "2026-09-26",
+    startDate: "2026-09-26",
+    endDate: "2026-09-26",
+    time: "11:00",
+    title: "Taller mini chef 3era edición",
+    description:
+      "Vuelve el taller favorito de lxs niñxs, en esta ocasión elaborarán fideos caseros y, mientras se cocinan, disfrutan de una colación de media mañana. | Inscripciones al 2994667883",
+    slug: "taller-mini-chef-3era-edicion",
+    category: "eventos",
+    tags: ["Taller", "Infancias", "Gastronomía"],
   },
   {
     id: 334,
