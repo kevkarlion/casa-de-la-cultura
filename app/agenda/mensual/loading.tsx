@@ -1,19 +1,25 @@
 import React from "react";
 
 const WEEK_DAYS = ["LUN", "MAR", "MIÉ", "JUE", "VIE", "SÁB", "DOM"];
-const ROWS = 5;
 
 export default function Loading() {
   return (
     <main className="bg-white text-black min-h-screen py-12">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* header skeleton */}
-        <div className="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div className="h-10 w-80 rounded bg-neutral-200 animate-pulse" />
-          <div className="flex gap-2">
-            <div className="w-32 h-10 rounded bg-neutral-200 animate-pulse" />
-            <div className="w-36 h-10 rounded bg-neutral-200 animate-pulse" />
+        <div className="mb-12 md:mb-16">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div className="min-w-0">
+              <div className="h-3 w-32 rounded bg-neutral-200 animate-pulse mb-4" />
+              <div className="h-20 w-72 max-w-full rounded bg-neutral-200 animate-pulse md:h-28" />
+              <div className="h-6 w-24 rounded bg-neutral-100 animate-pulse mt-3" />
+            </div>
+            <div className="flex gap-2 shrink-0 md:pb-2">
+              <div className="w-32 h-10 rounded bg-neutral-200 animate-pulse" />
+              <div className="w-36 h-10 rounded bg-neutral-200 animate-pulse" />
+            </div>
           </div>
+          <div className="h-px w-full bg-neutral-200 mt-8 md:mt-10" />
         </div>
 
         {/* weekday header */}

@@ -299,10 +299,8 @@ export default function AgendaAlmanaque({ events, initialYear, initialMonth }: A
     return map;
   }, [localMonth, events]);
 
-  const monthLabel = localMonth.toLocaleDateString("es-AR", {
-    month: "long",
-    year: "numeric",
-  });
+  const monthName = localMonth.toLocaleDateString("es-AR", { month: "long" });
+  const monthYear = localMonth.toLocaleDateString("es-AR", { year: "numeric" });
 
   const firstDayOfMonth = new Date(localMonth.getFullYear(), localMonth.getMonth(), 1);
   const desktopOffset = firstDayOfMonth.getDay() === 0 ? 6 : firstDayOfMonth.getDay() - 1;
@@ -310,25 +308,37 @@ export default function AgendaAlmanaque({ events, initialYear, initialMonth }: A
   return (
     <main className="bg-white text-black min-h-screen py-12">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <h1 className="text-4xl md:text-5xl font-bold font-neue">
-            Agenda cultural – {monthLabel}
-          </h1>
+        <div className="mb-12 md:mb-16">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div className="min-w-0">
+              <p className="font-neue text-xs font-bold uppercase tracking-[0.28em] text-neutral-500 mb-4">
+                Agenda cultural
+              </p>
+              <h1 className="font-neue font-bold tracking-tighter leading-[0.85] text-black text-[clamp(3.25rem,13vw,9rem)] lowercase">
+                {monthName}
+                <span className="block text-neutral-400 text-[0.28em] tracking-tight leading-none mt-3 tabular-nums">
+                  {monthYear}
+                </span>
+              </h1>
+            </div>
 
-          <div className="flex gap-2 mt-4 md:mt-0">
-            <button
-              onClick={() => setLocalMonth(d => new Date(d.getFullYear(), d.getMonth() - 1, 1))}
-              className="px-4 py-2 rounded-md bg-black text-white hover:bg-primary transition"
-            >
-              Mes anterior
-            </button>
-            <button
-              onClick={() => setLocalMonth(d => new Date(d.getFullYear(), d.getMonth() + 1, 1))}
-              className="px-4 py-2 rounded-md bg-black text-white hover:bg-primary transition"
-            >
-              Mes siguiente
-            </button>
+            <div className="flex gap-2 shrink-0 md:pb-2">
+              <button
+                onClick={() => setLocalMonth(d => new Date(d.getFullYear(), d.getMonth() - 1, 1))}
+                className="px-4 py-2 rounded-md bg-black text-white hover:bg-primary transition"
+              >
+                Mes anterior
+              </button>
+              <button
+                onClick={() => setLocalMonth(d => new Date(d.getFullYear(), d.getMonth() + 1, 1))}
+                className="px-4 py-2 rounded-md bg-black text-white hover:bg-primary transition"
+              >
+                Mes siguiente
+              </button>
+            </div>
           </div>
+
+          <div className="h-px w-full bg-neutral-200 mt-8 md:mt-10" />
         </div>
 
         <div className="hidden md:grid md:grid-cols-7 gap-2 text-center mb-1 font-semibold">
