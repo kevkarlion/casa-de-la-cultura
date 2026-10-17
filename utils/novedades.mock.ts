@@ -129,7 +129,7 @@ Gracias a Birock por apostar a este proyecto junto a nosotros. ¡Los esperamos p
     ],
 
     slug: "convocatoria-espacio-gastronomico-cdc",
-    featured: true,
+    featured: false,
     tags: ["convocatoria", "gastronomía", "cdc"],
     links: [
       {
@@ -170,7 +170,7 @@ Si querés ser parte de esta propuesta, podés completar el formulario de inscri
     ],
 
     slug: "feria-agro-cultural-2026",
-    featured: true,
+    featured: false,
     tags: ["feria", "agroecología", "artesanal"],
     links: [
       {
@@ -428,7 +428,7 @@ Un nuevo espacio para que la literatura también encuentre su lugar en nuestra c
     `,
     image: "/novedades/novedades-agosto/R09.webp",
     slug: "nueva-area-literatura",
-    featured: true,
+    featured: false,
     tags: ["literatura", "biblioteca"],
   },
   {
@@ -452,7 +452,7 @@ Durante las últimas semanas se realizaron tareas de pintura y reacondicionamien
       },
     ],
     slug: "mejoras-espacios-trabajo-formacion",
-    featured: true,
+    featured: false,
     tags: ["obras", "espacios"],
   },
   {
@@ -480,7 +480,7 @@ Un nuevo espacio para encontrarnos, compartir y disfrutar de nuestra casa tambi�
       },
     ],
     slug: "nueva-concesion-bar",
-    featured: true,
+    featured: false,
     tags: ["gastronomía", "bar"],
   },
   {
@@ -562,6 +562,95 @@ La incorporación agiliza la atención en boletería, reduce errores en el regis
     image: "/novedades/novedades-septiembre/r4.webp",
     slug: "nueva-ticketera-boleteria",
     tags: ["gestión", "boletería", "institucional"],
+  },
+  {
+    id: 26,
+    title: "Seguimos gestionando recursos para CDC",
+    date: "2026-10-01",
+    summary:
+      "Gracias a la articulación con el Ministerio de Desarrollo Humano de Río Negro, pudimos adquirir los materiales necesarios para finalizar la medianera de Casa de la Cultura.",
+    excerpt: `
+Gracias a la articulación con el Ministerio de Desarrollo Humano de Río Negro, pudimos adquirir los materiales necesarios para finalizar la medianera de Casa de la Cultura.
+
+Una obra que no solo mejora nuestro espacio, sino que también permitirá reducir la transmisión de sonido y favorecer una mejor convivencia con nuestros vecinos y vecinas.
+
+Y seguimos proyectando nuevos espacios para compartir.
+
+<strong>Se viene el Jardín Cultural CDC.</strong>
+    `,
+    image: "/novedades/nov-octubre/r01.webp",
+    images: [
+      { src: "/novedades/nov-octubre/r01.webp", alt: "Gestión de recursos para CDC" },
+      { src: "/novedades/nov-octubre/r01(1).webp", alt: "Materiales para la medianera" },
+    ],
+    slug: "seguimos-gestionando-recursos-cdc",
+    tags: ["obras", "institucional", "medianera"],
+  },
+  {
+    id: 27,
+    title: "Sumamos verde",
+    date: "2026-10-02",
+    summary:
+      "Para seguir fortaleciendo este nuevo espacio de CDC, plantamos 20 ejemplares de distintas especies junto a nuestra socia colaboradora María Angélica Vidal.",
+    excerpt: `
+Para seguir fortaleciendo este nuevo espacio de CDC, esta semana plantamos 20 ejemplares de distintas especies.
+
+Lo hicimos junto a nuestra socia colaboradora María Angélica Vidal, sumando verde a este proyecto.
+
+<strong>CDC también es un espacio para aprender.</strong>
+    `,
+    image: "/novedades/nov-octubre/r02.webp",
+    images: [
+      { src: "/novedades/nov-octubre/r02.webp", alt: "Plantación de verde en CDC" },
+      { src: "/novedades/nov-octubre/r02(1).webp", alt: "Vegetación en el espacio" },
+      { src: "/novedades/nov-octubre/r02(2).webp", alt: "Nuevo espacio verde" },
+    ],
+    slug: "sumamos-verde-cdc",
+    tags: ["espacios", "naturaleza", "institucional"],
+  },
+  {
+    id: 28,
+    title: "Villa California ya está en CDC",
+    date: "2026-10-03",
+    summary:
+      "Se estrenó Villa California, una coproducción entre el Teatro Nacional Cervantes, la Secretaría de Cultura de Río Negro y Casa de la Cultura.",
+    excerpt: `
+Se estrenó Villa California, una coproducción entre el Teatro Nacional Cervantes, la Secretaría de Cultura de Río Negro y Casa de la Cultura. Durante octubre, habrá funciones todos los viernes y sábados además de funciones especiales destinadas a escuelas.
+
+Una producción que, además de acercar teatro a nuestra comunidad, genera trabajo remunerado para actores, actresses y trabajadores de la cultura.
+
+<strong>Porque producir cultura también significa sostener y profesionalizar el trabajo artístico.</strong>
+    `,
+    image: "/novedades/nov-octubre/r03.webp",
+    images: [
+      { src: "/novedades/nov-octubre/r03.webp", alt: "Villa California en CDC" },
+      { src: "/novedades/nov-octubre/r03(1).webp", alt: "Función de Villa California" },
+    ],
+    slug: "villa-california-ya-esta-en-cdc",
+    featured: true,
+    tags: ["teatro", "cervantes", "producción federal"],
+  },
+  {
+    id: 29,
+    title: "Visitas guiadas",
+    date: "2026-10-04",
+    summary:
+      "Esta semana recibimos a dos cursos de la Escuela Agraria Juan XXIII de Villa Regina para compartir una visita guiada por CDC.",
+    excerpt: `
+Esta semana recibimos a dos cursos de la Escuela Agraria Juan XXIII de Villa Regina.
+
+Compartimos una visita guiada por distintos espacios de nuestra institución, acercando a estudiantes a la historia, el funcionamiento y las propuestas de Casa de la Cultura.
+
+<strong>Abrimos nuestras puertas para encontrarnos, conocer y compartir cultura.</strong>
+    `,
+    image: "/novedades/nov-octubre/r04.webp",
+    images: [
+      { src: "/novedades/nov-octubre/r04.webp", alt: "Visita guiada de estudiantes" },
+      { src: "/novedades/nov-octubre/r04(1).webp", alt: "Estudiantes en CDC" },
+    ],
+    slug: "visitas-guiadas-escuela-agraria",
+    featured: true,
+    tags: ["educación", "visitas", "comunidad"],
   },
 ];
 
