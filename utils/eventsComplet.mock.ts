@@ -1829,10 +1829,11 @@ export const eventosCompletMock: Event[] = [
     time: "20:00",
     title: "The King – Michael Jackson Experience",
     description:
-      "El espectáculo protagonizado por Leo Blanco, THE KING – Eternal Tour, lleva al escenario una producción de alto impacto que revive la música, el ritmo y la potencia escénica que convirtieron a Michael Jackson en un fenómeno mundial, a través de coreografías icónicas y canciones que marcaron generaciones.",
+      "El espectáculo protagonizado por Leo Blanco, THE KING – Eternal Tour, lleva al escenario una producción de alto impacto que revive la música, el ritmo y la potencia escénica que convirtieron a Michael Jackson en un fenómeno mundial, a través de coreografías icónicas y canciones que marcaron generaciones. | Entradas en boletería y ticketera.",
     slug: "the-king-michael-jackson-experience",
     category: "eventos",
     tags: ["Música", "Show", "Tributo"],
+    ticketeraUrl: "https://survivo.com.ar/evento/the-king-michael-jackson-experience/",
   },
   {
     id: 344,
