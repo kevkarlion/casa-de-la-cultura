@@ -1800,10 +1800,11 @@ export const eventosCompletMock: Event[] = [
     time: "22:00",
     title: "Petroka – No apto para secos",
     description:
-      "El comediante El Marito vuelve a los escenarios con un espectáculo totalmente renovado y presenta su nuevo show \"No apto para secos\", el tercer espectáculo de su exitoso personaje PETROKA. En este nuevo show, PETROKA no estará solo. El público se reencontrará con El Profe y conocerá a un nuevo personaje que se suma al universo PETROKA: El Albañil, una incorporación que promete carcajadas desde su primera aparición. Un espectáculo ágil y filoso, que combina actuación y humor popular, retratando con ironía la relación con el dinero, la viveza criolla y las contradicciones de la vida cotidiana.",
+      "El comediante El Marito vuelve a los escenarios con un espectáculo totalmente renovado y presenta su nuevo show \"No apto para secos\", el tercer espectáculo de su exitoso personaje PETROKA. En este nuevo show, PETROKA no estará solo. El público se reencontrará con El Profe y conocerá a un nuevo personaje que se suma al universo PETROKA: El Albañil, una incorporación que promete carcajadas desde su primera aparición. Un espectáculo ágil y filoso, que combina actuación y humor popular, retratando con ironía la relación con el dinero, la viveza criolla y las contradicciones de la vida cotidiana. | Entradas en boletería y ticketera.",
     slug: "petroka-no-apto-para-secos",
     category: "eventos",
     tags: ["Humor", "Show"],
+    ticketeraUrl: "https://survivo.com.ar/evento/petroka-no-apto-para-secos/",
   },
   {
     id: 338,
