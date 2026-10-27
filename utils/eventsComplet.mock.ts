@@ -2213,6 +2213,36 @@ export const eventosCompletMock: Event[] = [
     tags: ["Teatro", "Escénicas"],
     ticketeraUrl: "https://survivo.com.ar/evento/villa-california-7/",
   },
+  {
+    id: 370,
+    image: "/agenda/octubre/villa-30-y-31.webp",
+    date: "2026-10-30",
+    startDate: "2026-10-30",
+    endDate: "2026-10-30",
+    time: "20:30",
+    title: "Villa California – Función viernes 30 de octubre",
+    description:
+      "Una reunión entre vecinos se ve alterada por un episodio inesperado. Lo que comienza como una situación cotidiana deriva en una cadena de conflictos que pone en crisis la aparente armonía de un barrio cerrado. Una coproducción entre el Teatro Nacional Cervantes y la Secretaría de Estado de Cultura de la provincia de Río Negro, en el marco del programa TNC Produce en el país.",
+    slug: "villa-california-30-octubre",
+    category: "eventos",
+    tags: ["Teatro", "Escénicas"],
+    ticketeraUrl: "https://survivo.com.ar/evento/villa-california/",
+  },
+  {
+    id: 371,
+    image: "/agenda/octubre/villa-30-y-31.webp",
+    date: "2026-10-31",
+    startDate: "2026-10-31",
+    endDate: "2026-10-31",
+    time: "20:00",
+    title: "Villa California – Función sábado 31 de octubre",
+    description:
+      "Una reunión entre vecinos se ve alterada por un episodio inesperado. Lo que comienza como una situación cotidiana deriva en una cadena de conflictos que pone en crisis la aparente armonía de un barrio cerrado. Una coproducción entre el Teatro Nacional Cervantes y la Secretaría de Estado de Cultura de la provincia de Río Negro, en el marco del programa TNC Produce en el país.",
+    slug: "villa-california-31-octubre",
+    category: "eventos",
+    tags: ["Teatro", "Escénicas"],
+    ticketeraUrl: "https://survivo.com.ar/evento/villa-california-9/",
+  },
 ];
 
 export function getEventoBySlug(slug: string) {
