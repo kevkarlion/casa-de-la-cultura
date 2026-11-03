@@ -2,6 +2,8 @@ import React from 'react';
 import { getEventosOrdenados } from '@/utils/eventsComplet.mock';
 import AgendaAlmanaque from '@/components/home/AgendaCompleta/AgendaCompleta';
 
+export const dynamic = 'force-dynamic';
+
 function getBuenosAiresDate(): { year: number; month: number } {
   const now = new Date();
   const parts = new Intl.DateTimeFormat("en-CA", {
