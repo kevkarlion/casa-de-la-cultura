@@ -2371,6 +2371,36 @@ export const eventosCompletMock: Event[] = [
     category: "eventos",
     tags: ["Música", "Folklore"],
   },
+  {
+    id: 381,
+    image: "/agenda/noviembre/cuento-de-juguetes.webp",
+    date: "2026-11-25",
+    startDate: "2026-11-25",
+    endDate: "2026-11-25",
+    time: "18:00",
+    title: "Cuento de juguetes",
+    description:
+      "Una antigua juguetería, una tradición familiar y una adolescente convencida de que ya es demasiado grande para jugar. Pero todo cambiará cuando un misterioso personaje la deje atrapada allí y, al caer la noche, los juguetes cobren vida. Un gran espectáculo para toda la familia, con canciones conocidas, divertidas coreografías, efectos especiales y una puesta en escena llena de color y magia. | Entradas en boletería y ticketera",
+    slug: "cuento-de-juguetes",
+    category: "eventos",
+    tags: ["Infancias", "Teatro", "Show", "Música"],
+    ticketeraUrl: "https://survivo.com.ar/evento/cuento-con-juguetes/",
+  },
+  {
+    id: 382,
+    image: "/agenda/noviembre/pipa.webp",
+    date: "2026-11-25",
+    startDate: "2026-11-25",
+    endDate: "2026-11-25",
+    time: "21:00",
+    title: "Pipa Barbato",
+    description:
+      "El reconocido comediante Pipa Barbato presenta un show de stand up cargado de humor cotidiano, anécdotas sobre la infancia, la adolescencia y esas situaciones absurdas de la vida con las que todos nos identificamos. Con su estilo fresco y auténtico, Pipa llega al escenario con material inédito y sus monólogos más desopilantes para una noche de risas sin pausa. | Entradas en boletería y ticketera",
+    slug: "pipa-barbato",
+    category: "eventos",
+    tags: ["Humor", "Stand Up", "Show"],
+    ticketeraUrl: "https://survivo.com.ar/evento/pipa-barbato/",
+  },
 ];
 
 export function getEventoBySlug(slug: string) {
