@@ -2428,6 +2428,8 @@ export const eventosCompletMock: Event[] = [
     slug: "ter-ma-game",
     category: "eventos",
     tags: ["Teatro", "Taller", "Infancias"],
+    ticketeraUrl:
+      "https://survivo.com.ar/evento/ter-ma-game-muestra-del-taller-de-teatro-infancias-y-adolescentes/",
   },
   {
     id: 385,
@@ -2456,6 +2458,7 @@ export const eventosCompletMock: Event[] = [
     slug: "marinera-de-luces",
     category: "eventos",
     tags: ["Danza", "Muestra", "Taller"],
+    ticketeraUrl: "https://survivo.com.ar/evento/marineras-de-luces/",
   },
   {
     id: 387,
@@ -2484,6 +2487,7 @@ export const eventosCompletMock: Event[] = [
     slug: "circus-dance",
     category: "eventos",
     tags: ["Danza", "Muestra", "Taller"],
+    ticketeraUrl: "https://survivo.com.ar/evento/circus-dance/",
   },
   {
     id: 389,
