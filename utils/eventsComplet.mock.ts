@@ -2503,6 +2503,63 @@ export const eventosCompletMock: Event[] = [
     category: "eventos",
     tags: ["Danza", "Muestra", "Taller"],
   },
+  // Semana del 17 al 21 de noviembre 2026
+  {
+    id: 390,
+    image: "/agenda/noviembre/sabor-mexicana.webp",
+    date: "2026-11-18",
+    startDate: "2026-11-18",
+    endDate: "2026-11-18",
+    time: "21:00",
+    title: "Sabor a la mexicana",
+    description:
+      "Corta la semana con Alma Mía, el bar ubicado en nuestro hall superior, con una noche de comida mexicana libre, tacos, burritos, chimichangas y más, acompañado de música en vivo. | Reservas al 2994667883",
+    slug: "sabor-a-la-mexicana-18-noviembre",
+    category: "eventos",
+    tags: ["Gastronomía", "Noche Temática", "Música"],
+  },
+  {
+    id: 391,
+    image: "/agenda/noviembre/trepun.webp",
+    date: "2026-11-20",
+    startDate: "2026-11-20",
+    endDate: "2026-11-20",
+    time: "21:00",
+    title: "Trepún percusión + Ensamble de cuerdas del alto valle",
+    description:
+      "Trepún, el ensamble de percusión de la Orquesta Filarmónica de Río Negro, compartirá escenario con el Ensamble de Cuerdas del Alto Valle, de Cipolletti. En un concierto con una propuesta que recorre el folclore argentino, el tango y la música popular de distintos rincones de Latinoamérica | Colaboración voluntaria",
+    slug: "trepun-ensamble-cuerdas-alto-valle",
+    category: "eventos",
+    tags: ["Música", "Folklore", "Tango"],
+  },
+  {
+    id: 392,
+    image: "/agenda/noviembre/crucis.webp",
+    date: "2026-11-20",
+    startDate: "2026-11-20",
+    endDate: "2026-11-20",
+    time: "21:00",
+    title: "Crucis: Discografía completa",
+    description:
+      "Jóvenes Músicos, estudiantes del IUPA, interpretarán de principio a fin toda la discografía existente de Crucis, en una segunda función del homenaje a una de las bandas más importantes del Rock Progresivo Argentino. | Entradas con los artistas y al 2984152725",
+    slug: "crucis-discografia-completa",
+    category: "eventos",
+    tags: ["Música", "Rock", "Rock Progresivo"],
+  },
+  {
+    id: 393,
+    image: "/agenda/noviembre/festival-patagonico.webp",
+    date: "2026-11-21",
+    startDate: "2026-11-21",
+    endDate: "2026-11-21",
+    time: "12:00",
+    title: "Festival Patagónico El Porrazo",
+    description:
+      "CDC se convierte en la sede por todo un día del campeonato patagónico de tango “El porrazo”, con la presencia de los maestros jurados invitados, Milena Plebs, Analía Vega y Marcelo Varela. Desde las 12hs hasta las 14hs habrán clases grupales con los maestros invitados y desde las 14:30hs hasta las 18hs comenzaran las clasificatorias del campeonato. | Entradas e inscripción al 2984224887",
+    slug: "festival-patagonico-el-porrazo",
+    category: "eventos",
+    tags: ["Tango", "Festival", "Encuentro"],
+  },
 ];
 
 export function getEventoBySlug(slug: string) {
