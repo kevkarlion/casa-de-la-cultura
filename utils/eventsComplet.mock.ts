@@ -2560,6 +2560,36 @@ export const eventosCompletMock: Event[] = [
     category: "eventos",
     tags: ["Tango", "Festival", "Encuentro"],
   },
+  // Semana del 23 al 27 de noviembre 2026
+  {
+    id: 394,
+    image: "/agenda/noviembre/noche-pizza.webp",
+    date: "2026-11-25",
+    startDate: "2026-11-25",
+    endDate: "2026-11-25",
+    time: "21:00",
+    title: "Noche de pizza y entrepanes",
+    description:
+      "Disfrutá de pizza y entrepanes libres con música en vivo acompañando la noche. | Reservas al 2994667883",
+    slug: "noche-de-pizza-y-entrepanes-25-noviembre",
+    category: "eventos",
+    tags: ["Gastronomía", "Noche Temática", "Música"],
+  },
+  {
+    id: 395,
+    image: "/agenda/noviembre/villa-california-2611.webp",
+    date: "2026-11-26",
+    startDate: "2026-11-26",
+    endDate: "2026-11-26",
+    time: "20:30",
+    title: "Villa California",
+    description:
+      "Una reunión entre vecinos se ve alterada por un episodio inesperado. Lo que comienza como una situación cotidiana deriva en una cadena de conflictos que pone en crisis la aparente armonía de la comunidad. Una coproducción entre el Teatro Nacional Cervantes y la Secretaría de Estado de Cultura de la provincia de Río Negro, en el marco del programa TNC Produce en el país. | Entradas en boletería y ticketera",
+    slug: "villa-california-26-noviembre",
+    category: "eventos",
+    tags: ["Teatro", "Escénicas"],
+    ticketeraUrl: "https://survivo.com.ar/evento/villa-california-1/",
+  },
 ];
 
 export function getEventoBySlug(slug: string) {
